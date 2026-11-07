@@ -8,7 +8,6 @@ import {
   Search,
   FileText,
   Target,
-  MessageSquare,
   Mic,
   Video,
   ArrowRight,
@@ -28,7 +27,6 @@ type ServiceKey =
   | 'research'
   | 'blogFactory'
   | 'adCreator'
-  | 'manychat'
   | 'voiceAgent'
   | 'reelBuilder'
 
@@ -48,12 +46,11 @@ const SECONDARY_SERVICES: readonly ServiceCard[] = [
   { key: 'adCreator',       href: '/skills/ad-manager',       Icon: Megaphone,       status: 'live'         },
   { key: 'leadQualifier',   href: '/skills/lead-qualifier',   Icon: UserCheck,       status: 'live'         },
   { key: 'emailManagement', href: '/skills/email-management', Icon: Inbox,           status: 'live'         },
-  { key: 'manychat',        href: '/skills/manychat',         Icon: MessageSquare,   status: 'live'         },
   { key: 'reporting',       href: '/skills/reporting',        Icon: BarChart3,       status: 'live'         },
   { key: 'seoGeo',          href: '/skills/seo-geo',          Icon: Search,          status: 'live'         },
-  { key: 'research',        href: '/skills/research',         Icon: Target,          status: 'live'         },
-  { key: 'voiceAgent',      href: '/skills/voice-agent',      Icon: Mic,             status: 'coming_soon'  },
-  { key: 'reelBuilder',     href: '/skills/reel-builder',     Icon: Video,           status: 'coming_soon'  },
+  { key: 'research',        href: '/skills/strategy',         Icon: Target,          status: 'live'         },
+  { key: 'voiceAgent',      href: '/skills#binnenkort',       Icon: Mic,             status: 'coming_soon'  },
+  { key: 'reelBuilder',     href: '/skills#binnenkort',       Icon: Video,           status: 'coming_soon'  },
 ] as const
 
 export async function ServicesBento({ locale }: { locale: string }) {
@@ -88,7 +85,7 @@ export async function ServicesBento({ locale }: { locale: string }) {
 
         {/*
           Bento grid: Clyde featured tile col-span-2 row-span-2 (top-left),
-          11 secundaire services. 4 koloms desktop, 2 tablet, 1 mobile.
+          secundaire services. 4 koloms desktop, 2 tablet, 1 mobile.
           Auto-rows-fr keeps tile heights aligned in the bento flow.
         */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4 lg:gap-5">

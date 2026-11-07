@@ -81,7 +81,7 @@ export const PAGE_DATES: Record<string, string> = {
   // 2026-11-05 site-audit P0 PR: every path below changed its HTML that day (CTA label,
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
-  '/': '2026-11-07',
+  '/': '2026-11-08',
   '/memory': '2026-11-07',
   '/apply': '2026-11-06',
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
@@ -95,16 +95,15 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/social-media': '2026-11-05',
   '/skills/blog-factory': '2026-11-05',
   '/skills/ad-manager': '2026-11-05',
-  '/skills/reel-builder': '2026-11-05',
-  '/skills/voice-agent': '2026-11-05',
-  '/skills/lead-qualifier': '2026-11-05',
+  // 2026-11-08 golf 9a: the hub became Wat Clyde maakt, /skills/strategy is new, lead-qualifier lost its chat demo,
+  // and the skill count left /, /pricing (matrix rows) and the terms. Move these to the merge day if it slips.
+  '/skills/strategy': '2026-11-08',
+  '/skills/lead-qualifier': '2026-11-08',
   '/skills/email-management': '2026-11-05',
-  '/skills/manychat': '2026-11-05',
   '/skills/reporting': '2026-11-05',
   '/skills/seo-geo': '2026-11-05',
-  '/skills/research': '2026-11-05',
   '/skills/clyde': '2026-11-07',
-  '/pricing': '2026-11-07',
+  '/pricing': '2026-11-08',
   '/alternatives': '2026-11-07',
   '/about': '2026-11-06',
   '/contact': '2026-11-05',
@@ -113,12 +112,11 @@ export const PAGE_DATES: Record<string, string> = {
   '/kennisbank': '2026-06-02',
   // Dates below come from `git log -1` on each page's own source file, not
   // from a guess — these six were missing and hit the old `new Date()` path.
-  '/skills': '2026-11-05',
+  '/skills': '2026-11-08',
   '/assessment': '2026-11-05',
-  '/roadmap': '2026-11-05',
   // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
   '/legal/privacy': '2026-11-05',
-  '/legal/terms': '2026-11-06',
+  '/legal/terms': '2026-11-08',
   '/legal/cookies': '2026-04-27',
   '/trust': '2026-11-07',
 }

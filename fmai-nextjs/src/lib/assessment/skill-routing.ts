@@ -30,10 +30,9 @@ type SkillSlug =
   | 'voice-agent'
   | 'lead-qualifier'
   | 'email-management'
-  | 'manychat'
   | 'reporting'
   | 'seo-geo'
-  | 'research'
+  | 'strategy'
   | 'clyde'
 
 type ArchetypeRoutingMatrix = Record<
@@ -44,38 +43,38 @@ type ArchetypeRoutingMatrix = Record<
 const ARCHETYPE_ROUTING_MATRIX: ArchetypeRoutingMatrix = {
   'strategy-led': {
     // Strong vision; needs to execute and measure that vision
-    strategy: ['clyde', 'research', 'reporting'],
-    data: ['reporting', 'research', 'seo-geo'],
+    strategy: ['clyde', 'strategy', 'reporting'],
+    data: ['reporting', 'strategy', 'seo-geo'],
     tools: ['clyde', 'social-media', 'blog-factory'],
-    team: ['clyde', 'email-management', 'manychat'],
+    team: ['clyde', 'email-management', 'lead-qualifier'],
   },
   'data-led': {
     // Rich insights; needs to translate data into action and production
-    strategy: ['clyde', 'research', 'reporting'],
-    data: ['research', 'reporting', 'seo-geo'],
+    strategy: ['clyde', 'strategy', 'reporting'],
+    data: ['strategy', 'reporting', 'seo-geo'],
     tools: ['ad-manager', 'social-media', 'blog-factory'],
     team: ['reporting', 'clyde', 'email-management'],
   },
   'tooling-led': {
     // High automation; needs strategic direction and team adoption
-    strategy: ['clyde', 'research', 'reporting'],
-    data: ['reporting', 'research', 'seo-geo'],
+    strategy: ['clyde', 'strategy', 'reporting'],
+    data: ['reporting', 'strategy', 'seo-geo'],
     tools: ['clyde', 'social-media', 'blog-factory'],
-    team: ['email-management', 'manychat', 'clyde'],
+    team: ['email-management', 'lead-qualifier', 'clyde'],
   },
   'team-led': {
     // Strong talent; needs tools and data to scale that craft
-    strategy: ['clyde', 'research', 'reporting'],
-    data: ['reporting', 'research', 'seo-geo'],
+    strategy: ['clyde', 'strategy', 'reporting'],
+    data: ['reporting', 'strategy', 'seo-geo'],
     tools: ['clyde', 'social-media', 'blog-factory'],
     team: ['clyde', 'lead-qualifier', 'email-management'],
   },
   'balanced': {
     // No dominant axis; formalise operations across the board
-    strategy: ['clyde', 'research', 'reporting'],
-    data: ['reporting', 'research', 'seo-geo'],
+    strategy: ['clyde', 'strategy', 'reporting'],
+    data: ['reporting', 'strategy', 'seo-geo'],
     tools: ['clyde', 'social-media', 'blog-factory'],
-    team: ['clyde', 'email-management', 'manychat'],
+    team: ['clyde', 'email-management', 'lead-qualifier'],
   },
 }
 

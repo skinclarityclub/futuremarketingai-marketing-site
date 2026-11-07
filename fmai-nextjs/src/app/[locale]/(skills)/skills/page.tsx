@@ -1,39 +1,17 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import type { WithContext, ItemList } from 'schema-dts'
-import {
-  Megaphone,
-  UserCheck,
-  Inbox,
-  BarChart3,
-  Search,
-  FileText,
-  Target,
-  MessageSquare,
-  Mic,
-  Video,
-  ArrowRight,
-} from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { generatePageMetadata } from '@/lib/metadata'
 import { PageShell } from '@/components/layout/PageShell'
-import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { WebPageJsonLd } from '@/components/seo/WebPageJsonLd'
 import { BreadcrumbJsonLd } from '@/components/seo/BreadcrumbJsonLd'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SITE_URL, pageWebPageId } from '@/lib/seo-config'
-import { SKILLS_DATA, getSkillBySlug } from '@/lib/skills-data'
-import { getChatbotSkills } from '@/lib/chatbot/skill-i18n'
-import { EyebrowLabel } from '@/components/sections/EyebrowLabel'
-import { ClydeFeaturedTile } from '@/components/home/ClydeFeaturedTile'
-import { SpotlightCard } from '@/components/ui/SpotlightCard'
-import { GlassCard } from '@/components/ui/GlassCard'
-import { CTAButton } from '@/components/ui/CTAButton'
-import { RevealContainer, RevealItem } from '@/components/sections/RevealContainer'
-import { ScrollReveal } from '@/components/motion/ScrollReveal'
-import { Link } from '@/i18n/navigation'
-import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { SKILLS_DATA } from '@/lib/skills-data'
+import { SkillsHubSections } from '@/components/skills/SkillsHubSections'
+
+const PATH = '/skills'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -45,234 +23,52 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  return generatePageMetadata({
-    locale,
-    namespace: 'skills-index',
-    path: '/skills',
-  })
+  return generatePageMetadata({ locale, namespace: 'skills-index', path: PATH })
 }
 
-const SKILL_ICONS: Record<string, LucideIcon> = {
-  'social-media': Megaphone,
-  'blog-factory': FileText,
-  'lead-qualifier': UserCheck,
-  'email-management': Inbox,
-  manychat: MessageSquare,
-  reporting: BarChart3,
-  'seo-geo': Search,
-  research: Target,
-  'voice-agent': Mic,
-  'ad-manager': Megaphone,
-  'reel-builder': Video,
-}
-
-export default async function SkillsIndexPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+// Golf 9a: the bento made way for "Wat Clyde maakt" in the golf 6 template (prototype golf9-skills, Daley 2026-11-08).
+export default async function SkillsIndexPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'skills-index' })
-  const tCommon = await getTranslations({ locale, namespace: 'common' })
-  const tBreadcrumbs = await getTranslations({ locale, namespace: 'common.breadcrumbs' })
-  // Reuse the home Clyde-bento chat pairs so the featured tile on /skills shows
-  // the same demo conversation as the landing page — ClydeFeaturedTile expects
-  // { user, clyde } pairs after the 4e9dd8b refactor.
-  const tHomeClyde = await getTranslations({ locale, namespace: 'home.services.clyde' })
+  const tc = await getTranslations({ locale, namespace: 'common.breadcrumbs' })
 
-  // ItemList JSON-LD enumerating all 12 skills for graph-cohesion + AI citation.
-  const itemListId = `${pageWebPageId(locale, '/skills')}#itemlist`
+  // Only pages that exist: coming_soon skills have no page, their old URLs 308 to #binnenkort.
+  const pages = SKILLS_DATA.filter((s) => s.status === 'live')
   const itemList: WithContext<ItemList> = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    '@id': itemListId,
+    '@id': `${pageWebPageId(locale, PATH)}#itemlist`,
     name: t('meta.title'),
-    numberOfItems: SKILLS_DATA.length,
-    itemListElement: SKILLS_DATA.map((skill, index) => ({
+    numberOfItems: pages.length,
+    itemListElement: pages.map((skill, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       url: `${SITE_URL}/${locale}/skills/${skill.slug}`,
-      name: tBreadcrumbs(`skill_${skill.slug.replace(/-/g, '_')}`),
+      name: tc(`skill_${skill.slug.replace(/-/g, '_')}`),
     })),
   }
 
-  const clydeSkill = getSkillBySlug('clyde')
-  const secondarySkills = SKILLS_DATA.filter((s) => s.slug !== 'clyde')
-  // SKILLS_DATA is Dutch; skill-i18n carries the English card text, so /en no longer shows Dutch cards (golf 0, T5).
-  const cardText = new Map(getChatbotSkills(locale === 'en' ? 'en' : 'nl').map((s) => [s.id, s.shortDescription]))
-
-  const clydePairs = [
-    { user: tHomeClyde('prompt1'), clyde: tHomeClyde('response1') },
-    { user: tHomeClyde('prompt2'), clyde: tHomeClyde('response2') },
-    { user: tHomeClyde('prompt3'), clyde: tHomeClyde('response3') },
-  ] as const
-
   return (
-    <PageShell>
+    <PageShell showStickyCta>
       <WebPageJsonLd
         name={t('meta.title')}
         description={t('meta.description')}
-        path="/skills"
+        path={PATH}
         locale={locale}
+        speakableSelectors={['.speakable-sk-def']}
       />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: t('hero.title'), path: '/skills' },
+          { name: tc('skills_index'), path: PATH },
         ]}
         locale={locale}
-        path="/skills"
+        path={PATH}
       />
       <JsonLd data={itemList} />
-      <Breadcrumbs path="/skills" locale={locale} />
-
-      <section className="relative pt-12 pb-20 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <header className="text-center mb-12 space-y-4">
-            <EyebrowLabel>{t('hero.eyebrow')}</EyebrowLabel>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-              {t('hero.badge', { total: FOUNDING_SPOTS_TOTAL })}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold font-display text-text-primary">
-              {t('hero.title')}
-            </h1>
-            <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
-              {t('hero.subtitle')}
-            </p>
-          </header>
-
-          {/*
-            Bento mirroring home ServicesBento: Clyde featured tile
-            col-span-2 row-span-2 (top-left), 11 secondary skills with
-            SpotlightCard. 4-col desktop, 2-col tablet, 1-col mobile.
-          */}
-          <RevealContainer
-            as="ul"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-4 lg:gap-5"
-            aria-label={t('grid_aria_label')}
-          >
-            {clydeSkill && (
-              <RevealItem
-                as="li"
-                className="sm:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[260px]"
-              >
-                <ClydeFeaturedTile
-                  title={t('clyde.title')}
-                  description={t('clyde.description')}
-                  statusLabel={t('clyde.statusLabel')}
-                  promptIntro={t('clyde.promptIntro')}
-                  pairs={clydePairs}
-                  userLabel={tHomeClyde('userLabel')}
-                  clydeLabel={tHomeClyde('clydeLabel')}
-                  openLink={t('clyde.openLink')}
-                />
-              </RevealItem>
-            )}
-
-            {secondarySkills.map((skill) => {
-              const Icon = SKILL_ICONS[skill.slug] ?? Megaphone
-              const labelKey = `skill_${skill.slug.replace(/-/g, '_')}`
-              const label = tBreadcrumbs(labelKey)
-              const isComingSoon = skill.status === 'coming_soon'
-              return (
-                <RevealItem as="li" key={skill.slug}>
-                  <SpotlightCard
-                    href={skill.route}
-                    className="spotlight-card group relative rounded-[var(--radius-card)] border border-border-primary bg-white/[0.02] p-5 lg:p-6 h-full flex flex-col transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-                  >
-                    <header className="flex items-start justify-between gap-3 mb-4">
-                      <Icon className="w-5 h-5 text-accent-system shrink-0" aria-hidden />
-                      <StatusBadge
-                        status={skill.status}
-                        liveLabel={t('status.live')}
-                        soonLabel={tCommon('comingSoon')}
-                      />
-                    </header>
-
-                    <h2 className="font-display text-base lg:text-lg font-bold text-text-primary mb-1.5 leading-tight">
-                      {label}
-                    </h2>
-                    <p className="text-xs lg:text-sm text-text-secondary leading-relaxed flex-1">
-                      {cardText.get(skill.id) ?? skill.shortDescription}
-                    </p>
-
-                    <span
-                      aria-hidden
-                      className={
-                        'mt-3 inline-flex items-center transition-colors ' +
-                        (isComingSoon ? 'text-text-muted' : 'text-text-muted group-hover:text-accent-system')
-                      }
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </span>
-                  </SpotlightCard>
-                </RevealItem>
-              )
-            })}
-          </RevealContainer>
-        </div>
-      </section>
-
-      {/* Final CTA — scarcity-anchored close-block */}
-      <section className="py-16 px-6 lg:px-12" aria-labelledby="skills-cta">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <GlassCard className="p-12 text-center space-y-5">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent-human/10 border border-accent-human/30 rounded-full text-sm font-mono uppercase tracking-[0.16em] text-accent-human">
-                {t('cta.eyebrow', { total: FOUNDING_SPOTS_TOTAL })}
-              </span>
-              <h2
-                id="skills-cta"
-                className="text-3xl md:text-4xl font-bold font-display text-text-primary"
-              >
-                {t('cta.title')}
-              </h2>
-              <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-                {t('cta.description')}
-              </p>
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <CTAButton href="/apply" size="lg">
-                  {t('cta.button')}
-                </CTAButton>
-                <Link
-                  href="/how-it-works"
-                  className="group inline-flex items-center gap-1.5 text-sm text-accent-system hover:text-text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
-                >
-                  {t('cta.secondaryLink')}
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
-                </Link>
-              </div>
-            </GlassCard>
-          </ScrollReveal>
-        </div>
-      </section>
+      <SkillsHubSections locale={locale} />
     </PageShell>
-  )
-}
-
-function StatusBadge({
-  status,
-  liveLabel,
-  soonLabel,
-}: {
-  status: 'live' | 'coming_soon'
-  liveLabel: string
-  soonLabel: string
-}) {
-  if (status === 'live') {
-    return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-status-active/10 border border-status-active/30 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.14em] text-status-active">
-        <span aria-hidden className="inline-block w-1 h-1 rounded-full bg-status-active" />
-        {liveLabel}
-      </span>
-    )
-  }
-  return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-accent-human/10 border border-accent-human/30 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.14em] text-accent-human">
-      <span aria-hidden className="inline-block w-1 h-1 rounded-full bg-accent-human" />
-      {soonLabel}
-    </span>
   )
 }

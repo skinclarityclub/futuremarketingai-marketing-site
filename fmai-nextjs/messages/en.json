@@ -22,7 +22,7 @@
       "videoPause": "Pause the animation",
       "videoPlay": "Play the animation",
       "tagline": "Your agency's <accent>AI colleague</accent>.",
-      "subtitle": "Knows every client's goals, sits in every screen of your dashboard and messages you on WhatsApp the moment something comes up. Ten skills today, two coming soon: social, blogs, ads, email, lead qualification, SEO, analytics.",
+      "subtitle": "Knows every client's goals, sits in every screen of your dashboard and messages you on WhatsApp the moment something comes up. For social, blogs, ads, email, Instagram DMs, SEO and reporting.",
       "trustAnchor": "Running in production at our first client. Ten founding seats in total.",
       "cta": "Request a call",
       "ctaSecondary": "Meet Clyde",
@@ -34,7 +34,7 @@
     },
     "services": {
       "title": "What Clyde does for your agency",
-      "subtitle": "Twelve skills, ten ready to deploy today.",
+      "subtitle": "What Clyde makes per client, in one workspace.",
       "socialMedia": {
         "title": "Social Media Manager",
         "description": "Captions, scheduling and carousels per brand. Ready before you start on Monday."
@@ -71,8 +71,8 @@
         "clydeLabel": "Clyde"
       },
       "research": {
-        "title": "Research",
-        "description": "Market research, competitor analysis and trends per client, as the foundation for the strategy."
+        "title": "Strategy and research",
+        "description": "Goals, audience and a calendar for the year per client, with signals from research alongside."
       },
       "blogFactory": {
         "title": "Blog Factory",
@@ -81,10 +81,6 @@
       "adCreator": {
         "title": "Ad Manager",
         "description": "Ads for Meta: copy and visuals per brand, set up for approval. Then conversions, ROAS and ad fatigue per ad."
-      },
-      "manychat": {
-        "title": "ManyChat DM",
-        "description": "Conversations in Instagram DMs, connected to your funnels."
       },
       "voiceAgent": {
         "title": "Voice Agent",
@@ -385,8 +381,8 @@
           "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. There are ten founding seats. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
         },
         "q4": {
-          "question": "Exactly how many skills do I get?",
-          "answer": "Twelve in total: 10 live (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde orchestrator) and 2 coming soon (Voice Agent, Reel Builder). Every plan uses all live skills; caps apply to the heavier ones, except on Enterprise."
+          "question": "Which skills do I get?",
+          "answer": "Everything that is live: social media, blogs, ads, from post to lead, email, reporting, SEO and GEO, strategy and research, and Clyde himself. Voice Agent and Reel Builder are coming soon. Every plan uses all live skills; caps apply to the heavier ones, except on Enterprise."
         },
         "q5": {
           "question": "Why does this work better for agencies than separate tools?",
@@ -610,7 +606,9 @@
           "privacy": "Privacy",
           "terms": "Terms",
           "cookies": "Cookies",
-          "dpa": "Data processing agreement on request"
+          "dpa": "Data processing agreement on request",
+          "strategy": "Strategy",
+          "soon": "Coming soon"
         },
         "social_aria": {
           "linkedin": "Follow us on LinkedIn"
@@ -641,22 +639,17 @@
       "memory": "Memory",
       "apply": "Apply",
       "assessment": "Assessment",
-      "roadmap": "Roadmap",
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
       "skills_index": "What Clyde makes",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
-      "skill_voice_agent": "Voice Agent",
-      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_lead_qualifier": "From post to lead",
       "skill_ad_manager": "Ad Manager",
-      "skill_reel_builder": "Reel Builder",
       "skill_email_management": "Email Management",
-      "skill_manychat": "ManyChat DM",
       "skill_reporting": "Reporting",
       "skill_seo_geo": "SEO / GEO",
-      "skill_research": "Research",
       "skill_clyde": "Working with Clyde",
       "blog": "Blog",
       "resources": "Resources",
@@ -665,7 +658,8 @@
       "legal_terms": "Terms",
       "legal_cookies": "Cookies",
       "trust": "Trust",
-      "client_portal": "Your client follows along"
+      "client_portal": "Your client follows along",
+      "skill_strategy": "Strategy"
     },
     "cookie_consent": {
       "title": "We use cookies",
@@ -1525,7 +1519,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo, fixed for as long as the subscription runs, for up to 10 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include all 12 AI skills, ten of which are available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
+            "content": "Services are offered on a monthly subscription basis across four service levels: Founding (EUR 997/mo, fixed for as long as the subscription runs, for up to 10 workspaces, EUR 299 per additional workspace above that, 10 spots) and the workspace-priced levels Growth (EUR 499 per workspace, 2-4 brands), Professional (EUR 399 per workspace, 5-14 brands) and Enterprise (EUR 299 per workspace, from 15 brands). All plans include every AI skill that is available now (see article 1), with per-level caps on video and, once they are available, on voice and reels. Workspace rates are recalibrated every six months based on actual credit usage; existing contracts are not adjusted retroactively. Usage is measured in credits; each plan includes a monthly credit allocation. Additional credits can be purchased in packs. Billing is monthly in advance. You may cancel your subscription with 30 days written notice, effective at the end of the current billing cycle."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",
@@ -1620,7 +1614,7 @@
         "content": "The information on this website is provided for general information purposes. Any reliance you place on this information is at your own risk."
       }
     },
-    "last_updated": "Last updated: November 6, 2026"
+    "last_updated": "Last updated: November 8, 2026"
   },
   "trust": {
     "meta": {
@@ -1819,121 +1813,13 @@
       "related": "Related articles"
     }
   },
-  "skills-voice-agent": {
-    "meta": {
-      "title": "Voice Agent (coming soon). AI phone calls | Clyde",
-      "description": "Coming soon: Clyde answers phone calls, books appointments and hands off to a human when needed. Not available yet."
-    },
-    "hero": {
-      "eyebrow": "Skill 02. Voice Agent (coming soon)",
-      "title": "Soon Clyde picks up the phone.",
-      "subtitle": "What we are building: answering inbound calls, handling frequently asked questions, booking appointments and handing off to a human when the conversation calls for it. Not available yet.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Call the waitlist and book appointments for next week",
-        "prompt2": "Answer inbound questions about delivery times",
-        "prompt3": "Follow up with customers who missed their appointment"
-      }
-    },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Inbound calls plus FAQ",
-        "body": "Clyde will answer frequent questions in natural language, book appointments in the calendar and escalate only when needed."
-      },
-      "feature2": {
-        "title": "Outbound campaigns",
-        "body": "Working through lists, intake calls, follow-ups. Clyde will dial the contact list and log the result per call."
-      },
-      "feature3": {
-        "title": "Transcripts",
-        "body": "Every call will get a transcript, searchable in the client's memory."
-      },
-      "feature4": {
-        "title": "Human escalation",
-        "body": "Clyde gets clear rules for when he hands off to a human."
-      }
-    },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Set voice and persona",
-        "body": "You will choose voice, personality and knowledge base per brand, with the FAQ and calendar availability included."
-      },
-      "step2": {
-        "title": "Connect a phone number",
-        "body": "You connect a phone number. Inbound calls go to Clyde; you schedule follow-up calls."
-      },
-      "step3": {
-        "title": "Clyde will run, you monitor",
-        "body": "Calls, handoffs and results show up in the dashboard."
-      }
-    },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "Lead Qualifier: leads from calls land in the same lead list.",
-      "integration2": "Reporting: number of calls, duration and handoffs in the weekly report.",
-      "integration3": "Clyde orchestrator: conversation context travels along to other skills."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "Practices with front-desk pressure",
-        "body": "Clinics, dentists and therapists with high call volume. Clyde will handle intake and appointments."
-      },
-      "useCase2": {
-        "title": "Outbound sales teams",
-        "body": "Take first-contact calls off your SDRs: Clyde will qualify, schedule and hand off where needed."
-      }
-    },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Interested in the Voice Agent?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
-    },
-    "proof": {
-      "title": "Try Clyde live",
-      "subtitle": "Interactive demo. Have a short conversation with Clyde yourself to experience it."
-    },
-    "faq": {
-      "title": "Frequently asked questions about Voice Agent",
-      "items": {
-        "q1": {
-          "question": "What does the Voice Agent skill do exactly?",
-          "answer": "The Voice Agent is being built. The plan: Clyde handles phone calls with an AI voice, books appointments, answers questions from the knowledge base, turns every call into a transcript and hands off to a human when a conversation gets complex or the caller asks for one."
-        },
-        "q2": {
-          "question": "What technology does the Voice Agent use?",
-          "answer": "The voice comes from ElevenLabs. How phone numbers are connected, we will settle before the Voice Agent goes live."
-        },
-        "q3": {
-          "question": "On which tiers is Voice Agent available?",
-          "answer": "Once the Voice Agent is live: Growth 30 call minutes per month, Professional 120, Enterprise no cap, Founding 60. A minute costs 5 credits."
-        },
-        "q4": {
-          "question": "When will the Voice Agent be available?",
-          "answer": "There is no date yet. Founding members get access first; if you want to use it, say so in the call."
-        },
-        "q5": {
-          "question": "How does this differ from Vapi or Bland?",
-          "answer": "Vapi and Bland are API platforms for developers. The Voice Agent will be one of Clyde's skills, with your client's knowledge base and memory, without an in-house voice engineer."
-        }
-      }
-    }
-  },
   "skills-lead-qualifier": {
     "meta": {
       "title": "From Instagram comment to lead, in the brand voice | Clyde",
       "description": "Someone comments with a keyword and gets a DM right away. Clyde writes the follow-up in your client's brand voice, and you approve it."
     },
     "hero": {
-      "eyebrow": "Skill 03. Lead Qualifier",
+      "eyebrow": "From post to lead",
       "title": "From Instagram comment to lead",
       "subtitle": "When someone puts a keyword under a post or in a DM, Clyde sends a DM right away with the link that goes with it. He writes the follow-up in your client's brand voice, and you approve it.",
       "cta": "Request a call",
@@ -2006,26 +1892,33 @@
       "button": "Request a call"
     },
     "proof": {
-      "title": "Live demo",
-      "subtitle": "Try below how Clyde holds a conversation in a brand's voice."
+      "title": "The rule behind a keyword",
+      "subtitle": "This is how a rule of its own on a comment under a post looks in the app, with what it did over the last 30 days.",
+      "shot": {
+        "bar": "DM automation",
+        "scrollLabel": "The RUST rule, scrollable",
+        "alt": "DM automation for Dagspa Luwte, in Dutch: the rule RUST, a rule of its own on a comment under a post, switched on. Last 30 days: keyword 93, DM 80.",
+        "caption": "The RUST rule under a post from Dagspa Luwte."
+      },
+      "demo": "Example agency and example brands from the demo environment of the app."
     },
     "faq": {
-      "title": "Frequently asked questions about Lead Qualifier",
+      "title": "Questions about from post to lead",
       "items": {
         "q1": {
-          "question": "What does the Lead Qualifier skill do exactly?",
+          "question": "What exactly does this do?",
           "answer": "Clyde answers Instagram comments and DMs that contain a keyword with a DM and the link that goes with it, right away. He writes the follow-up in your client's brand voice, and leads that come in via the link appear in your lead list."
         },
         "q2": {
-          "question": "Which channels does Lead Qualifier work on?",
+          "question": "Which channels does this work on?",
           "answer": "On Instagram: in comments under posts and in DMs. Every lead lands in the same lead list as your other leads."
         },
         "q3": {
-          "question": "On which tiers is Lead Qualifier available?",
-          "answer": "Included on every tier, with fair use on conversation volume."
+          "question": "Which tiers include this?",
+          "answer": "On every tier, with a monthly limit on the number of DMs. The limit per tier is in the table on the pricing page."
         },
         "q4": {
-          "question": "How does Lead Qualifier get started?",
+          "question": "How does this start?",
           "answer": "You connect your client's Instagram account, set the keywords and links and check the brand voice in the knowledge base. From then on Clyde sends the DMs and prepares his answers for you."
         },
         "q5": {
@@ -2514,39 +2407,6 @@
       "sub": "A 30-minute conversation. After it, you know whether Clyde fits your clients.",
       "cta": "Request a call",
       "link": "How the start works"
-    }
-  },
-  "roadmap": {
-    "meta": {
-      "title": "Roadmap. What Clyde will do next | FutureMarketingAI",
-      "description": "See what Clyde does next: the two skills in development and testing, Voice Agent and Reel Builder. Founding members get early access first."
-    },
-    "hero": {
-      "eyebrow": "Roadmap",
-      "title": "What Clyde will do next.",
-      "subtitle": "Ten skills run live in production. Two are on the roadmap, in active development and testing. Founding members get access first as they go live."
-    },
-    "skills": {
-      "eyebrow": "In the pipeline",
-      "title": "In development",
-      "subtitle": "Two skills we are building now. No hard launch dates, but a clear order of value."
-    },
-    "voiceAgent": {
-      "name": "Voice Agent",
-      "phase": "In testing",
-      "description": "Inbound and outbound AI phone calls: booking appointments, handling questions, transferring to a person. We're building it; no client runs on it yet."
-    },
-    "reelBuilder": {
-      "name": "Reel Builder",
-      "phase": "In development",
-      "description": "Short vertical videos (9:16) with scripts, captions and music, for Instagram Reels, TikTok and YouTube Shorts. We're building it."
-    },
-    "cta": {
-      "eyebrow": "Early access",
-      "scarcityEyebrow": "Founding open · max {total} spots",
-      "title": "Want to be first in line?",
-      "subtitle": "Founding members get early access to both as they go live, plus a say in what we build next.",
-      "button": "Request a call"
     }
   },
   "apply": {
@@ -3401,138 +3261,316 @@
       }
     }
   },
-  "skills-research": {
+  "skills-index": {
     "meta": {
-      "title": "Research: market research, trends and competitors | Clyde",
-      "description": "Clyde does market research, follows trends and analyzes competitors, with a source link for every insight. 3 credits per question."
+      "title": "AI tools for marketing agencies: Clyde's skills",
+      "description": "What Clyde does for your agency, per client: strategy, social media, blogs, DMs, reporting, and SEO and GEO. One memory per client, and you approve."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Skill 07. Research",
-      "title": "Clyde does your market research.",
-      "subtitle": "Trends in each brand's niche, competitor analysis and content ideas, with a source link for every insight so you can check it. In the weekly trend scan, findings with fewer than two sources are dropped.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Research the top-5 competitors in the hydration market",
-        "prompt2": "What are this month’s trending topics in skincare?",
-        "prompt3": "Summarize the latest industry reports on EU cosmetics"
+      "eyebrow": "What Clyde makes",
+      "title": "AI tools for your agency, per client in one workspace.",
+      "definition": "Clyde plans, makes, puts work to you and measures, for each client separately and from one memory per client. Below is what he does, in the order of a working week. No post goes live without your approval.",
+      "factsLabel": "In short",
+      "facts": {
+        "workspace": {
+          "label": "Workspace",
+          "value": "One per client, with its own memory"
+        },
+        "approval": {
+          "label": "Approval",
+          "value": "Nothing live without you"
+        },
+        "client": {
+          "label": "Your client",
+          "value": "Follows along in their portal"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Overview",
+        "alt": "Clyde's overview in the app, in Dutch: what is waiting for you at four clients, in the demo environment.",
+        "caption": "What is waiting for you at four clients."
       }
     },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Trend monitoring per niche",
-        "body": "Scheduled research runs per client into market trends, competitors and news in the brand's niche."
-      },
-      "feature2": {
-        "title": "Competitor analysis",
-        "body": "Who are the biggest players, what do they do and what does their content strategy say about their positioning? Including a gap analysis for your brand."
-      },
-      "feature3": {
-        "title": "Content ideas with source citation",
-        "body": "Actionable content proposals with the sources attached. No \"the AI made this up\": you see what every proposal rests on."
-      },
-      "feature4": {
-        "title": "Actionable insights",
-        "body": "Not \"the trend is X\" but \"given trend X, your brand can take action Z.\" Recommendations with context."
+    "clyde": {
+      "title": "One colleague instead of separate tools.",
+      "sub": "You work with Clyde: in your dashboard, in the web app on your phone and on WhatsApp. What follows, he does per client, with that client's brand voice, goals and memory.",
+      "links": {
+        "clyde": "Working with Clyde",
+        "memory": "Memory per client"
       }
     },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Define niche and competitors",
-        "body": "Per brand: which niche, which 3 to 5 key competitors, which keywords and themes do we track?"
+    "plan": {
+      "title": "Plan: strategy and research.",
+      "sub": "Per client the goals, the audience and a calendar for the year. Clyde places signals from research next to that strategy, with the source, and proposes what to do with them. You decide.",
+      "shot": {
+        "bar": "Research · What needs attention now",
+        "scrollLabel": "Two signals, scrollable",
+        "alt": "What needs attention now for Dagspa Luwte, in Dutch: two open signals with urgency 68 and 53, each with a source, a date and buttons to discuss it with Clyde, open the research, mark it as seen or as not relevant.",
+        "caption": "Two open signals for Dagspa Luwte, with source and date."
       },
-      "step2": {
-        "title": "Research in the background",
-        "body": "Clyde runs scheduled research per client: trends, competitors and news."
+      "link": "Strategy and research"
+    },
+    "make": {
+      "title": "Make: posts, carousels and blogs.",
+      "sub": "Clyde writes posts, carousels and blogs per client, in that client's brand voice. Everything reaches you as a draft, with the checks included: caption, platform and language.",
+      "shot": {
+        "bar": "Review · Carousel",
+        "scrollLabel": "The review of a carousel, scrollable",
+        "alt": "The review of a carousel in the app, in Dutch: Which treatment suits you?, with caption, platform check and language check, in the demo environment.",
+        "caption": "The review of a carousel for Dagspa Luwte."
       },
-      "step3": {
-        "title": "Ask what you want to know",
-        "body": "Ask in natural language: \"What are competitors doing on theme X?\" Clyde delivers a structured answer with sources."
+      "links": {
+        "social": "Social media",
+        "blog": "Blogs",
+        "ads": "Ads"
       }
     },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "Blog Factory: research data feeds the choice of blog topics.",
-      "integration2": "Social Media: trend insights become content proposals.",
-      "integration3": "Strategy: research backs up the goals and plans per client."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "Content strategists without time for deep research",
-        "body": "No more 3 hours of Googling per content calendar. Clyde delivers the background; you make the strategic decisions."
+    "approve": {
+      "title": "Approve and publish.",
+      "sub": "Every day Clyde puts the posts that are ready to you. You approve, edit or reject, and your client approves along in their own portal. Only then does Clyde schedule them, on that client's channels.",
+      "shot": {
+        "bar": "Calendar",
+        "alt": "The calendar in the app, in Dutch: Wednesday 11 to Friday 13 November, with posts for five clients.",
+        "caption": "Three days in the calendar, with posts for five clients."
       },
-      "useCase2": {
-        "title": "Getting up to speed in a new niche",
-        "body": "New client in an industry you do not know? Clyde prepares a first niche briefing with sources."
+      "links": {
+        "portal": "Your client follows along",
+        "regie": "Nothing goes live without you"
       }
     },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
+    "leads": {
+      "title": "From post to lead.",
+      "sub": "When someone replies with a keyword under a post or in a DM, Clyde sends a DM right away with the link that goes with it. He writes the follow-up in your client's brand voice, and you approve it.",
+      "shot": {
+        "bar": "DM automation",
+        "scrollLabel": "The RUST rule, scrollable",
+        "alt": "DM automation for Dagspa Luwte, in Dutch: the rule RUST, a rule of its own on a comment under a post, switched on. Last 30 days: keyword 93, DM 80.",
+        "caption": "The RUST rule under a post from Dagspa Luwte."
+      },
+      "link": "From post to lead"
     },
-    "cta": {
-      "title": "Ready to hand research over to Clyde?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
+    "measure": {
+      "title": "Measure: reporting, SEO and GEO.",
+      "sub": "Per client a weekly and a monthly report from the real figures, which your client reads in their portal. Clyde also follows the positions in Google and how often ChatGPT, Perplexity and Google AI Overviews mention your client.",
+      "shot": {
+        "bar": "Goals · Bookings",
+        "scrollLabel": "Bookings per week, scrollable",
+        "alt": "Dagspa Luwte's bookings per week against the goal of 80 per four weeks, in Dutch, in the demo environment.",
+        "caption": "Dagspa Luwte's bookings per week, against the goal."
+      },
+      "links": {
+        "reporting": "Reporting",
+        "seo": "SEO and GEO"
+      }
+    },
+    "mail": {
+      "title": "Also: the mailbox.",
+      "sub": "Clyde reads incoming mail in Gmail or Outlook, puts every email in a category you choose and writes draft replies per brand.",
+      "link": "Email"
+    },
+    "tools": {
+      "title": "Separate AI tools or one AI colleague.",
+      "sub": "What changes when you work for several clients.",
+      "tableLabel": "Separate AI tools next to Clyde",
+      "cols": {
+        "what": "What",
+        "tools": "Separate AI tools",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "memory": {
+          "what": "Memory per client",
+          "tools": "Per tool and per conversation; you supply the brand voice again every time",
+          "clyde": "One memory per client, which Clyde keeps up to date"
+        },
+        "approval": {
+          "what": "Approval",
+          "tools": "Outside the tool, in email or chat",
+          "clyde": "In the app, per post; nothing live without you"
+        },
+        "client": {
+          "what": "Your client",
+          "tools": "Gets files or screenshots",
+          "clyde": "Follows along and approves in their own portal"
+        },
+        "reporting": {
+          "what": "Reporting",
+          "tools": "A separate overview per tool",
+          "clyde": "Weekly and monthly report per client"
+        },
+        "count": {
+          "what": "Number of tools",
+          "tools": "One for text, one for planning, one for figures",
+          "clyde": "One workspace"
+        },
+        "price": {
+          "what": "Pricing",
+          "tools": "A subscription per tool",
+          "clyde": "One subscription for your agency, per client brand"
+        }
+      },
+      "links": {
+        "alternatives": "Clyde next to the alternatives",
+        "pricing": "Pricing"
+      }
+    },
+    "soon": {
+      "title": "Coming soon.",
+      "sub": "This is what we are building now. It does not work yet, and it moves up this page once it does.",
+      "label": "Coming soon",
+      "items": {
+        "voice": {
+          "name": "Voice Agent",
+          "text": "Answering phone calls for your client: answering questions, booking appointments and transferring to a person when the conversation calls for it."
+        },
+        "reel": {
+          "name": "Reel Builder",
+          "text": "Short vertical videos per client, from script to footage and music, in the brand's house style."
+        }
+      }
     },
     "faq": {
-      "title": "Frequently asked questions about Research",
+      "title": "Questions about what Clyde makes.",
+      "sub": "What agencies ask before they choose between separate tools and Clyde.",
       "items": {
-        "q1": {
-          "question": "What does the Research skill do exactly?",
-          "answer": "Clyde does market research, follows trends in your niche, analyzes competitors and delivers insights with source citations. He answers targeted questions (for example, 'what did competitor X launch in the last 30 days') and runs scheduled research in the background."
+        "need": {
+          "q": "Which AI tools does a marketing agency need?",
+          "a": "For the work per client, something that plans, writes, gets approval, publishes and measures. With separate tools you supply each client's brand voice and figures again and again. Clyde does those steps in one workspace, with one memory per client."
         },
-        "q2": {
-          "question": "Which sources does Research use?",
-          "answer": "Web research via Perplexity, with the source links attached, supplemented by Firecrawl to read websites, PubMed for scientific sources and the Meta Ad Library for competitor ads. Every insight shows the source with link and title."
+        "colleague": {
+          "q": "What is the difference between separate AI tools and an AI colleague?",
+          "a": "A separate tool does one task and starts every conversation from scratch. Clyde works per client from one memory, puts his work to you and lets your client follow along in their portal."
         },
-        "q3": {
-          "question": "On which tiers is Research available?",
-          "answer": "Included on every tier, with fair use on the number of questions. A question costs 3 credits."
-        },
-        "q4": {
-          "question": "How does Research get started?",
-          "answer": "During onboarding you specify the niche, audience and competitors. Clyde then runs the first research into audience, customer profile and competitors; after that the scheduled runs happen on their own."
-        },
-        "q5": {
-          "question": "How does this differ from Perplexity Pro or Brandwatch?",
-          "answer": "Perplexity Pro answers stand-alone questions. Brandwatch is enterprise social listening. Clyde ties the research to the client: findings land in that brand's knowledge, and he does not keep fetching the same question again."
+        "team": {
+          "q": "What does Clyde do himself and what does my team decide?",
+          "a": "Clyde makes drafts, makes proposals and runs fixed tasks the way you set them up. Approving, rejecting and pausing is up to your team. How that works per task is on <link>Working with Clyde</link>."
         }
+      }
+    },
+    "end": {
+      "title": "See what Clyde makes for your clients.",
+      "sub": "A 30-minute call. Afterwards you know which steps Clyde can take for your agency.",
+      "cta": "Request a call",
+      "links": {
+        "how": "How it works",
+        "pricing": "Pricing"
       }
     }
   },
-  "skills-index": {
+  "skills-strategy": {
     "meta": {
-      "title": "Skills: Clyde's 12 capabilities | FutureMarketingAI",
-      "description": "Browse Clyde's skills: social, blogs, ads, leads, email, reporting, SEO/GEO and research, all in one AI colleague."
+      "title": "Content strategy per client with AI | Clyde",
+      "description": "Per client the goals, the audience, the platforms and a calendar for the year, with signals from research alongside. Clyde proposes, you decide."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "12 skills, one mind",
-      "badge": "Founding open · max {total} spots",
-      "title": "Clyde's 12 skills",
-      "subtitle": "One AI colleague, twelve skills, one shared memory per client. Ten are live in production, two are coming soon."
+      "eyebrow": "Strategy and research",
+      "title": "Content strategy per client, with the research alongside.",
+      "definition": "Every client gets a strategy page: what you are going for, for whom, on which platforms and with which goals. The calendar for the year follows from it. Clyde places signals from research next to it, with the source, and proposes what to do with them. You decide.",
+      "factsLabel": "In short",
+      "facts": {
+        "client": {
+          "label": "Per client",
+          "value": "Goals, audience and platforms"
+        },
+        "agenda": {
+          "label": "Calendar",
+          "value": "Windows for the whole year"
+        },
+        "decide": {
+          "label": "Deciding",
+          "value": "Always you"
+        }
+      },
+      "shot": {
+        "bar": "Strategy · Dagspa Luwte",
+        "scrollLabel": "The strategy page, scrollable",
+        "alt": "Dagspa Luwte's strategy page in the app, in Dutch, with tabs for the overview, the strategy, goals, platforms, calendar and decisions. What we are going for: people who book a treatment for the first time.",
+        "caption": "What Dagspa Luwte is going for, at the top of the strategy page."
+      }
     },
-    "status": {
-      "live": "Live"
+    "who": {
+      "title": "What you are going for, and for whom.",
+      "sub": "The strategy page holds, per client, the goal in one sentence, the audience and the customer profile: what those people run into and what the brand promises them. The tabs next to it hold the goals, the platforms, the calendar and the decisions.",
+      "shot": {
+        "bar": "Strategy · For whom",
+        "scrollLabel": "Audience and customer profile, scrollable",
+        "alt": "For whom, in Dutch: a busy woman aged 30 to 55 who wants an hour in which nobody asks anything of her. The customer profile: what they run into and what we promise them.",
+        "caption": "Dagspa Luwte's audience and customer profile."
+      }
     },
-    "clyde": {
-      "title": "Clyde, your AI colleague",
-      "description": "One point of contact for your entire portfolio. Ask in plain language and Clyde routes to the right skill.",
-      "statusLabel": "Active",
-      "promptIntro": "Ask something like:",
-      "openLink": "Open the Clyde skill"
+    "agenda": {
+      "title": "The calendar that follows from it.",
+      "sub": "The calendar divides the year into windows, each with a theme of its own. That way you see per month what that client's content is about, and what comes back every year.",
+      "shot": {
+        "bar": "Strategy · Calendar",
+        "scrollLabel": "The calendar, scrollable",
+        "alt": "Dagspa Luwte's calendar, in Dutch: six windows on a timeline from November to January, such as What really happens, In their own words and Warm through the winter.",
+        "caption": "Six windows for Dagspa Luwte on the timeline."
+      },
+      "link": "A week with Clyde"
     },
-    "grid_aria_label": "Skills list",
-    "cta": {
-      "eyebrow": "Founding open · max {total} spots",
-      "title": "One colleague, all skills under one roof",
-      "description": "No separate tools, no ticketing per skill. One workspace per client, one 30-minute call to see whether it fits.",
-      "button": "Request a call",
-      "secondaryLink": "See the full onboarding journey"
+    "research": {
+      "title": "What Clyde bases his proposal on.",
+      "sub": "Clyde follows trends and competitors in the market per client. What needs attention, he places as a signal in that client's research, with the source, the date and how urgent it is. Open the research to read what lies behind it.",
+      "shot": {
+        "bar": "Research · What needs attention now",
+        "scrollLabel": "Two signals, scrollable",
+        "alt": "What needs attention now for Dagspa Luwte, in Dutch: two open signals with urgency 68 and 53, each with a source, a date and buttons to discuss it with Clyde, open the research, mark it as seen or as not relevant.",
+        "caption": "Two open signals for Dagspa Luwte, with urgency, source and date."
+      }
+    },
+    "decide": {
+      "title": "Clyde proposes, you decide.",
+      "sub": "For every signal you choose what happens with it. Clyde puts a different course to you first, and what has been decided per client is under Decisions on the strategy page.",
+      "cards": {
+        "discuss": {
+          "label": "Discuss with Clyde",
+          "text": "You ask what the signal means for this client, and what he would propose."
+        },
+        "seen": {
+          "label": "Seen",
+          "text": "You have read it. It moves to Handled, with the date added."
+        },
+        "irrelevant": {
+          "label": "Not relevant",
+          "text": "It does not fit this client. That also goes under Handled, and you move it back if you change your mind."
+        }
+      },
+      "link": "Working with Clyde"
+    },
+    "faq": {
+      "title": "Questions about strategy per client.",
+      "sub": "What agencies want to know before Clyde thinks along about a client's course.",
+      "items": {
+        "what": {
+          "q": "What is a content strategy per client?",
+          "a": "A recorded plan per client brand: the goal, the audience, the platforms and the topics, spread over the year. Clyde works from that plan, together with that client's brand voice and memory."
+        },
+        "source": {
+          "q": "Where does Clyde get his research from?",
+          "a": "From sources on the web, among others via Perplexity. Every signal shows the source and the date, so you can check it yourself."
+        },
+        "adjust": {
+          "q": "Does Clyde change the strategy himself?",
+          "a": "No. Clyde proposes what could change and why. You decide, and he always puts a different course to you first."
+        },
+        "client": {
+          "q": "Does my client see the strategy?",
+          "a": "If you switch it on for them, your client has a strategy page in their portal, with the Ask Clyde card. What else they see is on <link>the client portal page</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Start the week with a plan.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "social": "Social media",
+        "seo": "SEO and GEO"
+      }
     }
   },
   "skills-blog-factory": {
@@ -3955,214 +3993,6 @@
       }
     }
   },
-  "skills-manychat": {
-    "meta": {
-      "title": "ManyChat DM. Instagram DMs with keyword triggers | Clyde",
-      "description": "Clyde answers Instagram DMs and comments with keyword triggers, adds leads to your lead list and writes AI replies as drafts. 2 credits per 10 DMs."
-    },
-    "hero": {
-      "eyebrow": "Skill 11. ManyChat DM",
-      "title": "Clyde handles Instagram DMs.",
-      "subtitle": "A keyword (\"INFO\", \"PRICE\") in a comment, DM or story reply sends the answer you set, with the link, within about a minute. For other messages Clyde writes a draft, and anyone who responds lands in your lead list.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Auto-answer DMs containing the keyword delivery time",
-        "prompt2": "Forward warm DM leads to our sales page",
-        "prompt3": "Set up a Story trigger for the new product launch"
-      }
-    },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Keyword triggers",
-        "body": "Set a keyword for comments, DMs, story replies or mentions. Whoever sends the keyword gets the answer you set."
-      },
-      "feature2": {
-        "title": "Drafts in the brand voice",
-        "body": "For messages without a keyword, Clyde writes a draft in the brand voice. You read it and send it."
-      },
-      "feature3": {
-        "title": "Lead capture",
-        "body": "Anyone who responds lands in your lead list, next to your other leads."
-      },
-      "feature4": {
-        "title": "Every reply logged",
-        "body": "Every reply is logged, so you see which keyword works and what to adjust."
-      }
-    },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Connect Instagram",
-        "body": "We connect the brand's Instagram account via Instagram Login. Already working with ManyChat? Then those conversations land in the same inbox."
-      },
-      "step2": {
-        "title": "Keywords and replies",
-        "body": "Per post or campaign: the keyword and the reply, with the link you want to send the follower to."
-      },
-      "step3": {
-        "title": "Live and monitor",
-        "body": "A keyword reply goes out within about a minute. In the dashboard you see the conversations and the drafts waiting for you."
-      }
-    },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "Social Media: posts trigger DMs via call-to-DM.",
-      "integration2": "Lead Qualifier: DM leads land in the same lead list as the leads from your website.",
-      "integration3": "Clyde orchestrator: DM context shareable with other skills."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "E-commerce with Instagram as a channel",
-        "body": "Reel with \"DM PRICE for the price list\". Whoever sends PRICE gets the link to the shop and lands in your lead list."
-      },
-      "useCase2": {
-        "title": "Service agencies with Instagram lead-gen",
-        "body": "LinkedIn posts drive traffic to the website, Instagram posts drive it into DMs. Clyde scales both."
-      }
-    },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Ready to hand Instagram DMs over to Clyde?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
-    },
-    "faq": {
-      "title": "Frequently asked questions about ManyChat DM",
-      "items": {
-        "q1": {
-          "question": "What does the ManyChat DM skill do exactly?",
-          "answer": "Clyde answers Instagram DMs, comments and story replies with keyword triggers: whoever sends 'price' or 'info', for example, gets the answer you set, with the link, within about a minute. For other messages Clyde writes a draft in the brand voice that you send. Anyone who responds lands in your lead list."
-        },
-        "q2": {
-          "question": "Which platforms does ManyChat DM support?",
-          "answer": "Currently Instagram: DMs, comments and story replies, via the official Instagram API. Conversations from ManyChat land in the same inbox. Facebook Messenger and WhatsApp Business as a DM channel for your clients' followers are not connected yet. Clyde himself is already on WhatsApp: for you as the agency and for your client, each with their own connection."
-        },
-        "q3": {
-          "question": "On which tiers is ManyChat DM available?",
-          "answer": "Growth 200 DMs per month, Professional 1,000, Enterprise no cap, Founding 500. Ten DMs cost 2 credits."
-        },
-        "q4": {
-          "question": "How does ManyChat DM get started?",
-          "answer": "We connect the brand's Instagram account and you set the keywords and replies. Keyword replies then go out directly; AI replies stay drafts that you send."
-        },
-        "q5": {
-          "question": "How does this differ from standard ManyChat?",
-          "answer": "Standard ManyChat runs on flow builders in which you write every variant. Clyde links the keyword replies to your lead list and writes a draft in the brand voice for the other messages. Already working with ManyChat? That keeps working, and those conversations land in the same inbox."
-        }
-      }
-    }
-  },
-  "skills-reel-builder": {
-    "meta": {
-      "title": "Reel Builder (coming soon). Vertical AI videos | Clyde",
-      "description": "Coming soon: short vertical videos (9:16) with AI scripts, captions and music, in the brand's house style. Not available yet."
-    },
-    "hero": {
-      "eyebrow": "Skill 12. Reel Builder (coming soon)",
-      "title": "Soon Clyde makes your Reels.",
-      "subtitle": "What we are building: short vertical videos (9:16) with AI scripts, captions that run in sync and background music, for Instagram and LinkedIn. Not available yet.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Build a 30-second Reel about the morning ritual",
-        "prompt2": "Write a Reel script for the product launch",
-        "prompt3": "Spin 5 hook variants for our top-performing Reel"
-      }
-    },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "AI-generated scripts",
-        "body": "Clyde will write short scripts (15 to 60 seconds) based on topic, hook style and brand voice."
-      },
-      "feature2": {
-        "title": "Automatic captions, in sync",
-        "body": "Captions will run in sync with the audio, in the platform's style."
-      },
-      "feature3": {
-        "title": "Music and timing",
-        "body": "Matching background music that lands on the beat."
-      },
-      "feature4": {
-        "title": "Template library",
-        "body": "You will start from templates for talking head, B-roll montage and text overlay."
-      }
-    },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Topic and format",
-        "body": "Give the topic and pick a format (educational, product demo, talking head). Clyde will write the script."
-      },
-      "step2": {
-        "title": "Review and adjust",
-        "body": "Edit the script, pick a caption style and select music. All with preview."
-      },
-      "step3": {
-        "title": "Export and publish",
-        "body": "A publish-ready MP4 (9:16), to schedule via the Social Media skill."
-      }
-    },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "Social Media: Reels will be published via the scheduler.",
-      "integration2": "Ad Manager: video ads can follow the Reel format.",
-      "integration3": "Blog Factory: an article as the basis for a Reel."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "Creators who need reel content regularly",
-        "body": "3 to 5 Reels per week, without your own videographer. Template-driven production."
-      },
-      "useCase2": {
-        "title": "E-commerce with product videos",
-        "body": "A short Reel per product for organic reach and ads. Clyde scales production with you."
-      }
-    },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Interested in the Reel Builder?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
-    },
-    "faq": {
-      "title": "Frequently asked questions about Reel Builder",
-      "items": {
-        "q1": {
-          "question": "What does the Reel Builder skill do exactly?",
-          "answer": "The Reel Builder is being built. The plan: Clyde makes short vertical videos (9:16) with a script in the brand voice, captions, fitting music and the brand's typography."
-        },
-        "q2": {
-          "question": "Which platforms will the Reels go to?",
-          "answer": "Clyde publishes today to Instagram, TikTok and YouTube, among others, and that is where the Reels will go too. We will settle the technology behind it before the Reel Builder goes live. Videos come in 9:16 (1080x1920), with room for captions."
-        },
-        "q3": {
-          "question": "On which tiers is Reel Builder available?",
-          "answer": "Once the Reel Builder is live: Growth 4 Reels per month, Professional 15, Enterprise no cap, Founding 8. A Reel costs 25 credits. Founding members get access first."
-        },
-        "q4": {
-          "question": "When will the Reel Builder be available?",
-          "answer": "There is no date yet. Founding members get access first; if you want to use it, say so in the call."
-        },
-        "q5": {
-          "question": "How does this differ from CapCut or Opus Clip?",
-          "answer": "CapCut is a manual editor. Opus Clip cuts longer videos into Shorts. The Reel Builder will make the Reel from scratch: script, captions and music, in the brand voice and house style."
-        }
-      }
-    }
-  },
   "nav": {
     "login": "Log in",
     "apply": "Request a call"
@@ -4543,7 +4373,7 @@
       "skills": {
         "blogFactory": "More content, same team",
         "reporting": "Automated reporting",
-        "research": "Market insight on demand"
+        "research": "Strategy and research per client"
       }
     }
   },

@@ -22,7 +22,7 @@
       "videoPause": "Pauzeer de animatie",
       "videoPlay": "Speel de animatie af",
       "tagline": "De <accent>AI-collega</accent> van je bureau.",
-      "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Tien vaardigheden vandaag, twee binnenkort: social, blogs, ads, e-mail, leadkwalificatie, SEO, analytics.",
+      "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Voor social, blogs, advertenties, e-mail, Instagram-DM's, SEO en rapportage.",
       "trustAnchor": "Draait in productie bij onze eerste klant. Tien founding-plekken in totaal.",
       "cta": "Vraag een gesprek aan",
       "ctaSecondary": "Leer Clyde kennen",
@@ -116,7 +116,7 @@
     },
     "services": {
       "title": "Wat Clyde doet voor jouw bureau",
-      "subtitle": "Twaalf vaardigheden, tien direct inzetbaar.",
+      "subtitle": "Wat Clyde per klant maakt, in één werkruimte.",
       "socialMedia": {
         "title": "Social Media Manager",
         "description": "Captions, planning en carrousels per merk. Klaar voordat jij maandag start."
@@ -153,8 +153,8 @@
         "clydeLabel": "Clyde"
       },
       "research": {
-        "title": "Research",
-        "description": "Marktonderzoek, concurrentieanalyse en trends per klant, als onderbouwing van de strategie."
+        "title": "Strategie en onderzoek",
+        "description": "Per klant doelen, doelgroep en een agenda voor het jaar, met signalen uit onderzoek ernaast."
       },
       "blogFactory": {
         "title": "Blog Factory",
@@ -163,10 +163,6 @@
       "adCreator": {
         "title": "Ad Manager",
         "description": "Advertenties voor Meta: copy en beeld per merk, klaargezet ter goedkeuring. Daarna per advertentie de conversies, ROAS en ad-fatigue."
-      },
-      "manychat": {
-        "title": "ManyChat DM",
-        "description": "Gesprekken in Instagram-DM's, gekoppeld aan jouw funnels."
       },
       "voiceAgent": {
         "title": "Voice Agent",
@@ -467,8 +463,8 @@
           "answer": "Clyde is een high-touch AI-partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. Er zijn tien founding-plekken. De aanmelding is niet om je af te wijzen: we kijken of het een match is voor ons beide. Een generieke sign-up past niet bij wat we leveren."
         },
         "q4": {
-          "question": "Hoeveel vaardigheden krijg ik precies?",
-          "answer": "Twaalf in totaal: 10 live (Social Media, Blog Factory, Ad Manager, Lead Qualifier, Email Management, ManyChat DM, Reporting, SEO/GEO, Research, Clyde-orchestrator) en 2 binnenkort (Voice Agent, Reel Builder). Elk pakket gebruikt alle live vaardigheden; op de zwaardere gelden caps, behalve bij Enterprise."
+          "question": "Welke vaardigheden krijg ik?",
+          "answer": "Alles wat live is: social media, blogs, advertenties, van post naar aanvraag, e-mail, rapportage, SEO en GEO, strategie en onderzoek, en Clyde zelf. Voice Agent en Reel Builder komen binnenkort. Elk pakket gebruikt alle live vaardigheden; op de zwaardere gelden caps, behalve bij Enterprise."
         },
         "q5": {
           "question": "Waarom werkt dit beter voor bureaus dan losse tools?",
@@ -1308,7 +1304,9 @@
           "privacy": "Privacy",
           "terms": "Voorwaarden",
           "cookies": "Cookies",
-          "dpa": "Verwerkersovereenkomst op aanvraag"
+          "dpa": "Verwerkersovereenkomst op aanvraag",
+          "strategy": "Strategie",
+          "soon": "Binnenkort"
         },
         "social_aria": {
           "linkedin": "Volg ons op LinkedIn"
@@ -1339,22 +1337,17 @@
       "memory": "Geheugen",
       "apply": "Aanmelden",
       "assessment": "Assessment",
-      "roadmap": "Roadmap",
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
       "skills_index": "Wat Clyde maakt",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
-      "skill_voice_agent": "Voice Agent",
-      "skill_lead_qualifier": "Lead Qualifier",
+      "skill_lead_qualifier": "Van post naar aanvraag",
       "skill_ad_manager": "Ad Manager",
-      "skill_reel_builder": "Reel Builder",
       "skill_email_management": "Email Management",
-      "skill_manychat": "ManyChat DM",
       "skill_reporting": "Rapportage",
       "skill_seo_geo": "SEO / GEO",
-      "skill_research": "Research",
       "skill_clyde": "Werken met Clyde",
       "blog": "Blog",
       "resources": "Kennisbank",
@@ -1363,7 +1356,8 @@
       "legal_terms": "Voorwaarden",
       "legal_cookies": "Cookies",
       "trust": "Vertrouwen",
-      "client_portal": "Je klant kijkt mee"
+      "client_portal": "Je klant kijkt mee",
+      "skill_strategy": "Strategie"
     },
     "cookie_consent": {
       "title": "We gebruiken cookies",
@@ -2223,7 +2217,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd, vast zolang het abonnement doorloopt, voor maximaal 10 werkruimtes, daarboven EUR 299 per extra werkruimte, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle 12 AI-vaardigheden, waarvan er nu tien beschikbaar zijn (zie artikel 1), met caps per niveau op video en, zodra die beschikbaar zijn, op voice en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis in vier service-niveaus: Founding (EUR 997/mnd, vast zolang het abonnement doorloopt, voor maximaal 10 werkruimtes, daarboven EUR 299 per extra werkruimte, 10 plekken) en de workspace-priced niveaus Growth (EUR 499 per werkruimte, 2-4 merken), Professional (EUR 399 per werkruimte, 5-14 merken) en Enterprise (EUR 299 per werkruimte, vanaf 15 merken). Alle plannen bevatten alle AI-vaardigheden die nu beschikbaar zijn (zie artikel 1), met caps per niveau op video en, zodra die beschikbaar zijn, op voice en reels. Workspace-tarieven worden elk halfjaar herijkt op basis van werkelijk credit-verbruik; bestaande contracten worden niet met terugwerkende kracht aangepast. Gebruik wordt gemeten in credits; elk plan bevat een maandelijkse credittoewijzing. Extra credits kunnen in pakketten worden aangeschaft. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -2318,7 +2312,7 @@
         "content": "De informatie op deze website wordt verstrekt voor algemene informatiedoeleinden. Elk vertrouwen dat u in deze informatie stelt is op eigen risico."
       }
     },
-    "last_updated": "Laatst bijgewerkt: 6 november 2026"
+    "last_updated": "Laatst bijgewerkt: 8 november 2026"
   },
   "trust": {
     "meta": {
@@ -2517,121 +2511,13 @@
       "related": "Gerelateerde artikelen"
     }
   },
-  "skills-voice-agent": {
-    "meta": {
-      "title": "Voice Agent (binnenkort). AI-telefoongesprekken | Clyde",
-      "description": "Binnenkort: Clyde beantwoordt telefoongesprekken, boekt afspraken en schakelt door naar een mens waar nodig. Nog niet beschikbaar."
-    },
-    "hero": {
-      "eyebrow": "Vaardigheid 02. Voice Agent (binnenkort)",
-      "title": "Binnenkort neemt Clyde de telefoon op.",
-      "subtitle": "Waar we aan bouwen: inkomende gesprekken beantwoorden, veelgestelde vragen afhandelen, afspraken boeken en doorschakelen naar een mens wanneer het gesprek daarom vraagt. Nog niet beschikbaar.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Bel de wachtlijst en boek afspraken voor volgende week",
-        "prompt2": "Beantwoord inkomende vragen over de levertijd",
-        "prompt3": "Volg klanten op die hun afspraak hebben gemist"
-      }
-    },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Inkomende gesprekken plus FAQ",
-        "body": "Clyde gaat veelgestelde vragen in gewone taal beantwoorden, afspraken boeken in de agenda en alleen escaleren wanneer nodig."
-      },
-      "feature2": {
-        "title": "Uitgaande campagnes",
-        "body": "Lijsten aflopen, intakegesprekken, opvolgingen. Clyde gaat de contactlijst bellen en per gesprek het resultaat registreren."
-      },
-      "feature3": {
-        "title": "Transcripties",
-        "body": "Van elk gesprek komt straks een transcript, doorzoekbaar in het geheugen van de klant."
-      },
-      "feature4": {
-        "title": "Menselijke escalatie",
-        "body": "Clyde krijgt duidelijke regels voor wanneer hij doorschakelt naar een mens."
-      }
-    },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Stem en persona instellen",
-        "body": "Je kiest straks stem, persoonlijkheid en kennisbasis per merk, met de FAQ en de agendabeschikbaarheid erbij."
-      },
-      "step2": {
-        "title": "Nummer koppelen",
-        "body": "Je koppelt een telefoonnummer. Inkomende gesprekken gaan naar Clyde, opvolggesprekken plan je in."
-      },
-      "step3": {
-        "title": "Clyde gaat draaien, jij monitort",
-        "body": "Gesprekken, doorschakelingen en resultaten zie je terug in het dashboard."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Lead Qualifier: leads uit gesprekken komen in dezelfde leadlijst.",
-      "integration2": "Rapportage: aantal gesprekken, duur en doorschakelingen in het weekrapport.",
-      "integration3": "Clyde-orchestrator: gesprekscontext reist mee naar andere vaardigheden."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Praktijken met receptiedruk",
-        "body": "Klinieken, tandartsen en therapeuten met een hoog belvolume. Clyde gaat intake en afspraken afhandelen."
-      },
-      "useCase2": {
-        "title": "Uitgaande sales-teams",
-        "body": "Ontlast SDR's bij eerste-contact-gesprekken: Clyde gaat kwalificeren, inplannen en doorschakelen waar nodig."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Interesse in de Voice Agent?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
-    },
-    "proof": {
-      "title": "Probeer Clyde live",
-      "subtitle": "Interactieve demo. Voer zelf een kort gesprek met Clyde om het te ervaren."
-    },
-    "faq": {
-      "title": "Veelgestelde vragen over Voice Agent",
-      "items": {
-        "q1": {
-          "question": "Wat doet de Voice Agent-vaardigheid precies?",
-          "answer": "De Voice Agent is in aanbouw. Het plan: Clyde handelt telefoongesprekken af met een AI-stem, boekt afspraken, beantwoordt vragen uit de kennisbasis, maakt van elk gesprek een transcript en schakelt door naar een mens wanneer een gesprek complex wordt of de beller erom vraagt."
-        },
-        "q2": {
-          "question": "Welke techniek gebruikt de Voice Agent?",
-          "answer": "De stem komt van ElevenLabs. Hoe telefoonnummers worden aangesloten, leggen we vast voordat de Voice Agent live gaat."
-        },
-        "q3": {
-          "question": "Op welke tiers is de Voice Agent beschikbaar?",
-          "answer": "Zodra de Voice Agent live is: Growth 30 gespreksminuten per maand, Professional 120, Enterprise zonder plafond, Founding 60. Een minuut kost 5 credits."
-        },
-        "q4": {
-          "question": "Wanneer is de Voice Agent beschikbaar?",
-          "answer": "Er is nog geen datum. Founding-leden krijgen als eerste toegang; wil je hem inzetten, zeg het in het gesprek."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Vapi of Bland?",
-          "answer": "Vapi en Bland zijn API-platforms voor ontwikkelaars. De Voice Agent wordt een vaardigheid van Clyde, met de kennisbasis en het geheugen van je klant, zonder eigen voice-engineer."
-        }
-      }
-    }
-  },
   "skills-lead-qualifier": {
     "meta": {
       "title": "Van Instagram-reactie naar lead, in de merkstem | Clyde",
       "description": "Iemand reageert met een trefwoord en krijgt meteen een DM. Clyde schrijft het vervolg in de merkstem van je klant en jij keurt het goed."
     },
     "hero": {
-      "eyebrow": "Vaardigheid 03. Lead Qualifier",
+      "eyebrow": "Van post naar aanvraag",
       "title": "Van Instagram-reactie naar lead",
       "subtitle": "Zet iemand een trefwoord onder een post of in een DM, dan stuurt Clyde meteen een DM met de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en jij keurt het goed.",
       "cta": "Vraag een gesprek aan",
@@ -2704,26 +2590,33 @@
       "button": "Vraag een gesprek aan"
     },
     "proof": {
-      "title": "Live demo",
-      "subtitle": "Probeer hieronder hoe Clyde een gesprek voert in de stem van een merk."
+      "title": "De regel achter een trefwoord",
+      "subtitle": "Zo staat een eigen regel op een reactie onder een post in de app, met wat hij de laatste 30 dagen deed.",
+      "shot": {
+        "bar": "DM-automatisering",
+        "scrollLabel": "De regel RUST, scrollbaar",
+        "alt": "DM-automatisering van Dagspa Luwte: de regel RUST, een eigen regel op een reactie onder een post, aan. Laatste 30 dagen: trefwoord 93, DM 80.",
+        "caption": "De regel RUST onder een post van Dagspa Luwte."
+      },
+      "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app."
     },
     "faq": {
-      "title": "Veelgestelde vragen over Lead Qualifier",
+      "title": "Vragen over van post naar aanvraag",
       "items": {
         "q1": {
-          "question": "Wat doet de Lead Qualifier-vaardigheid precies?",
+          "question": "Wat doet dit precies?",
           "answer": "Clyde beantwoordt Instagram-reacties en DM's met een trefwoord meteen met een DM en de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en leads die via de link binnenkomen staan in je leadlijst."
         },
         "q2": {
-          "question": "Op welke kanalen werkt Lead Qualifier?",
+          "question": "Op welke kanalen werkt dit?",
           "answer": "Op Instagram: in reacties onder posts en in DM's. Elke lead komt in dezelfde leadlijst als je andere leads."
         },
         "q3": {
-          "question": "Op welke tiers is Lead Qualifier beschikbaar?",
-          "answer": "Inbegrepen op elke tier, met fair-use op gespreksvolume."
+          "question": "Op welke tiers is dit beschikbaar?",
+          "answer": "Op elke tier, met een maandlimiet op het aantal DM's. De limiet per tier staat in de tabel op de prijspagina."
         },
         "q4": {
-          "question": "Hoe start Lead Qualifier?",
+          "question": "Hoe start dit?",
           "answer": "Je koppelt het Instagram-account van je klant, legt de trefwoorden en links vast en controleert de merkstem in de kennisbank. Vanaf dan stuurt Clyde de DM's en zet hij zijn antwoorden voor je klaar."
         },
         "q5": {
@@ -3212,39 +3105,6 @@
       "sub": "Een gesprek van 30 minuten. Daarna weet je of Clyde past bij je klanten.",
       "cta": "Vraag een gesprek aan",
       "link": "Zo verloopt de start"
-    }
-  },
-  "roadmap": {
-    "meta": {
-      "title": "Roadmap. Wat Clyde binnenkort kan | FutureMarketingAI",
-      "description": "De twee vaardigheden die momenteel in ontwikkeling en testing zijn: Voice Agent en Reel Builder. Founding-leden krijgen als eerste toegang."
-    },
-    "hero": {
-      "eyebrow": "Roadmap",
-      "title": "Wat Clyde binnenkort kan.",
-      "subtitle": "Tien vaardigheden draaien live in productie. Twee staan op de roadmap, in actieve ontwikkeling en testing. Founding-leden krijgen als eerste toegang zodra ze live gaan."
-    },
-    "skills": {
-      "eyebrow": "In de pijplijn",
-      "title": "In ontwikkeling",
-      "subtitle": "Twee vaardigheden waar we nu aan bouwen. Geen harde launch-data, wel een vaste volgorde van waarde."
-    },
-    "voiceAgent": {
-      "name": "Voice Agent",
-      "phase": "In testing",
-      "description": "Inkomende en uitgaande AI-telefoongesprekken: afspraken boeken, vragen afhandelen, doorschakelen naar een mens. We bouwen eraan; er draait nog geen klant op."
-    },
-    "reelBuilder": {
-      "name": "Reel Builder",
-      "phase": "In ontwikkeling",
-      "description": "Korte verticale video's (9:16) met scripts, ondertitels en muziek, voor Instagram Reels, TikTok en YouTube Shorts. We bouwen eraan."
-    },
-    "cta": {
-      "eyebrow": "Vroege toegang",
-      "scarcityEyebrow": "Founding open · maximaal {total} plekken",
-      "title": "Wil je als eerste meedraaien?",
-      "subtitle": "Founding-leden krijgen early access op allebei zodra ze live gaan, plus inspraak op wat we als volgende bouwen.",
-      "button": "Vraag een gesprek aan"
     }
   },
   "apply": {
@@ -4099,138 +3959,316 @@
       }
     }
   },
-  "skills-research": {
+  "skills-index": {
     "meta": {
-      "title": "Research: marktonderzoek, trends en concurrentie | Clyde",
-      "description": "Clyde doet marktonderzoek, volgt trends en analyseert concurrenten, met een bronlink bij elk inzicht. 3 credits per vraag."
+      "title": "AI-tools voor marketingbureaus: de vaardigheden van Clyde",
+      "description": "Wat Clyde per klant voor je bureau doet: strategie, social media, blogs, DM's, rapportage en SEO en GEO. Eén geheugen per klant, en jij keurt goed."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 07. Research",
-      "title": "Clyde doet jouw marktonderzoek.",
-      "subtitle": "Trends in de niche van elk merk, concurrentie-analyse en content-ideeën, met een bronlink bij elk inzicht zodat jij het kunt nalezen. In de wekelijkse trendscan vallen bevindingen met minder dan twee bronnen af.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Onderzoek de top-5 concurrenten in de hydratatie-markt",
-        "prompt2": "Wat zijn de trending topics in skincare deze maand?",
-        "prompt3": "Vat de laatste branche-rapporten over EU-cosmetica samen"
+      "eyebrow": "Wat Clyde maakt",
+      "title": "AI-tools voor je bureau, per klant in één werkruimte.",
+      "definition": "Clyde plant, maakt, legt voor en meet, voor elke klant apart en vanuit één geheugen per klant. Hieronder staat wat hij doet, in de volgorde van een werkweek. Geen post gaat live zonder jouw akkoord.",
+      "factsLabel": "Kort",
+      "facts": {
+        "workspace": {
+          "label": "Werkruimte",
+          "value": "Eén per klant, met eigen geheugen"
+        },
+        "approval": {
+          "label": "Akkoord",
+          "value": "Niets live zonder jou"
+        },
+        "client": {
+          "label": "Je klant",
+          "value": "Kijkt mee in zijn portaal"
+        }
+      },
+      "shot": {
+        "bar": "Clyde · Overzicht",
+        "alt": "Het overzicht van Clyde met wat er bij vier klanten op je wacht, in de demo-omgeving.",
+        "caption": "Wat er bij vier klanten op je wacht."
       }
     },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Trendmonitoring per niche",
-        "body": "Geplande onderzoeksruns per klant naar markttrends, concurrenten en nieuws in de niche van het merk."
-      },
-      "feature2": {
-        "title": "Concurrentie-analyse",
-        "body": "Wie zijn de grootste spelers, wat doen ze en wat zegt hun contentstrategie over hun positionering? Inclusief gap-analyse voor jouw merk."
-      },
-      "feature3": {
-        "title": "Content-ideeën met bronvermelding",
-        "body": "Bruikbare content-voorstellen met de bronnen erbij. Geen \"AI verzon dit\": je ziet waar elk voorstel op rust."
-      },
-      "feature4": {
-        "title": "Bruikbare inzichten",
-        "body": "Niet \"de trend is X\" maar \"gezien trend X kan jouw merk Y actie Z ondernemen\". Aanbevelingen met context."
+    "clyde": {
+      "title": "Eén collega in plaats van losse tools.",
+      "sub": "Je werkt met Clyde: in je dashboard, in de web-app op je telefoon en op WhatsApp. Wat hieronder staat, doet hij per klant, met de merkstem, de doelen en het geheugen van die klant.",
+      "links": {
+        "clyde": "Werken met Clyde",
+        "memory": "Geheugen per klant"
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Niche en concurrenten vastleggen",
-        "body": "Per merk: welke niche, welke 3 tot 5 belangrijkste concurrenten, welke zoekwoorden en thema's volgen we?"
+    "plan": {
+      "title": "Plannen: strategie en onderzoek.",
+      "sub": "Per klant de doelen, de doelgroep en een agenda voor het jaar. Clyde zet signalen uit onderzoek naast die strategie, met de bron erbij, en stelt voor wat je ermee doet. Jij beslist.",
+      "shot": {
+        "bar": "Onderzoek · Wat vraagt nu aandacht",
+        "scrollLabel": "Twee signalen, scrollbaar",
+        "alt": "Wat vraagt nu aandacht voor Dagspa Luwte: twee open signalen met urgentie 68 en 53, elk met een bron, een datum en de knoppen Bespreek met Clyde, Bekijk onderzoek, Gezien en Niet relevant.",
+        "caption": "Twee open signalen voor Dagspa Luwte, met bron en datum."
       },
-      "step2": {
-        "title": "Onderzoek op de achtergrond",
-        "body": "Clyde draait geplande onderzoeksruns per klant: trends, concurrenten en nieuws."
+      "link": "Strategie en onderzoek"
+    },
+    "make": {
+      "title": "Maken: posts, carrousels en blogs.",
+      "sub": "Clyde schrijft per klant posts, carrousels en blogs in de merkstem van die klant. Alles komt als concept bij jou binnen, met de controles erbij: bijschrift, platform en taal.",
+      "shot": {
+        "bar": "Review · Carrousel",
+        "scrollLabel": "De review van een carrousel, scrollbaar",
+        "alt": "De review van de carrousel Welke behandeling past bij jou?, met bijschrift, platformcheck en taalcontrole, in de demo-omgeving.",
+        "caption": "De review van een carrousel voor Dagspa Luwte."
       },
-      "step3": {
-        "title": "Vraag wat je weten wilt",
-        "body": "Vraag in gewone taal: \"Wat doen concurrenten op thema X?\" Clyde levert een gestructureerd antwoord met bronnen."
+      "links": {
+        "social": "Social media",
+        "blog": "Blogs",
+        "ads": "Advertenties"
       }
     },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Blog Factory: onderzoeksdata voedt de keuze van blogonderwerpen.",
-      "integration2": "Social Media: trendinzichten worden contentvoorstellen.",
-      "integration3": "Strategie: onderzoek onderbouwt de doelen en plannen per klant."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Content-strategen zonder tijd voor diepe research",
-        "body": "Geen 3 uur Google'en per contentkalender. Clyde levert de achtergrond; jij neemt de strategische beslissingen."
+    "approve": {
+      "title": "Goedkeuren en publiceren.",
+      "sub": "Elke dag legt Clyde de posts voor die klaarstaan. Jij keurt goed, past aan of wijst af, en je klant keurt mee in zijn eigen portaal. Pas daarna plant Clyde ze in, op de kanalen van die klant.",
+      "shot": {
+        "bar": "Kalender",
+        "alt": "De kalender van woensdag 11 tot en met vrijdag 13 november, met posts van vijf klanten.",
+        "caption": "Drie dagen in de kalender, met posts van vijf klanten."
       },
-      "useCase2": {
-        "title": "Snel thuisraken in een nieuwe niche",
-        "body": "Nieuwe klant in een branche waar je niet in thuis bent? Clyde zet een eerste niche-briefing met bronnen klaar."
+      "links": {
+        "portal": "Je klant kijkt mee",
+        "regie": "Niets gaat live zonder jou"
       }
     },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
+    "leads": {
+      "title": "Van post naar aanvraag.",
+      "sub": "Reageert iemand met een trefwoord onder een post of in een DM, dan stuurt Clyde meteen een DM met de link die erbij hoort. Het vervolg schrijft hij in de merkstem van je klant, en jij keurt het goed.",
+      "shot": {
+        "bar": "DM-automatisering",
+        "scrollLabel": "De regel RUST, scrollbaar",
+        "alt": "DM-automatisering van Dagspa Luwte: de regel RUST, een eigen regel op een reactie onder een post, aan. Laatste 30 dagen: trefwoord 93, DM 80.",
+        "caption": "De regel RUST onder een post van Dagspa Luwte."
+      },
+      "link": "Van post naar aanvraag"
     },
-    "cta": {
-      "title": "Klaar om research aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
+    "measure": {
+      "title": "Meten: rapportage, SEO en GEO.",
+      "sub": "Per klant een weekrapport en een maandrapport uit de echte cijfers, dat je klant in zijn portaal leest. Daarnaast volgt Clyde de posities in Google en hoe vaak ChatGPT, Perplexity en Google AI Overviews je klant noemen.",
+      "shot": {
+        "bar": "Doelen · Boekingen",
+        "scrollLabel": "De boekingen per week, scrollbaar",
+        "alt": "De boekingen van Dagspa Luwte per week tegen het doel van 80 per vier weken, in de demo-omgeving.",
+        "caption": "De boekingen van Dagspa Luwte per week, tegen het doel."
+      },
+      "links": {
+        "reporting": "Rapportage",
+        "seo": "SEO en GEO"
+      }
+    },
+    "mail": {
+      "title": "Ook: de mailbox.",
+      "sub": "Clyde leest de inkomende mail in Gmail of Outlook, zet elke mail in een categorie die jij kiest en schrijft conceptantwoorden per merk.",
+      "link": "E-mail"
+    },
+    "tools": {
+      "title": "Losse AI-tools of één AI-collega.",
+      "sub": "Wat er verandert als je voor meerdere klanten werkt.",
+      "tableLabel": "Losse AI-tools naast Clyde",
+      "cols": {
+        "what": "Wat",
+        "tools": "Losse AI-tools",
+        "clyde": "Clyde"
+      },
+      "rows": {
+        "memory": {
+          "what": "Geheugen per klant",
+          "tools": "Per tool en per gesprek; de merkstem lever je steeds opnieuw aan",
+          "clyde": "Eén geheugen per klant, dat Clyde bijwerkt"
+        },
+        "approval": {
+          "what": "Goedkeuring",
+          "tools": "Buiten de tool, in mail of chat",
+          "clyde": "In de app, per post; niets live zonder jou"
+        },
+        "client": {
+          "what": "Je klant",
+          "tools": "Krijgt bestanden of schermafbeeldingen",
+          "clyde": "Kijkt mee en keurt goed in zijn eigen portaal"
+        },
+        "reporting": {
+          "what": "Rapportage",
+          "tools": "Een eigen overzicht per tool",
+          "clyde": "Week- en maandrapport per klant"
+        },
+        "count": {
+          "what": "Aantal tools",
+          "tools": "Een voor tekst, een voor planning, een voor cijfers",
+          "clyde": "Eén werkruimte"
+        },
+        "price": {
+          "what": "Prijsmodel",
+          "tools": "Een abonnement per tool",
+          "clyde": "Eén abonnement voor je bureau, per klantmerk"
+        }
+      },
+      "links": {
+        "alternatives": "Clyde naast de alternatieven",
+        "pricing": "Prijzen"
+      }
+    },
+    "soon": {
+      "title": "Binnenkort.",
+      "sub": "Hier bouwen we nu aan. Het werkt nog niet, en het staat hierboven zodra het wel werkt.",
+      "label": "Binnenkort",
+      "items": {
+        "voice": {
+          "name": "Voice Agent",
+          "text": "Telefoongesprekken voor je klant aannemen: vragen beantwoorden, afspraken inplannen en doorverbinden met een mens als het gesprek daarom vraagt."
+        },
+        "reel": {
+          "name": "Reel Builder",
+          "text": "Korte verticale video's per klant, van script tot beeld en muziek, in de huisstijl van het merk."
+        }
+      }
     },
     "faq": {
-      "title": "Veelgestelde vragen over Research",
+      "title": "Vragen over wat Clyde maakt.",
+      "sub": "Wat bureaus vragen voordat ze kiezen tussen losse tools en Clyde.",
       "items": {
-        "q1": {
-          "question": "Wat doet de Research-vaardigheid precies?",
-          "answer": "Clyde doet marktonderzoek, volgt trends in jouw niche, analyseert concurrenten en levert inzichten met bronvermelding. Hij beantwoordt gerichte vragen (bijvoorbeeld 'wat lanceerde concurrent X de afgelopen 30 dagen') en draait geplande onderzoeksruns op de achtergrond."
+        "need": {
+          "q": "Welke AI-tools heeft een marketingbureau nodig?",
+          "a": "Voor het werk per klant iets dat plant, schrijft, laat goedkeuren, publiceert en meet. Met losse tools lever je de merkstem en de cijfers van elke klant steeds opnieuw aan. Clyde doet die stappen in één werkruimte, met één geheugen per klant."
         },
-        "q2": {
-          "question": "Welke bronnen gebruikt Research?",
-          "answer": "Webonderzoek via Perplexity, met de bronlinks erbij, aangevuld met Firecrawl om websites te lezen, PubMed voor wetenschappelijke bronnen en de Meta Ad Library voor advertenties van concurrenten. Bij elk inzicht staat de bron met link en titel."
+        "colleague": {
+          "q": "Wat is het verschil tussen losse AI-tools en een AI-collega?",
+          "a": "Een losse tool doet één taak en begint elk gesprek opnieuw. Clyde werkt per klant vanuit één geheugen, legt zijn werk aan je voor en laat je klant meekijken in zijn portaal."
         },
-        "q3": {
-          "question": "Op welke tiers is Research beschikbaar?",
-          "answer": "Inbegrepen op elke tier, met fair-use op het aantal vragen. Een vraag kost 3 credits."
-        },
-        "q4": {
-          "question": "Hoe start Research?",
-          "answer": "Bij de onboarding geef je niche, doelgroep en concurrenten op. Clyde draait dan de eerste onderzoeken naar doelgroep, klantprofiel en concurrenten; daarna lopen de geplande runs vanzelf."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Perplexity Pro of Brandwatch?",
-          "answer": "Perplexity Pro beantwoordt losse vragen. Brandwatch is enterprise social listening. Clyde koppelt het onderzoek aan de klant: bevindingen landen in de kennis van dat merk, en dezelfde vraag haalt hij niet steeds opnieuw op."
+        "team": {
+          "q": "Wat doet Clyde zelf en wat beslist mijn team?",
+          "a": "Clyde maakt concepten, doet voorstellen en draait vaste taken zoals jij ze instelt. Goedkeuren, afwijzen en pauzeren doet je team. Hoe dat per taak werkt, staat op <link>Werken met Clyde</link>."
         }
+      }
+    },
+    "end": {
+      "title": "Zie wat Clyde voor jouw klanten maakt.",
+      "sub": "Een gesprek van 30 minuten. Daarna weet je welke stappen Clyde voor je bureau kan doen.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "how": "Werkwijze",
+        "pricing": "Prijzen"
       }
     }
   },
-  "skills-index": {
+  "skills-strategy": {
     "meta": {
-      "title": "Vaardigheden: 12 vaardigheden van Clyde | FutureMarketingAI",
-      "description": "Bekijk de vaardigheden van Clyde: social, blogs, advertenties, leads, e-mail, rapportage, SEO/GEO en research."
+      "title": "Contentstrategie per klant met AI | Clyde",
+      "description": "Per klant de doelen, de doelgroep, de platforms en een agenda voor het jaar, met signalen uit onderzoek ernaast. Clyde stelt voor, jij beslist."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "12 vaardigheden, één brein",
-      "badge": "Founding open · maximaal {total} plekken",
-      "title": "De 12 vaardigheden van Clyde",
-      "subtitle": "Eén AI-collega, twaalf vaardigheden, één gedeeld geheugen per klant. Tien leveren al productie, twee zijn binnenkort live."
+      "eyebrow": "Strategie en onderzoek",
+      "title": "Contentstrategie per klant, met het onderzoek ernaast.",
+      "definition": "Elke klant krijgt een strategiepagina: waar je voor gaat, voor wie, op welke platforms en met welke doelen. Daaruit volgt de agenda voor het jaar. Clyde zet signalen uit onderzoek ernaast, met de bron, en stelt voor wat je ermee doet. Jij beslist.",
+      "factsLabel": "Kort",
+      "facts": {
+        "client": {
+          "label": "Per klant",
+          "value": "Doelen, doelgroep en platforms"
+        },
+        "agenda": {
+          "label": "Agenda",
+          "value": "Vensters voor het hele jaar"
+        },
+        "decide": {
+          "label": "Beslissen",
+          "value": "Altijd jij"
+        }
+      },
+      "shot": {
+        "bar": "Strategie · Dagspa Luwte",
+        "scrollLabel": "De strategiepagina, scrollbaar",
+        "alt": "De strategiepagina van Dagspa Luwte met de tabs Overzicht, Strategie, Doelen, Platforms, Agenda en Beslissingen. Waar we voor gaan: mensen die voor het eerst een behandeling aanvragen.",
+        "caption": "Waar Dagspa Luwte voor gaat, bovenaan de strategiepagina."
+      }
     },
-    "status": {
-      "live": "Live"
+    "who": {
+      "title": "Waar je voor gaat, en voor wie.",
+      "sub": "Op de strategiepagina staat per klant het doel in één zin, de doelgroep en het klantprofiel: waar die mensen tegenaan lopen en wat het merk ze belooft. In de tabs ernaast staan de doelen, de platforms, de agenda en de beslissingen.",
+      "shot": {
+        "bar": "Strategie · Voor wie",
+        "scrollLabel": "Doelgroep en klantprofiel, scrollbaar",
+        "alt": "Voor wie: drukke vrouw van 30 tot 55 die een uur wil waarin niemand iets van haar vraagt. Het klantprofiel: waar ze tegenaan lopen en wat wij ze beloven.",
+        "caption": "De doelgroep en het klantprofiel van Dagspa Luwte."
+      }
     },
-    "clyde": {
-      "title": "Clyde, je AI-collega",
-      "description": "Eén aanspreekpunt voor je hele portfolio. Vraag in gewone taal, Clyde kiest de juiste vaardigheid.",
-      "statusLabel": "Actief",
-      "promptIntro": "Vraag bijvoorbeeld:",
-      "openLink": "Open de Clyde-vaardigheid"
+    "agenda": {
+      "title": "De agenda die eruit volgt.",
+      "sub": "De agenda verdeelt het jaar in vensters, elk met een eigen thema. Zo zie je per maand waar de content van die klant over gaat, en wat jaarlijks terugkomt.",
+      "shot": {
+        "bar": "Strategie · Agenda",
+        "scrollLabel": "De agenda, scrollbaar",
+        "alt": "De agenda van Dagspa Luwte: zes vensters op een tijdlijn van november tot januari, zoals Wat er echt gebeurt, In hun eigen woorden en Warm de winter door.",
+        "caption": "Zes vensters voor Dagspa Luwte op de tijdlijn."
+      },
+      "link": "Een week met Clyde"
     },
-    "grid_aria_label": "Lijst met vaardigheden",
-    "cta": {
-      "eyebrow": "Founding open · maximaal {total} plekken",
-      "title": "Eén collega, alle vaardigheden bij elkaar",
-      "description": "Geen losse tools, geen ticketing per vaardigheid. Eén werkruimte per klant, één gesprek van 30 minuten om te kijken of het past.",
-      "button": "Vraag een gesprek aan",
-      "secondaryLink": "Bekijk de volledige onboardingreis"
+    "research": {
+      "title": "Waar Clyde zijn voorstel op baseert.",
+      "sub": "Clyde volgt per klant trends en concurrenten in de markt. Wat aandacht vraagt, zet hij als signaal in het onderzoek van die klant, met de bron, de datum en hoe urgent het is. Onder Bekijk onderzoek lees je wat erachter zit.",
+      "shot": {
+        "bar": "Onderzoek · Wat vraagt nu aandacht",
+        "scrollLabel": "Twee signalen, scrollbaar",
+        "alt": "Wat vraagt nu aandacht voor Dagspa Luwte: twee open signalen met urgentie 68 en 53, elk met een bron, een datum en de knoppen Bespreek met Clyde, Bekijk onderzoek, Gezien en Niet relevant.",
+        "caption": "Twee open signalen voor Dagspa Luwte, met urgentie, bron en datum."
+      }
+    },
+    "decide": {
+      "title": "Clyde stelt voor, jij beslist.",
+      "sub": "Bij elk signaal kies jij wat ermee gebeurt. Een andere koers legt Clyde eerst aan je voor, en wat er per klant besloten is, staat onder Beslissingen op de strategiepagina.",
+      "cards": {
+        "discuss": {
+          "label": "Bespreek met Clyde",
+          "text": "Je vraagt wat het signaal betekent voor deze klant, en wat hij zou voorstellen."
+        },
+        "seen": {
+          "label": "Gezien",
+          "text": "Je hebt het gelezen. Het gaat naar Afgehandeld, met de datum erbij."
+        },
+        "irrelevant": {
+          "label": "Niet relevant",
+          "text": "Het past niet bij deze klant. Ook dat staat onder Afgehandeld, en je zet het terug als je je bedenkt."
+        }
+      },
+      "link": "Werken met Clyde"
+    },
+    "faq": {
+      "title": "Vragen over strategie per klant.",
+      "sub": "Wat bureaus willen weten voordat Clyde meedenkt over de koers van een klant.",
+      "items": {
+        "what": {
+          "q": "Wat is een contentstrategie per klant?",
+          "a": "Een vastgelegd plan per klantmerk: het doel, de doelgroep, de platforms en de onderwerpen, verdeeld over het jaar. Clyde werkt vanuit dat plan, samen met de merkstem en het geheugen van die klant."
+        },
+        "source": {
+          "q": "Waar haalt Clyde zijn onderzoek vandaan?",
+          "a": "Van bronnen op het web, onder meer via Perplexity. Bij elk signaal staan de bron en de datum, zodat je het zelf kunt nalezen."
+        },
+        "adjust": {
+          "q": "Past Clyde de strategie zelf aan?",
+          "a": "Nee. Clyde stelt voor wat er kan veranderen en waarom. Jij beslist, en een andere koers legt hij altijd eerst aan je voor."
+        },
+        "client": {
+          "q": "Ziet mijn klant de strategie?",
+          "a": "Als je die voor hem aanzet, heeft je klant een strategiepagina in zijn portaal, met de kaart Vraag Clyde. Wat hij verder ziet, staat op <link>de pagina over het klantportaal</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Begin de week met een plan.",
+      "sub": "Een gesprek van 30 minuten over de klanten die je nu hebt.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "hub": "Wat Clyde maakt",
+        "social": "Social media",
+        "seo": "SEO en GEO"
+      }
     }
   },
   "skills-blog-factory": {
@@ -4653,214 +4691,6 @@
       }
     }
   },
-  "skills-manychat": {
-    "meta": {
-      "title": "ManyChat DM. Instagram-DM's met keywordtriggers | Clyde",
-      "description": "Clyde beantwoordt Instagram-DM's en reacties met keywordtriggers, zet leads in je leadlijst en schrijft AI-antwoorden als concept. 2 credits per 10 DM's."
-    },
-    "hero": {
-      "eyebrow": "Vaardigheid 11. ManyChat DM",
-      "title": "Clyde handelt Instagram-DM's af.",
-      "subtitle": "Een keyword (\"INFO\", \"PRIJS\") in een reactie, DM of story-reactie stuurt binnen ongeveer een minuut het antwoord dat jij vastlegt, met de link erbij. Voor andere berichten schrijft Clyde een concept, en wie reageert komt in je leadlijst.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Beantwoord DM's met het keyword levertijd automatisch",
-        "prompt2": "Stuur warme leads via DM door naar onze sales-pagina",
-        "prompt3": "Maak een Story-trigger voor de nieuwe productlaunch"
-      }
-    },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Keywordtriggers",
-        "body": "Stel een keyword in voor reacties, DM's, story-reacties of vermeldingen. Wie het keyword stuurt, krijgt het antwoord dat jij vastlegt."
-      },
-      "feature2": {
-        "title": "Concepten in de merkstem",
-        "body": "Voor berichten zonder keyword schrijft Clyde een concept in de merkstem. Jij leest het en verstuurt het."
-      },
-      "feature3": {
-        "title": "Lead capture",
-        "body": "Wie reageert, komt in je leadlijst, naast je andere leads."
-      },
-      "feature4": {
-        "title": "Elk antwoord gelogd",
-        "body": "Elk antwoord wordt vastgelegd, zodat je ziet welk keyword werkt en wat je bijstelt."
-      }
-    },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Instagram koppelen",
-        "body": "We koppelen het Instagram-account van het merk via Instagram Login. Werk je al met ManyChat, dan komen die gesprekken in dezelfde inbox."
-      },
-      "step2": {
-        "title": "Keywords en antwoorden",
-        "body": "Per post of campagne: het keyword en het antwoord, met de link waar je de volger naartoe wilt sturen."
-      },
-      "step3": {
-        "title": "Live en monitoren",
-        "body": "Een keyword-antwoord gaat binnen ongeveer een minuut de deur uit. In het dashboard zie je de gesprekken en de concepten die op je wachten."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Social Media: posts triggeren DM's via call-to-DM.",
-      "integration2": "Lead Qualifier: DM-leads komen in dezelfde leadlijst als de leads van je website.",
-      "integration3": "Clyde-orchestrator: DM-context deelbaar met andere vaardigheden."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "E-commerce met Instagram als kanaal",
-        "body": "Reel met \"DM PRIJS voor de prijslijst\". Wie PRIJS stuurt, krijgt de link naar de shop en komt in je leadlijst."
-      },
-      "useCase2": {
-        "title": "Dienstverlenende bureaus met Instagram-leadgen",
-        "body": "LinkedIn-posts sturen naar de website, Instagram-posts sturen naar DM. Clyde schaalt beide."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Klaar om Instagram-DM's aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
-    },
-    "faq": {
-      "title": "Veelgestelde vragen over ManyChat DM",
-      "items": {
-        "q1": {
-          "question": "Wat doet de ManyChat DM-vaardigheid precies?",
-          "answer": "Clyde beantwoordt Instagram-DM's, reacties en story-reacties met keywordtriggers: wie bijvoorbeeld 'prijs' of 'info' stuurt, krijgt binnen ongeveer een minuut het antwoord dat jij vastlegde, met de link erbij. Voor andere berichten schrijft Clyde een concept in de merkstem dat jij verstuurt. Wie reageert, komt in je leadlijst."
-        },
-        "q2": {
-          "question": "Welke platforms ondersteunt ManyChat DM?",
-          "answer": "Op dit moment Instagram: DM's, reacties en story-reacties, via de officiële Instagram-API. Gesprekken uit ManyChat komen in dezelfde inbox. Facebook Messenger en WhatsApp Business als DM-kanaal voor de volgers van je klanten zijn nog niet aangesloten. Clyde zelf zit wel al op WhatsApp: voor jou als bureau en voor je klant, ieder met een eigen koppeling."
-        },
-        "q3": {
-          "question": "Op welke tiers is ManyChat DM beschikbaar?",
-          "answer": "Growth 200 DM's per maand, Professional 1.000, Enterprise zonder plafond, Founding 500. Tien DM's kosten 2 credits."
-        },
-        "q4": {
-          "question": "Hoe start ManyChat DM?",
-          "answer": "We koppelen het Instagram-account van het merk en jij legt de keywords en antwoorden vast. Keyword-antwoorden gaan daarna direct mee; AI-antwoorden blijven concepten die jij verstuurt."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van standaard ManyChat?",
-          "answer": "Standaard ManyChat draait op flow-builders waarin jij elke variant schrijft. Clyde koppelt de keyword-antwoorden aan je leadlijst en schrijft voor de overige berichten een concept in de merkstem. Werk je al met ManyChat, dan blijft dat werken en komen die gesprekken in dezelfde inbox."
-        }
-      }
-    }
-  },
-  "skills-reel-builder": {
-    "meta": {
-      "title": "Reel Builder (binnenkort). Verticale AI-video's | Clyde",
-      "description": "Binnenkort: korte verticale video's (9:16) met AI-scripts, captions en muziek, in de huisstijl van het merk. Nog niet beschikbaar."
-    },
-    "hero": {
-      "eyebrow": "Vaardigheid 12. Reel Builder (binnenkort)",
-      "title": "Binnenkort maakt Clyde je Reels.",
-      "subtitle": "Waar we aan bouwen: korte verticale video's (9:16) met AI-scripts, captions die synchroon lopen en achtergrondmuziek, voor Instagram en LinkedIn. Nog niet beschikbaar.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Maak een 30-seconden Reel over het ochtendritueel",
-        "prompt2": "Schrijf een Reel-script voor de productlancering",
-        "prompt3": "Maak 5 hook-varianten voor onze best presterende Reel"
-      }
-    },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "AI-gegenereerde scripts",
-        "body": "Clyde gaat korte scripts schrijven (15 tot 60 seconden) op basis van onderwerp, hook-stijl en merkstem."
-      },
-      "feature2": {
-        "title": "Automatische captions, synchroon",
-        "body": "Captions gaan synchroon lopen met de audio, in de stijl van het platform."
-      },
-      "feature3": {
-        "title": "Muziek en timing",
-        "body": "Passende achtergrondmuziek die op de beat valt."
-      },
-      "feature4": {
-        "title": "Template-bibliotheek",
-        "body": "Je start straks vanuit templates voor talking head, B-roll-montage en tekst-overlay."
-      }
-    },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Onderwerp en formaat",
-        "body": "Geef het onderwerp en kies een formaat (educatief, productdemo, talking head). Clyde gaat het script schrijven."
-      },
-      "step2": {
-        "title": "Beoordelen en aanpassen",
-        "body": "Script bewerken, caption-stijl kiezen en muziek selecteren. Alles met preview."
-      },
-      "step3": {
-        "title": "Exporteren en publiceren",
-        "body": "Een publicatieklare MP4 (9:16), in te plannen via de Social Media-vaardigheid."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "Social Media: Reels worden straks via de inplanning gepubliceerd.",
-      "integration2": "Ad Manager: video-ads kunnen het Reel-formaat volgen.",
-      "integration3": "Blog Factory: een artikel als basis voor een Reel."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Creators die regelmatig reel-content nodig hebben",
-        "body": "Wekelijks 3 tot 5 Reels, zonder eigen videograaf. Productie op basis van sjablonen."
-      },
-      "useCase2": {
-        "title": "E-commerce met productvideo's",
-        "body": "Per product een korte Reel voor organisch bereik en ads. Clyde schaalt de productie mee."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Interesse in de Reel Builder?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
-    },
-    "faq": {
-      "title": "Veelgestelde vragen over Reel Builder",
-      "items": {
-        "q1": {
-          "question": "Wat doet de Reel Builder-vaardigheid precies?",
-          "answer": "De Reel Builder is in aanbouw. Het plan: Clyde maakt korte verticale video's (9:16) met een script in de merkstem, captions, passende muziek en de typografie van het merk."
-        },
-        "q2": {
-          "question": "Op welke platforms komen de Reels?",
-          "answer": "Clyde publiceert vandaag naar onder meer Instagram, TikTok en YouTube, en daar komen ook de Reels. De techniek erachter leggen we vast voordat de Reel Builder live gaat. Video's komen in 9:16 (1080x1920), met ruimte voor captions."
-        },
-        "q3": {
-          "question": "Op welke tiers is Reel Builder beschikbaar?",
-          "answer": "Zodra de Reel Builder live is: Growth 4 Reels per maand, Professional 15, Enterprise zonder plafond, Founding 8. Een Reel kost 25 credits. Founding-leden krijgen als eerste toegang."
-        },
-        "q4": {
-          "question": "Wanneer is de Reel Builder beschikbaar?",
-          "answer": "Er is nog geen datum. Founding-leden krijgen als eerste toegang; wil je hem inzetten, zeg het in het gesprek."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van CapCut of Opus Clip?",
-          "answer": "CapCut is een handmatige editor. Opus Clip knipt langere video's tot Shorts. De Reel Builder gaat de Reel vanaf nul maken: script, captions en muziek, in de merkstem en de huisstijl."
-        }
-      }
-    }
-  },
   "nav": {
     "login": "Inloggen",
     "apply": "Vraag een gesprek aan"
@@ -5241,7 +5071,7 @@
       "skills": {
         "blogFactory": "Meer content, zelfde team",
         "reporting": "Automatische rapportage",
-        "research": "Marktinzicht op aanvraag"
+        "research": "Strategie en onderzoek per klant"
       }
     }
   },

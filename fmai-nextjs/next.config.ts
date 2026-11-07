@@ -78,10 +78,10 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   // Disable browser features that are not needed
-  // microphone=(self) so the /skills/voice-agent ElevenLabs demo can request mic access on same-origin
+  // microphone=() since golf 9a: the only microphone user was the /skills/voice-agent demo, and that page is gone
   {
     key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(self), geolocation=(), browsing-topics=()',
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
   },
   // Explicitly disable XSS Auditor (deprecated; 0 = off is the safest setting)
   {
@@ -175,7 +175,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/:locale/voice-agents',
-        destination: '/:locale/skills/voice-agent',
+        destination: '/:locale/skills#binnenkort',
         permanent: true,
       },
       {
@@ -197,6 +197,35 @@ const nextConfig: NextConfig = {
       {
         source: '/:locale/skills/email',
         destination: '/:locale/skills/email-management',
+        permanent: true,
+      },
+      // Golf 9a (2026-11-08, siteplan decisions 3, 17 and [10] r920-930): five pages without a page of their own.
+      // ManyChat is the Instagram DM flow on lead-qualifier, research went into /skills/strategy, Voice Agent and Reel
+      // Builder only live in the hub's Binnenkort block, and the roadmap went with them. The browser keeps the fragment;
+      // Google indexes the target without it. /es already went to /en above, so /es lands in two hops.
+      {
+        source: '/:locale(nl|en)/skills/manychat',
+        destination: '/:locale/skills/lead-qualifier#instagram-dm',
+        permanent: true,
+      },
+      {
+        source: '/:locale(nl|en)/skills/research',
+        destination: '/:locale/skills/strategy#research',
+        permanent: true,
+      },
+      {
+        source: '/:locale(nl|en)/skills/voice-agent',
+        destination: '/:locale/skills#binnenkort',
+        permanent: true,
+      },
+      {
+        source: '/:locale(nl|en)/skills/reel-builder',
+        destination: '/:locale/skills#binnenkort',
+        permanent: true,
+      },
+      {
+        source: '/:locale(nl|en)/roadmap',
+        destination: '/:locale/skills#binnenkort',
         permanent: true,
       },
       // Ad Creator → Ad Manager rename (2026-06-15): skill went live + broadened

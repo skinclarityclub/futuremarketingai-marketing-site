@@ -22,7 +22,7 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing Plans
 
-All plans include Clyde, the AI colleague, and all 12 skills (10 live, 2 coming soon). Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays fixed for as long as the agency remains a client.
+All plans include Clyde, the AI colleague, and every skill. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays fixed for as long as the agency remains a client.
 
 **Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client** (maximum 10 founding spots)
 - 10 workspaces included, EUR 299 per extra workspace above that

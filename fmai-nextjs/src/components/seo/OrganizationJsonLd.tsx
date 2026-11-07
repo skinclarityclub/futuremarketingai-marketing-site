@@ -49,12 +49,13 @@ function buildSameAs(): string[] {
   )
 }
 
-// hasOfferCatalog — 12 skills as Services, referenced by @id so SkillPage ServiceJsonLd (14-02) agrees.
+// hasOfferCatalog: the live skills as Services, referenced by @id so the pages' ServiceJsonLd (14-02) agrees.
+// coming_soon skills have no page since golf 9a (their URLs 308 to /skills#binnenkort), so they stay out.
 function buildOfferCatalog() {
   return {
     '@type': 'OfferCatalog',
     name: 'Clyde AI Marketing Skills',
-    itemListElement: SKILLS_DATA.map((skill) => ({
+    itemListElement: SKILLS_DATA.filter((skill) => skill.status === 'live').map((skill) => ({
       '@type': 'Offer',
       itemOffered: {
         '@type': 'Service',

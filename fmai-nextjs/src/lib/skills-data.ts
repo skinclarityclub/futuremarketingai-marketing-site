@@ -1,7 +1,7 @@
 /**
  * Skills data, website mirror of fma-app/src/lib/skills.ts.
  *
- * WHY: de marketing site moet dezelfde 12 skills tonen als de SaaS,
+ * WHY: de marketing site moet dezelfde vaardigheden tonen als de SaaS,
  * maar zonder een harde dependency op fma-app. Bij wijzigingen in
  * fma-app/src/lib/skills.ts (pricing SSoT) ook hier bijwerken.
  *
@@ -137,7 +137,8 @@ export const SKILLS_DATA: readonly SkillData[] = [
     id: 'reel-builder',
     name: 'Reel Builder',
     slug: 'reel-builder',
-    route: '/skills/reel-builder',
+    // golf 9a: no page of its own, the old URL 308s to the hub's Binnenkort block
+    route: '/skills#binnenkort',
     shortDescription: "Binnenkort: korte verticale video's met captions en muziek voor Instagram Reels.",
     longDescription:
       "Binnenkort: Reel Builder maakt korte verticale video's (9:16) met een script in de merkstem, captions en muziek, voor Instagram en LinkedIn. Nog niet beschikbaar.",
@@ -163,7 +164,7 @@ export const SKILLS_DATA: readonly SkillData[] = [
     id: 'voice-agent',
     name: 'Voice Agent',
     slug: 'voice-agent',
-    route: '/skills/voice-agent',
+    route: '/skills#binnenkort',
     shortDescription: 'Binnenkort: AI-telefoongesprekken voor afspraken, FAQ en doorschakelen.',
     longDescription:
       'Binnenkort: de Voice Agent beantwoordt telefoongesprekken met AI, boekt afspraken, beantwoordt vragen uit de kennisbasis en schakelt door naar een mens wanneer nodig. Nog niet beschikbaar.',
@@ -203,7 +204,15 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'engage',
     status: 'live',
-    creditCostLabel: '2 cr / score',
+    // golf 9a: ManyChat folded into this skill, so it carries the DM pipeline's price and caps
+    // (fma-app CREDIT_COSTS.socialCommandCenter.dm_batch_10 and SKILL_CAPS.socialCommandCenter)
+    creditCostLabel: '2 cr / 10 DMs',
+    tierCaps: {
+      GROWTH: { included: 200, unit: 'dm' },
+      PROFESSIONAL: { included: 1000, unit: 'dm' },
+      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
+      FOUNDING_MEMBER: { included: 500, unit: 'dm' },
+    },
     serviceType: 'Instagram DM Lead Capture Service',
   },
   {
@@ -231,32 +240,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
       FOUNDING_MEMBER: { included: 40 },
     },
     serviceType: 'Email Inbox Classification Service',
-  },
-  {
-    id: 'manychat',
-    name: 'ManyChat DM',
-    slug: 'manychat',
-    route: '/skills/manychat',
-    shortDescription: "Instagram-DM's met keywordtriggers, AI-concepten en lead capture.",
-    longDescription:
-      "ManyChat DM beantwoordt Instagram-DM's, reacties en story-reacties met keywordtriggers: wie het keyword stuurt, krijgt het antwoord dat jij vastlegt, met een link. Voor andere berichten schrijft Clyde een concept in de merkstem, en wie reageert komt in je leadlijst.",
-    features: [
-      'Keyword-based DM triggers',
-      'AI-concepten in de merkstem',
-      'Lead capture in je leadlijst',
-      "Antwoorden op reacties, DM's en story-reacties",
-      'Elk antwoord gelogd',
-    ],
-    category: 'engage',
-    status: 'live',
-    creditCostLabel: '2 cr / 10 DMs',
-    tierCaps: {
-      GROWTH: { included: 200, unit: 'dm' },
-      PROFESSIONAL: { included: 1000, unit: 'dm' },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 500, unit: 'dm' },
-    },
-    serviceType: 'Instagram DM Automation Service',
   },
   {
     id: 'reporting',
@@ -300,24 +283,25 @@ export const SKILLS_DATA: readonly SkillData[] = [
     serviceType: 'SEO and Generative Engine Optimization Service',
   },
   {
-    id: 'research',
-    name: 'Research',
-    slug: 'research',
-    route: '/skills/research',
-    shortDescription: 'Marktonderzoek + trend monitoring + concurrentieanalyse met bronvermelding.',
+    id: 'strategy',
+    name: 'Strategie en onderzoek',
+    slug: 'strategy',
+    route: '/skills/strategy',
+    shortDescription:
+      'Per klant de doelen, de doelgroep, de platforms en een agenda voor het jaar, met signalen uit onderzoek ernaast.',
     longDescription:
-      'De Research-vaardigheid draait geplande onderzoeksruns per klant naar markttrends, concurrenten en nieuws, en beantwoordt gerichte vragen. Bij elk inzicht staat de bron met link.',
+      'Elke klant krijgt een strategiepagina: waar je voor gaat, voor wie, op welke platforms en met welke doelen. Daaruit volgt de agenda voor het jaar. Clyde zet signalen uit onderzoek ernaast, met de bron, en stelt voor wat je ermee doet. Jij beslist.',
     features: [
-      'Geplande onderzoeksruns per klant',
-      'Trend monitoring in jouw niche',
-      'Concurrentie-analyse',
-      'Actionable insights en recommendations',
-      'Bronvermelding bij elk inzicht',
+      'Doel, doelgroep en klantprofiel per klant',
+      'Een agenda met vensters voor het hele jaar',
+      'Trends en concurrenten per klant',
+      'Signalen uit onderzoek met bron en datum',
+      'Clyde stelt voor, jij beslist',
     ],
     category: 'grow',
     status: 'live',
     creditCostLabel: '3 cr / query',
-    serviceType: 'Market Research Service',
+    serviceType: 'Content Strategy Service',
   },
   {
     id: 'clyde',
