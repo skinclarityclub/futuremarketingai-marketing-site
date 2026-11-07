@@ -329,46 +329,52 @@ export function HeaderClient({ locale }: HeaderClientProps) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="xl:hidden bg-bg-deep/98 backdrop-blur-md border-t border-border-primary overflow-hidden"
           >
-            <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto">
-              <div className="max-w-xl mx-auto flex flex-col px-4 pt-2 pb-5">
-                <p className="px-1 py-3.5 border-b border-white/[0.06] text-base font-semibold text-[#f4f7fb]">
-                  {tHeader('nav.clyde')}
-                </p>
-                {CLYDE_ITEMS.map((item, index) => (
-                  <Link
-                    key={item.key}
-                    href={clydeHref(item)}
-                    onClick={() => setMobileOpen(false)}
-                    className={`py-2.5 pl-4 pr-1 text-[15px] text-[#c4ccd8] hover:text-[#f4f7fb] ${
-                      index === CLYDE_ITEMS.length - 1 ? 'pb-3.5 border-b border-white/[0.06]' : ''
-                    }`}
-                  >
-                    {tHeader(`clydeMenu.items.${item.key}.title`)}
-                  </Link>
-                ))}
-                {NAV_LINKS.map((item) => (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    aria-current={isActive([item.href]) ? 'page' : undefined}
-                    className="px-1 py-3.5 border-b border-white/[0.06] text-base font-semibold text-[#f4f7fb]"
-                  >
-                    {tHeader(`nav.${item.key}`)}
-                  </Link>
-                ))}
-                <div className="mt-[18px] flex flex-col gap-2.5">
+            {/* Daley 2026-11-08: the button must be in view the moment the menu opens, on the smallest phone too.
+                The links scroll; Log in and the button stay pinned at the foot of the panel, side by side. */}
+            <div className="flex max-h-[calc(100dvh-4rem)] flex-col">
+              <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+                <div className="max-w-xl mx-auto flex flex-col px-4 pt-2 pb-3">
+                  <p className="px-1 py-3.5 border-b border-white/[0.06] text-base font-semibold text-[#f4f7fb]">
+                    {tHeader('nav.clyde')}
+                  </p>
+                  {CLYDE_ITEMS.map((item, index) => (
+                    <Link
+                      key={item.key}
+                      href={clydeHref(item)}
+                      onClick={() => setMobileOpen(false)}
+                      className={`py-2.5 pl-4 pr-1 text-[15px] text-[#c4ccd8] hover:text-[#f4f7fb] ${
+                        index === CLYDE_ITEMS.length - 1 ? 'pb-3.5 border-b border-white/[0.06]' : ''
+                      }`}
+                    >
+                      {tHeader(`clydeMenu.items.${item.key}.title`)}
+                    </Link>
+                  ))}
+                  {NAV_LINKS.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      aria-current={isActive([item.href]) ? 'page' : undefined}
+                      className="px-1 py-3.5 border-b border-white/[0.06] text-base font-semibold text-[#f4f7fb]"
+                    >
+                      {tHeader(`nav.${item.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="shrink-0 border-t border-white/[0.08]">
+                <div className="max-w-xl mx-auto flex gap-2.5 px-4 pt-3 pb-[max(16px,env(safe-area-inset-bottom))]">
                   <a
                     href={LOGIN_HREF}
                     onClick={() => setMobileOpen(false)}
-                    className="inline-flex h-12 items-center justify-center rounded-xl text-[15px] text-[#c4ccd8] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)]"
+                    className="inline-flex h-12 shrink-0 items-center justify-center rounded-xl px-5 text-[15px] whitespace-nowrap text-[#c4ccd8] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)]"
                   >
                     {t('login')}
                   </a>
                   <Link
                     href="/apply"
                     onClick={() => setMobileOpen(false)}
-                    className={`flex h-12 text-[15px] ${ctaClass}`}
+                    className={`flex h-12 min-w-0 flex-1 px-4 text-[15px] ${ctaClass}`}
                   >
                     {t('apply')}
                   </Link>
