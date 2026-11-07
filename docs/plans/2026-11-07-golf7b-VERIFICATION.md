@@ -56,3 +56,15 @@ Daley zei "Ja, push en merge" op de diffpagina (`A/alle-paginas/golf7b-diff/inde
 ## Open
 
 - Niets voor 7b. Golf 7 (cases) is klaar.
+
+## Wrap-verificatie (2026-11-07)
+
+| claim | verdict | bewijs |
+|---|---|---|
+| 1. PR #101 squash 2d6d7a76 op origin/main, prod nl/en 200 + titels, hub-link, sitemap | BEVESTIGD | `gh pr view 101`: MERGED, oid 2d6d7a76; `branch -r --contains`: origin/main; curl nl/en 200, titels exact; hub bevat /nl/case-studies/saleslobe; sitemap bevat beide URL's |
+| 2a. PR #102 gemerged als d542c173 op origin/main | BEVESTIGD | `gh pr view 102`: MERGED, oid d542c173; `branch -r --contains`: origin/main |
+| 2b. Kaarten houden eigen hoogte (geen ~193 px leegte), desktop 1440 en 1280 | BEVESTIGD | vv.mjs prod: quoteH [468,629] op beide breedtes, quoteEmptyBottom [32,32] |
+| 2c. `.g6-vs` margin-top 14px | BEVESTIGD | getComputedStyle op prod: 14px (nl en en, 1440 en 1280) |
+| 2d. Harde spatie in datumlabels | BEVESTIGD | prod-HTML: `23 C2A0 oktober` en `27 C2A0 oktober` (en: October) in de g6-eb labels |
+| 2e. CSS-regels in proof.css | BEVESTIGD | origin/main fmai-nextjs/src/components/proof/proof.css:185 en :186 |
+| 3. Commit 805a08e3 op docs/golf8-plan, niet gepusht | BEVESTIGD | `git branch --contains`: docs/golf8-plan; `git ls-remote --heads origin docs/golf8-plan`: leeg; commit voegt docs/plans/2026-11-07-golf8-plan.md toe (98 regels) |
