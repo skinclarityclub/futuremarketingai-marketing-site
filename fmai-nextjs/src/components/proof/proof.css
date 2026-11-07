@@ -180,3 +180,7 @@
 .g6 .g6-quote img{display:block;width:min(100%,260px);height:auto;margin-top:16px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .g6 .g6-quote p.g6-sm{font-size:14px;color:var(--g6-muted)}
 .g6 .g6-body + .g6-body{margin-top:clamp(28px,4vh,44px)}
+/* golf 7b polish (2026-11-07, visual check on prod): two posts side by side keep their own height, so the shorter
+   LinkedIn text card does not end in an empty block; and the note above the three tones gets room before the cards. */
+.g6 .g6-two > .g6-quote{align-self:start}
+.g6 .g6-vs{margin-top:14px}
