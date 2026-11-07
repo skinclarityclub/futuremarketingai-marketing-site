@@ -11,6 +11,7 @@ const pages = [
   { path: '/apply', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/case-studies', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/case-studies/skinclarity-club', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/case-studies/saleslobe', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills', changeFrequency: 'monthly' as const, priority: 0.9 },
   { path: '/skills/social-media', changeFrequency: 'monthly' as const, priority: 0.8 },
   { path: '/skills/blog-factory', changeFrequency: 'monthly' as const, priority: 0.8 },

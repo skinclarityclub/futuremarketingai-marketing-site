@@ -152,7 +152,7 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
 
 **How it went:** one workspace with one memory for the whole client. Clyde made each draft in the voice of the account; the draft stayed in the app until it was approved, and then went live at the time from the calendar (the club at 10:00, Sindy at 12:30, the webshop at 18:00). Do not name who approved.
 
-**Second client:** SalesLobe (B2B): Clyde makes the brand's Instagram and the LinkedIn of the founder. Both are on https://future-marketing.ai/nl/case-studies.
+**Second client:** SalesLobe (B2B): since 5 October 2026 Clyde makes the brand's Instagram and the LinkedIn of the founder, Paul den Hartogh, in English. Before the first content month the voice was captured in a voice round with three real posts in versions and six choices by Paul. Case: https://future-marketing.ai/nl/case-studies/saleslobe. Both cases are on https://future-marketing.ai/nl/case-studies.
 
 No result figures are published for these cases; do not quote numbers, revenue or reach.`,
  keywords: [

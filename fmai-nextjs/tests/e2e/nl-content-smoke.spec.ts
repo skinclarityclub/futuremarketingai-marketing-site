@@ -23,6 +23,7 @@ const pages = [
   { path: '/nl/memory', name: 'memory', expected: ['Elke klant een eigen merkstem en geheugen', 'Vier bronnen, per klant'] },
   { path: '/nl/case-studies', name: 'cases-hub', expected: ['Clyde bij twee echte klanten', 'SalesLobe'] },
   { path: '/nl/case-studies/skinclarity-club', name: 'case-study-skc', expected: ['Drie Instagram-accounts', 'Een week bij SkinClarity Club'] },
+  { path: '/nl/case-studies/saleslobe', name: 'case-study-saleslobe', expected: ['eerst de stem', 'Eén onderwerp, twee stemmen'] },
   { path: '/nl/skills/clyde', name: 'skill-clyde', expected: ['AI-collega', 'orkestreert'] },
   { path: '/nl/skills/social-media', name: 'skill-social', expected: ['verzorgt je social media', 'merkstem'] },
   { path: '/nl/skills/voice-agent', name: 'skill-voice', expected: ['Clyde neemt de telefoon op', 'escalatie'] },

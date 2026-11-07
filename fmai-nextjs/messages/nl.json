@@ -1351,6 +1351,7 @@
       "roadmap": "Roadmap",
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
+      "case_studies_sl": "SalesLobe",
       "skills_index": "Vaardigheden",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
@@ -3456,10 +3457,7 @@
     "posts": {
       "skc-club-boodschappen": "Carrousel van SkinClarity Club, de club: Een acne-bewuste boodschappenlijst: waar begin je?",
       "skc-shop-enzympeeling": "Carrousel van SkinClarity Club, de webshop: Enzympeeling of zuur: wanneer kies je wat?",
-      "skc-huid-conservering": "Carrousel van SkinClarity Club, de huidtherapeut: Conserveringsmiddelen zijn niet de vijand in je kastje",
-      "sl-same-leads": "Instagram-carrousel van SalesLobe: Same leads. More revenue.",
-      "sl-three-kinds": "Instagram-carrousel van SalesLobe: Slow replies leak. Wrong ones burn the lead.",
-      "sl-not-right-now": "Instagram-carrousel van SalesLobe: Not right now is not not interested."
+      "skc-huid-conservering": "Carrousel van SkinClarity Club, de huidtherapeut: Conserveringsmiddelen zijn niet de vijand in je kastje"
     },
     "hub": {
       "meta": {
@@ -3503,12 +3501,12 @@
           "link": "Lees de case"
         },
         "sl": {
-          "postsLabel": "Drie echte posts van SalesLobe",
-          "label": "Instagram",
-          "caption": "Echte posts van SalesLobe op Instagram, geplaatst in oktober 2026.",
+          "postsLabel": "Drie slides uit de carrousel van 27 oktober",
+          "caption": "Echte carrousel van SalesLobe op Instagram, geplaatst op 27 oktober 2026.",
           "eyebrow": "B2B · sinds oktober 2026",
           "title": "SalesLobe",
-          "text": "Clyde draait de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. B2B, dus met een andere toon dan huidverzorging."
+          "text": "Clyde draait de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. B2B, dus met een andere toon dan huidverzorging.",
+          "link": "Lees de case"
         }
       },
       "faq": {
@@ -3650,6 +3648,152 @@
       },
       "client": {
         "description": "Nederlands huidverzorgingsmerk met een club, een webshop en een huidtherapeut."
+      }
+    },
+    "sl": {
+      "meta": {
+        "title": "Case SalesLobe: B2B-content op Instagram en LinkedIn",
+        "description": "Hoe Clyde de Instagram van SalesLobe en de LinkedIn van oprichter Paul den Hartogh maakt: eerst de stem vastleggen, dan de content."
+      },
+      "hero": {
+        "eyebrow": "Case · B2B",
+        "title": "SalesLobe: B2B-content met Clyde, eerst de stem.",
+        "definition": "Clyde maakt de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. Elke post in de eigen stem en huisstijl van SalesLobe, goedgekeurd in de app en daarna op het geplande moment gepubliceerd.",
+        "factsLabel": "Kort",
+        "facts": {
+          "channels": {
+            "label": "Kanalen",
+            "value": "Instagram en LinkedIn"
+          },
+          "since": {
+            "label": "Sinds",
+            "value": "5 oktober 2026"
+          },
+          "october": {
+            "label": "Online in oktober",
+            "value": "23 posts: 9 op Instagram, 14 op LinkedIn"
+          }
+        }
+      },
+      "two": {
+        "title": "Eén onderwerp, twee stemmen.",
+        "sub": "Op 23 oktober vertelde Paul op LinkedIn waarom \"not right now\" geen nee is. Vier dagen later ging hetzelfde idee als carrousel op de Instagram van SalesLobe. Op LinkedIn spreekt Paul zelf, in de ik-vorm en met een verhaal uit zijn eigen werk. Op Instagram spreekt het merk: korter, op slides en met hashtags.",
+        "liLabel": "LinkedIn · Paul den Hartogh · 23 oktober",
+        "liNote": "De post is hier ingekort.",
+        "igLabel": "Instagram · SalesLobe · 27 oktober",
+        "igAlt": "Eerste slide van de Instagram-carrousel van SalesLobe: Not right now is not not interested.",
+        "caption": "Echte posts van SalesLobe, geplaatst op 23 en 27 oktober 2026."
+      },
+      "slides": {
+        "title": "De carrousel, slide voor slide.",
+        "sub": "Eén gedachte per slide, van het verschil tussen \"later\" en \"nee\" tot wat het kost als je ze verwisselt. De laatste slide zegt wat SalesLobe doet.",
+        "stripLabel": "Zes slides van de carrousel van 27 oktober, scrollbaar",
+        "of": "{n} van 6",
+        "alts": {
+          "s01": "Slide 1: Not right now is not not interested. In a busy inbox they look the same.",
+          "s02": "Slide 2: One means: ask me later. The other means: stop.",
+          "s03": "Slide 3: Mix them up and it costs you.",
+          "s04": "Slide 4: So give later a real date.",
+          "s05": "Slide 5: Now do that across every client inbox.",
+          "s06": "Slide 6: SalesLobe sorts every reply and drafts the answer."
+        },
+        "caption": "Echte carrousel van SalesLobe op Instagram, geplaatst op 27 oktober 2026."
+      },
+      "voice": {
+        "title": "Eerst de stem, dan de content.",
+        "sub": "Voor de eerste contentmaand legden we de stem van SalesLobe vast. Paul kreeg drie echte posts uit zijn eerste week, elk in twee of drie versies die op één punt verschillen, en zes keuzes die in elke post terugkomen. Pas daarna begon de contentmaand.",
+        "note": "De opening van dezelfde LinkedIn-post in drie tonen. De boodschap is gelijk, alleen de toon verschilt.",
+        "versions": {
+          "a": "Versie A · strak en zakelijk",
+          "b": "Versie B · strak maar persoonlijk · gekozen",
+          "c": "Versie C · los en kort"
+        },
+        "caption": "Echte stemronde voor SalesLobe, september 2026. Bij alle drie de posts koos Paul versie B.",
+        "choicesTitle": "Zes keuzes van Paul.",
+        "choicesSub": "Ze gelden voor elke post die daarna is geschreven, op beide kanalen.",
+        "choicesLabel": "Zes keuzes van Paul",
+        "choices": {
+          "who": {
+            "label": "Wie spreekt op LinkedIn",
+            "value": "Paul zelf, in de ik-vorm"
+          },
+          "spelling": {
+            "label": "Spelling",
+            "value": "Amerikaans"
+          },
+          "emoji": {
+            "label": "Emoji en hashtags",
+            "value": "Alleen op Instagram"
+          },
+          "cta": {
+            "label": "Een oproep op LinkedIn",
+            "value": "Ongeveer één op de drie posts"
+          },
+          "numbers": {
+            "label": "Cijfers",
+            "value": "Een rekensom, met de aannames erbij"
+          },
+          "autopilot": {
+            "label": "Het woord autopilot",
+            "value": "Alleen als tegenstelling"
+          }
+        }
+      },
+      "live": {
+        "title": "Hoe een post live gaat.",
+        "sub": "Hetzelfde werk als bij huidverzorging, met een andere stem: Engelstalig, voor bedrijven, en op LinkedIn met de oprichter als afzender.",
+        "steps": {
+          "concept": {
+            "title": "Clyde maakt het concept",
+            "text": "In de stem en huisstijl van SalesLobe, vanuit wat Clyde over het merk onthoudt."
+          },
+          "approve": {
+            "title": "Goedkeuren in de app",
+            "text": "Elk concept staat in de app tot het is goedgekeurd. Aanpassen of overslaan kan ook."
+          },
+          "live": {
+            "title": "Gepubliceerd op het geplande moment",
+            "text": "Daarna publiceert de app de post op Instagram of LinkedIn, op de tijd uit de agenda."
+          }
+        },
+        "links": {
+          "memory": "Hoe het geheugen per klant werkt",
+          "skc": "De case van SkinClarity Club"
+        }
+      },
+      "faq": {
+        "title": "Vragen over deze case.",
+        "sub": "Wat bureaus willen weten over B2B-content met Clyde.",
+        "items": {
+          "channels": {
+            "q": "Welke kanalen maakt Clyde voor SalesLobe?",
+            "a": "De Instagram van het merk en de LinkedIn van de oprichter, Paul den Hartogh."
+          },
+          "language": {
+            "q": "In welke taal schrijft Clyde voor SalesLobe?",
+            "a": "In het Engels, met Amerikaanse spelling. Dat koos Paul in de stemronde."
+          },
+          "voice": {
+            "q": "Hoe is de stem van SalesLobe vastgelegd?",
+            "a": "Vóór de eerste contentmaand, met drie echte posts in versies en zes keuzes van Paul."
+          },
+          "results": {
+            "q": "Staan er resultaten in deze case?",
+            "a": "Nee. Deze case laat zien hoe het werk loopt en wat er live ging, niet wat het opleverde. Cijfers over omzet of leads zijn van SalesLobe."
+          }
+        },
+        "links": {
+          "all": "Alle cases"
+        }
+      },
+      "end": {
+        "title": "Ook B2B-klanten in je portfolio?",
+        "sub": "Een gesprek van 30 minuten. Daarna weet je of Clyde past bij je klanten.",
+        "cta": "Vraag een gesprek aan",
+        "link": "Alle cases"
+      },
+      "client": {
+        "description": "B2B-merk van oprichter Paul den Hartogh."
       }
     }
   },

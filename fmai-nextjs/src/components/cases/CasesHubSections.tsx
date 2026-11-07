@@ -1,7 +1,7 @@
 // Ported by hand from the approved prototype design/ronde1b/golf7-cases.tpl.html (2026-11-02 website-audit folder,
 // golf 7, r3, Daley's yes 2026-11-07). Same markup and classes; every text node is a key under case_studies.hub.
-// SkinClarity Club stays in the past tense until posts go live again (last post 2026-10-27). The SalesLobe card has
-// no case link until Paul approves the SalesLobe case (PR 7b).
+// SkinClarity Club stays in the past tense until posts go live again (last post 2026-10-27). Golf 7b (Paul's yes
+// 2026-11-07): the SalesLobe card shows the first three slides of the "not right now" carousel and links to its case.
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
@@ -15,7 +15,7 @@ const SKC_POSTS = [
   ['skc-shop-enzympeeling', 'shop'],
   ['skc-huid-conservering', 'huid'],
 ] as const
-const SL_POSTS = ['sl-same-leads', 'sl-three-kinds', 'sl-not-right-now'] as const
+const SL_SLIDES = ['s01', 's02', 's03'] as const
 const FAQ_KEYS = ['real', 'agency', 'live', 'results'] as const
 const POST_SIZES = '(max-width: 860px) 30vw, 180px'
 
@@ -89,17 +89,17 @@ export async function CasesHubSections({ locale }: { locale: string }) {
             <article className="g6-card g6-case">
               <figure className="g6-shot">
                 <div className="g6-posts" aria-label={t('hub.clients.sl.postsLabel')}>
-                  {SL_POSTS.map((img) => (
-                    <div className="g6-post" key={img}>
+                  {SL_SLIDES.map((s, i) => (
+                    <div className="g6-post" key={s}>
                       <Image
-                        src={`/home/klanten/${img}.webp`}
+                        src={`/proof/sl-notnow-${s}.webp`}
                         width={720}
                         height={900}
                         sizes={POST_SIZES}
-                        alt={t(`posts.${img}`)}
+                        alt={t(`sl.slides.alts.${s}`)}
                         loading="lazy"
                       />
-                      <p>{t('hub.clients.sl.label')}</p>
+                      <p>{t('sl.slides.of', { n: i + 1 })}</p>
                     </div>
                   ))}
                 </div>
@@ -110,6 +110,11 @@ export async function CasesHubSections({ locale }: { locale: string }) {
               <p className="g6-eb">{t('hub.clients.sl.eyebrow')}</p>
               <h3>{t('hub.clients.sl.title')}</h3>
               <p>{t('hub.clients.sl.text')}</p>
+              <div className="g6-links">
+                <Link className="g6-lk" href="/case-studies/saleslobe" prefetch={false}>
+                  {t('hub.clients.sl.link')} <Arrow />
+                </Link>
+              </div>
             </article>
           </div>
         </div>

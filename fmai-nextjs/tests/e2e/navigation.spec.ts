@@ -86,6 +86,7 @@ test.describe('Marketing Pages', () => {
     { path: '/en/roadmap', name: 'Roadmap' },
     { path: '/en/case-studies', name: 'Cases' },
     { path: '/en/case-studies/skinclarity-club', name: 'Case Study SKC' },
+    { path: '/en/case-studies/saleslobe', name: 'Case Study SalesLobe' },
   ]
 
   for (const { path, name } of marketingPages) {

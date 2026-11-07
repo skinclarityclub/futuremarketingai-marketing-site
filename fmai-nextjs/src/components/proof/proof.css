@@ -169,3 +169,14 @@
 
 /* site: the shared Breadcrumbs component renders nav > ol > li with a chevron, the prototype had plain links */
 .g6 .g6-crumb ol,.g6 .g6-crumb li{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+
+/* golf 7b (SalesLobe case, prototype r4): a carousel as a strip that scrolls inside its frame; versions side by side with
+   the chosen one marked; a post image inside a post card. Verbatim from golf6.css, block "golf 7b r4". */
+.g6 .g6-strip{display:grid;grid-template-columns:repeat(6,minmax(140px,1fr));gap:clamp(10px,1.2vw,16px);overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.g6 .g6-strip:focus-visible{outline:2px solid var(--g6-teal);outline-offset:3px}
+.g6 .g6-vs .g6-eb{color:var(--g6-muted)}
+.g6 .g6-vs .g6-pick{box-shadow:0 0 0 1.5px rgba(94,234,212,.7)}
+.g6 .g6-vs .g6-pick .g6-eb{color:var(--g6-teal)}
+.g6 .g6-quote img{display:block;width:min(100%,260px);height:auto;margin-top:16px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.g6 .g6-quote p.g6-sm{font-size:14px;color:var(--g6-muted)}
+.g6 .g6-body + .g6-body{margin-top:clamp(28px,4vh,44px)}
