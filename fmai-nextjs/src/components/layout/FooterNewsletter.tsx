@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { ArrowRight, Check } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -17,7 +17,8 @@ export function FooterNewsletter() {
   const t = useTranslations('common.landing.footer.newsletter')
   const locale = useLocale()
   const [email, setEmail] = useState('')
-  const [consent, setConsent] = useState(true)
+  // Off by default (golf 8b, Daley 2026-11-07): consent has to be an active tick
+  const [consent, setConsent] = useState(false)
   const [website, setWebsite] = useState('') // honeypot
   const [status, setStatus] = useState<Status>('idle')
 
@@ -50,7 +51,7 @@ export function FooterNewsletter() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2.5" noValidate>
+    <form onSubmit={handleSubmit} className="flex flex-wrap items-end gap-2.5" noValidate>
       {/* Honeypot, hidden from real users */}
       <input
         type="text"
@@ -62,12 +63,9 @@ export function FooterNewsletter() {
         aria-hidden="true"
         className="sr-only"
       />
-      <div className="flex items-stretch gap-1.5">
-        <label htmlFor="footer-newsletter-email" className="sr-only">
-          {t('label')}
-        </label>
+      <label className="flex flex-[1_1_200px] flex-col gap-1.5 text-[12.5px] font-semibold text-[#a3adbd]">
+        {t('label')}
         <input
-          id="footer-newsletter-email"
           type="email"
           required
           value={email}
@@ -75,39 +73,33 @@ export function FooterNewsletter() {
           placeholder={t('placeholder')}
           autoComplete="email"
           disabled={status === 'submitting' || status === 'success'}
-          className="flex-1 min-w-0 rounded-lg border border-border-primary bg-bg-elevated/60 px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:border-accent-system/50 focus:outline-none focus:ring-2 focus:ring-accent-system/20 disabled:opacity-60 transition-colors"
+          className="h-[42px] rounded-[10px] bg-white/[0.02] px-3 text-[14.5px] font-normal text-[#f4f7fb] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)] placeholder:text-text-muted focus:outline-none focus:shadow-[inset_0_0_0_1px_rgba(94,234,212,0.6)] disabled:opacity-60 transition-shadow"
         />
-        <button
-          type="submit"
-          disabled={status === 'submitting' || status === 'success' || !email || !consent}
-          aria-label={t('cta')}
-          className="shrink-0 inline-flex items-center justify-center rounded-lg bg-accent-system px-3 py-2 text-bg-deep transition-all hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
-        >
-          {status === 'success' ? (
-            <Check className="w-4 h-4" aria-hidden />
-          ) : (
-            <ArrowRight className="w-4 h-4" aria-hidden />
-          )}
-        </button>
-      </div>
-      <label className="flex items-start gap-2 text-[11px] text-text-muted leading-snug cursor-pointer">
+      </label>
+      <button
+        type="submit"
+        disabled={status === 'submitting' || status === 'success' || !email || !consent}
+        className="inline-flex h-[42px] shrink-0 items-center justify-center gap-1.5 rounded-[10px] px-4 text-[14.5px] font-semibold text-[#5eead4] shadow-[inset_0_0_0_1px_rgba(94,234,212,0.5)] transition-colors hover:bg-[#5eead4]/10 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+      >
+        {status === 'success' && <Check className="w-4 h-4" aria-hidden />}
+        {t('cta')}
+      </button>
+      <label className="flex basis-full items-start gap-2 text-[12.5px] leading-[1.45] text-[#a3adbd] cursor-pointer">
         <input
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 h-3 w-3 shrink-0 rounded border-border-primary bg-bg-elevated text-accent-system focus:ring-accent-system/30 focus:ring-1"
+          className="mt-px h-4 w-4 shrink-0 accent-[#5eead4]"
         />
         <span>{t('consent')}</span>
       </label>
       {status === 'success' && (
-        <p className="text-xs text-accent-system flex items-center gap-1.5">
+        <p className="basis-full text-xs text-accent-system flex items-center gap-1.5">
           <Check className="w-3 h-3" aria-hidden />
           {t('success')}
         </p>
       )}
-      {status === 'error' && (
-        <p className="text-xs text-error">{t('error')}</p>
-      )}
+      {status === 'error' && <p className="basis-full text-xs text-error">{t('error')}</p>}
     </form>
   )
 }

@@ -222,7 +222,7 @@ export async function SkillPageTemplate({
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Skills', path: '/skills' },
+          { name: tBreadcrumbs('skills_index'), path: '/skills' },
           { name: skill?.name ?? slug, path: `/skills/${slug}` },
         ]}
         locale={locale}

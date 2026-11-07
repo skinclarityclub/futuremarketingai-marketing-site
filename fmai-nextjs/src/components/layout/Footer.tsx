@@ -1,5 +1,4 @@
 import { getTranslations } from 'next-intl/server'
-import { BrandMark } from '@/components/marketing/BrandMark'
 import { Link } from '@/i18n/navigation'
 import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { CookieReopenButton } from './CookieReopenButton'
@@ -9,40 +8,71 @@ interface FooterProps {
   locale: string
 }
 
-type SkillHref =
-  | '/skills/social-media'
-  | '/skills/blog-factory'
-  | '/skills/voice-agent'
-  | '/skills/lead-qualifier'
-  | '/skills/ad-manager'
-  | '/skills/reel-builder'
-  | '/skills/email-management'
-  | '/skills/manychat'
-  | '/skills/reporting'
-  | '/skills/research'
-  | '/skills/seo-geo'
-  | '/skills/clyde'
+// Golf 8b (2026-11-07, prototype R/golf8-nav.tpl.html): six columns that link only to pages that exist.
+// Research, ManyChat, Voice Agent and Reel Builder stay off until golf 9 adds Strategie and Binnenkort;
+// the /skills hub still links them. Labels live in common.landing.footer.{sections,nav}.
+const COLUMNS = [
+  {
+    key: 'clyde',
+    links: [
+      { key: 'clyde', href: '/skills/clyde' },
+      { key: 'client_portal', href: '/client-portal' },
+      { key: 'memory', href: '/memory' },
+      { key: 'trust', href: '/trust' },
+      { key: 'alternatives', href: '/alternatives' },
+    ],
+  },
+  {
+    key: 'makes',
+    links: [
+      { key: 'social_media', href: '/skills/social-media' },
+      { key: 'blog_factory', href: '/skills/blog-factory' },
+      { key: 'lead_qualifier', href: '/skills/lead-qualifier' },
+      { key: 'reporting', href: '/skills/reporting' },
+      { key: 'seo_geo', href: '/skills/seo-geo' },
+      { key: 'ad_creator', href: '/skills/ad-manager' },
+      { key: 'email_management', href: '/skills/email-management' },
+      { key: 'all_skills', href: '/skills' },
+    ],
+  },
+  {
+    key: 'cases',
+    links: [
+      { key: 'skc', href: '/case-studies/skinclarity-club' },
+      { key: 'saleslobe', href: '/case-studies/saleslobe' },
+      { key: 'caseStudies', href: '/case-studies' },
+    ],
+  },
+  {
+    key: 'company',
+    links: [
+      { key: 'about', href: '/about' },
+      { key: 'how_it_works', href: '/how-it-works' },
+      { key: 'pricing', href: '/pricing' },
+      { key: 'contact', href: '/contact' },
+      { key: 'apply', href: '/apply' },
+    ],
+  },
+  {
+    key: 'learn',
+    links: [
+      { key: 'kennisbank', href: '/kennisbank' },
+      { key: 'assessment', href: '/assessment' },
+    ],
+  },
+  {
+    key: 'legal',
+    links: [
+      { key: 'privacy', href: '/legal/privacy' },
+      { key: 'terms', href: '/legal/terms' },
+      { key: 'cookies', href: '/legal/cookies' },
+      // No anchor: /trust has no #dpa, only tr-* ids on its headings
+      { key: 'dpa', href: '/trust' },
+    ],
+  },
+] as const
 
-interface FooterSkill {
-  href: SkillHref
-  navKey: string
-  comingSoon?: boolean
-}
-
-const FOOTER_SKILLS: readonly FooterSkill[] = [
-  { href: '/skills/clyde', navKey: 'clyde' },
-  { href: '/skills/social-media', navKey: 'social_media' },
-  { href: '/skills/blog-factory', navKey: 'blog_factory' },
-  { href: '/skills/voice-agent', navKey: 'voice_agent', comingSoon: true },
-  { href: '/skills/lead-qualifier', navKey: 'lead_qualifier' },
-  { href: '/skills/email-management', navKey: 'email_management' },
-  { href: '/skills/manychat', navKey: 'manychat' },
-  { href: '/skills/ad-manager', navKey: 'ad_creator' },
-  { href: '/skills/reel-builder', navKey: 'reel_builder', comingSoon: true },
-  { href: '/skills/reporting', navKey: 'reporting' },
-  { href: '/skills/research', navKey: 'research' },
-  { href: '/skills/seo-geo', navKey: 'seo_geo' },
-]
+const LINK_CLASS = 'text-[14.5px] leading-[1.4] text-[#c4ccd8] hover:text-[#f4f7fb] transition-colors'
 
 export async function Footer({ locale }: FooterProps) {
   const t = await getTranslations({ locale, namespace: 'common' })
@@ -50,217 +80,65 @@ export async function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="relative mt-16 bg-bg-deep">
-      {/* Decorative top accent line — subtle accent-system gradient scanline */}
       <div
         aria-hidden="true"
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-system/40 to-transparent"
       />
       <div className="border-t border-border-primary/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          {/* 4-column bento: Brand+Newsletter | Skills | Company | Resources */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-10">
-            {/* Brand + Newsletter (4 cols on lg) */}
-            <div className="lg:col-span-4 flex flex-col gap-4">
-              <Link href="/" className="flex items-center gap-2.5 group w-fit">
-                <LogoSynapse size={26} />
-                <span className="font-display font-bold text-base text-text-primary tracking-tight">
-                  {t('landing.footer.brand_name')}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-[clamp(36px,5vw,56px)] pb-7">
+          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-end gap-x-12 gap-y-6 pb-7 border-b border-white/[0.08]">
+            <div>
+              <Link href="/" className="flex items-center gap-2.5 w-fit">
+                <LogoSynapse size={28} />
+                <span className="font-display font-bold text-lg tracking-tight text-[#f4f7fb]">
+                  FutureMarketing<span className="text-accent-system">AI</span>
                 </span>
               </Link>
-              <p className="text-sm text-text-muted max-w-xs leading-relaxed">
+              <p className="mt-3 max-w-[44ch] text-[15px] leading-[1.55] text-[#c4ccd8]">
                 {t('landing.footer.tagline')}
               </p>
-              <div className="pt-2">
-                <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-2.5">
-                  {t('landing.footer.eyebrow.brand')}
-                </p>
-                <FooterNewsletter />
-              </div>
             </div>
-
-            {/* Skills column (4 cols on lg, 2-col internal grid) */}
-            <nav aria-label={t('landing.footer.sections.skills')} className="lg:col-span-4">
-              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
-                {t('landing.footer.eyebrow.skills')}
-              </p>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {FOOTER_SKILLS.map((skill) => (
-                  <li key={skill.navKey}>
-                    <Link
-                      href={skill.href}
-                      className="text-sm text-text-muted hover:text-text-primary transition-colors inline-flex items-center gap-1.5 min-w-0 max-w-full group/skill"
-                    >
-                      <span
-                        aria-hidden
-                        className={`inline-block w-1.5 h-1.5 shrink-0 rounded-full transition-all ${
-                          skill.comingSoon
-                            ? 'bg-[#F5A623]/60 group-hover/skill:bg-[#F5A623]'
-                            : 'bg-status-active/70 group-hover/skill:bg-status-active'
-                        }`}
-                      />
-                      <span className="truncate">{t(`landing.footer.nav.${skill.navKey}`)}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            {/* Company column (2 cols on lg) */}
-            <nav aria-label={t('landing.footer.sections.company')} className="lg:col-span-2">
-              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
-                {t('landing.footer.eyebrow.company')}
-              </p>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.about')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/how-it-works"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.how_it_works')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.pricing')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/alternatives"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.alternatives')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing#founding"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.founding_member')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/case-studies"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.caseStudies')}
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-
-            {/* Resources column (2 cols on lg) */}
-            <nav aria-label={t('landing.footer.sections.resources')} className="lg:col-span-2">
-              <p className="font-mono uppercase tracking-[0.18em] text-[10px] text-accent-system mb-3">
-                {t('landing.footer.eyebrow.resources')}
-              </p>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/apply"
-                    className="text-sm font-medium text-accent-system hover:opacity-80 transition-opacity"
-                  >
-                    {t('landing.footer.nav.apply')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/memory"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.memory')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/kennisbank"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.kennisbank')}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.contact')}
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <FooterNewsletter />
           </div>
 
-          {/* Bottom strip: copyright + status + legal + social + cookie-reopen */}
-          <div className="pt-6 border-t border-border-primary/60">
-            <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <p className="text-xs text-text-muted">
-                  {t('landing.footer.copyright', { year })}
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-x-6 gap-y-7 py-8">
+            {COLUMNS.map((col) => (
+              <nav key={col.key} aria-label={t(`landing.footer.sections.${col.key}`)}>
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-[#a3adbd]">
+                  {t(`landing.footer.sections.${col.key}`)}
                 </p>
-                <div className="flex items-center gap-3">
-                  <Link
-                    href="/trust"
-                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.trust')}
-                  </Link>
-                  <Link
-                    href="/legal/privacy"
-                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.privacy')}
-                  </Link>
-                  <Link
-                    href="/legal/terms"
-                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.terms')}
-                  </Link>
-                  <Link
-                    href="/legal/cookies"
-                    className="text-xs text-text-muted hover:text-text-primary transition-colors"
-                  >
-                    {t('landing.footer.nav.cookies')}
-                  </Link>
-                  <CookieReopenButton />
-                </div>
-              </div>
+                <ul className="mt-3.5 flex flex-col gap-[9px]">
+                  {col.links.map((link) => (
+                    <li key={link.key}>
+                      <Link href={link.href} className={LINK_CLASS}>
+                        {t(`landing.footer.nav.${link.key}`)}
+                      </Link>
+                    </li>
+                  ))}
+                  {col.key === 'legal' && (
+                    <li>
+                      <CookieReopenButton />
+                    </li>
+                  )}
+                </ul>
+              </nav>
+            ))}
+          </div>
 
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://www.linkedin.com/company/futuremarketingai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 rounded-md text-text-muted hover:text-accent-system hover:bg-white/5 transition-all"
-                  aria-label={t('landing.footer.social_aria.linkedin')}
-                >
-                  <BrandMark name="linkedin" className="w-4 h-4" />
-                </a>
-                {/* No X/Twitter link: twitter.com/FutureMarketAI and x.com/FutureMarketAI
-                    both 404, TWITTER_URL is null in seo-config so it never reached sameAs,
-                    llms.txt lists no X profile, and the client's own account_keys are
-                    li-founder, li-company, threads, ig-main, tiktok and website — there is
-                    no X account. It was a dead link on every page of the site.
-
-                    Instagram, TikTok and Threads ARE real channels and belong here and in
-                    Organization.sameAs; their profile URLs are not stored anywhere in the
-                    repo or the database, so adding them needs the actual handles. */}
-              </div>
-            </div>
+          <div className="flex flex-wrap justify-between gap-3 pt-5 border-t border-white/[0.08] text-[13px] text-[#a3adbd]">
+            <p>{t('landing.footer.copyright', { year })}</p>
+            {/* No X/Twitter: twitter.com/FutureMarketAI and x.com/FutureMarketAI both 404 and there is no X
+                account. Instagram, TikTok and Threads are real channels but their profile URLs are not stored
+                anywhere in the repo or the database, so adding them needs the actual handles. */}
+            <a
+              href="https://www.linkedin.com/company/futuremarketingai"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('landing.footer.social_aria.linkedin')}
+              className="hover:text-[#f4f7fb] transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

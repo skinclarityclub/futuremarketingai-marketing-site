@@ -1270,53 +1270,48 @@
     },
     "landing": {
       "footer": {
-        "brand_name": "Future Marketing AI",
-        "tagline": "Clyde, de AI-collega van je bureau. Tien vaardigheden vandaag, twee binnenkort, één systeem dat alles verbindt.",
-        "copyright": "© {year} Future Marketing AI. Alle rechten voorbehouden.",
+        "brand_name": "FutureMarketingAI",
+        "tagline": "Clyde, de AI-collega van je bureau. Eén geheugen per klant, en niets gaat live zonder jou.",
+        "copyright": "© {year} FutureMarketingAI. Alle rechten voorbehouden.",
         "sections": {
-          "skills": "Vaardigheden",
+          "clyde": "Clyde",
+          "makes": "Wat Clyde maakt",
+          "cases": "Cases",
           "company": "Bedrijf",
-          "resources": "Bronnen"
+          "learn": "Leren",
+          "legal": "Juridisch"
         },
         "nav": {
-          "content_creator": "Content Creator",
-          "voice_agent": "Voice Agent",
-          "lead_qualifier": "Lead Qualifier",
-          "social_media": "Social Media",
-          "ad_creator": "Ad Manager",
-          "reel_builder": "Reel Builder",
-          "reporting": "Rapportage",
-          "email_management": "Email Management",
-          "manychat": "ManyChat DM",
-          "research": "Research",
-          "pricing": "Prijzen",
+          "clyde": "Werken met Clyde",
+          "client_portal": "Je klant kijkt mee",
+          "memory": "Geheugen per klant",
+          "trust": "Vertrouwen",
           "alternatives": "Alternatieven",
+          "social_media": "Social media",
+          "blog_factory": "Blogs",
+          "lead_qualifier": "Van post naar aanvraag",
+          "reporting": "Rapportage",
+          "seo_geo": "SEO en GEO",
+          "ad_creator": "Advertenties",
+          "email_management": "E-mail",
+          "all_skills": "Alle vaardigheden",
+          "skc": "SkinClarity Club",
+          "saleslobe": "SalesLobe",
+          "caseStudies": "Alle cases",
           "about": "Over ons",
-          "how_it_works": "Hoe het werkt",
-          "founding_member": "Founding Member",
-          "blog": "Blog",
-          "kennisbank": "Kennisbank",
+          "how_it_works": "Werkwijze",
+          "pricing": "Prijzen",
           "contact": "Contact",
+          "apply": "Vraag een gesprek aan",
+          "kennisbank": "Kennisbank",
+          "assessment": "AI-scan voor bureaus",
           "privacy": "Privacy",
           "terms": "Voorwaarden",
           "cookies": "Cookies",
-          "apply": "Vraag een gesprek aan",
-          "memory": "Geheugensysteem",
-          "caseStudies": "Case studies",
-          "blog_factory": "Blog Factory",
-          "seo_geo": "SEO / GEO",
-          "clyde": "Clyde Orchestrator",
-          "trust": "Vertrouwen"
+          "dpa": "Verwerkersovereenkomst op aanvraag"
         },
         "social_aria": {
-          "linkedin": "Volg ons op LinkedIn",
-          "twitter": "Volg ons op X"
-        },
-        "eyebrow": {
-          "brand": "Nieuwsbrief",
-          "skills": "Vaardigheden",
-          "company": "Bedrijf",
-          "resources": "Bronnen"
+          "linkedin": "Volg ons op LinkedIn"
         },
         "newsletter": {
           "label": "E-mailadres",
@@ -1325,10 +1320,6 @@
           "consent": "Ik wil updates over Clyde per e-mail en mag me altijd uitschrijven.",
           "success": "Check je inbox voor de bevestigingsmail.",
           "error": "Aanmelden lukte niet. Probeer het later opnieuw."
-        },
-        "labels": {
-          "live": "Live",
-          "comingSoon": "Binnenkort"
         }
       }
     },
@@ -1352,7 +1343,7 @@
       "case_studies": "Cases",
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
-      "skills_index": "Vaardigheden",
+      "skills_index": "Wat Clyde maakt",
       "skill_social_media": "Social Media",
       "skill_blog_factory": "Blog Factory",
       "skill_voice_agent": "Voice Agent",
@@ -4872,106 +4863,45 @@
   },
   "nav": {
     "login": "Inloggen",
-    "apply": "Vraag een gesprek aan",
-    "assessment": "Doe de AI-Scan"
+    "apply": "Vraag een gesprek aan"
   },
   "header": {
-    "skills": {
-      "create": {
-        "label": "Maak en Publiceer",
-        "description": "Contentproductie op schaal",
-        "items": {
-          "socialMedia": {
-            "title": "Social Media",
-            "description": "Captions, inplanning, carrousels en stories"
-          },
-          "blogFactory": {
-            "title": "Blog Factory",
-            "description": "SEO- en GEO-artikelen per klant, van onderwerp tot publicatie"
-          },
-          "adCreator": {
-            "title": "Ad Manager",
-            "description": "Meta-ads maken en volgen op leads en CPL"
-          },
-          "reelBuilder": {
-            "title": "Reel Builder",
-            "description": "Verticale video's met captions en muziek"
-          }
-        }
-      },
-      "engage": {
-        "label": "Engage en Converteer",
-        "description": "Leadcapture en klantinteractie",
-        "items": {
-          "voiceAgent": {
-            "title": "Voice Agent",
-            "description": "Inkomende en uitgaande AI-telefoongesprekken"
-          },
-          "leadQualifier": {
-            "title": "Lead Qualifier",
-            "description": "Van Instagram-reactie naar lead"
-          },
-          "emailManagement": {
-            "title": "Email Management",
-            "description": "Inbox-triage voor Gmail en Outlook, met conceptantwoorden"
-          },
-          "manychat": {
-            "title": "ManyChat DM",
-            "description": "Instagram DM-triggers met AI-antwoorden"
-          }
-        }
-      },
-      "grow": {
-        "label": "Groei en Optimaliseer",
-        "description": "Analyse, onderzoek en werken met Clyde",
-        "items": {
-          "reporting": {
-            "title": "Reporting",
-            "description": "Dashboards, digests en anomaliewaarschuwingen"
-          },
-          "seoGeo": {
-            "title": "SEO / GEO Analyst",
-            "description": "SEO-audits en AI-citatiemonitoring"
-          },
-          "research": {
-            "title": "Research",
-            "description": "Marktonderzoek en trendmonitoring"
-          },
-          "clyde": {
-            "title": "Clyde, AI-collega",
-            "description": "Bereidt het werk voor, jij beslist"
-          }
-        }
-      },
-      "comingSoon": "Binnenkort"
-    },
     "nav": {
-      "skills": "Vaardigheden",
-      "memory": "Geheugen",
-      "caseStudies": "Cases",
-      "kennisbank": "Kennisbank",
-      "pricing": "Prijzen",
+      "clyde": "Clyde",
       "howItWorks": "Werkwijze",
-      "foundingMember": "Founding",
-      "about": "Over"
+      "caseStudies": "Cases",
+      "pricing": "Prijzen",
+      "kennisbank": "Kennisbank",
+      "about": "Over ons"
     },
-    "cta": {
-      "applyTitle": "Apply",
-      "applySubtitle": "Vraag een gesprek aan"
-    },
-    "megaMenu": {
-      "tagline": "10 live, 2 binnenkort",
-      "previewCta": "Bekijk de vaardigheid",
-      "viewAll": "Alle vaardigheden"
-    },
-    "priceMenu": {
-      "pricing": {
-        "subtitle": "Alle abonnementen en tiers"
-      },
-      "foundingMember": {
-        "subtitle": "Vast tarief zolang je klant blijft"
-      },
-      "spots": "max. {total} plekken"
+    "clydeMenu": {
+      "intro": "De AI-collega van je bureau. Hoe je met hem werkt, wat hij maakt en wat je klant ziet.",
+      "items": {
+        "week": {
+          "title": "Een week met Clyde",
+          "description": "Maandag tot zondag bij een bureau met vijf klanten"
+        },
+        "working": {
+          "title": "Werken met Clyde",
+          "description": "Wat hij zelf doet, wat hij voorlegt, wat alleen jij doet"
+        },
+        "makes": {
+          "title": "Wat Clyde maakt",
+          "description": "Strategie, social media, blogs, rapportage en meer"
+        },
+        "clientPortal": {
+          "title": "Je klant kijkt mee",
+          "description": "Een portaal op naam van je bureau"
+        },
+        "memory": {
+          "title": "Geheugen per klant",
+          "description": "Merkstem en feedback, per klant apart"
+        },
+        "trust": {
+          "title": "Vertrouwen",
+          "description": "Waar de data van je klanten staat"
+        }
+      }
     }
   },
   "chat": {

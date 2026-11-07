@@ -21,7 +21,7 @@ export function CookieReopenButton() {
     <button
       type="button"
       onClick={() => window.dispatchEvent(new CustomEvent('fmai:cookie-reopen'))}
-      className="text-xs text-text-muted hover:text-text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
+      className="text-left text-[14.5px] leading-[1.4] text-[#c4ccd8] hover:text-[#f4f7fb] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system rounded-sm"
     >
       {t('reopenLink')}
     </button>
