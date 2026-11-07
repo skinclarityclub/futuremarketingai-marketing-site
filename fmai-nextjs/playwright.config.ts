@@ -37,6 +37,16 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    // Phones (Daley 2026-11-08: "zorg dat we mobile e2e kunnen testen"). The whole suite runs here too; specs that
+    // only make sense on a desktop layout skip themselves on `isMobile`. mobile-sweep.spec.ts runs only here.
+    {
+      name: 'mobile-chrome',
+      use: { ...devices['Pixel 7'] },
+    },
+    {
+      name: 'mobile-safari',
+      use: { ...devices['iPhone 13'] },
+    },
   ],
 
   webServer: process.env.PLAYWRIGHT_BASE_URL

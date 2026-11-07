@@ -39,7 +39,24 @@ test.describe('Home hero 3 (/nl)', () => {
     await expect(pause).toHaveAttribute('aria-label', 'Pauzeer de animatie')
   })
 
-  test('the Clyde button is its round mark over the hero, the full pill further down (K1 B)', async ({ page }) => {
+  // Daley 2026-11-08: "de pauze knop voor de animatie linksonder ... dan kan het geheel meer omhoog". Red before: the
+  // button sat top-right above the h1 (y 78-122 on 390x844) and the h1 started at y 140.
+  test('on a phone the pause button sits bottom-left in the scene and the copy starts under the header', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/nl')
+    const hero = (await page.locator('#hero').boundingBox())!
+    const stage = (await page.locator('#hero .stage').boundingBox())!
+    const pause = (await page.locator('#hero #pause').boundingBox())!
+    const h1 = (await page.locator('#hero h1').boundingBox())!
+    expect(pause.x).toBeLessThanOrEqual(24)
+    expect(pause.y).toBeGreaterThanOrEqual(stage.y)
+    expect(pause.y + pause.height).toBeLessThanOrEqual(hero.y + hero.height)
+    expect(pause.y + pause.height).toBeGreaterThan(hero.y + hero.height - 80)
+    expect(h1.y).toBeLessThan(hero.y + 60)
+  })
+
+  test('the Clyde button is its round mark over the hero and further down (Daley 2026-11-08)', async ({ page }) => {
     await page.goto('/nl')
     const fab = page.locator('[data-clyde-launcher]')
     await expect(fab).toHaveAttribute('data-quiet', 'true')
@@ -48,6 +65,9 @@ test.describe('Home hero 3 (/nl)', () => {
     expect(box && Math.round(box.height)).toBe(44)
     await page.getByRole('contentinfo').scrollIntoViewIfNeeded()
     await expect(fab).toHaveAttribute('data-quiet', 'false')
+    // quiet now only holds the whisper back; the shape stays the round mark
+    const below = await fab.boundingBox()
+    expect(below && Math.round(below.width)).toBe(44)
   })
 
   test('the round mark is there from the first paint, so an early click does not miss a shrinking pill', async ({
@@ -70,8 +90,8 @@ test.describe('Home hero on /en stays the old one', () => {
     await expect(page.locator('section[aria-label="Hero"]')).toHaveCount(1)
     await expect(page.locator('#hero[data-b]')).toHaveCount(0)
     expect(await page.locator('link[rel="preload"][href*="clyde-kring-poster"]').count()).toBeGreaterThan(0)
-    // no quiet section on /en: the pill, never the round mark
+    // no quiet section on /en, and still the round mark: it is the shape everywhere (Daley 2026-11-08)
     const box = await page.locator('[data-clyde-launcher]').boundingBox()
-    expect(box && box.width).toBeGreaterThan(60)
+    expect(box && Math.round(box.width)).toBe(44)
   })
 })

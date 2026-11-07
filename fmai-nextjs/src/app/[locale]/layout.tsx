@@ -12,7 +12,6 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Providers } from '@/components/providers/Providers'
 import { MotionRoot } from '@/components/motion/MotionRoot'
-import { FloatingLocaleSwitcher } from '@/components/common/FloatingLocaleSwitcher'
 import { ClientIslands } from '@/components/providers/ClientIslands'
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -77,7 +76,6 @@ export default async function LocaleLayout({
             <Providers>
               <OrganizationJsonLd />
               <Header locale={locale} />
-              <FloatingLocaleSwitcher />
               {children}
               <Footer locale={locale} />
               {/*

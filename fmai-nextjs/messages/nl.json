@@ -5,7 +5,6 @@
   },
   "stickyCta": {
     "label": "Vraag een gesprek aan",
-    "subLabel": "30 min met Daley",
     "dismiss": "Sluit mobiele CTA-balk",
     "srLandmark": "Snelle actie"
   },
@@ -53,18 +52,12 @@
         "desktop": "Dashboard, telefoon en WhatsApp. Niets gaat live zonder akkoord van jou en je klant.",
         "mobile": "Jij stuurt, Clyde doet het werk, je klant keurt goed."
       },
-      "sceneDescription": "In de kalender van Nova Digital staan de posts van vijf klanten voor de week van 9 november, op Instagram, LinkedIn, Facebook en X. Mondzorg Meerkade keurt een LinkedIn-post goed op de eigen telefoon. Dagspa Luwte keurt een reel goed voor Instagram en Facebook. Krijt & Staal keurt een Instagram-story goed. Daarna komt het weekrapport van Luwte als PDF in WhatsApp.",
+      "sceneDescription": "In de kalender van Nova Digital staan de posts van vijf klanten voor de week van 9 november, op Instagram, LinkedIn en X. Mondzorg Meerkade keurt een LinkedIn-post goed op de eigen telefoon. Dagspa Luwte keurt een Instagram-reel goed. Krijt & Staal keurt een Instagram-story goed. Daarna komt het weekrapport van Luwte als PDF in WhatsApp.",
       "screens": {
         "n1": "Jij stuurt",
         "n10": "19:00",
         "n11": "Dagspa Luwte ·",
         "n12": "Vijftig minuten in Luwte",
-        "n13": "19:00",
-        "n14": "Dagspa Luwte ·",
-        "n15": "Vijftig minuten in Luwte",
-        "n16": "19:00",
-        "n17": "Dagspa Luwte ·",
-        "n18": "Vijftig minuten in Luwte",
         "n19": "Clyde doet het werk",
         "n2": "Nova Digital / Content / Kalender",
         "n20": "Clyde",
@@ -1341,8 +1334,8 @@
       "case_studies_skc": "SkinClarity Club",
       "case_studies_sl": "SalesLobe",
       "skills_index": "Wat Clyde maakt",
-      "skill_social_media": "Social Media",
-      "skill_blog_factory": "Blog Factory",
+      "skill_social_media": "Social media",
+      "skill_blog_factory": "Blogs",
       "skill_lead_qualifier": "Van post naar aanvraag",
       "skill_ad_manager": "Ad Manager",
       "skill_email_management": "Email Management",
@@ -2628,109 +2621,111 @@
   },
   "skills-social-media": {
     "meta": {
-      "title": "Social Media Manager: captions en carrousels | Clyde",
-      "description": "Clyde verzorgt social media per merk: AI-captions in de merkstem, inplanning en carrousels, klaar voor publicatie. 1 tot 2 credits per post."
+      "title": "Social media planning tool voor bureaus | Clyde",
+      "description": "Clyde schrijft per klant posts, captions en carrousels in de merkstem en legt ze per dag aan je voor. Na akkoord plant hij ze in; je klant keurt mee."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 01. Social Media Manager",
-      "title": "Clyde verzorgt je social media.",
-      "subtitle": "Captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Per account, per merk. Eén collega voor je hele klantportfolio.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Plan de Instagram-content voor de drie SKC-accounts deze week",
-        "prompt2": "Maak 5 carrouselposts over de winter-routine",
-        "prompt3": "Welke captions presteren het best op LinkedIn voor B2B?"
+      "eyebrow": "Social media",
+      "title": "Social media voor bureaus: Clyde plant, schrijft en wacht op jouw akkoord.",
+      "definition": "Niets gaat live zonder jouw akkoord, en je klant kan meekeuren in zijn eigen portaal. Clyde maakt per klant de posts, captions en carrousels, in de merkstem en de huisstijl van dat merk, en legt ze per dag aan je voor. Wat je goedkeurt, plant hij in op het moment dat in de kalender staat.",
+      "factsLabel": "Kort",
+      "facts": {
+        "client": {
+          "label": "Per klant",
+          "value": "In de eigen merkstem"
+        },
+        "day": {
+          "label": "Per dag",
+          "value": "Beoordelen in één rij"
+        },
+        "approve": {
+          "label": "Akkoord",
+          "value": "Altijd eerst jij"
+        }
+      },
+      "shot": {
+        "bar": "Content · Dagspa Luwte",
+        "scrollLabel": "Het reviewscherm per dag, scrollbaar",
+        "alt": "Het reviewscherm van Dagspa Luwte per dag. Op zondag 8 november wacht de post Na afloop blijf je zitten op goedkeuring, op donderdag 12 november de carrousel Welke behandeling past bij jou?, met per dag de knop Hele dag goedkeuren. De dagen ertussen staan op Alles besloten.",
+        "caption": "Elke dag een rij: wat op jou wacht, en welke dagen al besloten zijn."
       }
     },
-    "features": {
-      "title": "Wat Clyde voor social media doet",
-      "subtitle": "Vier kernfuncties, naadloos geïntegreerd. Elke output past in de merkstem.",
-      "feature1": {
-        "title": "AI-captions in de merkstem",
-        "body": "Clyde schrijft posts en captions die klinken als het merk, op basis van eerder goedgekeurde content, de merkrichtlijnen en jouw correcties."
-      },
-      "feature2": {
-        "title": "Multi-platform inplanning",
-        "body": "Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Eén contentkalender, slepen en neerzetten, preview over alle kanalen."
-      },
-      "feature3": {
-        "title": "Carrousels in de huisstijl",
-        "body": "Educatieve carrousels, meestal 5 tot 7 slides, met templates in de huisstijl. Van idee tot publicatieklare output in één pipeline."
-      },
-      "feature4": {
-        "title": "Prestaties per post",
-        "body": "Bereik, comments, saves en betrokkenheid per post. Wat aanslaat, weegt mee in welke contentpijlers Clyde vaker inplant."
+    "review": {
+      "title": "Je beoordeelt per dag, niet per losse post.",
+      "sub": "Clyde zet de posts van een klant per dag onder elkaar. Een dag met werk zegt hoeveel er op je wacht; een dag zonder werk staat op Alles besloten. Je keurt een post goed, past hem aan of slaat hem over, en met Hele dag goedkeuren doe je een hele dag in één keer.",
+      "cards": {
+        "posts": {
+          "label": "Posts",
+          "text": "Een beeld met een caption in de merkstem van de klant, en de hashtags die bij dat merk passen."
+        },
+        "carousels": {
+          "label": "Carrousels",
+          "text": "Slides in de huisstijl van het merk, die een onderwerp stap voor stap uitleggen."
+        },
+        "channels": {
+          "label": "Kanalen",
+          "text": "Bijvoorbeeld Instagram, Facebook en LinkedIn. Welke kanalen meedoen, hangt af van de accounts die je per klant koppelt."
+        }
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Merkstem-intake",
-        "body": "Tijdens onboarding leest Clyde eerdere content, merkrichtlijnen en doelgroepdata. Bouwt een merkprofiel per merk."
+    "calendar": {
+      "title": "De maand van elke klant op één kalender.",
+      "sub": "Wat je goedkeurt, plant Clyde in op de dag en het uur uit de kalender. In de maandweergave zie je per klant wat gepland staat en wat nog op jou wacht, en de kalender meldt het als er een doordeweekse dag zonder content aankomt.",
+      "shot": {
+        "bar": "Kalender · Dagspa Luwte",
+        "scrollLabel": "Twee weken uit de maandkalender, scrollbaar",
+        "alt": "Twee weken uit de maandkalender van Dagspa Luwte, 16 tot en met 29 november, met per dag de geplande posts en hun tijd, zoals Thee tussendoor om 13:15 en Na afloop blijf je zitten om 18:30.",
+        "caption": "De tweede helft van november voor Dagspa Luwte, in de maandweergave."
       },
-      "step2": {
-        "title": "Contentkalender plannen",
-        "body": "Je geeft thema en frequentie op; Clyde stelt de weekkalender samen met postvoorstellen, captions en hashtags."
+      "link": "Een contentkalender voor meerdere klanten"
+    },
+    "client": {
+      "title": "Je klant keurt mee in zijn eigen portaal.",
+      "sub": "In zijn portaal ziet je klant zijn kalender en de posts die op goedkeuring wachten. Een beheerder van zijn team keurt ze goed; wie alleen meekijkt, ziet wat er komt.",
+      "shot": {
+        "bar": "Klantportaal · Kalender",
+        "scrollLabel": "De kalender in het klantportaal, scrollbaar",
+        "alt": "Het klantportaal van Dagspa Luwte: de kalender met de melding 2 posts wachten op goedkeuring. Een beheerder van je team beoordeelt ze, met daaronder wat vandaag en deze week gepland staat.",
+        "caption": "De kalender in het portaal van Dagspa Luwte, zoals de klant hem ziet."
       },
-      "step3": {
-        "title": "Goedkeuren en publiceren",
-        "body": "Jij beoordeelt de kalender (slepen en neerzetten). Na goedkeuring publiceert Clyde op de geplande tijden en meet de prestaties."
-      }
+      "link": "Het klantportaal"
     },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "De Social Media-vaardigheid deelt context met andere vaardigheden via het gedeelde geheugen per klant.",
-      "integration1": "Blog Factory: social posts afgeleid van blogcontent.",
-      "integration2": "Ad Manager: de best presterende organische content wordt advertentietestmateriaal.",
-      "integration3": "Rapportage: social-KPI's in de wekelijkse prestatie-digest."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "Bureaus met 5 tot 20 merken",
-        "body": "Eén Clyde naast je team, met een eigen merkstem per klant. Hoe jullie als bureau werken, onthoudt hij voor alle klanten."
-      },
-      "useCase2": {
-        "title": "Multi-brand operators",
-        "body": "SkinClarity Club, onze eerste klant, draait 3 Instagram-accounts op één Clyde-setup, elk in een eigen stem. Zie de case study voor concrete output."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "proof": {
-      "title": "SkinClarity Club in actie",
-      "subtitle": "Drie Instagram-accounts, elk in een eigen stem. Bekijk de case study voor screenshots en voorbeelden."
-    },
-    "cta": {
-      "title": "Klaar om social media aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
+    "saleslobe": {
+      "title": "Zo werkt het bij SalesLobe.",
+      "sub": "Clyde maakt de Instagram van SalesLobe en de LinkedIn van de oprichter. Elke post wordt in de app goedgekeurd en daarna op het geplande moment gepubliceerd.",
+      "link": "De case van SalesLobe"
     },
     "faq": {
-      "title": "Veelgestelde vragen over Social Media Manager",
+      "title": "Vragen over social media met Clyde.",
+      "sub": "Wat bureaus willen weten voordat Clyde de posts van een klant maakt.",
       "items": {
-        "q1": {
-          "question": "Wat doet de Social Media Manager-vaardigheid precies?",
-          "answer": "Clyde verzorgt het complete social-proces voor Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube: captions in de merkstem, een contentkalender per account, carrousels in de huisstijl en prestaties per post. Eén collega beheert meerdere merken tegelijk zonder dat tonen door elkaar lopen."
+        "multi": {
+          "q": "Hoe automatiseer ik social media voor meerdere klanten?",
+          "a": "Je zet per klant de merkstem, de huisstijl en de accounts klaar. Daarna schrijft Clyde de posts per klant en legt ze per dag aan je voor. Jij keurt goed, Clyde plant in. Hoe je zo'n kalender opzet, lees je in <link>het artikel over een contentkalender voor meerdere klanten</link>."
         },
-        "q2": {
-          "question": "Welke platforms en tools ondersteunt de Social Media Manager?",
-          "answer": "Publicatie naar Instagram via de Meta-API, en naar Facebook, LinkedIn, X, Threads, TikTok en YouTube via Postiz. Inkomende data wordt verrijkt met inzichten uit Rapportage en Research. Carrousels worden via templates in jouw huisstijl opgemaakt. Geplande posts kunnen in een goedkeuringsworkflow voor publicatie."
+        "approval": {
+          "q": "Publiceert Clyde zonder akkoord?",
+          "a": "Nee. Een post gaat pas live als jij hem hebt goedgekeurd. Tot dat moment staat hij op Wacht op jou."
         },
-        "q3": {
-          "question": "Op welke tiers is de Social Media Manager beschikbaar?",
-          "answer": "Inbegrepen op elke tier. Een post of carrousel kost 1 tot 2 credits. Hoeveel credits en werkruimtes elke tier heeft, staat op de prijspagina."
+        "channels": {
+          "q": "Welke kanalen ondersteunt Clyde?",
+          "a": "Clyde plant voor de social accounts die je per klant koppelt, zoals Instagram, Facebook en LinkedIn. Welke kanalen er bij een klant meedoen, zie je bovenaan zijn kalender."
         },
-        "q4": {
-          "question": "Hoe start Social Media Manager?",
-          "answer": "Clyde leest eerdere content, merkrichtlijnen en doelgroepdata in, en de eerste kalender keur je per post goed. Hoeveel Clyde daarna zelf mag doen, bepaal je per taak."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Buffer of Later?",
-          "answer": "Buffer en Later zijn schedulers, geen content-creators. Jij of een copywriter blijft elke caption en visual schrijven. Clyde combineert creatie, planning en publicatie in één pipeline, met de merkstem van elke klant als vaste context en jouw correcties erbij. Geen losse tools voor copy, visual en planning meer."
+        "client": {
+          "q": "Kan mijn klant zelf goedkeuren?",
+          "a": "Ja, als hij in zijn portaal beheerder is. Dan keurt hij de posts goed in zijn eigen kalender. Wie alleen meekijkt, ziet de posts maar keurt niet. Wat je klant verder ziet, staat op <link>de pagina over het klantportaal</link>."
         }
+      }
+    },
+    "end": {
+      "title": "Eén kalender voor al je klanten.",
+      "sub": "Een gesprek van 30 minuten over de klanten die je nu hebt.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "hub": "Wat Clyde maakt",
+        "blog": "Blogs",
+        "reporting": "Rapportage"
       }
     }
   },
@@ -2754,7 +2749,7 @@
       "title": "Wat Clyde doet",
       "subtitle": "Vier kernfuncties van deze vaardigheid.",
       "feature1": {
-        "title": "Ads maken (10/20 credits)",
+        "title": "Ads maken",
         "body": "Copy, statische visuals in 1080×1080 (Feed) of 1080×1920 (Story of Reel) en korte video-ads met motion graphics. In jouw huisstijl, klaar om te publiceren."
       },
       "feature2": {
@@ -2763,7 +2758,7 @@
       },
       "feature3": {
         "title": "Prestaties per advertentie",
-        "body": "Bereik, klikken, CTR, conversies en ROAS per losse ad, niet alleen per campagne. Eerlijke lege staat zolang er nog geen resultaat is."
+        "body": "Bereik, klikken, CTR, conversies en ROAS per losse ad, niet alleen per campagne. Heeft een advertentie nog geen resultaat, dan zie je dat ook."
       },
       "feature4": {
         "title": "Ad-fatigue en aanbevelingen",
@@ -2795,7 +2790,7 @@
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
-        "title": "E-commerce met veel SKU's",
+        "title": "Bureaus met webshops als klant",
         "body": "Per product meerdere advertentievarianten, en daarna verder met de winnaars. Schalen zonder de bottleneck van een freelance-designer."
       },
       "useCase2": {
@@ -3858,12 +3853,12 @@
   "skills-email-management": {
     "meta": {
       "title": "Email Management. Inbox classificeren | Clyde",
-      "description": "Clyde classificeert je Gmail- of Outlook-inbox, zet labels, meldt elke ochtend wat er binnenkwam en schrijft conceptantwoorden per merk. 5 credits per actie."
+      "description": "Clyde classificeert je Gmail- of Outlook-inbox, zet labels, meldt elke ochtend wat binnenkwam en schrijft conceptantwoorden per merk. 5 credits per actie."
     },
     "hero": {
       "eyebrow": "Vaardigheid 04. Email Management",
       "title": "Clyde classificeert je inbox.",
-      "subtitle": "Geen mailcampagnes: dit is inbox-classificatie voor Gmail en Outlook. Clyde leest inkomende mails, zet ze in de categorieën die jij kiest, geeft elke mail een urgentie en schrijft conceptantwoorden. Je begint je dag met overzicht in plaats van chaos.",
+      "subtitle": "Clyde ordent je inbox in Gmail of Outlook. Hij leest inkomende mails, zet ze in de categorieën die jij kiest, geeft elke mail een urgentie en schrijft conceptantwoorden. Je begint je dag met overzicht in plaats van chaos.",
       "cta": "Vraag een gesprek aan",
       "prompts": {
         "prompt1": "Vat de belangrijkste e-mails van vandaag samen",
@@ -3910,14 +3905,14 @@
       "title": "Werkt samen met",
       "subtitle": "Via het gedeelde geheugen per klant.",
       "integration1": "Merkstem: conceptantwoorden gebruiken de merkstem en eerdere antwoorden van de klant.",
-      "integration2": "Clyde-orchestrator: e-mailcontext deelbaar met andere vaardigheden.",
+      "integration2": "Clyde: de context uit een mail is ook bruikbaar voor de andere vaardigheden.",
       "integration3": "Rapportage: e-mailvolume en reactietijd-metrics."
     },
     "useCases": {
       "title": "Voor wie",
       "useCase1": {
         "title": "Inbox-overload bij bureau-operators",
-        "body": "Met 15 merken in beheer krijg je al snel 100+ mails per dag. Clyde sorteert, jij reageert op wat écht telt."
+        "body": "Met een handvol merken in beheer loopt de inbox snel vol. Clyde sorteert, jij reageert op wat telt."
       },
       "useCase2": {
         "title": "Triage van klantcommunicatie",
@@ -4273,110 +4268,107 @@
   },
   "skills-blog-factory": {
     "meta": {
-      "title": "Blog Factory. SEO-artikelen zoekwoord tot publicatie | Clyde",
-      "description": "Zoekwoord-onderzoek, artikelen in de merkstem, een SEO-check en publicatie na jouw goedkeuring. 15 credits per artikel."
+      "title": "Blog Factory: SEO-blogs per klant in de merkstem | Clyde",
+      "description": "Clyde kiest per klant zoekwoorden waar de site al bijna rankt, schrijft het artikel in de merkstem en zet het klaar voor jouw akkoord."
     },
+    "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
     "hero": {
-      "eyebrow": "Vaardigheid 08. Blog Factory",
-      "title": "Clyde schrijft je SEO-blogs.",
-      "subtitle": "Zoekwoord-onderzoek, artikelen in de merkstem en een SEO-check, en na jouw goedkeuring gepubliceerd op de website. De lengte volgt wat er voor die zoekterm al rankt. Blog Factory is live en blijft in doorontwikkeling.",
-      "cta": "Vraag een gesprek aan",
-      "prompts": {
-        "prompt1": "Schrijf een SEO-artikel over serum voor de gevoelige huid",
-        "prompt2": "Bouw een topic cluster rond hydratatieroutines",
-        "prompt3": "Update meta-beschrijvingen van de tien best gelezen blogs"
+      "eyebrow": "Blog Factory",
+      "title": "Clyde schrijft SEO-blogs voor je klanten.",
+      "definition": "Per klant kiest Clyde een onderwerp uit de zoekwoorden waar de site al bijna rankt, en schrijft er een artikel over in de merkstem van dat merk, met de bronnen erbij. Elk artikel krijgt een kwaliteitstoets en wacht dan op jou. Pas als jij het goedkeurt, wordt het gepubliceerd.",
+      "factsLabel": "Kort",
+      "facts": {
+        "client": {
+          "label": "Per klant",
+          "value": "In de eigen merkstem"
+        },
+        "topic": {
+          "label": "Onderwerp",
+          "value": "Waar de site bijna rankt"
+        },
+        "publish": {
+          "label": "Publiceren",
+          "value": "Na jouw akkoord"
+        }
+      },
+      "shot": {
+        "bar": "Blog Factory · Dagspa Luwte",
+        "scrollLabel": "Artikelen die op review wachten, scrollbaar",
+        "alt": "Blog Factory van Dagspa Luwte, artikelen die op review wachten: Welke olie we gebruiken, en waarom jij kiest, Waarom we beginnen met thee, en De rustruimte: waarom je niet meteen weg hoeft. Elk met een kwaliteitsscore, de scores voor SEO, GEO en E-E-A-T, het zoekwoord, het aantal woorden en de knop Goedkeuren.",
+        "caption": "Artikelen voor Dagspa Luwte die op review wachten."
       }
     },
-    "features": {
-      "title": "Wat Clyde doet",
-      "subtitle": "Vier kernfuncties van deze vaardigheid.",
-      "feature1": {
-        "title": "Zoekwoord-onderzoek en clustering",
-        "body": "Zoekwoorden met veel volume en lage concurrentie in de niche. Clustering naar pijlerpagina's en ondersteunende content."
+    "keywords": {
+      "title": "Het onderwerp komt uit de zoekwoorden.",
+      "sub": "Clyde kijkt per klant naar de zoekwoorden waar de site op de tweede pagina van Google staat, net buiten de top 10. Daar is de afstand tot de eerste pagina het kleinst. Het zoekwoord met de meeste vertoningen waar nog niets over geschreven is, komt eerst.",
+      "shot": {
+        "bar": "SEO / GEO · Zoekwoordposities",
+        "scrollLabel": "Zoekwoordposities in Google, scrollbaar",
+        "alt": "Zoekwoordposities van Dagspa Luwte in Google: dagspa Amsterdam op 4,6, rugmassage Amsterdam op 6,9, gezichtsbehandeling Amsterdam op 11,1, cadeaubon spa Amsterdam op 16,3 en spa voor één persoon op 19,6, elk met de klikratio en de trend.",
+        "caption": "De posities van Dagspa Luwte in Google, met drie zoekwoorden net buiten de eerste pagina."
       },
-      "feature2": {
-        "title": "Lengte die bij de zoekterm past",
-        "body": "Clyde kijkt hoe lang de pagina's zijn die al ranken en schrijft daarnaar. In de merkstem, onderbouwd met bronnen en met een scanbare structuur."
-      },
-      "feature3": {
-        "title": "SEO-optimalisatie",
-        "body": "Meta-description, kopstructuur, interne links en bronnen worden per artikel gecontroleerd. Core Web Vitals meet de SEO/GEO-vaardigheid apart, per pagina."
-      },
-      "feature4": {
-        "title": "Publiceren na goedkeuring",
-        "body": "Naar een MDX-site, een Shopify-blog of met een koppeling op maat naar je eigen site. Concept, beoordeling, publicatie."
+      "link": "SEO en GEO"
+    },
+    "review": {
+      "title": "Goedkeuren of afkeuren, met alles ernaast.",
+      "sub": "Open je een artikel, dan zie je de tekst, het rapport van de toets en hoe het in Google komt te staan: de titel, de beschrijving en het zoekwoord. Klopt het, dan keur je het goed. Klopt het niet, dan keur je het af met een reden, en Clyde maakt een nieuwe versie.",
+      "shot": {
+        "bar": "Blog Factory · Review",
+        "scrollLabel": "Het reviewvenster van een artikel, scrollbaar",
+        "alt": "Het reviewvenster van het artikel Wat er gebeurt tijdens een gezichtsbehandeling, te beoordelen, met overall 84. Het tabblad SEO toont de voorvertoning in Google, de lengte van titel en beschrijving, het doeltrefwoord en de secundaire trefwoorden. Onderaan Afkeuren en Goedkeuren.",
+        "caption": "Het tabblad SEO van een artikel voor Dagspa Luwte."
       }
     },
-    "how": {
-      "title": "Hoe het werkt",
-      "step1": {
-        "title": "Zoekwoord-strategie per merk",
-        "body": "Clyde zoekt dagelijks naar zoekwoorden die bij het merk passen en clustert ze naar content-thema's."
+    "client": {
+      "title": "Wat je klant ziet.",
+      "sub": "Goedgekeurde en gepubliceerde artikelen staan in het portaal van je klant, onder Blogs. Hij leest ze daar; aanpassen doe jij.",
+      "cards": {
+        "check": {
+          "label": "De toets",
+          "text": "Elk artikel krijgt scores voor SEO, GEO, E-E-A-T en leesbaarheid voordat het bij jou komt."
+        },
+        "approval": {
+          "label": "Jouw akkoord",
+          "text": "Niets wordt gepubliceerd zonder dat jij het goedkeurt. Ook daarna houdt de toets een artikel tegen als een bron of een kwaliteitspunt niet klopt."
+        },
+        "expert": {
+          "label": "Een expert van de klant",
+          "text": "Moet een vakexpert van je klant een artikel eerst lezen, dan keurt die het in het portaal goed of stuurt het terug met een opmerking."
+        }
       },
-      "step2": {
-        "title": "Artikelen plannen",
-        "body": "Kies welke zoekwoorden je wilt aanpakken. Clyde maakt een outline en schrijft. Jij beoordeelt in het reviewscherm: goedkeuren of met opmerkingen terugsturen."
-      },
-      "step3": {
-        "title": "Publiceren en monitoren",
-        "body": "Na goedkeuring publiceert Clyde. SEO-posities worden parallel bijgehouden door de SEO/GEO-vaardigheid."
-      }
-    },
-    "integrations": {
-      "title": "Werkt samen met",
-      "subtitle": "Via het gedeelde geheugen per klant.",
-      "integration1": "SEO/GEO Analyst: blog-posities worden bijgehouden en Core Web Vitals gemonitord.",
-      "integration2": "Social Media: een artikel kan de basis zijn voor social posts.",
-      "integration3": "Research: trenddata voedt de keuze van onderwerpen."
-    },
-    "useCases": {
-      "title": "Voor wie",
-      "useCase1": {
-        "title": "E-commerce met SEO-focus",
-        "body": "Artikelen rond je producten die organisch verkeer opbouwen, in de stem van het merk."
-      },
-      "useCase2": {
-        "title": "B2B-contentmarketing",
-        "body": "Thought leadership-blogs in de niche. Clyde werkt jouw expertise uit tot volwaardige artikelen."
-      }
-    },
-    "allocation": {
-      "title": "Creditkosten en beschikbaarheid per tier",
-      "subtitle": "Wat deze vaardigheid kost per actie, en hoeveel er in elk tier is inbegrepen."
-    },
-    "cta": {
-      "title": "Klaar om blogproductie aan Clyde over te dragen?",
-      "subtitle": "Vraag een gesprek aan. We bespreken hoe deze vaardigheid past bij jouw merken.",
-      "button": "Vraag een gesprek aan"
+      "link": "Het klantportaal"
     },
     "faq": {
-      "title": "Veelgestelde vragen over Blog Factory",
+      "title": "Vragen over de Blog Factory.",
+      "sub": "Wat bureaus willen weten voordat Clyde de blogs van een klant schrijft.",
       "items": {
-        "q1": {
-          "question": "Wat doet de Blog Factory-vaardigheid precies?",
-          "answer": "Clyde schrijft SEO-artikelen, van zoekwoord-onderzoek tot publicatie. De lengte volgt de zoekintentie en de pagina's die al ranken. Elk artikel krijgt een meta-description, een kopstructuur en interne links, en gaat na jouw goedkeuring naar de website. Clyde schrijft in de merkstem, op basis van eerder goedgekeurde content en jouw correcties."
+        "topics": {
+          "q": "Hoe kiest Clyde de onderwerpen?",
+          "a": "Uit de zoekwoorden waar de site van je klant net buiten de eerste pagina van Google staat. Wil je zelf een onderwerp, dan geef je dat op met Nieuwe blog."
         },
-        "q2": {
-          "question": "Waar publiceert Blog Factory?",
-          "answer": "Naar een MDX-site, een Shopify-blog of, met een koppeling op maat, naar je eigen site. Werkt je bureau met een ander CMS, bespreek het in het eerste gesprek. De hoofdafbeelding van een artikel lever je zelf aan."
+        "voice": {
+          "q": "Schrijft Clyde in de stem van mijn klant?",
+          "a": "Ja. Per klant leg je de stem vast: de toon, de doelgroep, de woorden die wel en niet passen, en voorbeelden van bestaande teksten. Clyde schrijft vanuit die instellingen."
         },
-        "q3": {
-          "question": "Op welke tiers is Blog Factory beschikbaar?",
-          "answer": "Growth 8 artikelen per maand, Professional 20, Enterprise zonder plafond, Founding 12. Een artikel kost 15 credits. Extra artikelen via creditpacks bijkoopbaar."
+        "approval": {
+          "q": "Gaat er iets live zonder mijn akkoord?",
+          "a": "Nee. Een artikel wordt alleen gepubliceerd als het is goedgekeurd. Zolang het op jou wacht, staat het op Te beoordelen."
         },
-        "q4": {
-          "question": "Hoe start Blog Factory voor een nieuw merk?",
-          "answer": "Clyde leest bij de start eerdere artikelen van het merk als voorbeeld voor de stem. Daarna keur je elk artikel goed voordat het online gaat, en je feedback neemt hij mee in het volgende."
-        },
-        "q5": {
-          "question": "Hoe verschilt dit van Jasper of SurferSEO?",
-          "answer": "Jasper is een prompt-tool, jij bouwt elke keer de structuur. SurferSEO controleert SEO-kwaliteit. Clyde levert het volledige artikel: keyword-clustering, schrijven, optimaliseren, publiceren, met geheugen voor jouw stijl en eerdere onderwerpen. Geen handmatig knippen-plakken tussen 3 tools."
+        "seo": {
+          "q": "Hoe hangt dit samen met SEO en GEO?",
+          "a": "De Blog Factory haalt zijn onderwerpen uit de posities die Clyde per klantsite bijhoudt. Hoe de site daarna klimt, en of AI-assistenten het artikel als bron noemen, zie je op <link>de pagina over SEO en GEO</link>."
         }
       }
     },
-    "screenshot": {
-      "alt": "Het Blog Factory-scherm met vier concepten klaar voor review, per merk.",
-      "caption": "Generatie, review en publicatie vanuit één scherm"
+    "end": {
+      "title": "Een blog per klant, in zijn eigen stem.",
+      "sub": "Een gesprek van 30 minuten over de klanten die je nu hebt.",
+      "cta": "Vraag een gesprek aan",
+      "links": {
+        "hub": "Wat Clyde maakt",
+        "seo": "SEO en GEO",
+        "social": "Social media"
+      }
     }
   },
   "skills-seo-geo": {
@@ -4848,7 +4840,7 @@
           "a": "Vooral ChatGPT, individueel gebruik per medewerker",
           "b": "ChatGPT plus 1 tot 2 vaste tools, teambreed gedeeld",
           "c": "Stack van 5+ AI-tools, onderling gekoppeld",
-          "d": "AI-orchestrator stuurt meerdere tools per workflow autonoom"
+          "d": "Een AI-agent stuurt meerdere tools per workflow zelf aan"
         }
       },
       "q10": {

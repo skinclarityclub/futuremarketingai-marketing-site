@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const SKILLS = ['clyde', 'social-media', 'lead-qualifier', 'email-management'] as const
+const SKILLS = ['clyde', 'ad-manager', 'lead-qualifier', 'email-management'] as const
 
 for (const slug of SKILLS) {
   test(`skill page ${slug} renders with new template parts`, async ({ page }) => {

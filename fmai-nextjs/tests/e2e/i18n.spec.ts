@@ -37,9 +37,8 @@ test.describe('Locale Switcher', () => {
   test('should show locale switcher in header', async ({ page }) => {
     await page.goto('/en')
 
-    // Locale switcher button showing current locale
-    const localeButton = page.locator('button[aria-label="Change language"]')
-    await expect(localeButton).toBeVisible()
+    // one link in the header bar to the other locale (golf 9b, Daley 2026-11-08)
+    await expect(page.locator('header').getByRole('link', { name: 'Nederlands (NL)' })).toBeVisible()
   })
 
   test('should be able to switch to NL locale', async ({ page }) => {
@@ -49,14 +48,11 @@ test.describe('Locale Switcher', () => {
     await expect(page.locator('h1').first()).toBeVisible()
   })
 
-  test('locale switcher button should be visible', async ({ page }) => {
-    await page.goto('/en')
-    const localeButton = page.locator('button[aria-label="Change language"]')
-    await expect(localeButton).toBeVisible({ timeout: 5000 })
-    // Button shows a flag emoji for the current locale (UK flag for EN)
-    const buttonText = await localeButton.textContent()
-    expect(buttonText).toBeTruthy()
-    expect(buttonText!.length).toBeGreaterThan(0)
+  test('locale switcher keeps the page and changes the locale', async ({ page }) => {
+    await page.goto('/nl/pricing')
+    await page.locator('header').getByRole('link', { name: 'English (EN)' }).click()
+    await expect(page).toHaveURL(/\/en\/pricing$/)
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   })
 })
 

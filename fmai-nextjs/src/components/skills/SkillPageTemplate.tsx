@@ -40,7 +40,6 @@ import { SkillStickyToc } from './SkillStickyToc'
  * dus er staat geen klantdata op.
  */
 const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
-  'blog-factory': '/screenshots/blog-factory.webp',
   reporting: '/screenshots/weekrapport.webp',
   // seo-geo stond hier even NIET: dat scherm toonde op de demo-organisatie
   // "GA4 niet gekoppeld", streepjes bij citaties en positie, en "Geen data" bij
@@ -64,10 +63,8 @@ const SKILL_SCREENSHOTS: Record<string, string | undefined> = {
 const SKILL_ARTICLES: Record<string, string[]> = {
   clyde: ['ai-marketing-medewerker', 'ai-agent-vs-ai-tool-marketing', 'ai-marketing-agent-geheugen-en-leren'],
   'seo-geo': ['geo-generative-engine-optimization', 'zichtbaarheid-meten-ai-overviews', 'geo-monitoring-tools-chatgpt-perplexity'],
-  'blog-factory': ['geo-generative-engine-optimization', 'geo-vs-seo-waar-investeren-2026', 'ai-marketing-automation-voor-bureaus'],
   reporting: ['meetbare-ai-marketing-resultaten', 'ai-marketing-resultaat-in-de-praktijk', 'ai-efficientie-marketingbureau'],
   'ad-manager': ['meetbare-ai-marketing-resultaten', 'ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush'],
-  'social-media': ['ai-marketing-automation-voor-bureaus', 'clyde-vs-jasper-chatgpt-semrush', 'ai-marketing-resultaat-in-de-praktijk'],
   'lead-qualifier': ['ai-agent-vs-ai-tool-marketing', 'meetbare-ai-marketing-resultaten', 'marketingbureau-schalen-met-ai'],
   'email-management': ['ai-efficientie-marketingbureau', 'ai-marketing-automation-voor-bureaus', 'marketingbureau-schalen-met-ai'],
 }

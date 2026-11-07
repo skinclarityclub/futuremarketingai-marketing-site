@@ -11,8 +11,7 @@ interface FloatingButtonProps {
 /**
  * Post-mount Clyde trigger rendered inside ChatWidget when the chat is
  * minimized. Matches ClydePresence so the identity stays consistent
- * before and after first interaction: same sparkle mark + "Clyde"
- * wordmark in a pill.
+ * before and after first interaction: the same round sparkle mark, no wordmark.
  *
  * While the panel is open the trigger renders nothing: the panel header
  * carries its own close button, and the old circular X that stayed on
@@ -32,15 +31,14 @@ export function FloatingButton({
       onClick={onClick}
       aria-label="Open chat met Clyde"
       data-clyde-launcher
-      className="clyde-fab group fixed right-6 fab-rest z-[61] inline-flex items-center gap-2 rounded-full border border-accent-system/40 bg-bg-elevated/95 py-2.5 pl-3 pr-4 text-text-primary backdrop-blur-md outline-none transition-[box-shadow,transform,bottom] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system"
+      className="clyde-fab group fixed right-6 fab-rest z-[61] inline-flex h-11 items-center rounded-full border border-accent-system/40 bg-bg-elevated/95 px-[10px] text-text-primary backdrop-blur-md outline-none transition-[box-shadow,transform,bottom] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-system"
       style={{ boxShadow: 'var(--shadow-glow)' }}
     >
       <LogoSynapse size={22} ariaLabel="" />
-      <span className="font-display text-sm font-semibold tracking-tight">Clyde</span>
       {hasUnread && (
         <span
           aria-hidden="true"
-          className="relative ml-1 flex h-2 w-2 items-center justify-center rounded-full bg-error"
+          className="absolute right-1.5 top-1.5 flex h-2 w-2 items-center justify-center rounded-full bg-error"
         >
           <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-error opacity-60" />
         </span>

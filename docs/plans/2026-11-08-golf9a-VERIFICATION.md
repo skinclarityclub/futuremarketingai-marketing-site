@@ -55,3 +55,19 @@ Geen regressie gevonden: elke rode test is ook rood op prod of wordt groen met m
 ## Akkoord op de diff
 
 Diffpagina `A/alle-paginas/golf9a-diff/index.html` (A = `.../design/siteplan`), vault-note `Agency/Rapporten/2026-11-08 Golf 9a diff`. Daley, één AskUserQuestion op 2026-11-08, met de negen punten erin (pricing en de DM-limieten bij Lead Qualifier, voorwaarden artikel 2 en de datum, voorwaarden artikel 1, /en home, de brede strategietegel, 308 in plaats van 301, microfoon uit, de sitemapdatums, Engelse tekst in es): **"Ja, push en merge"**.
+
+## Live
+
+| Stap | Bewijs | Uitkomst |
+|---|---|---|
+| PR | `gh pr create`, #105 | Vercel-preview `dpl_6cuUfxAWAFCP27hpGnNbiL3s7gzt` Ready, checks groen |
+| Preview | `MSYS_NO_PATHCONV=1 vercel curl <pad> --deployment https://futuremarketingai-6wunk3n3s-future-marketing-ai.vercel.app` | `/nl/skills`, `/en/skills`, `/nl/skills/strategy`, `/en/skills/strategy` met de nieuwe titles en ankers; `/nl/skills/manychat` 308 |
+| Merge | `gh pr merge 105 --squash` | squash `2b511e89`, 2026-11-07 19:38:18Z (02:38 lokaal op 11-08, dus `PAGE_DATES` 2026-11-08 klopt) |
+| Prod-deploy | `vercel inspect future-marketing.ai` | `dpl_6xy1oeYTE56SXwwsZRSxAUXKrtMZ`, production, Ready (aangemaakt 3 s na de merge); `/nl/skills/strategy` 200 na 98 s |
+| curl prod | dezelfde set als lokaal | 4x 200; 12x 308 met dezelfde bestemmingen als lokaal; sitemap 73 URL's, 0 oude paden; `words9a.py` op 16 pagina's plus llms gelijk aan lokaal (Voice Agent en Reel Builder alleen als binnenkort, Gemini 1x in llms-full.txt) |
+| PSI, ronde 1 | `m-psi.mjs <url> 3`, ~3 min na de deploy, 12 verschillende `fetchTime`'s | `/nl/skills` mobiel 100, 100, 93 (LCP = FCP 1,2 / 1,2 / 2,3 s, `p.g6-def`), desktop 3x 100 (LCP 0,6 s, het eerste scherm). `/nl/skills/strategy` mobiel 95, 93, 100 (LCP = FCP 2,0 / 2,3 / 1,2 s), desktop 3x 100. JSON `ronde1b/g9/psi9a/nl_skills*/` |
+| PSI, ronde 2 | idem met `?r=2`, ~20 min na de deploy, 12 verschillende `fetchTime`'s | `/nl/skills` mobiel 3x 100 (LCP 1,2 s), desktop 3x 100 (LCP 0,5-0,6 s). `/nl/skills/strategy` mobiel 100, 100, 99 (LCP 1,2 s), desktop 3x 100 (LCP 0,5 s). JSON `ronde1b/g9/psi9a/*-r2/` |
+
+De lagere mobiele runs in ronde 1 hebben LCP gelijk aan FCP (2,0 tot 2,3 s) op de hero-tekst: hetzelfde beeld als bij 8b direct na een deploy (koude edge). In ronde 2 zijn alle mobiele runs 99 of 100.
+
+Deze live-sectie en de status in het plan staan op branch `docs/golf9a-live` (vanaf `2b511e89`, niet gepusht) en gaan mee met de volgende website-PR (9b).
