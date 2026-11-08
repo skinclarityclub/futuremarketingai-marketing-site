@@ -83,7 +83,9 @@ export const PAGE_DATES: Record<string, string> = {
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
   '/': '2026-11-08',
   '/memory': '2026-11-07',
-  '/apply': '2026-11-06',
+  // 2026-11-08 golf 9c: /apply and /contact got titles and metas under the limits, /skills/clyde lost the WhatsApp
+  // one-tap line. Move these to the merge day if it slips.
+  '/apply': '2026-11-08',
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
   '/case-studies': '2026-11-07',
   '/case-studies/skinclarity-club': '2026-11-07',
@@ -107,11 +109,11 @@ export const PAGE_DATES: Record<string, string> = {
   '/skills/strategy': '2026-11-08',
   '/skills/lead-qualifier': '2026-11-08',
   '/skills/email-management': '2026-11-08',
-  '/skills/clyde': '2026-11-07',
+  '/skills/clyde': '2026-11-08',
   '/pricing': '2026-11-08',
   '/alternatives': '2026-11-07',
   '/about': '2026-11-06',
-  '/contact': '2026-11-05',
+  '/contact': '2026-11-08',
   '/how-it-works': '2026-11-07',
   '/legal': '2026-11-05',
   '/kennisbank': '2026-06-02',
