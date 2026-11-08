@@ -164,7 +164,7 @@ const SKILL_TEXT: Record<'en' | 'es', Record<string, SkillText>> = {
     clyde: {
       shortDescription: 'The AI colleague who puts the other skills to work.',
       longDescription:
-        'Clyde is your agency's AI colleague. Give instructions in natural language. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.',
+        "Clyde is your agency's AI colleague. Give instructions in natural language. Works in the dashboard, in the web app on your home screen and on WhatsApp. Has per-client memory and remembers earlier conversations, preferences and context.",
       features: [
         'Natural language instructions',
         'Drafts, proposals and fixed tasks per client',
