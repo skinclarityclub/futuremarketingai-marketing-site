@@ -85,10 +85,11 @@ const CLIENT_COUNT_LABELS: Record<string, string> = {
 }
 
 const TIER_LABELS: Record<string, string> = {
-  founding: 'Founding Member (997 EUR per maand, vast zolang klant)',
-  growth: 'Growth (499 EUR per werkruimte, 2 tot 4 merken)',
-  professional: 'Professional (399 EUR per werkruimte, 5 tot 14 merken)',
-  enterprise: 'Enterprise (299 EUR per werkruimte, 15+ merken)',
+  founding: 'Founding (1.297 EUR per maand excl. btw, 5 klantmerken inbegrepen)',
+  // Old tiers stay as labels: an application sent before 2026-11-09 can still carry them.
+  growth: 'Growth (oud pakket, niet meer te koop)',
+  professional: 'Professional (oud pakket, niet meer te koop)',
+  enterprise: 'Enterprise (oud pakket, niet meer te koop)',
   unsure: 'Nog onduidelijk',
 }
 

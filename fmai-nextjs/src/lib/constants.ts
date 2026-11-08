@@ -1,12 +1,14 @@
 /**
  * Shared constants — SSoT for numbers used across multiple pages.
  *
- * WHY: prevents drift when home/pricing/founding-member all reference the
- * same capacity numbers. There is no "taken" count: no founding org pays yet, so a
- * number of taken spots cannot be proven (Daley 2026-10-12, counter out).
+ * WHY: prevents drift when home/pricing/apply all reference the same capacity
+ * numbers. FOUNDING_SPOTS_TAKEN counts signed agencies on Founding A1.4 only;
+ * legacy, demo and internal orgs never count (plan A1.4 §8). Raise it by hand
+ * when a contract is signed, never before.
  */
 
-export const FOUNDING_SPOTS_TOTAL = 10
+export const FOUNDING_SPOTS_TOTAL = 3
+export const FOUNDING_SPOTS_TAKEN = 0
 
 // ISO 8601 date string.
 //

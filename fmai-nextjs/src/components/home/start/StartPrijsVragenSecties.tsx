@@ -282,86 +282,8 @@ export function StartPrijsVragenView({ t }: { t: HomeT }) {
             {' '}
           </div>
           {' '}
-          <div className="gp-tw" role="region" aria-labelledby="gp-tc" tabIndex={0}>
-            {' '}
-            <table className="gp-tab">
-              {' '}
-              <caption id="gp-tc" className="gp-sr">
-                {t("prijs.table.caption")}
-              </caption>
-              {' '}
-              <thead>
-                <tr>
-                  <th scope="col">
-                    {t("prijs.table.head.n1")}
-                  </th>
-                  <th scope="col">
-                    {t("prijs.table.head.n2")}
-                  </th>
-                  <th scope="col">
-                    {t("prijs.table.head.n3")}
-                  </th>
-                  <th scope="col">
-                    {t("prijs.table.head.n4")}
-                  </th>
-                </tr>
-              </thead>
-              {' '}
-              <tbody>
-                {' '}
-                <tr>
-                  <th scope="row">
-                    {t("prijs.table.rows.n1")}
-                  </th>
-                  <td>
-                    {t("prijs.table.cells.n1")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n2")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n3")}
-                  </td>
-                </tr>
-                {' '}
-                <tr>
-                  <th scope="row">
-                    {t("prijs.table.rows.n2")}
-                  </th>
-                  <td>
-                    {t("prijs.table.cells.n4")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n5")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n6")}
-                  </td>
-                </tr>
-                {' '}
-                <tr>
-                  <th scope="row">
-                    {t("prijs.table.rows.n3")}
-                  </th>
-                  <td>
-                    {t("prijs.table.cells.n7")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n8")}
-                  </td>
-                  <td>
-                    {t("prijs.table.cells.n9")}
-                  </td>
-                </tr>
-                {' '}
-              </tbody>
-              {' '}
-            </table>
-            {' '}
-          </div>
-          {' '}
           <p className="gp-ent">
-            {t("prijs.enterprise")}
+            {t("prijs.regular")}
           </p>
           {' '}
           <div className="gp-fit">

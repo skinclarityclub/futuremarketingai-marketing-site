@@ -1,39 +1,40 @@
 import { JsonLd } from './JsonLd'
-import { FOUNDING, TIER_PRICING, WORKSPACE_TIER_KEYS, type WorkspaceTierPricing } from '@/lib/pricing-data'
+import { FOUNDING, CREDIT_PACKS } from '@/lib/pricing-data'
 import { ORG_ID, SITE_URL } from '@/lib/seo-config'
 
 const SELLER = { '@id': ORG_ID } as const
-const TIER_NAMES = { GROWTH: 'Growth', PROFESSIONAL: 'Professional', ENTERPRISE: 'Enterprise' } as const
+type Founding = typeof FOUNDING
 
 // One text per indexable locale; nl is the default (es is no longer a locale).
 const COPY = {
   nl: {
     app: 'Clyde, de AI-collega voor marketingbureaus: strategie, content, goedkeuring, publicatie en rapportage per klantmerk.',
-    founding: (f: typeof FOUNDING) =>
-      `Founding partner: ${f.includedWorkspaces} klantmerken inbegrepen, €${f.pricePerExtraWorkspace} per extra klantmerk per maand, ${f.credits} credits per maand, €0 onboarding en een directe WhatsApp-lijn met Daley. Het tarief blijft vast zolang je klant blijft.`,
-    workspace: (name: string, c: WorkspaceTierPricing) =>
-      `${name}: €${c.pricePerWorkspace} per klantmerk per maand, ${
-        c.maxWorkspaces === -1 ? `vanaf ${c.minWorkspaces}` : `${c.minWorkspaces} tot ${c.maxWorkspaces}`
-      } klantmerken, ${c.creditsPerWorkspace} credits per klantmerk per maand, eenmalige onboarding €${c.onboardingFee}. Actief zodra de founding-plekken bezet zijn.`,
+    founding: (f: Founding) =>
+      `Founding partner: €${f.price} per maand excl. btw met ${f.includedWorkspaces} klantmerken inbegrepen, €${f.pricePerExtraWorkspace} per extra klantmerk tot ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per klantmerk per maand in één pot voor je bureau, €0 onboarding. Je bureau keurt zelf goed. Prijs ${f.priceLockMonths} betaalde maanden vast, maandelijks opzegbaar. Niet inbegrepen: AI-video, voice-over en advertenties.`,
+    pack: (credits: number) => `${credits} extra credits`,
   },
   en: {
     app: 'Clyde, the AI colleague for marketing agencies: strategy, content, approval, publishing and reporting per client brand.',
-    founding: (f: typeof FOUNDING) =>
-      `Founding partner: ${f.includedWorkspaces} client brands included, €${f.pricePerExtraWorkspace} per extra client brand per month, ${f.credits} credits per month, €0 onboarding and a direct WhatsApp line with Daley. The rate stays fixed for as long as you remain a client.`,
-    workspace: (name: string, c: WorkspaceTierPricing) =>
-      `${name}: €${c.pricePerWorkspace} per client brand per month, ${
-        c.maxWorkspaces === -1 ? `from ${c.minWorkspaces}` : `${c.minWorkspaces} to ${c.maxWorkspaces}`
-      } client brands, ${c.creditsPerWorkspace} credits per client brand per month, one-time onboarding €${c.onboardingFee}. Active once the founding spots are taken.`,
+    founding: (f: Founding) =>
+      `Founding partner: €${f.price} per month excl. VAT with ${f.includedWorkspaces} client brands included, €${f.pricePerExtraWorkspace} per extra client brand up to ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per client brand per month in one pool for your agency, €0 onboarding. Your agency approves the work itself. Price fixed for ${f.priceLockMonths} paid months, cancel monthly. Not included: AI video, voice-over and ads.`,
+    pack: (credits: number) => `${credits} extra credits`,
   },
 } as const
 
 /**
- * The prices on /pricing as the `offers` of SoftwareApplication #clyde, one source
- * (pricing-data.ts). Workspace tiers carry their unit price per workspace, not a
- * range of monthly totals: that read as "€998 per workspace" in the old schema.
+ * The offer on /pricing as the `offers` of SoftwareApplication #clyde, one source
+ * (pricing-data.ts): Founding plus the three credit top-ups. Prices exclude VAT.
  */
 export function PricingJsonLd({ locale }: { locale: string }) {
   const copy = locale === 'en' ? COPY.en : COPY.nl
+  const monthly = (price: number, unitText: string) => ({
+    '@type': 'UnitPriceSpecification',
+    price: String(price),
+    priceCurrency: 'EUR',
+    valueAddedTaxIncluded: false,
+    billingDuration: 'P1M',
+    unitText,
+  })
   const data = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -52,40 +53,33 @@ export function PricingJsonLd({ locale }: { locale: string }) {
         description: copy.founding(FOUNDING),
         price: String(FOUNDING.price),
         priceCurrency: 'EUR',
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: String(FOUNDING.price),
-          priceCurrency: 'EUR',
-          billingDuration: 'P1M',
-          unitText: 'per month',
+        priceSpecification: [
+          monthly(FOUNDING.price, `per month, ${FOUNDING.includedWorkspaces} client brands included`),
+          monthly(FOUNDING.pricePerExtraWorkspace, 'per extra client brand per month'),
+        ],
+        eligibleQuantity: {
+          '@type': 'QuantitativeValue',
+          minValue: 1,
+          maxValue: FOUNDING.maxWorkspaces,
+          unitText: 'client brand',
         },
         url: `${SITE_URL}/${locale}/pricing#founding`,
         seller: SELLER,
       },
-      ...WORKSPACE_TIER_KEYS.map((tier) => {
-        const cfg = TIER_PRICING[tier] as WorkspaceTierPricing
-        return {
-          '@type': 'Offer',
-          name: TIER_NAMES[tier],
-          description: copy.workspace(TIER_NAMES[tier], cfg),
-          price: String(cfg.pricePerWorkspace),
+      ...CREDIT_PACKS.map((pack) => ({
+        '@type': 'Offer',
+        name: copy.pack(pack.credits),
+        price: String(pack.price),
+        priceCurrency: 'EUR',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          price: String(pack.price),
           priceCurrency: 'EUR',
-          priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: String(cfg.pricePerWorkspace),
-            priceCurrency: 'EUR',
-            billingDuration: 'P1M',
-            unitText: 'per workspace per month',
-          },
-          eligibleQuantity: {
-            '@type': 'QuantitativeValue',
-            minValue: cfg.minWorkspaces,
-            ...(cfg.maxWorkspaces === -1 ? {} : { maxValue: cfg.maxWorkspaces }),
-            unitText: 'workspace',
-          },
-          seller: SELLER,
-        }
-      }),
+          valueAddedTaxIncluded: false,
+        },
+        url: `${SITE_URL}/${locale}/pricing#credits`,
+        seller: SELLER,
+      })),
     ],
   }
 

@@ -32,7 +32,7 @@ const PERSONA_WELCOME: Record<DemoPersonaId, Record<DemoLocale, string>> = {
   },
   concierge: {
     nl: 'Hey! Ik ben Clyde, je FutureMarketingAI-concierge. Vraag me alles over wat Clyde maakt, de tarieven of hoe Clyde in jouw klantportfolio past.',
-    en: "Hey! I'm Clyde, your FutureMarketingAI Concierge. Ask me anything about what Clyde makes, pricing tiers, or how Clyde fits your client portfolio.",
+    en: "Hey! I'm Clyde, your FutureMarketingAI Concierge. Ask me anything about what Clyde makes, pricing, or how Clyde fits your client portfolio.",
     es: '¡Hey! Soy Clyde, tu concierge de FutureMarketingAI. Pregúntame lo que sea sobre lo que hace Clyde, las tarifas o cómo encaja Clyde en tu portafolio de clientes.',
   },
 }

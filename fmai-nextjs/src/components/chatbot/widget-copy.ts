@@ -22,7 +22,7 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hoi, ik ben Clyde, een AI-collega. Ik filter je Gmail en stuur dagelijks een digest van wat ertoe doet.',
     '/skills/reporting':
       'Hoi, ik ben Clyde, een AI-collega. Ik laat zien hoe een weekrapport eruitziet.',
-    '/pricing': 'Hoi, ik ben Clyde, een AI-collega. Ik kan je ROI berekenen of de tiers doorlopen.',
+    '/pricing': 'Hoi, ik ben Clyde, een AI-collega. Ik kan je ROI berekenen of Founding met je doorlopen.',
     '/apply': 'Hoi, ik ben Clyde, een AI-collega. Vragen voordat je je aanmeldt? Stel ze gerust.',
     '/about': 'Hoi, ik ben Clyde, een AI-collega. Wil je weten hoe ik werk?',
     default: 'Hoi, ik ben Clyde, de AI-collega van je bureau. Wat heb je nodig?',
@@ -40,7 +40,7 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
     '/skills/reporting':
       "Hi, I'm Clyde, an AI colleague. I can show you what a weekly report looks like.",
     '/pricing':
-      "Hi, I'm Clyde, an AI colleague. I can calculate your ROI or walk you through the tiers.",
+      "Hi, I'm Clyde, an AI colleague. I can calculate your ROI or walk you through Founding.",
     '/apply': "Hi, I'm Clyde, an AI colleague. Questions before you apply? Go ahead and ask.",
     '/about': "Hi, I'm Clyde, an AI colleague. Want to know how I work?",
     default: "Hi, I'm Clyde, your agency's AI colleague. What do you need?",
@@ -57,7 +57,7 @@ export const WELCOME_MESSAGES: Record<ChatLocale, Record<string, string>> = {
       'Hola, soy Clyde, un compañero de IA. Filtro tu Gmail y envío un resumen diario de lo que importa.',
     '/skills/reporting':
       'Hola, soy Clyde, un compañero de IA. Puedo mostrarte cómo es un informe semanal.',
-    '/pricing': 'Hola, soy Clyde, un compañero de IA. Puedo calcular tu ROI o repasar los planes.',
+    '/pricing': 'Hola, soy Clyde, un compañero de IA. Puedo calcular tu ROI o repasar Founding contigo.',
     '/apply':
       'Hola, soy Clyde, un compañero de IA. ¿Dudas antes de aplicar? Pregunta lo que quieras.',
     '/about': 'Hola, soy Clyde, un compañero de IA. ¿Quieres saber cómo trabajo?',
@@ -84,7 +84,7 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       'Wie keurt het vervolg goed?',
       'Waar komen de aanvragen terecht?',
     ],
-    '/pricing': ['Bereken ROI voor mijn bureau', 'Vergelijk de tiers', 'Wat zit er in Growth?'],
+    '/pricing': ['Bereken ROI voor mijn bureau', 'Wat zit er in Founding?', 'Wat leveren 1.500 credits op?'],
     default: ['Wat kun je voor mijn bureau doen?', 'Wat kost het?', 'Laat een echte klant zien'],
   },
   en: {
@@ -99,7 +99,7 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       'Who approves the follow-up?',
       'Where do the leads end up?',
     ],
-    '/pricing': ['Calculate ROI for my agency', 'Compare the tiers', "What's in Growth?"],
+    '/pricing': ['Calculate ROI for my agency', "What's in Founding?", 'What do 1,500 credits cover?'],
     default: ['What can you do for my agency?', 'What does it cost?', 'Show me a real client'],
   },
   es: {
@@ -114,7 +114,7 @@ export const SUGGESTED_PROMPTS: Record<ChatLocale, Record<string, string[]>> = {
       '¿Quién aprueba el seguimiento?',
       '¿Dónde acaban los leads?',
     ],
-    '/pricing': ['Calcula el ROI para mi agencia', 'Compara los planes', '¿Qué incluye Growth?'],
+    '/pricing': ['Calcula el ROI para mi agencia', '¿Qué incluye Founding?', '¿Qué dan 1.500 créditos?'],
     default: ['¿Qué puedes hacer por mi agencia?', '¿Cuánto cuesta?', 'Muéstrame un cliente real'],
   },
 }

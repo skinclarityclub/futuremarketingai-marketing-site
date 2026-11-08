@@ -146,9 +146,9 @@ test('get_roi_estimate shows only hours the visitor typed and the price for thei
   expect(await run({ brandCount: 6 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
   // the paid-test failure: the model passes hours nobody typed
   expect(await run({ teamHoursPerWeek: 10 })).toEqual({ needsInput: ['teamHoursPerWeek'] })
-  // Professional: 6 workspaces x EUR 399
+  // Founding: EUR 1,297 for 5 brands + EUR 199 for the sixth
   const shown = await run({ teamHoursPerWeek: 40 })
-  expect(shown).toEqual({ teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 2394 })
+  expect(shown).toEqual({ teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 1496 })
   expect(JSON.stringify(shown)).not.toMatch(/saving|roi|payback|percent/i)
 
   // "we zijn met 2 mensen, elk 20 uur, 1 merk": per-person hours times the team count; 1 brand has no plan
@@ -167,7 +167,10 @@ test('get_roi_estimate shows only hours the visitor typed and the price for thei
     const out = await buildLeadgenTools('nl', s).get_roi_estimate.execute!({ teamHoursPerWeek: 40, brandCount: brands }, call)
     return (out as { subscription?: number }).subscription
   }
-  expect([await price(3), await price(14), await price(15)]).toEqual([3 * 499, 14 * 399, 15 * 299])
+  // Founding A1.4: 5 brands included, +199 each up to 15; above 15 there is no Founding price
+  expect([await price(3), await price(5), await price(6), await price(10), await price(15), await price(16)]).toEqual([
+    1297, 1297, 1496, 2292, 3287, undefined,
+  ])
 })
 
 test('get_roi_estimate takes a number only in the unit the visitor wrote it in (Codex R1 P1)', async () => {
@@ -185,7 +188,7 @@ test('get_roi_estimate takes a number only in the unit the visitor wrote it in (
     teamHoursPerWeek: 40,
     teamHoursPerMonth: 173,
     brandCount: 6,
-    subscription: 6 * 399,
+    subscription: 1496,
   })
   expect(await perRoi.execute!({ teamHoursPerWeek: 30 }, call)).toEqual({ needsInput: ['teamHoursPerWeek'] })
   // a brand count the visitor typed as people is no brand count
@@ -214,7 +217,7 @@ test('get_roi_estimate never prices brands or a team that only the client profil
     teamHoursPerWeek: 40,
     teamHoursPerMonth: 173,
     brandCount: 15,
-    subscription: 15 * 299,
+    subscription: 3287,
   })
 })
 

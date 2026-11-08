@@ -1,121 +1,58 @@
 /**
- * Pricing data — marketing-site mirror of fma-app/src/lib/skills.ts AGENT_TIERS.
+ * Pricing data — the one offer the site sells: Founding A1.4.
  *
- * SSoT: fma-app/src/lib/skills.ts. When tier prices, workspace ranges or
- * credits-per-workspace change there, update here too.
- *
- * Two pricing models:
- * - 'fixed': Founding. A flat monthly price that covers `includedWorkspaces`;
- *   every workspace above that adds `pricePerExtraWorkspace`. fma-app calls this
- *   model 'included' (#1904, 10 included since #1943); credits stay fixed.
- * - 'workspace': monthly price = pricePerWorkspace * workspaces. Credits
- *   scale with workspaces (creditsPerWorkspace * workspaces). Per-workspace
- *   tarief recalibrated every 6 months on observed credit usage.
+ * SSoT: fma-app docs/plans/2026-11-09-founding-a14-credits-PLAN.md §1-§2 (Daley,
+ * 9 Nov 2026). Growth, Professional and Enterprise left the site that night
+ * (decision D2): regular plans follow after the Founding cohort, from three measured
+ * months. Existing founding partners keep their own agreement; nothing here
+ * describes or changes it.
  */
 
-import type { TierKey } from './skills-data'
-
-export interface FixedTierPricing {
-  pricingModel: 'fixed'
+export interface FoundingPricing {
+  /** Monthly price in EUR, excl. VAT, covering `includedWorkspaces` client brands. */
   price: number
   includedWorkspaces: number
   pricePerExtraWorkspace: number
-  credits: number
-  onboardingFee: number
-}
-
-export interface WorkspaceTierPricing {
-  pricingModel: 'workspace'
-  pricePerWorkspace: number
-  minWorkspaces: number
-  /** -1 = unlimited */
   maxWorkspaces: number
-  creditsPerWorkspace: number
+  /** Credits per active client brand per month, pooled across the agency. */
+  creditsPerBrand: number
   onboardingFee: number
+  /** The price stays fixed for this many paid months. */
+  priceLockMonths: number
 }
 
-export type TierPricing = FixedTierPricing | WorkspaceTierPricing
-
-export const TIER_PRICING: Record<TierKey, TierPricing> = {
-  FOUNDING_MEMBER: {
-    pricingModel: 'fixed',
-    price: 997,
-    includedWorkspaces: 10,
-    pricePerExtraWorkspace: 299,
-    credits: 8000,
-    onboardingFee: 0,
-  },
-  GROWTH: {
-    pricingModel: 'workspace',
-    pricePerWorkspace: 499,
-    minWorkspaces: 2,
-    maxWorkspaces: 4,
-    creditsPerWorkspace: 800,
-    onboardingFee: 1997,
-  },
-  PROFESSIONAL: {
-    pricingModel: 'workspace',
-    pricePerWorkspace: 399,
-    minWorkspaces: 5,
-    maxWorkspaces: 14,
-    creditsPerWorkspace: 800,
-    onboardingFee: 3997,
-  },
-  ENTERPRISE: {
-    pricingModel: 'workspace',
-    pricePerWorkspace: 299,
-    minWorkspaces: 15,
-    maxWorkspaces: -1,
-    creditsPerWorkspace: 800,
-    onboardingFee: 5997,
-  },
+export const FOUNDING: FoundingPricing = {
+  price: 1297,
+  includedWorkspaces: 5,
+  pricePerExtraWorkspace: 199,
+  maxWorkspaces: 15,
+  creditsPerBrand: 1500,
+  onboardingFee: 0,
+  priceLockMonths: 12,
 }
 
-/** The day the prices on /pricing were last checked against fma-app; shown on the page. */
-export const PRICING_CHECKED_ON = '2026-11-06'
+/** Credit top-ups: €0.08 per credit, no volume discount (plan §2). */
+export const CREDIT_PACKS = [
+  { credits: 500, price: 40 },
+  { credits: 2000, price: 160 },
+  { credits: 5000, price: 400 },
+] as const
 
-/** Founding config, narrowed once so callers do not repeat the model check. */
-export const FOUNDING = TIER_PRICING.FOUNDING_MEMBER as FixedTierPricing
-
-/** Monthly price in EUR for a given tier + workspace count. */
-export function priceForTier(tier: TierKey, workspaces: number): number {
-  const cfg = TIER_PRICING[tier]
-  if (cfg.pricingModel === 'fixed') {
-    return cfg.price + Math.max(0, workspaces - cfg.includedWorkspaces) * cfg.pricePerExtraWorkspace
-  }
-  const max = cfg.maxWorkspaces === -1 ? Infinity : cfg.maxWorkspaces
-  const clamped = Math.max(cfg.minWorkspaces, Math.min(max, workspaces))
-  return clamped * cfg.pricePerWorkspace
-}
-
-/** Tier keys that participate in the shared workspace slider (excludes Founding). */
-export const WORKSPACE_TIER_KEYS = ['GROWTH', 'PROFESSIONAL', 'ENTERPRISE'] as const
-export type WorkspaceTierKey = (typeof WORKSPACE_TIER_KEYS)[number]
+/** The day the prices on /pricing were last checked against the plan; shown on the page. */
+export const PRICING_CHECKED_ON = '2026-11-09'
 
 /**
- * Detect which workspace-priced tier a given workspace count falls into.
- * Growth: 2-4, Professional: 5-14, Enterprise: 15+. For workspaces=1
- * returns Growth (the lowest applicable tier) so the slider has a sensible
- * "below minimum" fallback rather than rendering nothing active.
+ * Monthly Founding price in EUR for a number of active client brands. Fewer than
+ * the included five still pay the base price; more than the maximum is not on offer.
  */
-export function detectWorkspaceTier(workspaces: number): WorkspaceTierKey {
-  for (const tier of WORKSPACE_TIER_KEYS) {
-    const cfg = TIER_PRICING[tier] as WorkspaceTierPricing
-    const max = cfg.maxWorkspaces === -1 ? Infinity : cfg.maxWorkspaces
-    if (workspaces >= cfg.minWorkspaces && workspaces <= max) return tier
+export function foundingPrice(workspaces: number): number {
+  if (!Number.isInteger(workspaces) || workspaces < 1 || workspaces > FOUNDING.maxWorkspaces) {
+    throw new RangeError(`Founding covers 1-${FOUNDING.maxWorkspaces} client brands, got ${workspaces}`)
   }
-  // Workspaces below Growth.minWorkspaces (e.g. 1) → Growth as starting point.
-  return 'GROWTH'
+  return FOUNDING.price + Math.max(0, workspaces - FOUNDING.includedWorkspaces) * FOUNDING.pricePerExtraWorkspace
 }
 
-/** Shared-slider bounds. Lower-bound 1 for transparency about what one
- * client brand costs; upper-bound 30 covers the Enterprise range without
- * pretending Enterprise has a hard cap.
- */
-export const SHARED_SLIDER_MIN = 1
-export const SHARED_SLIDER_MAX = 30
-
-/** EUR thousands-separator formatter. Use for tier prices. */
+/** EUR thousands-separator formatter. Use for prices and credit counts. */
 export function formatEur(amount: number, locale: string): string {
   return new Intl.NumberFormat(locale === 'en' ? 'en-IE' : locale === 'es' ? 'es-ES' : 'nl-NL', {
     maximumFractionDigits: 0,

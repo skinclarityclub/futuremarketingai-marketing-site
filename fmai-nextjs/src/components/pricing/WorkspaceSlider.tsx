@@ -2,16 +2,7 @@
 
 import { useId, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import {
-  FOUNDING,
-  TIER_PRICING,
-  detectWorkspaceTier,
-  priceForTier,
-  formatEur,
-  SHARED_SLIDER_MIN,
-  SHARED_SLIDER_MAX,
-  type WorkspaceTierPricing,
-} from '@/lib/pricing-data'
+import { FOUNDING, foundingPrice, formatEur } from '@/lib/pricing-data'
 import { CountUp } from '@/components/motion/CountUp'
 
 interface WorkspaceSliderProps {
@@ -20,28 +11,21 @@ interface WorkspaceSliderProps {
   initialWorkspaces: number
 }
 
-const TIER_LABEL_KEY = {
-  GROWTH: 'growth',
-  PROFESSIONAL: 'professional',
-  ENTERPRISE: 'enterprise',
-} as const
+const SLIDER_MIN = 1
 
 /**
- * The calculator on /pricing: drag to a number of client brands and see what
- * Founding costs now, per brand, next to the tariff that applies once the
- * founding spots are taken. Founding is the offer of today, so it is the big number.
+ * The calculator on /pricing: drag to a number of client brands (1 to the Founding
+ * maximum) and see the monthly price, the price per brand and the credit pool.
  */
 export function WorkspaceSlider({ locale, initialWorkspaces }: WorkspaceSliderProps) {
   const t = useTranslations('pricing.example.slider')
-  const tTiers = useTranslations('pricing.tiers')
   const sliderId = useId()
   const [workspaces, setWorkspaces] = useState(initialWorkspaces)
 
-  const founding = priceForTier('FOUNDING_MEMBER', workspaces)
+  const founding = foundingPrice(workspaces)
   const perBrand = Math.round(founding / workspaces)
-  const laterTier = detectWorkspaceTier(workspaces)
-  const laterCfg = TIER_PRICING[laterTier] as WorkspaceTierPricing
-  const later = priceForTier(laterTier, workspaces)
+  // Plan A1.4 §2: the pool is 1,500 x active brands.
+  const credits = FOUNDING.creditsPerBrand * workspaces
   const eur = (n: number) => formatEur(Math.round(n), locale)
 
   return (
@@ -59,26 +43,22 @@ export function WorkspaceSlider({ locale, initialWorkspaces }: WorkspaceSliderPr
             <input
               id={sliderId}
               type="range"
-              min={SHARED_SLIDER_MIN}
-              max={SHARED_SLIDER_MAX}
+              min={SLIDER_MIN}
+              max={FOUNDING.maxWorkspaces}
               value={workspaces}
               onChange={(e) => setWorkspaces(Number(e.target.value))}
               className="h-2 w-full cursor-pointer accent-[#2dd4bf]"
             />
           </label>
           <div className="mt-2 flex justify-between font-mono text-[10px] uppercase tracking-wide text-[#8f9aae]">
-            <span>{SHARED_SLIDER_MIN}</span>
+            <span>{SLIDER_MIN}</span>
             <span>{FOUNDING.includedWorkspaces}</span>
-            <span>20</span>
-            <span>{SHARED_SLIDER_MAX}</span>
+            <span>10</span>
+            <span>{FOUNDING.maxWorkspaces}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-[#a3adbd]">
-            {t('later', {
-              tier: tTiers(`${TIER_LABEL_KEY[laterTier]}.name`),
-              price: eur(later),
-            })}
-            {workspaces < laterCfg.minWorkspaces &&
-              ` ${t('laterMinimum', { min: laterCfg.minWorkspaces })}`}
+            {t('credits', { credits: eur(credits) })}
+            {workspaces < FOUNDING.includedWorkspaces && ` ${t('minimum', { included: FOUNDING.includedWorkspaces })}`}
           </p>
         </div>
 

@@ -6,38 +6,13 @@
  * fma-app/src/lib/skills.ts (pricing SSoT) ook hier bijwerken.
  *
  * Bevat: per-skill metadata (naam, slug, beschrijving, features) +
- * per-tier caps + status (live / coming_soon) + category voor mega-menu.
+ * status (live / coming_soon) + category voor mega-menu. Capaciteit loopt sinds
+ * Founding A1.4 (9 nov 2026) via credits, niet via caps per tier.
  */
 
 export type SkillCategory = 'create' | 'engage' | 'grow'
 
 export type SkillStatus = 'live' | 'coming_soon'
-
-// Keep TierKey and per-skill tierCaps in sync with fma-app/src/lib/skills.ts
-// (AGENT_TIERS keys + SKILL_CAPS). Pricing SSoT = fma-app.
-// Partner tier removed 2026-04-28 (consolidated into Founding-only entry; see
-// fma-app commit 297949d7).
-export type TierKey = 'GROWTH' | 'PROFESSIONAL' | 'ENTERPRISE' | 'FOUNDING_MEMBER'
-
-/**
- * Unit for rendering the included count in the tier matrix.
- * The matrix component looks up `pricing.matrix.{unit}PerMonth` to format.
- * e.g. unit: 'min' → "30 min/mnd" in NL, "30 min/mo" in EN.
- */
-export type SkillCapUnit = 'count' | 'min' | 'dm'
-
-export interface SkillTierCap {
-  /** -1 = unlimited / fair use, 0 = not available, n = monthly cap */
-  included: number
-  /** Unit for rendering: 'count' → "12/mnd", 'min' → "30 min/mnd", 'dm' → "500 DMs/mnd". Default 'count'. */
-  unit?: SkillCapUnit
-  /**
-   * i18n key (in `pricing.matrix.*`) to render instead of the numeric cap.
-   * Used for special states like "Niet beschikbaar" or "Onbeperkt".
-   * If set, takes precedence over `included` + `unit`.
-   */
-  labelKey?: 'notAvailable' | 'unlimited'
-}
 
 export interface SkillData {
   id: string
@@ -50,10 +25,6 @@ export interface SkillData {
   features: readonly string[]
   category: SkillCategory
   status: SkillStatus
-  /** Credit cost per action, display label like "2 cr / post" */
-  creditCostLabel: string
-  /** Per-tier availability, null = fair use on all tiers */
-  tierCaps?: Record<TierKey, SkillTierCap>
   /** Schema.org Service.serviceType — Google-classified category for rich results (Phase 14-02) */
   serviceType: string
 }
@@ -77,7 +48,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'create',
     status: 'live',
-    creditCostLabel: '1-2 cr / post',
     serviceType: 'Social Media Content Service',
   },
   {
@@ -97,13 +67,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'create',
     status: 'live',
-    creditCostLabel: '15 cr / artikel',
-    tierCaps: {
-      GROWTH: { included: 8 },
-      PROFESSIONAL: { included: 20 },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 12 },
-    },
     serviceType: 'AI Content Writing Service',
   },
   {
@@ -124,13 +87,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'create',
     status: 'live',
-    creditCostLabel: '10 cr static / 20 cr video',
-    tierCaps: {
-      GROWTH: { included: 15 },
-      PROFESSIONAL: { included: 50 },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 25 },
-    },
     serviceType: 'Digital Advertising Management Service',
   },
   {
@@ -151,13 +107,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'create',
     status: 'coming_soon',
-    creditCostLabel: '25 cr / reel',
-    tierCaps: {
-      GROWTH: { included: 4 },
-      PROFESSIONAL: { included: 15 },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 8 },
-    },
     serviceType: 'Short-Form Video Production Service',
   },
   {
@@ -178,13 +127,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'engage',
     status: 'coming_soon',
-    creditCostLabel: '5 cr / minuut',
-    tierCaps: {
-      GROWTH: { included: 30, unit: 'min' },
-      PROFESSIONAL: { included: 120, unit: 'min' },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 60, unit: 'min' },
-    },
     serviceType: 'AI Phone Answering Service',
   },
   {
@@ -204,15 +146,8 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'engage',
     status: 'live',
-    // golf 9a: ManyChat folded into this skill, so it carries the DM pipeline's price and caps
+    // golf 9a: ManyChat folded into this skill
     // (fma-app CREDIT_COSTS.socialCommandCenter.dm_batch_10 and SKILL_CAPS.socialCommandCenter)
-    creditCostLabel: '2 cr / 10 DMs',
-    tierCaps: {
-      GROWTH: { included: 200, unit: 'dm' },
-      PROFESSIONAL: { included: 1000, unit: 'dm' },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 500, unit: 'dm' },
-    },
     serviceType: 'Instagram DM Lead Capture Service',
   },
   {
@@ -232,13 +167,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'engage',
     status: 'live',
-    creditCostLabel: '5 cr / actie',
-    tierCaps: {
-      GROWTH: { included: 20 },
-      PROFESSIONAL: { included: 60 },
-      ENTERPRISE: { included: -1, labelKey: 'unlimited' },
-      FOUNDING_MEMBER: { included: 40 },
-    },
     serviceType: 'Email Inbox Classification Service',
   },
   {
@@ -258,7 +186,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'grow',
     status: 'live',
-    creditCostLabel: '5 cr / rapport',
     serviceType: 'Marketing Analytics Reporting Service',
   },
   {
@@ -279,7 +206,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'grow',
     status: 'live',
-    creditCostLabel: '5 cr audit / 3 cr rapport',
     serviceType: 'SEO and Generative Engine Optimization Service',
   },
   {
@@ -300,7 +226,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'grow',
     status: 'live',
-    creditCostLabel: '3 cr / query',
     serviceType: 'Content Strategy Service',
   },
   {
@@ -320,7 +245,6 @@ export const SKILLS_DATA: readonly SkillData[] = [
     ],
     category: 'grow',
     status: 'live',
-    creditCostLabel: '1-5 cr / chat',
     serviceType: 'AI Marketing Assistant Service',
   },
 ] as const

@@ -1,12 +1,12 @@
 # FutureMarketingAI (FMai)
 
-> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Skills for strategy, social media, blogs, ads, Instagram DMs, email, reporting and SEO/GEO, and a memory per client. Workspace-priced model since 2026-04-28: Founding Member 997 EUR per month, rate fixed while you remain a client, 10 workspaces included (maximum 10 founding spots), Growth 499 EUR per workspace (2 to 4 brands), Professional 399 EUR per workspace (5 to 14 brands), Enterprise 299 EUR per workspace (15 plus brands). Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: fma-app/src/lib/skills.ts revision 2026-04-28.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Skills for strategy, social media, blogs, ads, Instagram DMs, email, reporting and SEO/GEO, and a memory per client. The offer for new agencies since 2026-11-09 is Founding: 1297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 spots in the first cohort. Regular plans follow after the Founding cohort. Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: Founding A1.4, 2026-11-09.
 
 ## Company
 
 FutureMarketingAI (FMai) is an AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Based in the Netherlands, serving EU agencies.
 
-Unlike a self-serve SaaS, FMai has application-gated onboarding and 10 founding spots. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
+Unlike a self-serve SaaS, FMai has application-gated onboarding and 3 founding spots in the first cohort. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
 The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all of Clyde's live skills are switched on there.
 
@@ -18,7 +18,7 @@ Key facts:
 - Location: Netherlands (EU)
 - Languages: Dutch (source of truth), English
 - Company type: AI marketing partnership for agencies
-- Target market: marketing agencies in NL and the EU with 5 to 20 people managing 5 to 20 client brands
+- Target market: marketing agencies in NL and the EU with 5 to 20 people managing 5 to 15 client brands
 - Data: servers and database in the EU. The language model runs at Anthropic and OpenAI in the US.
 
 ## Product: Clyde, the agency's AI colleague
@@ -58,7 +58,7 @@ Capabilities:
 - Carousels in the house style
 - Hashtag strategy per brand
 
-Credit cost: 1 to 2 credits per post.
+Credit cost: 20 credits per static post, 30 per carousel, 2 per platform variant of an existing piece.
 
 ### Blog Factory (Live)
 
@@ -71,7 +71,7 @@ Capabilities:
 - Publication after approval
 - Brand voice consistency
 
-Credit cost: 15 credits per article. Each workspace receives 800 credits per month (Founding Member: 8000 credits total).
+Credit cost: 20 credits per article (up to 1,000 words). Founding includes 1,500 credits per client brand per month, in one pool for the agency.
 
 ### Ad Manager (Live)
 
@@ -85,7 +85,7 @@ Capabilities:
 - Variants to test
 - Competitor research in the Meta Ad Library
 
-Credit cost: 10 credits per static ad, 20 credits per video ad.
+Not included in the Founding offer.
 
 ### Reel Builder (Coming soon)
 
@@ -98,7 +98,7 @@ Planned capabilities:
 - Vertical format (9:16)
 - Template library
 
-Credit cost: 25 credits per reel. Status: coming soon.
+Credit cost: 60 credits per short, made from the brand's own footage (no AI video). Status: coming soon; until the first short for a brand is rendered and approved, carousels take its slots.
 
 ### Voice Agent (Coming soon)
 
@@ -112,7 +112,7 @@ Planned capabilities:
 - Handover to a person
 - Campaign management for outbound calls
 
-Credit cost: 5 credits per minute. Status: coming soon.
+Status: coming soon.
 
 ### From post to lead (Live)
 
@@ -125,7 +125,7 @@ Capabilities:
 - Handover to a person when Clyde does not know the answer
 - Leads from the DM link in the lead list
 
-Credit cost: 2 credits per 10 DMs. Monthly DM limits per tier are in the table on the pricing page.
+Credit cost: from the agency's credit pool; there is no published rate per DM yet.
 
 ### Email Management (Live)
 
@@ -138,7 +138,7 @@ Capabilities:
 - Urgency per email (1 to 5)
 - Draft replies, sent after approval
 
-Credit cost: 5 credits per action.
+Credit cost: from the agency's credit pool; there is no published rate per action yet.
 
 ### Reporting & Analytics (Live)
 
@@ -151,7 +151,7 @@ Capabilities:
 - Social, web, sales and ads together
 - Custom report generation
 
-Credit cost: 5 credits per report.
+Credit cost: 100 credits per monthly report.
 
 ### SEO / GEO Analyst (Live)
 
@@ -165,7 +165,7 @@ Capabilities:
 - Competitors on Core Web Vitals and new pages
 - Prioritized fix recommendations
 
-Credit cost: 5 credits per audit, 3 credits per report.
+Credit cost: 200 credits per SEO/GEO check (25 URLs, 10 questions).
 
 ### Strategy and research (Live)
 
@@ -178,7 +178,7 @@ Capabilities:
 - Signals from research with source and date
 - Clyde proposes, the agency decides
 
-Credit cost: 3 credits per query.
+Credit cost: 6 credits per research question, 50 per research memo.
 
 ### Clyde (Live)
 
@@ -191,58 +191,47 @@ Capabilities:
 - Memory and context per client
 - Routines and recurring tasks
 
-Credit cost: 1 to 5 credits per chat.
+Credit cost: 1 to 17 credits per turn, depending on the model.
 
 Page: https://future-marketing.ai/nl/skills/clyde (Working with Clyde). What Clyde does himself: drafts for posts, carousels and blogs, fixed tasks on their time when the agency sets that task to run, and updating the memory per client. What he puts to the agency: posts and carousels for review, blog topics and signals under For you, and proposals on WhatsApp with the buttons Run and Cancel (a typed "yes" runs nothing). What only the agency does: approving, rejecting or setting aside, choosing how independently a fixed task runs, and pausing a post or a whole client. With the stop moment on for a client, a post can still be paused after approval until four hours before it goes live.
 
-## Tiers and Pricing
+## Pricing
 
-All prices in EUR per month excluding VAT unless stated. Workspace-priced model since 2026-04-28. Pricing canon: `fma-app/src/lib/skills.ts`. Workspace tariffs are recalibrated every 6 months based on observed credit usage. Existing contracts are not retroactively adjusted.
+All prices in EUR per month excluding VAT unless stated. Pricing canon: Founding A1.4, 2026-11-09, mirrored in `src/lib/pricing-data.ts` of this site. New agencies have one offer: Founding. Regular plans follow after the Founding cohort, built on three measured months; Growth, Professional and Enterprise are no longer for sale. Existing founding partners keep their agreement as signed; it is not retroactively adjusted.
 
-Two pricing models:
-- Fixed: Founding Member only. Single monthly price, single credit allocation.
-- Workspace: monthly price equals pricePerWorkspace times workspaces. Credits scale with workspaces (creditsPerWorkspace times workspaces).
+### Founding, 1,297 EUR per month excl. VAT, 5 client brands included
 
-### Founding Member, 997 EUR per month, rate fixed while you remain a client
-
-- Maximum 10 founding spots
-- 10 workspaces included, 299 EUR per extra workspace
-- 8,000 credits per month
-- All skills included
-- Direct WhatsApp line with Daley, plus roadmap influence
-- No onboarding fee
-- Monthly cancellable; the rate stays fixed for as long as you remain a client (it never rises)
-- Cheaper than the workspace tiers from 3 brands (997 vs 1497 at Growth 499 times 3)
-
-### Growth, 499 EUR per workspace
-
-- 2 to 4 brand workspaces
-- 800 credits per workspace per month (1600 to 3200 total)
-- All skills included
-- 1,997 EUR one-time onboarding
+- 3 spots in the first cohort; the counter on the site counts signed spots only
+- 199 EUR per extra client brand per month, up to 15 brands (6 brands 1,496 EUR, 10 brands 2,292 EUR, 15 brands 3,287 EUR)
+- 1,500 credits per client brand per month, in one pool for the whole agency; included credits expire at the end of the month, bought credits stay valid for 12 months
+- 0 EUR onboarding
+- The agency approves the work itself and keeps the client contact; guidance is available on request
+- Price fixed for 12 paid months; cancel monthly, before the next period
+- No trial and no introductory discount: Founding is the opening offer
 - Direct WhatsApp line with Daley
 
-### Professional, 399 EUR per workspace
+### What 1,500 credits cover per brand per month
 
-- 5 to 14 brand workspaces
-- 800 credits per workspace per month (4000 to 11200 total)
-- All skills included
-- 3,997 EUR one-time onboarding
-- Direct WhatsApp line with Daley
+A guideline for planning, not an output entitlement; the agency may spend its credits differently.
 
-### Enterprise, 299 EUR per workspace
+- About 20 unique pieces: 12 static posts, 4 carousels and 4 shorts made from the brand's own footage (template renders, no AI video)
+- About 40 placements: Instagram 12, Facebook 12, LinkedIn 8, TikTok 4, YouTube Shorts 4; X and Threads where they fit the brand
+- Plus a blog, a research memo, an SEO/GEO check, a monthly report and questions to Clyde
+- Shorts are planned for a brand once the first short has been rendered and approved; until then carousels take those slots
 
-- 15 plus brand workspaces (no upper cap)
-- 800 credits per workspace per month (12000 plus total)
-- All skills included
-- 5,997 EUR one-time onboarding
-- Direct WhatsApp line with Daley
+Credit costs: static post 20, carousel 30, short 60, platform variant of an existing piece 2, new image 10, blog 20, research memo 50, SEO/GEO check 200, monthly report 100, a Clyde turn 1 to 17 depending on the model. During the 12 fixed months a rate can only go down.
 
-### Credit packs (all tiers)
+### Not included
 
-- Boost: 2,000 credits, 149 EUR
-- Scale: 5,000 credits, 297 EUR
-- Max: 15,000 credits, 697 EUR
+- AI-generated video
+- Voice-over
+- Ads and ad management
+
+### Extra credits
+
+- 500 credits, 40 EUR
+- 2,000 credits, 160 EUR
+- 5,000 credits, 400 EUR
 
 ## Case Study: SkinClarity Club
 
@@ -293,11 +282,11 @@ Leaving: after cancellation we send you an export of your data within 30 days; a
 
 Application-gated, no self-service signup.
 
-Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. Name, email, agency and role are required; preferred tier, revenue band, number of clients, urgency and a short problem statement are optional.
+Step 1, Apply (5 min): submit the Apply form at https://future-marketing.ai/nl/apply. Name, email, agency and role are required; preferred offer, revenue band, number of clients, urgency and a short problem statement are optional.
 
 Step 2, Founder Review (within 48 hours): Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.
 
-Step 3, Strategy Call (30 min): honest assessment of which tier and skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
+Step 3, Strategy Call (30 min): honest assessment of whether Founding fits and which skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
 
 Step 4, Onboarding (4 weeks): we connect the accounts, brand voice and knowledge, run the strategy session per client, and set up Clyde, the content agenda and the approvals.
 
@@ -373,7 +362,7 @@ Step 2 - Persoonlijke beoordeling door Daley (binnen 48 uur)
 Daley beoordeelt elke aanvraag persoonlijk. Als er een goede match is, plant hij direct een Strategy Call in. Geen automatische afwijzingen, geen verkoopscript.
 
 Step 3 - Strategy Call (30 minuten)
-Een eerlijk gesprek over welk tier en welke vaardigheden het meeste impact hebben voor jouw portfolio. We kiezen de juiste startopzet samen.
+Een eerlijk gesprek over of Founding past en welke vaardigheden het meeste impact hebben voor jouw portfolio. We kiezen de juiste startopzet samen.
 
 Step 4 - Onboarding (4 weken)
 We koppelen de accounts, merkstem en kennis, doen de strategiesessie per klant en richten Clyde, de content-agenda en de goedkeuringen in. Geen technische kennis vereist van jouw kant.
@@ -390,13 +379,13 @@ Type: FAQPage
 URL: https://future-marketing.ai
 
 Q: Wat kost FutureMarketingAI?
-A: Founding Member kost 997 EUR per maand, vast zolang je klant blijft, maandelijks opzegbaar, met 10 werkruimtes inbegrepen (daarboven 299 EUR per extra werkruimte) en maximaal 10 plekken. Growth kost 499 euro per werkruimte per maand (2 tot 4 merken). Professional kost 399 euro per werkruimte per maand (5 tot 14 merken). Enterprise kost 299 euro per werkruimte per maand (15 of meer merken). De tarieven per werkruimte worden halfjaarlijks herijkt op het werkelijke creditverbruik. Geen onboardingkosten voor Founding.
+A: Founding kost 1.297 EUR per maand excl. btw, met 5 klantmerken inbegrepen. Elk extra klantmerk kost 199 EUR per maand, tot 15 merken. Je krijgt 1.500 credits per klantmerk per maand, in één pot voor je bureau. De onboarding kost 0 EUR en de prijs staat 12 betaalde maanden vast. Het eerste cohort heeft 3 plekken. Reguliere pakketten volgen na het Founding-cohort.
 
 Q: Kan ik stoppen wanneer ik wil?
-A: Ja. Alle tiers, inclusief Founding, zijn maandelijks opzegbaar. Founding is geen eenmalige betaling maar een maandelijks abonnement met een vast tarief: zolang je klant blijft, betaal je 997 EUR per maand en het tarief stijgt nooit.
+A: Ja. Founding is maandelijks opzegbaar, vóór de volgende periode. Het is geen eenmalige betaling maar een maandelijks abonnement, met een prijs die 12 betaalde maanden vaststaat.
 
 Q: Voor welke bureaus is FutureMarketingAI geschikt?
-A: Voor marketingbureaus in Nederland en de EU met 5 tot 20 mensen die 5 tot 20 klantmerken beheren, en die meer klanten willen bedienen met het team dat ze hebben. De pakketten beginnen bij 2 merken.
+A: Voor marketingbureaus in Nederland en de EU met 5 tot 20 mensen die 5 tot 15 klantmerken beheren, en die meer klanten willen bedienen met het team dat ze hebben. Founding heeft 5 klantmerken inbegrepen en groeit mee tot 15.
 
 Q: Hoelang duurt de onboarding?
 A: De onboarding duurt 4 weken: accounts koppelen, merkstem en kennis, een strategiesessie per klant, en Clyde, de agenda en de goedkeuringen inrichten. Maand 1 is de correctielus. Per taak kies je daarna hoe zelfstandig Clyde werkt.
@@ -408,13 +397,13 @@ Q: Kan Clyde meerdere merken tegelijk beheren?
 A: Ja. Elke klant krijgt een eigen werkruimte met een eigen merkstem, geheugen, agenda en goedkeuringen. Binnen een klant kunnen meerdere accounts vallen, zoals bij SkinClarity Club met 3 Instagram-accounts.
 
 Q: Welke platformen ondersteunt Clyde?
-A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta. Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de web-app op je beginscherm en op WhatsApp.
+A: Publiceren op Instagram, Facebook, LinkedIn, X, Threads, TikTok en YouTube. Blogs naar een MDX-site, een Shopify-blog of een eigen koppeling. Advertenties op Meta (niet inbegrepen in Founding). Data voor de rapporten uit Instagram, GA4, Search Console, Shopify en Meta Ads. E-mail in Gmail en Outlook. Leads via een webhook naar je eigen CRM. Clyde zelf in het dashboard, in de web-app op je beginscherm en op WhatsApp.
 
 Q: Hoe werkt de goedkeuringsflow?
 A: Per taak kies je hoe zelfstandig Clyde werkt: meekijken, voorstellen, doen en melden, of helemaal zelf. Content keuren jij of je klant goed in het dashboard of in de web-app op je beginscherm. In WhatsApp meldt Clyde zich wanneer er iets op goedkeuring wacht. Afwijzen met commentaar komt in het geheugen van die klant, en Clyde gebruikt het bij het volgende verzoek.
 
-Q: Wat is het verschil tussen Founding en Growth?
-A: Founding kost 997 EUR per maand, vast zolang je klant blijft, 10 werkruimtes inbegrepen, maximaal 10 plekken en een directe WhatsApp-lijn met Daley. Growth is 499 euro per werkruimte per maand (2 tot 4 merken) en wordt halfjaarlijks herijkt. Beide zijn maandelijks opzegbaar.
+Q: Wat leveren 1.500 credits per klantmerk op?
+A: Genoeg voor een gebalanceerde maand per merk, bijvoorbeeld ~20 unieke stukken (12 posts, 4 carrousels, 4 shorts uit eigen beeldmateriaal) en ~40 plaatsingen op Instagram, Facebook, LinkedIn, TikTok en YouTube Shorts. X en Threads waar ze bij het merk passen. Plus een blog, een onderzoeksmemo, een SEO/GEO-check, een maandrapport en Clyde. Je bureau keurt zelf goed; begeleiding kan op aanvraag. Niet inbegrepen: AI-video, voice-over en advertenties. Credits bijkopen kan: 500 voor 40 EUR, 2.000 voor 160 EUR, 5.000 voor 400 EUR.
 
 Q: Kan ik FutureMarketingAI eerst uitproberen?
 A: Er is geen gratis trial. Wel is er een eerlijk strategiegesprek van 30 minuten voordat je betaalt. Als de match er niet is, zeggen we dat direct. Het aanvraagproces is vrijblijvend.

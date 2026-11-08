@@ -87,7 +87,7 @@ async function clickOptionContaining(page: Page, text: string) {
 
 async function fillQualificationHigh(page: Page) {
   // Q1 founding → 3pts
-  await clickOptionContaining(page, 'Founding (€997')
+  await clickOptionContaining(page, 'Founding (€1.297')
   // Q2 €1M tot €3M → 3pts
   await clickOptionContaining(page, '1M tot')
   // Q3 5 tot 15 merken → 3pts
@@ -367,7 +367,8 @@ test.describe('Critical path: assessment handoff via URL params', () => {
     await expect(page.getByText(/scan resultaat/i)).toBeVisible({ timeout: 5_000 })
 
     // Q1 + Q5 still asked
-    await clickOptionContaining(page, 'Growth')
+    // Founding A1.4: the wizard only offers Founding and 'not sure' (growth stays valid in the API enum).
+    await clickOptionContaining(page, 'Founding (€1.297')
     await clickOptionContaining(page, '30 dagen')
     await clickNext(page)
 
@@ -375,13 +376,13 @@ test.describe('Critical path: assessment handoff via URL params', () => {
     await expect(page.locator('#apply-problem')).toBeVisible({ timeout: 5_000 })
     await clickSubmit(page)
 
-    // Should be qualified: scaling(3)+growth(2)+30days(3) = 8 >= 7
+    // Should be qualified: scaling(3)+founding(3)+30days(3) = 9 >= 7
     await waitForResult(page)
     await expect(page.getByText(/geweldig/i)).toBeVisible({ timeout: 15_000 })
     expect(applyBodies).toHaveLength(1)
     expect(applyBodies[0]).toMatchObject({
       assessment: { archetype: 'data-led', stage: 'scaling', lowestCategory: 'tools' },
-      qualification: { q1: 'growth', q5: '30days' },
+      qualification: { q1: 'founding', q5: '30days' },
     })
   })
 })

@@ -55,32 +55,20 @@ export const CASE = {
   },
 }
 
+// Founding A1.4 is the only offer for new agencies (2026-11-09).
 export const PRICING = {
   tiers: [
     {
-      name: 'Founding Member',
-      price: '€997 per maand, levenslang vast',
-      features: ['Maximaal 10 plekken', 'Alle vaardigheden'],
-      highlighted: true,
-    },
-    { name: 'Growth', price: '€499 per werkruimte', features: ['2-4 merken'], highlighted: false },
-    {
-      name: 'Professional',
-      price: '€399 per werkruimte',
-      features: ['5-14 merken'],
-      highlighted: false,
-    },
-    {
-      name: 'Enterprise',
-      price: '€299 per werkruimte',
-      features: ['15+ merken'],
-      highlighted: false,
+      name: 'Founding',
+      price: '€1.297/mnd excl. btw',
+      features: ['5 klantmerken inbegrepen, €199 per extra klantmerk tot 15'],
     },
   ],
 }
 
 // get_roi_estimate for a team that said 40 hours a week and 6 brands: their own hours plus the price, no saving.
-export const ROI = { teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 2394 }
+// Founding: 1,297 for 5 brands + 199 for the sixth.
+export const ROI = { teamHoursPerWeek: 40, teamHoursPerMonth: 173, brandCount: 6, subscription: 1496 }
 
 export const ROI_NEEDS_INPUT = { needsInput: ['teamHoursPerWeek'] }
 

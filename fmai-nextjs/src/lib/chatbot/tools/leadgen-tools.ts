@@ -1,20 +1,17 @@
 import { tool } from 'ai'
 import { z } from 'zod'
 import {
-  CHATBOT_TIERS,
+  foundingPriceFor,
   getChatbotTiers,
   getChatbotTier,
   type ChatbotLocale,
-  type ChatbotTierKey,
 } from '@/lib/chatbot/tool-data'
 import { decideFit, noOfferSession, type FitSession } from '@/lib/chatbot/fit'
 
-// One workspace per client brand; the tier follows from the count (tool-data.ts). Solo/1 brand has no plan.
+// Founding price for the brand count (tool-data.ts). 1 brand is no fit, above 15 Founding has no price.
 function subscriptionFor(brands: number) {
-  const tier = [CHATBOT_TIERS.enterprise, CHATBOT_TIERS.professional, CHATBOT_TIERS.growth].find(
-    (t) => brands >= t.minWorkspaces,
-  )
-  return tier && { brandCount: brands, subscription: tier.pricePerWorkspace * brands }
+  const subscription = brands >= 2 ? foundingPriceFor(brands) : undefined
+  return subscription === undefined ? undefined : { brandCount: brands, subscription }
 }
 
 export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = noOfferSession()) {
@@ -36,16 +33,13 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
 
   const get_pricing_info = tool({
     description:
-      'Retrieve pricing information for a specific tier or all tiers. 4 tiers: Founding Member (997 EUR/mo, fixed for as long as the agency remains a client, maximum 10 spots), Growth (499 EUR per workspace, 2-4 brands), Professional (399 EUR per workspace, 5-14 brands), Enterprise (299 EUR per workspace, 15+ brands). Workspace-priced tiers have a one-time onboarding fee.',
+      'Retrieve the offer for new agencies. There is one: Founding, 1,297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1,500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 spots in the first cohort. Regular plans follow after the Founding cohort; Growth, Professional and Enterprise are not for sale.',
     inputSchema: z.object({
-      tier: z
-        .enum(['founding', 'growth', 'professional', 'enterprise', 'all'])
-        .default('all')
-        .describe('Which tier to retrieve. Use "all" for overview.'),
+      tier: z.enum(['founding', 'all']).default('all').describe('Use "all" for the overview.'),
     }),
     execute: async ({ tier }) => {
       if (tier === 'all') return { tiers: getChatbotTiers(locale) }
-      return getChatbotTier(locale, tier as ChatbotTierKey)
+      return getChatbotTier(locale, tier)
     },
   })
 

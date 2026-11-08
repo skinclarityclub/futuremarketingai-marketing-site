@@ -10,7 +10,7 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 **Create and Publish**
 - Social Media Manager (live): captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.
 - Blog Factory (live): SEO articles from keyword research to publication after approval. Length follows the search intent and the pages that already rank. Publishes to an MDX site, a Shopify blog or a custom connection.
-- Ad Manager (live): static and video ads for Meta, prepared for approval in Ads Manager (ad spend is always proposed first), then followed per ad on conversions, ROAS and ad fatigue.
+- Ad Manager (live): static and video ads for Meta, prepared for approval in Ads Manager (ad spend is always proposed first), then followed per ad on conversions, ROAS and ad fatigue. Ads are not included in the Founding offer.
 - Reel Builder (coming soon): short vertical videos with script, captions and music.
 
 **Engage and Convert**
@@ -53,38 +53,21 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
  },
  {
  key: 'pricing',
- content: `## FutureMarketingAI Pricing Plans
+ content: `## FutureMarketingAI Pricing
 
-All plans include Clyde, the AI colleague, and every skill. Caps scale with tier. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage.
+New agencies have one offer: Founding. Regular plans follow after the Founding cohort, built on three measured months. Growth, Professional and Enterprise are not for sale.
 
-**Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client**: maximum 10 founding spots. For portfolios of 3 or more brands it costs less than the workspace-priced tiers.
-- 10 workspaces included, EUR 299 per extra workspace above that
-- 8,000 credits/mo
-- All skills, with caps between Growth and Professional
-- Rate stays fixed for as long as the agency remains a client
-- Direct line to Daley on WhatsApp
-- No onboarding fee
+**Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 spots in the first cohort)
+- EUR 199 per extra client brand per month, up to 15 brands (6 brands EUR 1,496, 10 EUR 2,292, 15 EUR 3,287)
+- 1,500 credits per client brand per month, in one pool for the whole agency
+- Enough for a balanced month per brand, for example about 20 unique pieces (12 posts, 4 carousels, 4 shorts from the brand's own footage) and about 40 placements on Instagram, Facebook, LinkedIn, TikTok and YouTube Shorts; X and Threads where they fit the brand. Plus a blog, a research memo, an SEO/GEO check, a monthly report and Clyde. A guideline, not an output entitlement
+- The agency approves the work itself and keeps the client contact. Guidance is available on request
+- EUR 0 onboarding
+- Price fixed for 12 paid months, cancel monthly
+- Not included: AI video, voice-over, ads
+- Extra credits: 500 credits EUR 40, 2,000 EUR 160, 5,000 EUR 400
 
-**Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands**. Linear pricing: EUR 998 to EUR 1,996 per month total.
-- 800 credits per workspace (1,600 to 3,200 total per month)
-- All skills with Growth-tier caps
-- Direct WhatsApp line with Daley
-- EUR 1,997 onboarding fee
-
-**Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands**. Linear pricing: EUR 1,995 to EUR 5,586 per month total.
-- 800 credits per workspace (4,000 to 11,200 total per month)
-- All skills with wider caps
-- Direct WhatsApp line with Daley
-- EUR 3,997 onboarding fee
-
-**Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands**. Linear pricing: from EUR 4,485 per month upward.
-- 800 credits per workspace (12,000+ total per month)
-- All live skills without caps (fair use)
-- Direct WhatsApp line with Daley
-- EUR 5,997 onboarding fee
-
-**Credit Packs (top up anytime):**
-Mini Top-up 500 credits EUR 39 | Boost 2,000 credits EUR 149 | Scale 5,000 credits EUR 297 | Max 15,000 credits EUR 697
+Existing founding partners keep their agreement exactly as signed.
 
 Every engagement starts with a Strategy Call via the Apply form at https://future-marketing.ai/nl/apply. No self-service signup.`,
  keywords: [
@@ -118,7 +101,7 @@ Submit the short application form at https://future-marketing.ai/nl/apply.
 Daley personally reviews every application. If accepted, he schedules a 30-minute Strategy Call.
 
 **3. Strategy Call (30 min)**
-Honest assessment of which tier and skills deliver the most impact. We assess your client portfolio and pick the right starting setup.
+Honest assessment of whether Founding fits and which skills deliver the most impact. We assess your client portfolio and pick the right starting setup: how many brands and which channels per brand.
 
 **4. Onboarding (4 weeks)**
 We connect the accounts, brand voice and knowledge, run the strategy session per client, and set up Clyde, the content agenda and the approvals.
@@ -190,7 +173,7 @@ FutureMarketingAI builds Clyde, the AI colleague of your agency. Partnership mod
 
 **Our Focus:**
 - Marketing agencies in the Netherlands and the EU
-- Agencies with 5 to 20 people managing 5 to 20 client brands
+- Agencies with 5 to 20 people managing 5 to 15 client brands
 - Agencies that want to take on more clients with the team they have`,
  keywords: [
  'about',
@@ -219,7 +202,7 @@ Response within 48 hours on business days.
 
 **What to Expect:**
 - No sales pressure. We listen first
-- Honest assessment of which tier fits your agency
+- Honest assessment of whether Founding fits your agency
 - If we are not the right fit, we will tell you`,
  keywords: [
  'contact',
