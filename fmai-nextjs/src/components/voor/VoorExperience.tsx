@@ -38,7 +38,7 @@ export function VoorExperience({ slug, firstName, agencyName, email, bookingStar
         slug={slug}
         v={v}
         src={voorVideo.hlsUrl}
-        // shortcut: placeholder asset until plan A2 delivers the real video (ruling R2), replace at Task 11 step 1
+        // poster and still are a frame from film r3 (chapter 1); shortcut until Bunny, plan A Task 11
         poster="/voor/outreach-poster.jpg"
         still="/voor/daley-still.png"
         agencyName={agencyName}

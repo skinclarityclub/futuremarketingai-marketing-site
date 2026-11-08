@@ -2,6 +2,7 @@ import { expect, test, type APIRequestContext, type BrowserContext, type Page, t
 import { randomInt } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
+import { voorVideo } from '../../src/config/voorVideo'
 
 // Proof of /voor/<slug> in a real Chrome against the stub of the app (tests/e2e-voor/stubs/video-pages-app.mjs).
 // The stub never orders events: these tests prove what the BROWSER sends and when it starts measuring.
@@ -74,7 +75,7 @@ function calRequests(page: Page) {
 // The player gets its source through the same code as production; only the network answer is ours.
 function serveVideo(target: Page | BrowserContext) {
   const hits: { url: string; headers: Record<string, string> }[] = []
-  void target.route('https://voor-video.invalid/**', (route) => {
+  void target.route(`${voorVideo.cdnOrigin}/**`, (route) => {
     const req = route.request()
     hits.push({ url: req.url(), headers: req.headers() })
     const name = path.basename(new URL(req.url()).pathname)
@@ -247,7 +248,7 @@ test.describe('voor', () => {
     await startVideo(page)
     await expect.poll(() => time(page)).toBeGreaterThan(1)
     // Chrome 155 plays HLS natively (canPlayType says 'maybe'), so the source is the playlist URL itself; hls.js is the next test.
-    expect(await page.evaluate(() => document.querySelector('video')!.src)).toBe('https://voor-video.invalid/outreach/playlist.m3u8')
+    expect(await page.evaluate(() => document.querySelector('video')!.src)).toBe(voorVideo.hlsUrl)
     expect(hits.some((h) => h.url.endsWith('.m3u8'))).toBe(true)
     expect(hits.some((h) => h.url.endsWith('.m2ts'))).toBe(true)
     expect(hits.filter((h) => h.headers['referer'])).toEqual([])
