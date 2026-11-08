@@ -70,7 +70,7 @@ export function ClydePresence({
   }, [])
 
   const isWhispering = idleStage === 'whispering' && whisper.length > 0
-  const ariaLabel = `Open chat met Clyde${isWhispering ? ` — ${whisper}` : ''}`
+  const ariaLabel = `Open chat met Clyde${isWhispering ? `: ${whisper}` : ''}`
 
   // Lift clear of the cookie banner until consent is recorded. The banner is
   // fixed bottom-0 z-[9999] and ~154px tall on desktop, so the old lg:bottom-24

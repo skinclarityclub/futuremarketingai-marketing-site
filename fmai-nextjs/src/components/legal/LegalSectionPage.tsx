@@ -68,7 +68,7 @@ export async function LegalSectionPage({
 
       <section className="relative pt-16 pb-8 px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-text-primary mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-text-primary mb-4 hyphens-auto break-words">
             {sectionTitle}
           </h1>
           <p className="text-sm text-text-muted">{t('last_updated')}</p>

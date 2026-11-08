@@ -197,7 +197,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {getCategoryLabel(post.category)}
             </span>
           </div>
-          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
+          {/* text-3xl on phones plus hyphens and break-words: one long Dutch compound in an article title overflowed 390px */}
+          <h1 className="font-display text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl hyphens-auto break-words">
             {post.title}
           </h1>
           <p className="text-lg leading-relaxed text-text-secondary">{post.description}</p>

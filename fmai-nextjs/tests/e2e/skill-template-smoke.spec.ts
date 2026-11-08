@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 
-const SKILLS = ['clyde', 'ad-manager', 'lead-qualifier', 'email-management'] as const
+// clyde left the template in golf 6, reporting and seo-geo in golf 9c (proof pages without FAQ accordion or related list).
+const SKILLS = ['ad-manager', 'lead-qualifier', 'email-management'] as const
 
 for (const slug of SKILLS) {
   test(`skill page ${slug} renders with new template parts`, async ({ page }) => {

@@ -59,7 +59,13 @@ export async function ComparisonTable({ locale }: { locale: string }) {
 
         {/* Mobile: horizontal scroll with right-edge gradient hint. Desktop: full grid. */}
         <div className="relative">
-          <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible">
+          {/* focusable so keyboard users can scroll the columns on a phone (axe scrollable-region-focusable) */}
+          <div
+            tabIndex={0}
+            role="region"
+            aria-labelledby="comparison-table"
+            className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 lg:overflow-visible rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-system"
+          >
             <table className="min-w-[760px] lg:min-w-full w-full border-separate border-spacing-0 text-left">
             <thead>
               <tr>
@@ -74,7 +80,7 @@ export async function ComparisonTable({ locale }: { locale: string }) {
                   className="font-mono uppercase text-[11px] tracking-[0.16em] text-text-muted px-4 lg:px-5 py-3 align-bottom"
                 >
                   <span className="block">{t('headers.diy')}</span>
-                  <span className="block normal-case tracking-normal text-text-muted/70 mt-0.5 text-[10px]">
+                  <span className="block normal-case tracking-normal text-text-muted mt-0.5 text-[11px]">
                     {t('headers.diyHint')}
                   </span>
                 </th>

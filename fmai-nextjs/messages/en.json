@@ -56,7 +56,7 @@
       },
       "clyde": {
         "title": "Clyde, your AI colleague",
-        "description": "One point of contact for your entire portfolio, in every screen of your dashboard and on WhatsApp. Ask in plain language, Clyde picks the right skill.",
+        "description": "One point of contact for your entire portfolio, in every screen of your dashboard and on WhatsApp. You ask in plain language.",
         "statusLabel": "Active",
         "promptIntro": "Ask for example:",
         "prompt1": "Plan Instagram content for all SKC accounts this week",
@@ -472,7 +472,7 @@
         },
         "s2": {
           "t": "WhatsApp",
-          "d": "Ask Clyde how things stand while you're out. He checks in on his own when something deviates or is waiting for you, and every Friday the SEO report comes in. Reports and Clyde's proposals you confirm with one tap; content you approve in the app."
+          "d": "Ask Clyde how things stand while you're out. He checks in on his own when something deviates or is waiting for you, and every Friday the SEO report comes in. Content you approve in the app or the dashboard."
         },
         "s3": {
           "t": "On your phone",
@@ -648,7 +648,7 @@
       "skill_ad_manager": "Ad Manager",
       "skill_email_management": "Email Management",
       "skill_reporting": "Reporting",
-      "skill_seo_geo": "SEO / GEO",
+      "skill_seo_geo": "SEO and GEO",
       "skill_clyde": "Working with Clyde",
       "blog": "Blog",
       "resources": "Resources",
@@ -1440,7 +1440,7 @@
   "contact": {
     "meta": {
       "title": "Contact | FutureMarketingAI",
-      "description": "Get in touch with Future Marketing AI about Clyde, your agency's AI colleague. Questions on partnerships or the skills? We respond within 1 to 2 business days."
+      "description": "Get in touch about Clyde, your agency's AI colleague. A question about a partnership or a skill? We reply within 1 to 2 business days."
     },
     "hero": {
       "eyebrow": "Contact",
@@ -2043,7 +2043,7 @@
       "description": "Create static and video ads for Meta, queue them for approval and track each ad on conversions, ROAS and ad fatigue. 10 credits static, 20 credits video."
     },
     "hero": {
-      "eyebrow": "Skill 05. Ad Manager",
+      "eyebrow": "Ad Manager",
       "title": "Clyde creates your Meta ads and tracks them.",
       "subtitle": "Static ads and video ads: copy, visuals and multiple formats (Feed, Stories, Reels), queued for Meta Ads Manager. An ad only goes live after your approval. After that Clyde tracks every ad on conversions, ROAS and ad fatigue, in plain language.",
       "cta": "Request a call",
@@ -2124,7 +2124,7 @@
         },
         "q2": {
           "question": "Which platforms does Ad Manager support?",
-          "answer": "Meta Ads (Instagram and Facebook): Feed, Stories and Reels, plus per-ad performance via the Meta Marketing API. TikTok, LinkedIn and Google Ads are on the product roadmap. Clients with budget on those channels can export PNG and MP4 manually for now."
+          "answer": "Meta Ads (Instagram and Facebook): Feed, Stories and Reels, plus per-ad performance via the Meta Marketing API. Clyde does not run TikTok, LinkedIn or Google Ads. If a client has budget on those channels, you export the ads as PNG or MP4 and place them there yourself."
         },
         "q3": {
           "question": "On which tiers is Ad Manager available?",
@@ -2143,110 +2143,106 @@
   },
   "skills-reporting": {
     "meta": {
-      "title": "Reporting. Dashboards, digests and anomaly detection | Clyde",
-      "description": "Every week Clyde writes a report per brand, keeps a dashboard per client and lets you know when a figure deviates sharply. 5 credits per report."
+      "title": "Automated marketing reporting for agencies | Clyde",
+      "description": "Clyde builds a weekly and a monthly report per client from the real figures, explained in plain language. Your client reads it in their portal."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Skill 06. Reporting and Analytics",
-      "title": "Clyde reports every week.",
-      "subtitle": "A weekly report per brand in your dashboard, the SEO report on WhatsApp every Friday, and a heads-up from Clyde as soon as a figure deviates sharply. No more manual Notion updates.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Generate the weekly performance digest for every brand",
-        "prompt2": "Which metrics drifted more than 20% this week?",
-        "prompt3": "Compare SkinClarity’s Q4 numbers against Q3"
+      "eyebrow": "Reporting",
+      "title": "Automated marketing reporting per client.",
+      "definition": "Per client, Clyde puts the figures that matter in one place: the brand's goal, what the posts did and where visitors came from. A weekly report every week and an evaluation every month, explained in plain language. Your client reads the same in their portal.",
+      "factsLabel": "In short",
+      "facts": {
+        "client": {
+          "label": "Per client",
+          "value": "The goal first"
+        },
+        "source": {
+          "label": "Source",
+          "value": "With every figure"
+        },
+        "portal": {
+          "label": "Portal",
+          "value": "Your client reads along"
+        }
+      },
+      "shot": {
+        "bar": "Results · Dagspa Luwte",
+        "scrollLabel": "A client's results, scrollable",
+        "alt": "Dagspa Luwte's results over weeks 41 to 44, in the app, in Dutch: 86 bookings against a goal of 80 per four weeks, per week in a bar chart, with the source entered by hand. On the right, Clyde with questions such as which post did best.",
+        "caption": "Dagspa Luwte's goal first, with the source and the date next to it."
       }
     },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Weekly performance digest",
-        "body": "Every week per brand in your dashboard: top KPIs, trends, anomalies and recommended actions. Clyde writes the narrative. The SEO report also arrives on WhatsApp every Friday."
-      },
-      "feature2": {
-        "title": "Dashboard per client",
-        "body": "Across the connected channels: Instagram, website traffic from GA4 and Search Console, sales from Shopify and ads from Meta. Refreshed daily, filterable per brand and period."
-      },
-      "feature3": {
-        "title": "Anomaly detection",
-        "body": "Every day Clyde looks at reach, engagement, saves and revenue. If a figure deviates sharply, he lets you know, on WhatsApp too if you have connected it. No surprises in the monthly report."
-      },
-      "feature4": {
-        "title": "Custom reports",
-        "body": "Ask in natural language: \"Report for brand X on Q3, focused on Instagram versus LinkedIn.\" Clyde builds it."
+    "figures": {
+      "title": "From the real figures, with the source next to them.",
+      "sub": "Clyde reads the figures from what you connect per client: Google Analytics for the website, the social accounts, and what you enter yourself, such as bookings. Every figure shows where it comes from and when it was read. He compares posts on their seventh day, so a post from yesterday does not lag behind one from last week.",
+      "shot": {
+        "bar": "Results · Channels",
+        "scrollLabel": "The Instagram channel, scrollable",
+        "alt": "Dagspa Luwte's Instagram channel over weeks 41 to 44, in the app, in Dutch: an average reach of 772 per day, 185 new followers, 24 posts, 1.1 percent interactions per reach and 803 link clicks, each with its source and date.",
+        "caption": "Dagspa Luwte's Instagram, compared on reach rather than followers."
       }
     },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Connect data sources",
-        "body": "Instagram, Google Analytics, Search Console, Shopify and Meta Ads, connected per brand."
-      },
-      "step2": {
-        "title": "Set goals",
-        "body": "What does success look like for this client? Set the goals and choose where the result comes from: Shopify, a GA4 conversion, a custom connection or manual entry."
-      },
-      "step3": {
-        "title": "A fixed rhythm",
-        "body": "The weekly report is ready every Sunday, the SEO report comes on Friday. Clyde flags sharp deviations the same day."
-      }
-    },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "All skills: social, blog, ads and email feed the reporting.",
-      "integration2": "Research: trend data enriches the context in digests.",
-      "integration3": "Clyde: ask him what a figure means and what the best next step is."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "Agencies with monthly client reviews",
-        "body": "Instead of a Notion marathon right before the client meeting: you are already up to date every week."
-      },
-      "useCase2": {
-        "title": "Operators who want to work data-driven",
-        "body": "Which content works, which campaigns have ROI, where the portfolio is growing. Transparent and auditable."
-      }
-    },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Ready to hand reporting over to Clyde?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
-    },
-    "faq": {
-      "title": "Frequently asked questions about Reporting and Analytics",
-      "items": {
-        "q1": {
-          "question": "What does the Reporting skill do exactly?",
-          "answer": "Every week Clyde writes a report per brand with the figures and his interpretation, keeps a dashboard per client across social, web, sales and ads, and checks every day for deviations in reach, engagement, saves and revenue. He lets you know about a sharp deviation, on WhatsApp too. You ask for a custom report in plain language."
+    "explain": {
+      "title": "Explained in plain language.",
+      "sub": "With the figures, Clyde writes what happened and what he would do next, for now in Dutch. Want to know more? Ask him, right next to the figures.",
+      "cards": {
+        "week": {
+          "label": "Weekly report",
+          "text": "A look back at the week and ahead to the next one, per client."
         },
-        "q2": {
-          "question": "Which data sources does Reporting support?",
-          "answer": "Instagram, Google Analytics 4, Search Console, Shopify and Meta Ads. The sources are refreshed daily and stored in our database in the EU. The result per client comes from Shopify, a GA4 conversion, a custom connection or manual entry."
+        "month": {
+          "label": "Monthly evaluation",
+          "text": "Once a month: what worked, what did not, and the lesson you take into the next month."
         },
-        "q3": {
-          "question": "On which tiers is Reporting available?",
-          "answer": "Included on every tier. A report costs 5 credits. What each tier costs is on the pricing page."
-        },
-        "q4": {
-          "question": "How soon do I get the first report?",
-          "answer": "As soon as a source is connected, the data comes in daily and the weekly report is ready every Sunday. The SEO report follows every Friday once Search Console is connected."
-        },
-        "q5": {
-          "question": "How does this differ from Looker Studio or Whatagraph?",
-          "answer": "Looker Studio builds dashboards that you interpret yourself every week. Whatagraph bundles the figures into a report. Clyde adds the interpretation: what changed and what he proposes. And you can ask him follow-up questions, in the dashboard or on WhatsApp."
+        "ask": {
+          "label": "Ask Clyde",
+          "text": "Which post did best? Which channel is growing? You ask the question next to that client's figures."
         }
       }
     },
-    "screenshot": {
-      "alt": "Weekly report for a demo client covering October 4 to 10: summary, content performance, highlights and recommendations. The figures are demo data.",
-      "caption": "A demo client's weekly report, with what Clyde recommends"
+    "portal": {
+      "title": "Your client reads it in their portal.",
+      "sub": "Under Reports your client sees the same figures, in their own words: a figure you enter is labelled as entered by your agency. The weekly reports and the monthly evaluations are there too, to read back.",
+      "shot": {
+        "bar": "Client portal · Reports",
+        "scrollLabel": "The reporting in the client portal, scrollable",
+        "alt": "The reporting in Dagspa Luwte's client portal, in Dutch: the same 86 bookings against a goal of 80 per four weeks, with the source entered by your agency, and a choice between one week, four weeks and thirteen weeks.",
+        "caption": "What Dagspa Luwte itself sees under Reports."
+      },
+      "link": "The client portal"
+    },
+    "faq": {
+      "title": "Questions about reporting.",
+      "sub": "What agencies want to know before Clyde makes their clients' reports.",
+      "items": {
+        "client": {
+          "q": "Can my client read the report themselves?",
+          "a": "Yes. In their portal, under Reports, they find the overview with their goal, plus the weekly reports and the monthly evaluations. They read along; you make the changes. What else they see is on <link>the client portal page</link>."
+        },
+        "sources": {
+          "q": "Which sources does Clyde use?",
+          "a": "Google Analytics 4 for the website, the social accounts you connect per client, such as Instagram and LinkedIn, and figures you enter yourself, such as bookings or enquiries. Every figure shows its source and the moment Clyde read it."
+        },
+        "missing": {
+          "q": "What if a source is missing?",
+          "a": "Then the report says so. A block without a connection is marked as not connected, and a week that is still running is marked as ongoing. Clyde does not fill in a figure he has not measured."
+        },
+        "often": {
+          "q": "How often is there a report?",
+          "a": "A weekly report every week and a monthly evaluation every month, per client. You look at the figures themselves whenever you like, per week, per four weeks or per thirteen weeks. The SEO report per client site is on <link>the SEO and GEO page</link>."
+        }
+      }
+    },
+    "end": {
+      "title": "Figures your client can read themselves.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "seo": "SEO and GEO",
+        "social": "Social media"
+      }
     }
   },
   "booking": {
@@ -2540,7 +2536,7 @@
       "qualification": {
         "eyebrow": "Agency context",
         "title": "5 questions about your agency",
-        "subtitle": "No jury verdict — just so we can prepare the conversation.",
+        "subtitle": "No jury verdict, just so we can prepare the conversation.",
         "q1Title": "Which tier are you considering?",
         "q1Help": "Not a contract. We discuss the choice in the conversation.",
         "q2Title": "What's your agency's annual revenue?",
@@ -2571,7 +2567,7 @@
       "problem": {
         "eyebrow": "The problem",
         "title": "What are you trying to solve?",
-        "subtitle": "1 or 2 sentences. No pitch — just the real blocker.",
+        "subtitle": "1 or 2 sentences. No pitch, just the real blocker.",
         "placeholder": "Example: \"We lose 2 FTE on content production for 15 brands\" or \"SEO stagnates and we have no room for blogs.\"",
         "help": "Optional but recommended. Helps Daley prepare the conversation.",
         "counter": "{count} characters"
@@ -3164,7 +3160,7 @@
       "description": "Clyde classifies your Gmail or Outlook inbox, applies labels, tells you every morning what came in and drafts replies per brand. 5 credits per action."
     },
     "hero": {
-      "eyebrow": "Skill 04. Email Management",
+      "eyebrow": "Email Management",
       "title": "Clyde classifies your inbox.",
       "subtitle": "Clyde sorts your inbox in Gmail or Outlook. He reads incoming emails, puts them in the categories you choose, gives every email an urgency and drafts replies. You start the day with an overview instead of chaos.",
       "cta": "Request a call",
@@ -3681,110 +3677,134 @@
   },
   "skills-seo-geo": {
     "meta": {
-      "title": "SEO / GEO. SEO audits and monitoring of AI citations | Clyde",
-      "description": "Technical SEO audits, position tracking, Core Web Vitals and monitoring of AI citations in ChatGPT and Perplexity. 5 credits audit, 3 credits report."
+      "title": "Monitor AI citations for your clients: SEO and GEO | Clyde",
+      "description": "Per client site you see how often ChatGPT, Perplexity and Google AI Overviews mention your client, and which keywords rise or fall. A report every Friday."
     },
+    "demo": "Example agency and example brands from the demo environment of the app.",
     "hero": {
-      "eyebrow": "Skill 09. SEO / GEO Analyst",
-      "title": "Clyde monitors your SEO and AI citations.",
-      "subtitle": "Technical SEO audits, position tracking and Core Web Vitals. Plus GEO: how often is your brand cited by ChatGPT, Perplexity and Google AI Overviews? The new search layer runs on AI. Clyde keeps you visible there.",
-      "cta": "Request a call",
-      "prompts": {
-        "prompt1": "Run a technical SEO audit on the main domains",
-        "prompt2": "Track how often our brand is cited by ChatGPT and Perplexity",
-        "prompt3": "Which keywords dropped in ranking this week?"
+      "eyebrow": "SEO and GEO",
+      "title": "SEO and GEO for all your clients.",
+      "definition": "Per client site, Clyde measures two things side by side: how the site does in Google, and whether AI assistants such as ChatGPT, Perplexity and Google AI Overviews mention your client when they answer a question. Whatever needs attention goes to the top, with a proposal. Every Friday there is a report per site.",
+      "factsLabel": "In short",
+      "facts": {
+        "site": {
+          "label": "Per site",
+          "value": "Google and AI side by side"
+        },
+        "proposal": {
+          "label": "Proposal",
+          "value": "With every signal"
+        },
+        "report": {
+          "label": "Report",
+          "value": "Every Friday"
+        }
+      },
+      "shot": {
+        "bar": "SEO / GEO · Dagspa Luwte",
+        "scrollLabel": "A client's SEO dashboard, scrollable",
+        "alt": "Dagspa Luwte's SEO dashboard for luwte.demo, in the app, in Dutch: health 81 after the last crawl. At the top the priorities: a page title is missing, no main heading on the about page, AI search engines mention a competitor more often, a meta description is missing. On the right, Ask Clyde.",
+        "caption": "What needs attention on Dagspa Luwte's site, at the top of the dashboard."
       }
     },
-    "features": {
-      "title": "What Clyde does",
-      "subtitle": "Four core functions of this skill.",
-      "feature1": {
-        "title": "Technical SEO audits",
-        "body": "Weekly crawl: broken links, missing meta tags, slow pages, mobile friendliness and structured data. With a prioritized fix list."
+    "geo": {
+      "title": "What is GEO?",
+      "sub": "GEO stands for generative engine optimization: making sure AI assistants mention your client and cite them as a source. Every week Clyde asks ChatGPT, Perplexity and Google AI Overviews the same questions per client, and tracks whether the brand is in the answer, and in which place as a source.",
+      "shot": {
+        "bar": "SEO / GEO · AI visibility",
+        "scrollLabel": "Where a client is cited, scrollable",
+        "alt": "Where Dagspa Luwte is cited, in the app, in Dutch: in place 3 at Perplexity for rugmassage Amsterdam and in place 4 in Google AI Overviews for dagspa Amsterdam. Below, the AI share of voice: Dagspa Luwte 2, stadsbad-oost.demo 15 and warmwater-spa.demo 3.",
+        "caption": "Where AI assistants name Dagspa Luwte as a source, and how often a competitor."
       },
-      "feature2": {
-        "title": "Position tracking",
-        "body": "Your Google positions from Search Console every day, with a notification when a keyword drops. You follow competitors on Core Web Vitals and new pages in their sitemap."
-      },
-      "feature3": {
-        "title": "Core Web Vitals",
-        "body": "LCP, INP and CLS per page. Trend over time. Alerts on regressions. One of the most important Google ranking factors."
-      },
-      "feature4": {
-        "title": "Monitoring of AI citations (GEO)",
-        "body": "Every week Clyde asks ChatGPT, Perplexity, Gemini and Google AI Overviews questions from your niche. Is your brand mentioned? How often? In what context? A new kind of visibility."
+      "link": "More about GEO (in Dutch)"
+    },
+    "proposal": {
+      "title": "A proposal with every signal.",
+      "sub": "If Clyde sees that a competitor is mentioned more often, or that a keyword stays just outside the top 3, he puts it in the dashboard as a signal, with what he would do. You mark it as handled, reject it or turn it into a task.",
+      "shot": {
+        "bar": "SEO / GEO · Signals",
+        "scrollLabel": "Two signals with a proposal, scrollable",
+        "alt": "Two signals for Dagspa Luwte, in the app, in Dutch. AI search engines mention stadsbad-oost.demo more often, with the proposal to put a short, factual paragraph on the home page. Rugmassage Amsterdam sits just outside the top 3, with the proposal to name the keyword in the page title. Each has buttons to mark it as handled, reject it or make a task.",
+        "caption": "Two signals with a proposal, for Dagspa Luwte."
       }
     },
-    "how": {
-      "title": "How it works",
-      "step1": {
-        "title": "Connect site and keywords",
-        "body": "Clyde crawls the site and recognizes structure and key pages. Upload a keyword list or let Clyde compose one."
-      },
-      "step2": {
-        "title": "Set up GEO queries",
-        "body": "Which questions would a customer in your niche ask ChatGPT? Clyde asks them every week and logs the answers."
-      },
-      "step3": {
-        "title": "Weekly overview",
-        "body": "Positions, audit issues, AI citations and Core Web Vitals. Everything in one dashboard plus a weekly digest."
-      }
-    },
-    "integrations": {
-      "title": "Works together with",
-      "subtitle": "Via the shared memory per client.",
-      "integration1": "Blog Factory: blog articles are tracked on positions.",
-      "integration2": "Research: competitor keyword data enriches the strategy.",
-      "integration3": "Reporting: SEO and GEO KPIs in the weekly digest."
-    },
-    "useCases": {
-      "title": "Who this is for",
-      "useCase1": {
-        "title": "E-commerce with organic traffic as growth engine",
-        "body": "Technical audits and position tracking keep blog and product pages performing."
-      },
-      "useCase2": {
-        "title": "Agencies that take AI search seriously",
-        "body": "GEO is the new SEO. Whoever builds visibility in AI answers now has a head start later."
-      }
-    },
-    "allocation": {
-      "title": "Credit cost and tier availability",
-      "subtitle": "What this skill costs per action, and how much is included in each tier."
-    },
-    "cta": {
-      "title": "Ready to hand SEO over to Clyde?",
-      "subtitle": "Request a call. We will discuss how this skill fits your brands.",
-      "button": "Request a call"
-    },
-    "faq": {
-      "title": "Frequently asked questions about SEO and GEO Analyst",
-      "items": {
-        "q1": {
-          "question": "What does the SEO/GEO skill do exactly?",
-          "answer": "Clyde runs technical SEO audits, follows your Google positions via Search Console, monitors Core Web Vitals and tracks how often your brand is mentioned by AI search engines (ChatGPT, Perplexity, Gemini and Google AI Overviews). Delivers prioritized fix recommendations ranked by impact and effort."
-        },
-        "q2": {
-          "question": "Which tools and APIs are used?",
-          "answer": "PageSpeed Insights and Chrome user data (CrUX) for Core Web Vitals, Google Search Console for your positions, our own crawler that checks, among other things, whether structured data is present, and questions to ChatGPT, Perplexity, Gemini and Google AI Overviews for AI citations. Everything comes together in the weekly report."
-        },
-        "q3": {
-          "question": "On which tiers is SEO/GEO available?",
-          "answer": "Included on every tier. An audit costs 5 credits, a short report 3. The weekly crawl and the monthly report run for everyone."
-        },
-        "q4": {
-          "question": "How does SEO/GEO get started?",
-          "answer": "You connect Search Console and Google Analytics; Clyde crawls the site and asks the first AI questions. After that positions come in daily and AI citations weekly, with the SEO report every Friday."
-        },
-        "q5": {
-          "question": "How does this differ from Ahrefs or Semrush?",
-          "answer": "Ahrefs and Semrush are data tools, you interpret. Clyde combines SEO and GEO (AI citations), interprets the data and recommends by urgency. Example: 'your product page dropped four positions this week and loads slowly on mobile; start there.'"
+    "measure": {
+      "title": "What Clyde tracks per client site.",
+      "sub": "Everything is on one dashboard per client, in tabs. You only see that client's sites.",
+      "table": {
+        "caption": "Per client site",
+        "colMeasure": "Measure",
+        "colWhat": "What you see",
+        "rows": {
+          "health": {
+            "k": "Health",
+            "v": "A score from 0 to 100 after every crawl, with the open issues per page"
+          },
+          "positions": {
+            "k": "Positions in Google",
+            "v": "Per keyword the average position, the click-through rate and the seven-day trend"
+          },
+          "visits": {
+            "k": "Visits",
+            "v": "Sessions and page views from Google Analytics 4"
+          },
+          "citations": {
+            "k": "AI citations",
+            "v": "Per AI assistant, how often the brand is cited as a source and how often it is mentioned"
+          },
+          "quality": {
+            "k": "Site quality",
+            "v": "Speed and Core Web Vitals, plus the technical points"
+          },
+          "reports": {
+            "k": "Reports",
+            "v": "A weekly report every Friday, and a monthly report at the start of the month"
+          }
         }
       }
     },
-    "screenshot": {
-      "alt": "The SEO/GEO Command Center showing visitors, rankings, AI citations and Core Web Vitals side by side.",
-      "caption": "Rankings and AI citations in one view"
+    "report": {
+      "title": "A report per site every Friday.",
+      "sub": "Every Friday Clyde makes a weekly report per client site, and a monthly report at the start of the month. Under Reports you see which ones are ready and whether they were delivered. With the button to generate a report now, you make one in between.",
+      "shot": {
+        "bar": "SEO / GEO · Reports",
+        "scrollLabel": "A client site's reports, scrollable",
+        "alt": "The reports of luwte.demo, in the app, in Dutch: two weekly reports and a monthly report on October, in Dutch and delivered, with the button to generate a report now.",
+        "caption": "Dagspa Luwte's reports."
+      },
+      "link": "Reporting per client"
+    },
+    "faq": {
+      "title": "Questions about SEO and GEO.",
+      "sub": "What agencies want to know before Clyde follows their clients' sites.",
+      "items": {
+        "engines": {
+          "q": "Which AI assistants does Clyde measure?",
+          "a": "ChatGPT, Perplexity and Google AI Overviews. Every week he asks the same questions per client, so you see whether the brand is mentioned more or less often."
+        },
+        "citation": {
+          "q": "What is the difference between a citation and a mention?",
+          "a": "In a citation, the AI assistant names your client's site as a source. In a mention, the brand appears in the answer, with or without a link. A citation is the stronger signal."
+        },
+        "often": {
+          "q": "How often does the report come?",
+          "a": "A weekly report per client site every Friday, and a monthly report at the start of the month. In between, you make one with the button to generate a report now."
+        },
+        "blogs": {
+          "q": "Does this work together with the blogs?",
+          "a": "Yes. Keywords where the site sits just outside Google's first page are the starting point for <link>the Blog Factory</link>: Clyde writes an article about them, in the client's brand voice."
+        }
+      }
+    },
+    "end": {
+      "title": "Know where AI mentions your clients.",
+      "sub": "A 30-minute call about the clients you have now.",
+      "cta": "Request a call",
+      "links": {
+        "hub": "What Clyde makes",
+        "blog": "Blogs",
+        "reporting": "Reporting"
+      }
     }
   },
   "skills-clyde": {
@@ -3841,7 +3861,7 @@
     "whatsapp": {
       "title": "On WhatsApp: a proposal, you tap.",
       "sub": "Ask Clyde on WhatsApp. He answers, or makes a proposal with the buttons Run and Cancel. A typed \"yes\" runs nothing: only the button does.",
-      "body": "Every morning the briefing is in your WhatsApp. You confirm reports and proposals there with one tap; content you approve in the app.",
+      "body": "Every morning the briefing is in your WhatsApp. Content you approve in the app or the dashboard.",
       "scene": {
         "label": "Rebuilt WhatsApp conversation with Clyde. You ask how Luwte is doing. Clyde: three posts are scheduled, two wait for your review in the app. You ask to move the Thursday post to Friday. Clyde proposes to move the carousel from Thursday 12 November to Friday 13 November, with the buttons Run and Cancel.",
         "org": "Nova Digital",

@@ -85,3 +85,20 @@ Uit `R/g9/9b-tools/g9b-e2e-base-failing.txt` (31 regels; base2 is een herhaling 
 ## Akkoord op de diff
 
 Daley gaf vooraf toestemming voor push, PR en squash-merge (zie boven). Diffpagina `A/alle-paginas/golf9b-diff/index.html`, vault-note `Agency/Rapporten/2026-11-08 Golf 9b diff`.
+
+## Live (2026-11-08)
+
+PR #106, squash-merge `b58a243d` op 2026-11-07 23:48Z (00:48 Nederlandse tijd, dus de mergedag is 8 november en de PAGE_DATES kloppen). Op Daleys vooraf gegeven ja (zie boven).
+
+| Poort | Commando | Uitkomst |
+|---|---|---|
+| Vercel-preview | `gh pr checks 106`, daarna `vercel curl` op de branch-alias (de preview staat achter Vercel-bescherming, gewone curl geeft 302) | groen; 10 routes 200; ring 2 op 16.15%, geen `n13`, de Krijt & Staal-story in de HTML |
+| Prod, curl | `curl` op 12 routes van https://future-marketing.ai | 12x 200; ring 2 op 16.15%, de story staat erin; social-title "Social media planning tool voor bureaus \| Clyde" |
+| Prod, woorden | `python -I words9b.py https://future-marketing.ai` (`sessie-11-08/words9b-prod.log`) | 41 treffers, precies het aantal van build 5; social-media en blog-factory schoon. De rest staat buiten 9b en gaat mee in 9c |
+| Prod, PSI | `tools/port/m-psi.mjs`, 2 runs per strategie (`g9/psi9b`) | social-media mobiel 100/100, desktop 100/100; blog-factory mobiel 100/99, desktop 100/100; /nl mobiel 100/96, desktop 99/99 |
+| Prod, mobile-safari | `PLAYWRIGHT_BASE_URL=https://future-marketing.ai npx playwright test home-week-mobile mobile-sweep mobile-menu-cta --project=mobile-safari --workers=1` (`sessie-11-08/e2e-prod-safari.log`) | 3 groen (home-week-mobile, mobile-menu-cta 375x667 en 390x664). mobile-sweep rood, twee oorzaken, allebei niet uit 9b: (1) zijwaarts scrollen op `/nl/kennisbank/ai-marketing-medewerker` (33 px) en `/nl/legal/terms` (3 px), een lang samengesteld woord in de H1, ook al op prod voor 9b; mobile-chrome zag het niet omdat de spec `innerWidth` mat, die Chromium oprekt tot de inhoud. (2) WebKit meldt de afgebroken RSC-prefetches van de vorige pagina als "due to access control checks" zodra de sweep doornavigeert: gemeten 0 fouten zolang een pagina stilstaat, 46 tot 62 bij het wegnavigeren. Beide opgelost in 9c (H1's en de spec) |
+
+### Gezien op prod, mee in 9c
+
+- `/en`: `aria-prohibited-attr` op de typpuntjes in de geheugendemo (`span aria-label="thinking"`), alleen zichtbaar als de demo op dat moment typt.
+- Het axe-script van deze sessie stopte na 30 scrollstappen boven de laatste secties en mat die halverwege hun fade-in. `g9/9c-tools/axe-en2.mjs` scrolt tot het einde en wacht 1,2 s.

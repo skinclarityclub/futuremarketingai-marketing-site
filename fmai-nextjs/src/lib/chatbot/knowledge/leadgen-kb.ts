@@ -73,7 +73,7 @@ Ad copy plus static or video creatives in Feed, Story and Reel formats, with var
 **Email draft replies**
 Draft replies to incoming mail in the brand voice. This is inbox management, not newsletters or campaigns.
 
-**Not available today:** newsletters and email campaigns, Google Ads and LinkedIn Ads, TikTok and YouTube Shorts. Reel scripts and video come with the Reel Builder, which is coming soon.
+**Not available today:** newsletters and email campaigns, Google Ads and LinkedIn Ads, and video made by Clyde (TikTok videos, YouTube Shorts). Reel scripts and video come with the Reel Builder, which is coming soon.
 
 How much is produced follows the content agenda per client; there are no fixed weekly quotas.`,
  },

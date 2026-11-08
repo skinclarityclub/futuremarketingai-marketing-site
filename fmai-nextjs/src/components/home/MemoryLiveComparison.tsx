@@ -331,8 +331,9 @@ function ResponseCard(props: ResponseCardProps) {
 
 function TypingDots({ tone }: { tone: 'muted' | 'accent' }) {
   const color = tone === 'accent' ? 'bg-accent-system/60' : 'bg-text-muted/50'
+  // decorative: a span may not carry aria-label without a role (axe aria-prohibited-attr), and the reply text follows
   return (
-    <span className="inline-flex items-center gap-1 py-1" aria-label="thinking">
+    <span className="inline-flex items-center gap-1 py-1" aria-hidden>
       {[0, 1, 2].map((i) => (
         <span
           key={i}
