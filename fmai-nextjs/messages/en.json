@@ -2419,7 +2419,7 @@
         "15_50": "15 to 50 clients",
         "over_50": "More than 50"
       },
-      "tierLabel": "Which service level fits best?",
+      "tierLabel": "Which offer fits best?",
       "tierOptions": {
         "founding": "Founding (€1,297 per month excl. VAT for 5 client brands, €199 per extra brand): 3 spots",
         "unsure": "Not sure yet"
