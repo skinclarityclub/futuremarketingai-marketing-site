@@ -27,10 +27,11 @@ async function scrollThrough(page: Page) {
   })
 }
 
-test('no JavaScript and reduced motion: every .fm-reveal on /nl is fully visible', async ({ browser }) => {
+// /en: the /nl home has used no ScrollReveal since golf 5 (0 .fm-reveal on prod, 30 on /en, 2026-11-08).
+test('no JavaScript and reduced motion: every .fm-reveal on /en is fully visible', async ({ browser }) => {
   const ctx = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce' })
   const page = await ctx.newPage()
-  await page.goto('/nl')
+  await page.goto('/en')
   const styles = await revealStyles(page)
   expect(styles.length).toBeGreaterThan(0)
   for (const s of styles) expect(s.opacity).toBe('1')
@@ -38,7 +39,7 @@ test('no JavaScript and reduced motion: every .fm-reveal on /nl is fully visible
 })
 
 test('without view-timeline support every .fm-reveal is visible without scrolling', async ({ page }) => {
-  await page.goto('/nl')
+  await page.goto('/en')
   const supported = await page.evaluate(() => CSS.supports('animation-timeline: view()'))
   test.skip(supported, 'this engine supports view-timeline; covered by the next test')
   const styles = await revealStyles(page)
@@ -49,7 +50,7 @@ test('without view-timeline support every .fm-reveal is visible without scrollin
 test('with view-timeline support each .fm-reveal ends opaque and untransformed once scrolled into view', async ({
   page,
 }) => {
-  await page.goto('/nl')
+  await page.goto('/en')
   const supported = await page.evaluate(() => CSS.supports('animation-timeline: view()'))
   test.skip(!supported, 'this engine has no view-timeline; covered by the previous test')
   await scrollThrough(page)

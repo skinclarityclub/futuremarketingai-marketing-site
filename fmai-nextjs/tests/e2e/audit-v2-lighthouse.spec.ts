@@ -37,10 +37,10 @@ const OUT = join(__dirname, '../../test-results/audit-v2/lighthouse')
 // Playwright's chrome.exe causes ERR_ABORTED on Next.js App Router pages because its
 // renderer process handles history.replaceState() differently in Lighthouse's CDP context.
 // chrome-headless-shell does not exhibit this bug and is the correct binary for automated audits.
-// Update the revision (1223) when upgrading Playwright.
+// Update the revision when upgrading Playwright: playwright-core/browsers.json, chromium-headless-shell (1217 for 1.59.1).
 const CHROMIUM_PATH =
   process.env.PW_CHROMIUM_PATH ??
-  'C:\\Users\\daley\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1223\\chrome-headless-shell-win64\\chrome-headless-shell.exe'
+  'C:\\Users\\daley\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1217\\chrome-headless-shell-win64\\chrome-headless-shell.exe'
 
 type FormFactor = 'mobile' | 'desktop'
 const FORM_FACTORS: FormFactor[] = ['mobile', 'desktop']

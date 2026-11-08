@@ -79,7 +79,10 @@ test.describe('Clyde audit — chrome (no API key)', () => {
   test('panel opens with a message input and is a dialog', async ({ page }) => {
     const panel = await openClyde(page)
     await expect(panel.locator('textarea')).toBeVisible()
-    await expect(panel).toHaveAttribute('aria-modal', 'true')
+    await expect(panel).toHaveAttribute('role', 'dialog')
+    // Modal only below lg (e851a23a): on desktop the page behind the card stays usable.
+    if ((page.viewportSize()?.width ?? 1280) < 1024) await expect(panel).toHaveAttribute('aria-modal', 'true')
+    else await expect(panel).not.toHaveAttribute('aria-modal')
   })
 
   test('escape closes the panel', async ({ page }) => {
