@@ -34,9 +34,9 @@ export function BookingPanel({ agencyName, onOpen, open }: { agencyName: string;
     <>
       <aside className="flex flex-col gap-3 rounded-xl border border-border-primary bg-bg-surface p-5">
         <div className="flex items-center gap-3">
-          {/* shortcut: placeholder asset until plan A2 delivers the real video (ruling R2), replace at Task 11 step 1 */}
+          {/* the website portrait, the only photo of Daley we use (no AI photos) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/voor/daley-still.png" alt="" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
+          <img src="/images/daley-portrait.webp" alt="" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
           <div>
             <strong className="block">Daley van Diest</strong>
             <small className="text-text-secondary">Oprichter van FutureMarketingAI</small>
