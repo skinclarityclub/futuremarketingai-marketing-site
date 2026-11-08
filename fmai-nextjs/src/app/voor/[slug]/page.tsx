@@ -52,7 +52,7 @@ export default async function VoorPage({ params }: { params: Promise<{ slug: str
   return (
     <main className="mx-auto max-w-5xl px-4 pb-24 pt-6 sm:pt-10">
       {/* same lockup as the site header, so the prospect sees our brand, not plain text */}
-      <Link href="/nl" className="mb-6 inline-flex items-center gap-2.5" aria-label="FutureMarketingAI home">
+      <Link href="/nl" className="mb-6 flex w-fit items-center gap-2.5" aria-label="FutureMarketingAI home">
         <LogoSynapse size={30} />
         <span className="font-display text-xl font-bold tracking-tight whitespace-nowrap">
           <span className="logo-shimmer-text">FutureMarketing</span>
