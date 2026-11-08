@@ -282,20 +282,23 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         </div>
 
         <div className="ml-auto flex items-center gap-4 2xl:gap-5">
-          {/* Daley 2026-11-08: the language switch lives in the bar; as a floating button it covered page content.
-              The accessible name keeps the visible code in it (label in name). */}
+          {/* Daley 2026-11-08: the switch shows the flag of the language you are reading ("EN" on the Dutch
+              site was confusing); a click goes to the other one. The name is in the target language, the
+              language of whoever needs the switch, so `lang` matches the spoken text. */}
           <Link
             href={pathname}
             locale={otherLocale}
             hrefLang={otherLocale}
             lang={otherLocale}
-            aria-label={otherLocale === 'en' ? 'English (EN)' : 'Nederlands (NL)'}
+            aria-label={
+              locale === 'nl' ? 'Language: Dutch. Switch to English' : 'Taal: Engels. Wissel naar Nederlands'
+            }
             onClick={() =>
               window.gtag?.('event', 'language_switch', { from_language: locale, to_language: otherLocale })
             }
-            className="inline-flex h-11 items-center px-1 text-[14px] font-semibold tracking-[0.06em] text-[#c4ccd8] hover:text-[#f4f7fb] transition-colors"
+            className="group inline-flex h-11 w-11 items-center justify-center"
           >
-            {otherLocale.toUpperCase()}
+            <LocaleFlag locale={locale} />
           </Link>
           <a
             href={LOGIN_HREF}
@@ -385,5 +388,34 @@ export function HeaderClient({ locale }: HeaderClientProps) {
         )}
       </AnimatePresence>
     </header>
+  )
+}
+
+// Inline SVG, because flag emoji render as the letters "NL" in Chrome on Windows.
+function LocaleFlag({ locale }: { locale: string }) {
+  return (
+    <span
+      aria-hidden
+      className="block h-4 w-6 overflow-hidden rounded-[3px] ring-1 ring-white/25 transition-shadow group-hover:ring-white/60"
+    >
+      {locale === 'nl' ? (
+        <svg viewBox="0 0 9 6" className="block h-full w-full">
+          <rect width="9" height="2" fill="#AE1C28" />
+          <rect y="2" width="9" height="2" fill="#FFFFFF" />
+          <rect y="4" width="9" height="2" fill="#21468B" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" className="block h-full w-full">
+          <clipPath id="flag-uk-t">
+            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+          </clipPath>
+          <rect width="60" height="30" fill="#012169" />
+          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFFFFF" strokeWidth="6" />
+          <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#flag-uk-t)" stroke="#C8102E" strokeWidth="4" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#FFFFFF" strokeWidth="10" />
+          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+        </svg>
+      )}
+    </span>
   )
 }
