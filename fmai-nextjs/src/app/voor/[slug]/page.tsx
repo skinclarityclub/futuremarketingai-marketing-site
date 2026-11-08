@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { LogoSynapse } from '@/components/brand/logos/LogoSynapse'
 import { cache } from 'react'
 import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -49,7 +51,14 @@ export default async function VoorPage({ params }: { params: Promise<{ slug: str
   if (!page) notFound()
   return (
     <main className="mx-auto max-w-5xl px-4 pb-24 pt-6 sm:pt-10">
-      <p className="mb-6 text-sm font-semibold tracking-wide text-text-secondary">FutureMarketingAI</p>
+      {/* same lockup as the site header, so the prospect sees our brand, not plain text */}
+      <Link href="/nl" className="mb-6 inline-flex items-center gap-2.5" aria-label="FutureMarketingAI home">
+        <LogoSynapse size={30} />
+        <span className="font-display text-xl font-bold tracking-tight whitespace-nowrap">
+          <span className="logo-shimmer-text">FutureMarketing</span>
+          <span className="logo-ai-glow">AI</span>
+        </span>
+      </Link>
       <span className="text-xs font-semibold uppercase tracking-widest text-accent-system">
         Voor {page.firstName} van {page.agencyName}
       </span>
