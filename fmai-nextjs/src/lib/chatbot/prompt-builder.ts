@@ -21,7 +21,7 @@ export function buildMemoryContextLine(profile: MemoryProfile | undefined): stri
 const PAGE_CONTEXT_HINTS: Record<string, string> = {
   '/': 'User is on the homepage. Give an overview of capabilities, route to relevant skills.',
   '/memory': 'User is on the Memory page. Explain that Clyde keeps a memory per client (conversations, feedback, strategy and research) and that memories about a client belong to that agency and that client.',
-  '/pricing': 'User is on the Pricing page. Walk through the tiers and help pick one by the number of client brands.',
+  '/pricing': 'User is on the Pricing page. Explain the Founding offer and what it costs for their number of client brands.',
   '/apply': 'User is on the Apply page. Answer questions about the partnership process.',
   '/case-studies/skinclarity-club':
     'User is on the SkinClarity Club case study, our first client. Explain, in the past tense, how Clyde made the posts for 3 Instagram accounts from May to October 2026 and a post went live only after approval in the app. No result figures.',

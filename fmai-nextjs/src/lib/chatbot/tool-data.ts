@@ -1,19 +1,18 @@
 /**
- * Chatbot tier snapshot (v11, workspace-priced since 2026-04-28, locale-aware since 2026-05-29).
+ * Chatbot offer snapshot (Founding A1.4 since 2026-11-09, locale-aware since 2026-05-29).
  *
- * WHY: both /api/chatbot tools (leadgen + concierge) need tier data to answer
- * pricing questions. One module mirrors fma-app/src/lib/skills.ts AGENT_TIERS.
+ * WHY: both /api/chatbot tools (leadgen + concierge) need offer data to answer
+ * pricing questions. One module mirrors the offer in src/lib/pricing-data.ts and
+ * fma-app docs/plans/2026-11-09-founding-a14-credits-PLAN.md §1.
  *
- * Numeric/structural facts live in CHATBOT_TIERS (locale-neutral). User-facing
- * copy (price label + feature bullets) lives in TIER_COPY per locale so the
- * pricing card renders in the visitor's language (NL is source of truth).
+ * Numeric facts live in CHATBOT_TIERS (locale-neutral). User-facing copy (price
+ * label + feature bullets) lives in TIER_COPY per locale so the pricing card
+ * renders in the visitor's language (NL is source of truth).
  *
- * Pricing model:
- * - 'fixed': single monthly price (Founding Member only).
- * - 'workspace': monthly price = pricePerWorkspace * workspaces. `monthlyPrice`
- *   is the starter price for minWorkspaces.
+ * There is one offer for new agencies: Founding. Growth, Professional and
+ * Enterprise are off the site until the regular plans follow the Founding cohort.
  *
- * When fma-app pricing changes, update this file AND src/lib/skills-data.ts AND
+ * When the offer changes, update this file AND src/lib/pricing-data.ts AND
  * messages/*.json simultaneously. See fmai-nextjs/CLAUDE.md "Pricing SoT" rule.
  */
 
@@ -25,47 +24,25 @@ export function normalizeChatbotLocale(value: string | undefined): ChatbotLocale
 
 export const CHATBOT_TIERS = {
   founding: {
-    name: 'Founding Member',
-    pricingModel: 'fixed' as const,
-    monthlyPrice: 997,
+    name: 'Founding',
+    monthlyPrice: 1297, // EUR excl. VAT, covers includedBrands
+    includedBrands: 5,
+    pricePerExtraBrand: 199,
+    maxBrands: 15,
+    creditsPerBrand: 1500,
     onboardingFee: 0,
-    workspaces: -1, // not rendered; founding includes 10 workspaces, EUR 299 per extra one (app-side cap: stream P)
-    credits: 8000,
-    spotsTotal: 10,
-  },
-  growth: {
-    name: 'Growth',
-    pricingModel: 'workspace' as const,
-    pricePerWorkspace: 499,
-    minWorkspaces: 2,
-    maxWorkspaces: 4,
-    creditsPerWorkspace: 800,
-    monthlyPrice: 998, // 499 * 2 starter
-    onboardingFee: 1997,
-  },
-  professional: {
-    name: 'Professional',
-    pricingModel: 'workspace' as const,
-    pricePerWorkspace: 399,
-    minWorkspaces: 5,
-    maxWorkspaces: 14,
-    creditsPerWorkspace: 800,
-    monthlyPrice: 1995, // 399 * 5 starter
-    onboardingFee: 3997,
-  },
-  enterprise: {
-    name: 'Enterprise',
-    pricingModel: 'workspace' as const,
-    pricePerWorkspace: 299,
-    minWorkspaces: 15,
-    maxWorkspaces: -1, // unlimited
-    creditsPerWorkspace: 800,
-    monthlyPrice: 4485, // 299 * 15 starter
-    onboardingFee: 5997,
+    spotsTotal: 3,
   },
 } as const
 
 export type ChatbotTierKey = keyof typeof CHATBOT_TIERS
+
+/** Founding price for a brand count, or undefined outside 1..maxBrands. */
+export function foundingPriceFor(brands: number): number | undefined {
+  const f = CHATBOT_TIERS.founding
+  if (!Number.isInteger(brands) || brands < 1 || brands > f.maxBrands) return undefined
+  return f.monthlyPrice + Math.max(0, brands - f.includedBrands) * f.pricePerExtraBrand
+}
 
 interface TierCopy {
   priceLabel: string
@@ -75,142 +52,46 @@ interface TierCopy {
 const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
   nl: {
     founding: {
-      priceLabel: '€997/mnd',
+      priceLabel: '€1.297/mnd excl. btw',
       features: [
-        'Alle vaardigheden inbegrepen',
-        '10 werkruimtes inbegrepen',
-        '8.000 credits per maand',
-        'Vast tarief van €997 zolang je klant blijft (wordt nooit herijkt)',
-        'Directe WhatsApp-lijn met Daley',
-        'Bepaal mee de productroadmap',
-        'Maximaal 10 founding-plekken, geen onboarding-fee',
-      ],
-    },
-    growth: {
-      priceLabel: '€499 per werkruimte/mnd',
-      features: [
-        'Alle vaardigheden inbegrepen',
-        '2 tot 4 merk-werkruimtes',
-        '€499 per werkruimte per maand (vanaf €998 voor 2 merken)',
-        '800 credits per werkruimte (1.600 tot 3.200 totaal per maand)',
-        '€1.997 eenmalige onboarding',
-        'Directe WhatsApp-lijn met Daley',
-      ],
-    },
-    professional: {
-      priceLabel: '€399 per werkruimte/mnd',
-      features: [
-        'Alle vaardigheden inbegrepen',
-        '5 tot 14 merk-werkruimtes',
-        '€399 per werkruimte per maand (vanaf €1.995 voor 5 merken)',
-        '800 credits per werkruimte (4.000 tot 11.200 totaal per maand)',
-        '€3.997 eenmalige onboarding',
-        'Directe WhatsApp-lijn met Daley',
-      ],
-    },
-    enterprise: {
-      priceLabel: '€299 per werkruimte/mnd',
-      features: [
-        'Alle vaardigheden inbegrepen',
-        '15+ merk-werkruimtes (geen bovengrens)',
-        '€299 per werkruimte per maand (vanaf €4.485 voor 15 merken)',
-        '800 credits per werkruimte (12.000+ totaal per maand)',
-        '€5.997 eenmalige onboarding',
-        'Directe WhatsApp-lijn met Daley',
+        '5 klantmerken inbegrepen, €199 per extra klantmerk tot 15',
+        '1.500 credits per klantmerk per maand, in één pot voor je bureau',
+        'Per merk genoeg voor ~20 unieke stukken: 12 posts, 4 carrousels, 4 shorts uit eigen beeldmateriaal',
+        'Je bureau keurt zelf goed; begeleiding kan op aanvraag',
+        '€0 onboarding',
+        'Prijs 12 betaalde maanden vast, maandelijks opzegbaar',
+        'Niet inbegrepen: AI-video, voice-over, advertenties',
+        '3 plekken in het eerste cohort',
       ],
     },
   },
   en: {
     founding: {
-      priceLabel: '€997/mo',
+      priceLabel: '€1,297/mo excl. VAT',
       features: [
-        'All skills included',
-        '10 workspaces included',
-        '8,000 credits per month',
-        '€997 rate fixed for as long as you remain a client (never recalibrated)',
-        'Direct WhatsApp line with Daley',
-        'Shape the product roadmap',
-        'Maximum 10 founding spots, no onboarding fee',
-      ],
-    },
-    growth: {
-      priceLabel: '€499 per workspace/mo',
-      features: [
-        'All skills included',
-        '2 to 4 brand workspaces',
-        '€499 per workspace per month (from €998 for 2 brands)',
-        '800 credits per workspace (1,600 to 3,200 total per month)',
-        '€1,997 one-time onboarding',
-        'Direct WhatsApp line with Daley',
-      ],
-    },
-    professional: {
-      priceLabel: '€399 per workspace/mo',
-      features: [
-        'All skills included',
-        '5 to 14 brand workspaces',
-        '€399 per workspace per month (from €1,995 for 5 brands)',
-        '800 credits per workspace (4,000 to 11,200 total per month)',
-        '€3,997 one-time onboarding',
-        'Direct WhatsApp line with Daley',
-      ],
-    },
-    enterprise: {
-      priceLabel: '€299 per workspace/mo',
-      features: [
-        'All skills included',
-        '15+ brand workspaces (no upper cap)',
-        '€299 per workspace per month (from €4,485 for 15 brands)',
-        '800 credits per workspace (12,000+ total per month)',
-        '€5,997 one-time onboarding',
-        'Direct WhatsApp line with Daley',
+        '5 client brands included, €199 per extra client brand up to 15',
+        '1,500 credits per client brand per month, in one pool for your agency',
+        'Per brand enough for ~20 unique pieces: 12 posts, 4 carousels, 4 shorts from your own footage',
+        'Your agency approves the work itself; guidance is available on request',
+        '€0 onboarding',
+        'Price fixed for 12 paid months, cancel monthly',
+        'Not included: AI video, voice-over, ads',
+        '3 spots in the first cohort',
       ],
     },
   },
   es: {
     founding: {
-      priceLabel: '€997/mes',
+      priceLabel: '€1.297/mes sin IVA',
       features: [
-        'Todas las habilidades incluidas',
-        '10 espacios de trabajo incluidos',
-        '8.000 créditos al mes',
-        'Precio fijo de por vida de €997 (nunca sube para los miembros founding)',
-        'Acceso directo al fundador',
-        'Influye en la hoja de ruta del producto',
-        'Máximo 10 plazas founding, sin tarifa de incorporación',
-      ],
-    },
-    growth: {
-      priceLabel: '€499 por espacio/mes',
-      features: [
-        'Todas las habilidades incluidas',
-        '2 a 4 espacios de marca',
-        '€499 por espacio al mes (desde €998 para 2 marcas)',
-        '800 créditos por espacio (1.600 a 3.200 en total al mes)',
-        '€1.997 de incorporación única',
-        'Soporte por email',
-      ],
-    },
-    professional: {
-      priceLabel: '€399 por espacio/mes',
-      features: [
-        'Todas las habilidades incluidas',
-        '5 a 14 espacios de marca',
-        '€399 por espacio al mes (desde €1.995 para 5 marcas)',
-        '800 créditos por espacio (4.000 a 11.200 en total al mes)',
-        '€3.997 de incorporación única',
-        'Línea directa con Daley por WhatsApp',
-      ],
-    },
-    enterprise: {
-      priceLabel: '€299 por espacio/mes',
-      features: [
-        'Todas las habilidades incluidas',
-        '15+ espacios de marca (sin límite superior)',
-        '€299 por espacio al mes (desde €4.485 para 15 marcas)',
-        '800 créditos por espacio (12.000+ en total al mes)',
-        '€5.997 de incorporación única',
-        'Línea directa con Daley',
+        '5 marcas cliente incluidas, €199 por cada marca extra hasta 15',
+        '1.500 créditos por marca cliente al mes, en una bolsa para tu agencia',
+        'Por marca da para ~20 piezas únicas: 12 posts, 4 carruseles, 4 shorts con tu propio material',
+        'Tu agencia aprueba el trabajo; el acompañamiento está disponible bajo petición',
+        '€0 de onboarding',
+        'Precio fijo durante 12 meses pagados, cancelación mensual',
+        'No incluido: vídeo con IA, locución, anuncios',
+        '3 plazas en el primer grupo',
       ],
     },
   },
@@ -222,7 +103,6 @@ export function getChatbotTiers(locale: ChatbotLocale) {
     name: CHATBOT_TIERS[key].name,
     price: TIER_COPY[locale][key].priceLabel,
     features: TIER_COPY[locale][key].features,
-    highlighted: key === 'founding',
   }))
 }
 

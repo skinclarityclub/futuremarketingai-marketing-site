@@ -21,8 +21,6 @@ import { getAllPosts } from '@/lib/blog'
 import {
   getSkillBySlug,
   getRelatedSkills,
-  type SkillData,
-  type TierKey,
 } from '@/lib/skills-data'
 import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { SkillStickyToc } from './SkillStickyToc'
@@ -65,38 +63,6 @@ interface SkillPageTemplateProps {
   faqCount?: number
 }
 
-const TIER_ORDER: Array<{ key: TierKey; labelKey: string }> = [
-  { key: 'FOUNDING_MEMBER', labelKey: 'founding' },
-  { key: 'GROWTH', labelKey: 'growth' },
-  { key: 'PROFESSIONAL', labelKey: 'professional' },
-  { key: 'ENTERPRISE', labelKey: 'enterprise' },
-]
-
-type MatrixT = (key: string, values?: Record<string, string | number>) => string
-
-function formatCap(
-  skill: SkillData,
-  tier: TierKey,
-  t: MatrixT,
-  labels: { fairUse: string; unlimited: string; notAvailable: string },
-): string {
-  if (!skill.tierCaps) return labels.fairUse
-  const cap = skill.tierCaps[tier]
-  if (!cap) return labels.notAvailable
-  if (cap.labelKey) return t(cap.labelKey)
-  if (cap.included === -1) return labels.unlimited
-  if (cap.included === 0) return labels.notAvailable
-  switch (cap.unit ?? 'count') {
-    case 'min':
-      return t('minPerMonth', { count: cap.included })
-    case 'dm':
-      return t('dmsPerMonth', { count: cap.included })
-    case 'count':
-    default:
-      return t('itemsPerMonth', { count: cap.included })
-  }
-}
-
 export async function SkillPageTemplate({
   namespace,
   slug,
@@ -111,8 +77,6 @@ export async function SkillPageTemplate({
   faqCount = 5,
 }: SkillPageTemplateProps) {
   const t = await getTranslations({ locale, namespace })
-  const tTiers = await getTranslations({ locale, namespace: 'pricing.tiers' })
-  const tMatrix = await getTranslations({ locale, namespace: 'pricing.matrix' })
   const tCommon = await getTranslations({ locale, namespace: 'common' })
   const tBreadcrumbs = await getTranslations({ locale, namespace: 'common.breadcrumbs' })
   const tTemplate = await getTranslations({ locale, namespace: 'skills-template' })
@@ -133,12 +97,6 @@ export async function SkillPageTemplate({
       readTime: p.readTime ?? 1,
       kind: 'pillar' as const,
     }))
-
-  const matrixLabels = {
-    fairUse: tMatrix('fairUse'),
-    unlimited: tMatrix('unlimited'),
-    notAvailable: tMatrix('notAvailable'),
-  }
 
   const featureKeys = Array.from({ length: featureCount }, (_, i) => `feature${i + 1}`)
   const stepKeys = Array.from({ length: stepCount }, (_, i) => `step${i + 1}`)
@@ -173,7 +131,6 @@ export async function SkillPageTemplate({
     { id: 'how', label: tTemplate('toc.how') },
     { id: 'integrations', label: tTemplate('toc.integrations') },
     { id: 'usecases', label: tTemplate('toc.useCases') },
-    ...(skill ? [{ id: 'allocation', label: tTemplate('toc.allocation') }] : []),
     ...(customProof ? [{ id: 'proof', label: tTemplate('toc.proof') }] : []),
     ...(related.length > 0 ? [{ id: 'related', label: tTemplate('toc.related') }] : []),
     ...(articles.length > 0 ? [{ id: 'kennisbank', label: tTemplate('toc.kennisbank') }] : []),
@@ -384,57 +341,6 @@ export async function SkillPageTemplate({
                 </RevealContainer>
               </div>
             </section>
-
-            {/* Credit allocation per tier */}
-            {skill && (
-              <section id="allocation" className="py-16" aria-labelledby="allocation-heading">
-                <div className="max-w-5xl mx-auto">
-                  <div className="text-center mb-8 space-y-3">
-                    <EyebrowLabel>{tTemplate('eyebrows.allocation')}</EyebrowLabel>
-                    <SectionHeading id="allocation-heading">
-                      {t('allocation.title')}
-                    </SectionHeading>
-                    <p className="text-text-secondary max-w-2xl mx-auto">
-                      {t('allocation.subtitle')}
-                    </p>
-                    <p className="text-sm text-text-muted">
-                      <span className="font-mono">{skill.creditCostLabel}</span>
-                    </p>
-                  </div>
-                  <ScrollReveal>
-                    <GlassCard className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-b border-border-primary">
-                            <th className="text-left px-3 py-2 font-semibold text-text-primary">
-                              Tier
-                            </th>
-                            <th className="text-right px-3 py-2 font-semibold text-text-primary">
-                              {skill.name}
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {TIER_ORDER.map(({ key, labelKey }) => (
-                            <tr
-                              key={key}
-                              className="border-b border-border-primary/50 last:border-0"
-                            >
-                              <td className="px-3 py-2 text-text-secondary">
-                                {tTiers(`${labelKey}.name`)}
-                              </td>
-                              <td className="px-3 py-2 text-right text-text-primary font-medium">
-                                {formatCap(skill, key, tMatrix, matrixLabels)}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </GlassCard>
-                  </ScrollReveal>
-                </div>
-              </section>
-            )}
 
             {/* Proof / demo slot */}
             {customProof && (

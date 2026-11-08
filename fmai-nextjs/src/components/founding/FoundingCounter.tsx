@@ -1,14 +1,16 @@
 import { getLocale, getTranslations } from 'next-intl/server'
 import {
   FOUNDING_SPOTS_TOTAL,
+  FOUNDING_SPOTS_TAKEN,
   FOUNDING_COHORT_START,
 } from '@/lib/constants'
 
 /**
  * FoundingCounter
  *
- * WHY: shows the founding cap ("maximaal 10 founding-plekken") and, while it is still
- * ahead, the cohort start. No taken count: no founding org pays yet (Daley 2026-10-12).
+ * WHY: shows the signed spots against the cohort size ("0 van 3 plekken bezet") and,
+ * while it is still ahead, the cohort start. Only signed Founding A1.4 agencies count;
+ * legacy, demo and internal orgs never do (plan A1.4 §8, Daley 9 Nov 2026).
  *
  * Locale-aware date formatting via Intl.DateTimeFormat.
  *
@@ -65,6 +67,7 @@ export async function FoundingCounter({
     >
       <span className="text-sm font-semibold">
         {t('badge', {
+          taken: FOUNDING_SPOTS_TAKEN,
           total: FOUNDING_SPOTS_TOTAL,
         })}
       </span>

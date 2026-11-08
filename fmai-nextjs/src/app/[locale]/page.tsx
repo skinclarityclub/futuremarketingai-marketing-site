@@ -43,14 +43,14 @@ import { FounderSection } from '@/components/home/FounderSection'
 const PricingTeaser = dynamic(() =>
   import('@/components/home/PricingTeaser').then((m) => ({ default: m.PricingTeaser }))
 )
-import { TIER_PRICING, formatEur } from '@/lib/pricing-data'
+import { FOUNDING, formatEur } from '@/lib/pricing-data'
 const FaqAccordion = dynamic(() =>
   import('@/components/home/FaqAccordion').then((m) => ({ default: m.FaqAccordion }))
 )
 const LeadMagnetCTA = dynamic(() =>
   import('@/components/conversion/LeadMagnetCTA').then((m) => ({ default: m.LeadMagnetCTA }))
 )
-import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
 import { getPillarPosts, getClusterPosts } from '@/lib/blog'
 import { KennisbankTeaser, type KennisbankCard } from '@/components/home/KennisbankTeaser'
 import { ArrowRight, ShieldCheck, ServerCog, Handshake, Users, UserRound, Check } from 'lucide-react'
@@ -481,7 +481,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           (docs/plans/2026-05-26-post-nightshift-walkthrough.md:356). Back once she confirms one (Daley 2026-10-12). */}
 
       {/* ─────────────────────────────────────────────────────────────
-          Sectie 11 — PricingTeaser (4 tiers, W5.8 stagger reveal)
+          Sectie 11 — PricingTeaser (Founding only since A1.4, W5.8 stagger reveal)
           ──────────────────────────────────────────────────────────── */}
       {locale !== 'nl' && (
       <LazySection minHeight="420px">
@@ -491,23 +491,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             title={t('pricingTeaser.title')}
             subtitle={t('pricingTeaser.subtitle')}
             ctaLink={t('pricingTeaser.ctaLink')}
-            spotsTaken={t('pricingTeaser.spotsTaken', { total: FOUNDING_SPOTS_TOTAL })}
+            spotsTaken={t('pricingTeaser.spotsTaken', { taken: FOUNDING_SPOTS_TAKEN, total: FOUNDING_SPOTS_TOTAL })}
             perMonth={t('pricingTeaser.perMonth')}
-            perWorkspace={t('pricingTeaser.perWorkspace')}
-            futurePhaseEyebrow={t('pricingTeaser.futurePhaseEyebrow')}
-            futureAvailability={t('pricingTeaser.futureAvailability')}
+            regularNote={t('pricingTeaser.regularNote')}
             foundingCtaLabel={t('pricingTeaser.foundingCtaLabel')}
-            tiers={[
-              { key: 'founding',     price: formatEur(TIER_PRICING.FOUNDING_MEMBER.pricingModel === 'fixed' ? TIER_PRICING.FOUNDING_MEMBER.price : 0, locale),                       unit: 'perMonth',     highlighted: true  },
-              { key: 'growth',       price: formatEur(TIER_PRICING.GROWTH.pricingModel === 'workspace' ? TIER_PRICING.GROWTH.pricePerWorkspace : 0, locale),                          unit: 'perWorkspace', highlighted: false },
-              { key: 'professional', price: formatEur(TIER_PRICING.PROFESSIONAL.pricingModel === 'workspace' ? TIER_PRICING.PROFESSIONAL.pricePerWorkspace : 0, locale),              unit: 'perWorkspace', highlighted: false },
-              { key: 'enterprise',   price: formatEur(TIER_PRICING.ENTERPRISE.pricingModel === 'workspace' ? TIER_PRICING.ENTERPRISE.pricePerWorkspace : 0, locale),                  unit: 'perWorkspace', highlighted: false },
-            ]}
-            tierCopy={{
-              founding:     { label: t('pricingTeaser.tiers.founding.label'),     tagline: t('pricingTeaser.tiers.founding.tagline'),     desc: t('pricingTeaser.tiers.founding.desc')     },
-              growth:       { label: t('pricingTeaser.tiers.growth.label'),       tagline: t('pricingTeaser.tiers.growth.tagline'),       desc: t('pricingTeaser.tiers.growth.desc')       },
-              professional: { label: t('pricingTeaser.tiers.professional.label'), tagline: t('pricingTeaser.tiers.professional.tagline'), desc: t('pricingTeaser.tiers.professional.desc') },
-              enterprise:   { label: t('pricingTeaser.tiers.enterprise.label'),   tagline: t('pricingTeaser.tiers.enterprise.tagline'),   desc: t('pricingTeaser.tiers.enterprise.desc')   },
+            founding={{
+              price: formatEur(FOUNDING.price, locale),
+              label: t('pricingTeaser.tiers.founding.label'),
+              tagline: t('pricingTeaser.tiers.founding.tagline'),
+              desc: t('pricingTeaser.tiers.founding.desc', {
+                included: FOUNDING.includedWorkspaces,
+                extra: formatEur(FOUNDING.pricePerExtraWorkspace, locale),
+                max: FOUNDING.maxWorkspaces,
+                credits: formatEur(FOUNDING.creditsPerBrand, locale),
+                lock: FOUNDING.priceLockMonths,
+              }),
             }}
           />
         </ScrollReveal>

@@ -14,7 +14,8 @@ import type {
   LikertValue,
 } from '@/lib/apply/types'
 
-const TIER_KEYS: TierKey[] = ['founding', 'growth', 'professional', 'enterprise', 'unsure']
+// Founding A1.4 is the only offer; the API enum keeps the old values so earlier applications still validate.
+const TIER_KEYS: TierKey[] = ['founding', 'unsure']
 const REVENUE_KEYS: RevenueKey[] = ['under_300k', '300k_1m', '1m_3m', '3m_10m', 'over_10m']
 const CLIENT_COUNT_KEYS: ClientCountKey[] = ['solo', '1_5', '5_15', '15_50', 'over_50']
 const URGENCY_KEYS: UrgencyKey[] = ['30days', 'quarter', 'explore', 'unknown']

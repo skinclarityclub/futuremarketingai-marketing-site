@@ -10,7 +10,7 @@ import { sanitizeMemory } from './memory-persistence'
 export type Fit = 'strong' | 'good' | 'no_fit' | 'unclear'
 
 // The ICP as the site states it (messages/nl.json: "Bureaus met 5 tot 20 mensen en
-// 5 tot 20 merken"); the plans start at 2 brands, so 1 brand or a solo team is no fit.
+// 5 tot 20 merken"); 1 brand or a solo team is no fit.
 const ICP_MIN = 5
 const ICP_MAX = 20
 

@@ -6,15 +6,6 @@ import { Link } from '@/i18n/navigation'
 import { CTAButton } from '@/components/ui/CTAButton'
 import { EASE_OUT, VIEWPORT_DEFAULT } from '@/lib/motion/easings'
 
-type TierKey = 'founding' | 'growth' | 'professional' | 'enterprise'
-
-type TierViewModel = {
-  key: TierKey
-  price: string
-  unit: 'perMonth' | 'perWorkspace'
-  highlighted: boolean
-}
-
 interface PricingTeaserProps {
   eyebrow: string
   title: string
@@ -22,12 +13,11 @@ interface PricingTeaserProps {
   ctaLink: string
   spotsTaken: string
   perMonth: string
-  perWorkspace: string
-  futurePhaseEyebrow: string
-  futureAvailability: string
+  /** One line in place of the old tier strip: regular plans follow after the cohort (plan A1.4 D2). */
+  regularNote: string
   foundingCtaLabel: string
-  tiers: TierViewModel[]
-  tierCopy: Record<TierKey, { label: string; tagline: string; desc: string }>
+  /** Founding is the only offer on the site (Founding A1.4, 9 Nov 2026). */
+  founding: { price: string; label: string; tagline: string; desc: string }
 }
 
 const containerVariants = {
@@ -47,15 +37,6 @@ const itemVariants = {
   },
 }
 
-function unitLabel(
-  unit: TierViewModel['unit'],
-  perMonth: string,
-  perWorkspace: string,
-) {
-  if (unit === 'perMonth') return perMonth
-  return perWorkspace
-}
-
 export function PricingTeaser({
   eyebrow,
   title,
@@ -63,15 +44,10 @@ export function PricingTeaser({
   ctaLink,
   spotsTaken,
   perMonth,
-  perWorkspace,
-  futurePhaseEyebrow,
-  futureAvailability,
+  regularNote,
   foundingCtaLabel,
-  tiers,
-  tierCopy,
+  founding,
 }: PricingTeaserProps) {
-  const founding = tiers.find((t) => t.key === 'founding')
-  const futureTiers = tiers.filter((t) => t.key !== 'founding')
 
   return (
     <section aria-labelledby="pricing-teaser" className="py-20 px-6 lg:px-12">
@@ -99,8 +75,7 @@ export function PricingTeaser({
           viewport={VIEWPORT_DEFAULT}
         >
           {/* Founding hero tile (full-width) */}
-          {founding && (
-            <motion.article
+          <motion.article
               variants={itemVariants}
               className="relative overflow-hidden rounded-2xl border border-accent-human/40 bg-gradient-to-br from-accent-human/[0.08] via-bg-surface/30 to-transparent p-6 md:p-8 lg:p-10"
             >
@@ -113,11 +88,11 @@ export function PricingTeaser({
                 <div className="max-w-2xl">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-human/15 border border-accent-human/40 px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.14em] text-accent-human mb-5">
                     <Crown className="w-3 h-3" aria-hidden />
-                    {tierCopy.founding.tagline}
+                    {founding.tagline}
                   </span>
                   <div className="flex items-baseline gap-3 mb-2">
                     <span className="font-display text-xs uppercase tracking-[0.18em] text-text-secondary">
-                      {tierCopy.founding.label}
+                      {founding.label}
                     </span>
                   </div>
                   <div className="flex items-baseline gap-3">
@@ -125,11 +100,11 @@ export function PricingTeaser({
                       €{founding.price}
                     </span>
                     <span className="text-sm md:text-base text-text-secondary">
-                      {unitLabel(founding.unit, perMonth, perWorkspace)}
+                      {perMonth}
                     </span>
                   </div>
                   <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed">
-                    {tierCopy.founding.desc}
+                    {founding.desc}
                   </p>
                   <p className="mt-4 text-xs font-mono uppercase tracking-[0.14em] text-accent-human">
                     {spotsTaken}
@@ -147,50 +122,8 @@ export function PricingTeaser({
                 </div>
               </div>
             </motion.article>
-          )}
 
-          {/* Future tiers preview strip */}
-          {futureTiers.length > 0 && (
-            <div className="mt-12 lg:mt-14">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-xs font-mono uppercase tracking-[0.18em] text-text-muted">
-                  {futurePhaseEyebrow}
-                </span>
-                <span className="h-px flex-1 bg-border-primary/60" aria-hidden />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
-                {futureTiers.map((tier) => (
-                  <motion.article
-                    key={tier.key}
-                    variants={itemVariants}
-                    className="relative rounded-2xl border border-border-primary bg-white/[0.015] p-5 md:p-6 flex flex-col transition-colors hover:bg-white/[0.03] hover:border-border-primary/80"
-                  >
-                    <span className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">
-                      {tierCopy[tier.key].label}
-                    </span>
-                    <div className="mt-3 flex items-baseline gap-1.5">
-                      <span className="font-display text-3xl lg:text-4xl font-bold text-text-primary tabular-nums">
-                        €{tier.price}
-                      </span>
-                      <span className="text-xs text-text-muted">
-                        {unitLabel(tier.unit, perMonth, perWorkspace)}
-                      </span>
-                    </div>
-                    <p className="mt-2 text-xs font-medium text-accent-system">
-                      {tierCopy[tier.key].tagline}
-                    </p>
-                    <p className="mt-3 text-sm text-text-secondary leading-relaxed flex-1">
-                      {tierCopy[tier.key].desc}
-                    </p>
-                    <p className="mt-5 text-[11px] font-mono uppercase tracking-[0.12em] text-text-muted">
-                      {futureAvailability}
-                    </p>
-                  </motion.article>
-                ))}
-              </div>
-            </div>
-          )}
+          <p className="mt-8 text-sm text-text-muted">{regularNote}</p>
         </motion.div>
 
         <div className="mt-10">

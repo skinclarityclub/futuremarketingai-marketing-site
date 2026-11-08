@@ -11,21 +11,11 @@ import { PricingJsonLd } from '@/components/seo/PricingJsonLd'
 import { PageShell } from '@/components/layout/PageShell'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { SkillsTierMatrix } from '@/components/pricing/SkillsTierMatrix'
 import { WorkspaceSlider } from '@/components/pricing/WorkspaceSlider'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
-import { FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import {
-  FOUNDING,
-  PRICING_CHECKED_ON,
-  TIER_PRICING,
-  WORKSPACE_TIER_KEYS,
-  detectWorkspaceTier,
-  formatEur,
-  priceForTier,
-  type WorkspaceTierPricing,
-} from '@/lib/pricing-data'
+import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
+import { CREDIT_PACKS, FOUNDING, PRICING_CHECKED_ON, formatEur, foundingPrice } from '@/lib/pricing-data'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -41,11 +31,12 @@ export async function generateMetadata({
   return generatePageMetadata({ locale, namespace: 'pricing', path: '/pricing' })
 }
 
-const TIER_LABEL_KEY = { GROWTH: 'growth', PROFESSIONAL: 'professional', ENTERPRISE: 'enterprise' } as const
 const FOUNDING_LIST = ['n1', 'n2', 'n3', 'n4', 'n5'] as const
 const INCLUDED_KEYS = ['n1', 'n2', 'n3', 'n4', 'n5', 'n6'] as const
+// Plan A1.4 §3: the balanced month per brand, channel by channel (placements over 4 weeks).
+const MONTH_ROWS = ['n1', 'n2', 'n3', 'n4', 'n5'] as const
+const MONTH_EXTRAS = ['n1', 'n2', 'n3'] as const
 const EXAMPLE_BRANDS = [5, 10, 15] as const
-const CREDIT_PACK_KEYS = ['miniTopUp', 'boost', 'scale', 'unlimited'] as const
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11'] as const
 const CTA_LINKS = [
   { key: 'n1', href: '/alternatives' },
@@ -73,34 +64,37 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: 'pricing' })
-  const tTiers = await getTranslations({ locale, namespace: 'pricing.tiers' })
 
   // The slider is a client island; the global client payload only ships
-  // GLOBAL_CLIENT_NAMESPACES, so scope a provider here with just the two
-  // subtrees it reads (the whole namespace would ship the FAQ twice).
+  // GLOBAL_CLIENT_NAMESPACES, so scope a provider here with just the subtree
+  // it reads (the whole namespace would ship the FAQ twice).
   const { pricing } = (await getMessages()) as {
-    pricing: { example: { slider: AbstractIntlMessages }; tiers: AbstractIntlMessages }
+    pricing: { example: { slider: AbstractIntlMessages } }
   }
-  const pricingMessages = { pricing: { example: { slider: pricing.example.slider }, tiers: pricing.tiers } }
+  const pricingMessages = { pricing: { example: { slider: pricing.example.slider } } }
 
   const eur = (n: number) => formatEur(n, locale)
-  const growth = TIER_PRICING.GROWTH as WorkspaceTierPricing
-  const enterprise = TIER_PRICING.ENTERPRISE as WorkspaceTierPricing
+  const [pack1, pack2, pack3] = CREDIT_PACKS
   // One value bag for every string: copy never carries its own price or count.
   const v = {
     price: eur(FOUNDING.price),
     included: FOUNDING.includedWorkspaces,
     extra: eur(FOUNDING.pricePerExtraWorkspace),
-    credits: eur(FOUNDING.credits),
+    max: FOUNDING.maxWorkspaces,
+    creditsPerBrand: eur(FOUNDING.creditsPerBrand),
+    credits: eur(FOUNDING.creditsPerBrand * FOUNDING.includedWorkspaces),
+    lock: FOUNDING.priceLockMonths,
     spots: FOUNDING_SPOTS_TOTAL,
+    taken: FOUNDING_SPOTS_TAKEN,
     perBrand: eur(Math.round(FOUNDING.price / FOUNDING.includedWorkspaces)),
-    price15: eur(priceForTier('FOUNDING_MEMBER', 15)),
-    creditsPerBrand: eur(growth.creditsPerWorkspace),
-    growth: eur(growth.pricePerWorkspace),
-    professional: eur((TIER_PRICING.PROFESSIONAL as WorkspaceTierPricing).pricePerWorkspace),
-    enterprise: eur(enterprise.pricePerWorkspace),
-    onboardingMin: eur(growth.onboardingFee),
-    onboardingMax: eur(enterprise.onboardingFee),
+    price10: eur(foundingPrice(10)),
+    price15: eur(foundingPrice(15)),
+    pack1Credits: eur(pack1.credits),
+    pack1Price: eur(pack1.price),
+    pack3Credits: eur(pack3.credits),
+    pack3Price: eur(pack3.price),
+    pack2Credits: eur(pack2.credits),
+    pack2Price: eur(pack2.price),
   }
   const checkedOn = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : 'nl-NL', {
     day: 'numeric',
@@ -222,7 +216,54 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* 4. Worked example: price per client brand at 5, 10 and 15, plus the slider */}
+      {/* 4. What 1,500 credits per brand typically buy: the balanced month (plan A1.4 §3) */}
+      <section id="month" className={`${SECTION} scroll-mt-24`} aria-labelledby="month-title">
+        <div className="mx-auto max-w-6xl">
+          <p className={KICK}>{t('month.eyebrow')}</p>
+          <h2 id="month-title" className={H2}>
+            {t('month.title', v)}
+          </h2>
+          <p className={LEAD}>{t('month.sub', v)}</p>
+          <div className={TABLE_WRAP} role="region" aria-labelledby="month-caption" tabIndex={0}>
+            <table className={TABLE}>
+              <caption id="month-caption" className="caption-top px-4 pt-4 text-left text-sm text-[#8f9aae]">
+                {t('month.caption')}
+              </caption>
+              <thead>
+                <tr>
+                  {(['n1', 'n2', 'n3'] as const).map((key) => (
+                    <th key={key} scope="col" className={TH_HEAD}>
+                      {t(`month.head.${key}`)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {MONTH_ROWS.map((key) => (
+                  <tr key={key}>
+                    <th scope="row" className={TH_ROW}>
+                      {t(`month.rows.${key}.channel`)}
+                    </th>
+                    <td className={TD}>{t(`month.rows.${key}.rhythm`)}</td>
+                    <td className={TD}>{t(`month.rows.${key}.mix`)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <ul className="mt-8 flex max-w-[70ch] flex-col gap-2">
+            {MONTH_EXTRAS.map((key) => (
+              <li key={key} className={`${DOT} ${BODY}`}>
+                {t(`month.extras.${key}`, v)}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('month.notIncluded')}</p>
+          <p className="mt-2 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('month.guideline', v)}</p>
+        </div>
+      </section>
+
+      {/* 5. Worked example: price per client brand at 5, 10 and 15, plus the slider */}
       <section className={SECTION} aria-labelledby="example-title">
         <div className="mx-auto max-w-6xl">
           <p className={KICK}>{t('example.eyebrow')}</p>
@@ -244,8 +285,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               </thead>
               <tbody>
                 {EXAMPLE_BRANDS.map((brands) => {
-                  const founding = priceForTier('FOUNDING_MEMBER', brands)
-                  const laterTier = detectWorkspaceTier(brands)
+                  const founding = foundingPrice(brands)
                   return (
                     <tr key={brands}>
                       <th scope="row" className={TH_ROW}>
@@ -253,12 +293,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                       </th>
                       <td className={`${TD} font-semibold text-[#f4f7fb]`}>€{eur(founding)}</td>
                       <td className={TD}>€{eur(Math.round(founding / brands))}</td>
-                      <td className={TD}>
-                        {t('example.later', {
-                          price: eur(priceForTier(laterTier, brands)),
-                          tier: tTiers(`${TIER_LABEL_KEY[laterTier]}.name`),
-                        })}
-                      </td>
+                      <td className={TD}>{eur(FOUNDING.creditsPerBrand * brands)}</td>
                     </tr>
                   )
                 })}
@@ -270,69 +305,12 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <WorkspaceSlider locale={locale} initialWorkspaces={FOUNDING.includedWorkspaces} />
             </NextIntlClientProvider>
           </div>
+          <p className="mt-6 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('example.regular', v)}</p>
         </div>
       </section>
 
-      {/* 5. Later tariffs and caps */}
-      <section className={SECTION} aria-labelledby="later-title">
-        <div className="mx-auto max-w-6xl">
-          <p className={KICK}>{t('later.eyebrow')}</p>
-          <h2 id="later-title" className={H2}>
-            {t('later.title')}
-          </h2>
-          <p className={LEAD}>{t('later.sub', v)}</p>
-          <div className={TABLE_WRAP} role="region" aria-labelledby="later-caption" tabIndex={0}>
-            <table className={TABLE}>
-              <caption id="later-caption" className="caption-top px-4 pt-4 text-left text-sm text-[#8f9aae]">
-                {t('later.caption', v)}
-              </caption>
-              <thead>
-                <tr>
-                  {(['n1', 'n2', 'n3', 'n4', 'n5'] as const).map((key) => (
-                    <th key={key} scope="col" className={TH_HEAD}>
-                      {t(`later.head.${key}`)}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {WORKSPACE_TIER_KEYS.map((tier) => {
-                  const cfg = TIER_PRICING[tier] as WorkspaceTierPricing
-                  return (
-                    <tr key={tier}>
-                      <th scope="row" className={TH_ROW}>
-                        {tTiers(`${TIER_LABEL_KEY[tier]}.name`)}
-                      </th>
-                      <td className={TD}>
-                        {cfg.maxWorkspaces === -1
-                          ? t('later.rangeOpen', { min: cfg.minWorkspaces })
-                          : t('later.range', { min: cfg.minWorkspaces, max: cfg.maxWorkspaces })}
-                      </td>
-                      <td className={TD}>€{eur(cfg.pricePerWorkspace)}</td>
-                      <td className={TD}>{eur(cfg.creditsPerWorkspace)}</td>
-                      <td className={TD}>€{eur(cfg.onboardingFee)}</td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('later.recalibration')}</p>
-          <p className="mt-2 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('later.enterprise')}</p>
-
-          <h3 id="pricing-matrix" className="mt-14 text-xl font-bold tracking-[-0.02em] text-[#f4f7fb]">
-            {t('matrix.title')}
-          </h3>
-          <p className={`${BODY} mt-2 max-w-[62ch]`}>{t('matrix.subtitle')}</p>
-          <div className="mt-6">
-            <SkillsTierMatrix locale={locale} />
-          </div>
-          <p className="mt-4 max-w-[70ch] text-xs leading-normal text-[#8f9aae]">{t('matrix.legend')}</p>
-        </div>
-      </section>
-
-      {/* 6. Credits, in plain words; packs as a side note */}
-      <section className={SECTION} aria-labelledby="credits-title">
+      {/* 6. Credits, in plain words; top-ups as a side note */}
+      <section id="credits" className={`${SECTION} scroll-mt-24`} aria-labelledby="credits-title">
         <div className="mx-auto max-w-6xl">
           <p className={KICK}>{t('credits.eyebrow')}</p>
           <h2 id="credits-title" className={H2}>
@@ -341,20 +319,20 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
           <p className={LEAD}>{t('credits.body1')}</p>
           <p className={LEAD}>{t('credits.body2', v)}</p>
           <h3 className="mt-10 text-[17px] font-semibold text-[#f4f7fb]">{t('credits.packsTitle')}</h3>
-          <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {CREDIT_PACK_KEYS.map((key) => (
+          <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {CREDIT_PACKS.map((pack) => (
               <li
-                key={key}
+                key={pack.credits}
                 className="flex flex-col gap-1 rounded-xl bg-[#0e121b] px-4 py-4 shadow-[0_0_0_1px_rgba(255,255,255,0.08)]"
               >
-                <span className="text-sm font-semibold text-[#f4f7fb]">{t(`credits.packs.${key}.name`)}</span>
                 <span className="text-sm text-[#a3adbd]">
-                  {t('credits.packCredits', { credits: t(`credits.packs.${key}.credits`) })}
+                  {t('credits.packCredits', { credits: eur(pack.credits) })}
                 </span>
-                <span className="font-mono text-lg font-bold text-[#f4f7fb]">€{t(`credits.packs.${key}.price`)}</span>
+                <span className="font-mono text-lg font-bold text-[#f4f7fb]">€{eur(pack.price)}</span>
               </li>
             ))}
           </ul>
+          <p className="mt-4 max-w-[70ch] text-sm leading-normal text-[#8f9aae]">{t('credits.packsNote')}</p>
         </div>
       </section>
 

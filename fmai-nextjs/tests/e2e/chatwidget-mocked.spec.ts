@@ -674,9 +674,10 @@ test.describe('compact cards', () => {
       expect(c!.width).toBeGreaterThan(b!.width)
     })
 
-    test('pricing shows 4 rows', async ({ page }) => {
+    test('pricing shows the one Founding row', async ({ page }) => {
       const { card } = await show(page, 'get_pricing_info', PRICING)
-      await expect(card.locator('li')).toHaveCount(4)
+      await expect(card.locator('li')).toHaveCount(1)
+      await expect(card.getByText('€1.297/mnd excl. btw')).toBeVisible()
     })
 
     test('skills shows 5 rows and a coming soon pill', async ({ page }) => {
@@ -690,8 +691,8 @@ test.describe('compact cards', () => {
       await expect(card.locator('[data-roi-figure]')).toHaveCount(3)
       await expect(card.getByText('40 uur')).toBeVisible()
       await expect(card.getByText('173 uur')).toBeVisible()
-      await expect(card.getByText('€2.394')).toBeVisible()
-      await expect(card.getByText('abonnement per maand (6 merken)')).toBeVisible()
+      await expect(card.getByText('€1.496')).toBeVisible()
+      await expect(card.getByText('abonnement per maand excl. btw (6 merken)')).toBeVisible()
       await expect(card.getByText(/nog niet gemeten/)).toBeVisible()
       await expect(card.getByText(/besparing|ROI|%|terugverdien/i)).toHaveCount(0)
     })
@@ -775,9 +776,9 @@ test.describe('compact cards', () => {
 
   test('a single tier keeps its link to all prices', async ({ page }) => {
     const { card } = await show(page, 'get_pricing_info', {
-      name: 'Growth',
-      description: '€499 per werkruimte',
-      features: ['2-4 merken'],
+      name: 'Founding',
+      description: '€1.297/mnd excl. btw',
+      features: ['5 klantmerken inbegrepen, €199 per extra klantmerk tot 15'],
     })
     await expect(card.getByRole('link', { name: /Alle prijzen/ })).toHaveAttribute(
       'href',

@@ -78,14 +78,17 @@ export const ORG_FOUNDING_DATE = '2024-01-01'
 export const FALLBACK_PAGE_DATE = '2026-03-18'
 
 export const PAGE_DATES: Record<string, string> = {
+  // 2026-11-09 Founding A1.4: price, spots, credits and the old tiers changed on /, /pricing, /apply, /about,
+  // /alternatives, /how-it-works, /client-portal, /contact, /assessment, /legal/terms and every skill page that
+  // carried the per-tier caps table.
   // 2026-11-05 site-audit P0 PR: every path below changed its HTML that day (CTA label,
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
-  '/': '2026-11-08',
+  '/': '2026-11-09',
   '/memory': '2026-11-07',
   // 2026-11-08 golf 9c: /apply and /contact got titles and metas under the limits, /skills/clyde lost the WhatsApp
   // one-tap line. Move these to the merge day if it slips.
-  '/apply': '2026-11-08',
+  '/apply': '2026-11-09',
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
   '/case-studies': '2026-11-07',
   '/case-studies/skinclarity-club': '2026-11-07',
@@ -93,37 +96,37 @@ export const PAGE_DATES: Record<string, string> = {
   '/case-studies/saleslobe': '2026-11-07',
   // 2026-11-07 golf 8a: /client-portal is new, /skills/clyde became a proof page, and the stop-moment sentence on /,
   // /pricing and /trust now says the pause only holds with the stop moment on (Daley's choice 2).
-  '/client-portal': '2026-11-07',
+  '/client-portal': '2026-11-09',
   // 2026-11-08 golf 9c: reporting and seo-geo became proof pages from the prototype. Move these to the merge day
   // if it slips.
-  '/skills/reporting': '2026-11-08',
-  '/skills/seo-geo': '2026-11-08',
+  '/skills/reporting': '2026-11-09',
+  '/skills/seo-geo': '2026-11-09',
   // 2026-11-08 golf 9b: social-media and blog-factory became proof pages from the prototype; ad-manager and
   // email-management lost the invented numbers and the credits in a heading; the assessment lost 'orchestrator'.
   // Move these to the merge day if it slips.
-  '/skills/social-media': '2026-11-08',
-  '/skills/blog-factory': '2026-11-08',
-  '/skills/ad-manager': '2026-11-08',
+  '/skills/social-media': '2026-11-09',
+  '/skills/blog-factory': '2026-11-09',
+  '/skills/ad-manager': '2026-11-09',
   // 2026-11-08 golf 9a: the hub became Wat Clyde maakt, /skills/strategy is new, lead-qualifier lost its chat demo,
   // and the skill count left /, /pricing (matrix rows) and the terms. Move these to the merge day if it slips.
   '/skills/strategy': '2026-11-08',
-  '/skills/lead-qualifier': '2026-11-08',
-  '/skills/email-management': '2026-11-08',
+  '/skills/lead-qualifier': '2026-11-09',
+  '/skills/email-management': '2026-11-09',
   '/skills/clyde': '2026-11-08',
-  '/pricing': '2026-11-08',
-  '/alternatives': '2026-11-07',
-  '/about': '2026-11-06',
-  '/contact': '2026-11-08',
-  '/how-it-works': '2026-11-07',
+  '/pricing': '2026-11-09',
+  '/alternatives': '2026-11-09',
+  '/about': '2026-11-09',
+  '/contact': '2026-11-09',
+  '/how-it-works': '2026-11-09',
   '/legal': '2026-11-05',
   '/kennisbank': '2026-06-02',
   // Dates below come from `git log -1` on each page's own source file, not
   // from a guess — these six were missing and hit the old `new Date()` path.
   '/skills': '2026-11-08',
-  '/assessment': '2026-11-08',
+  '/assessment': '2026-11-09',
   // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
   '/legal/privacy': '2026-11-05',
-  '/legal/terms': '2026-11-08',
+  '/legal/terms': '2026-11-09',
   '/legal/cookies': '2026-04-27',
   '/trust': '2026-11-07',
 }

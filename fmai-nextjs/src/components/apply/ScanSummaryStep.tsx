@@ -8,7 +8,8 @@ import { ApplyOptionButton } from './ApplyOptionButton'
 import { Link } from '@/i18n/navigation'
 import type { TierKey, UrgencyKey } from '@/lib/apply/types'
 
-const TIER_KEYS: TierKey[] = ['founding', 'growth', 'professional', 'enterprise', 'unsure']
+// Founding A1.4 is the only offer; the API enum keeps the old values so earlier applications still validate.
+const TIER_KEYS: TierKey[] = ['founding', 'unsure']
 const URGENCY_KEYS: UrgencyKey[] = ['30days', 'quarter', 'explore', 'unknown']
 
 /**

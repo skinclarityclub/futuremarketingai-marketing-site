@@ -50,17 +50,8 @@
 #prijs:not(#_pad) .gp-pm li:first-child{border-top:0;padding-top:4px}
 #prijs:not(#_pad) .gp-pm b{font-size:clamp(30px,2.6vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.05;color:#f4f7fb;font-variant-numeric:tabular-nums}
 #prijs:not(#_pad) .gp-pm span{font-size:14.5px;line-height:1.4;color:#a3adbd}
-#prijs:not(#_pad) .gp-tw{margin-top:clamp(28px,4vh,40px);overflow-x:auto;overscroll-behavior-x:contain;border-radius:14px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
-#prijs:not(#_pad) .gp-tw:focus-visible{outline:2px solid #5eead4;outline-offset:3px}
-#prijs:not(#_pad) .gp-tab{width:100%;min-width:560px;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:14.5px;line-height:1.45}
-#prijs:not(#_pad) .gp-tab thead th:first-child{width:26%}
-#prijs:not(#_pad) .gp-tab th,#prijs:not(#_pad) .gp-tab td{padding:13px 16px;text-align:left;vertical-align:top;border-top:1px solid rgba(255,255,255,.07)}
-#prijs:not(#_pad) .gp-tab thead th{border-top:0;padding-top:15px;padding-bottom:13px;font-size:13.5px;font-weight:600;color:#c4ccd8;vertical-align:bottom}
-#prijs:not(#_pad) .gp-tab tbody th{font-weight:600;color:#f4f7fb}
-#prijs:not(#_pad) .gp-tab td{color:#c4ccd8;font-variant-numeric:tabular-nums}
-#prijs:not(#_pad) .gp-tab th:first-child{position:sticky;left:0;z-index:1;background:#0a0d14}
 #prijs:not(#_pad) .gp-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-#prijs:not(#_pad) .gp-ent{margin-top:12px;font-size:14px;line-height:1.5;color:#8f9aae}
+#prijs:not(#_pad) .gp-ent{margin-top:clamp(20px,3vh,28px);font-size:14px;line-height:1.5;color:#8f9aae}
 #prijs:not(#_pad) .gp-fit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px);margin-top:clamp(44px,7vh,72px)}
 #prijs:not(#_pad) .gp-ch{margin:0 0 14px;font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.25;color:#f4f7fb}
 #prijs:not(#_pad) .gp-col ul{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
@@ -90,9 +81,6 @@
 :is(#start,#prijs,#vragen,#afsluiting):not(#_pad) .gf5-hd{grid-template-columns:1fr;gap:18px}
 :is(#start,#prijs,#vragen,#afsluiting):not(#_pad) .gf5-p{font-size:17px}
 #start:not(#_pad) .gs-weeks{grid-template-columns:minmax(0,1fr)}
-#prijs:not(#_pad) .gp-tab{font-size:13.5px}
-#prijs:not(#_pad) .gp-tab th,#prijs:not(#_pad) .gp-tab td{padding:12px}
-#prijs:not(#_pad) .gp-tab thead th:first-child{width:128px}
 #prijs:not(#_pad) .gp-fit{grid-template-columns:minmax(0,1fr)}
 #afsluiting:not(#_pad) .ga-band{grid-template-columns:minmax(0,1fr);align-items:start}
 }

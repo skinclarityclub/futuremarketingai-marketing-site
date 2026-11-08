@@ -67,15 +67,18 @@ Captions in the brand voice and carousels (usually 5 to 7 slides) in the house s
 **Blog articles**
 SEO articles whose length follows the search intent and the pages that already rank. Meta description, heading structure and internal links are checked. Published after approval to an MDX site, a Shopify blog or a custom connection.
 
+**Shorts**
+Short vertical videos made from the brand's own footage: a template render with captions and music, for Instagram Reels, TikTok and YouTube Shorts. A short is planned for a brand once the first one has been rendered and approved; until then carousels take those slots. No AI-generated video.
+
 **Ads (Meta)**
-Ad copy plus static or video creatives in Feed, Story and Reel formats, with variants to test. Prepared for approval; ad spend is always proposed first.
+Ad copy plus static or video creatives in Feed, Story and Reel formats, with variants to test. Prepared for approval; ad spend is always proposed first. Ads are not included in the Founding offer.
 
 **Email draft replies**
 Draft replies to incoming mail in the brand voice. This is inbox management, not newsletters or campaigns.
 
-**Not available today:** newsletters and email campaigns, Google Ads and LinkedIn Ads, and video made by Clyde (TikTok videos, YouTube Shorts). Reel scripts and video come with the Reel Builder, which is coming soon.
+**Not available today:** newsletters and email campaigns, Google Ads and LinkedIn Ads, AI-generated video and voice-over.
 
-How much is produced follows the content agenda per client; there are no fixed weekly quotas.`,
+How much is produced follows the content agenda per client and the credits. In Founding, 1,500 credits per brand per month typically cover about 20 unique pieces (12 posts, 4 carousels, 4 shorts) and about 40 placements. That is a guideline, not a fixed quota.`,
  },
  {
  key: 'content_strategy',

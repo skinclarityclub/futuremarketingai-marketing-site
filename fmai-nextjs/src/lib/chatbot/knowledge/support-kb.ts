@@ -20,40 +20,29 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  'monthly',
  'EUR',
  ],
- content: `## FutureMarketingAI Pricing Plans
+ content: `## FutureMarketingAI Pricing
 
-All plans include Clyde, the AI colleague, and every skill. Workspace-priced tiers (Growth/Pro/Enterprise) bill linearly per workspace, recalibrated every 6 months on actual credit usage. Founding stays fixed for as long as the agency remains a client.
+New agencies have one offer: Founding. Regular plans follow after the Founding cohort, built on three measured months; until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
 
-**Founding Member. EUR 997/mo, rate fixed for as long as the agency remains a client** (maximum 10 founding spots)
-- 10 workspaces included, EUR 299 per extra workspace above that
-- 8,000 credits/mo
-- All skills, with caps between Growth and Professional
-- Direct line to Daley on WhatsApp
-- No onboarding fee
+**Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 spots in the first cohort)
+- EUR 199 per extra client brand per month, up to 15 brands. 6 brands EUR 1,496, 10 brands EUR 2,292, 15 brands EUR 3,287
+- 1,500 credits per client brand per month, in one pool for the whole agency. Included credits expire at the end of the month; bought credits stay valid for 12 months
+- EUR 0 onboarding
+- The agency approves the work itself and keeps the client contact. Guidance is available on request; it has no public price
+- Price fixed for 12 paid months; cancel monthly, before the next period
+- Not included: AI video, voice-over, ads and ad management
+- No trial and no introductory discount: Founding itself is the opening offer
 
-**Growth (AI Marketing Starter). EUR 499 per workspace, 2 to 4 brands** (EUR 998 to EUR 1,996 / mo total)
-- 800 credits per workspace (1,600 to 3,200 total / mo)
-- All skills with Growth-tier caps
-- Direct WhatsApp line with Daley
-- EUR 1,997 onboarding fee
+**What 1,500 credits typically cover per brand per month** (a guideline for planning, not an output entitlement; the agency may spend credits differently):
+- About 20 unique pieces: 12 static posts, 4 carousels and 4 shorts made from the brand's own footage (no AI video)
+- About 40 placements on Instagram, Facebook, LinkedIn, TikTok and YouTube Shorts; X and Threads where they fit the brand
+- Plus a blog, a research memo, an SEO/GEO check, a monthly report and questions to Clyde
 
-**Professional (AI Marketing Pro). EUR 399 per workspace, 5 to 14 brands** (EUR 1,995 to EUR 5,586 / mo total)
-- 800 credits per workspace (4,000 to 11,200 total / mo)
-- All skills with wider caps
-- Direct WhatsApp line with Daley
-- EUR 3,997 onboarding fee
+**Credit costs:** static post 20, carousel 30, short 60, platform variant of an existing piece 2, new image 10, blog 20, research memo 50, SEO/GEO check 200, monthly report 100, a Clyde turn 1 to 17 depending on the model. During the 12 fixed months a rate can only go down, never up.
 
-**Enterprise (AI Marketing Suite). EUR 299 per workspace, 15+ brands** (from EUR 4,485 / mo upward)
-- 800 credits per workspace (12,000+ total / mo)
-- All live skills without caps (fair use)
-- Direct WhatsApp line with Daley
-- EUR 5,997 onboarding fee
+**Extra credits:** 500 credits EUR 40, 2,000 credits EUR 160, 5,000 credits EUR 400. There is never an automatic overage.
 
-**Credit Packs (top up anytime):**
-- Mini Top-up: 500 credits. EUR 39
-- Boost: 2,000 credits. EUR 149
-- Scale: 5,000 credits. EUR 297
-- Max: 15,000 credits. EUR 697`,
+Existing founding partners keep their agreement exactly as signed; the new offer does not change it.`,
  },
  {
  key: 'cost_benchmarks',
@@ -76,11 +65,10 @@ All plans include Clyde, the AI colleague, and every skill. Workspace-priced tie
 
 Clyde does not replace people: he takes work off the team, so the same team can serve more clients. Compare against your cost per client today, not against a salary.
 
-**Price per client (workspace):**
-- Growth: EUR 499 per workspace (2 to 4 brands). 3 clients = EUR 1,497/mo
-- Professional: EUR 399 per workspace (5 to 14 brands). 8 clients = EUR 3,192/mo
-- Enterprise: EUR 299 per workspace (15+ brands)
-- Founding: EUR 997/mo with 10 workspaces included, while founding spots are open
+**Price per client brand (Founding, excl. VAT):**
+- 5 brands: EUR 1,297/mo, about EUR 259 per brand
+- 10 brands: EUR 2,292/mo, about EUR 229 per brand
+- 15 brands: EUR 3,287/mo, about EUR 219 per brand
 
 **What to compare in the strategy call:**
 - The hours your team spends per client on content, inbox and reporting
@@ -105,7 +93,7 @@ We do not quote savings or benchmark comparisons: there are no measured results 
  ],
  content: `## Time and Review
 
-Clyde makes the drafts: posts, carousels, articles, ad creatives, draft replies and reports. The review stays with your team: per task you choose what Clyde proposes first and what he may do himself and report. Ad spend is always proposed first.
+Clyde makes the drafts: posts, carousels, shorts from the brand's own footage, articles, draft replies and reports. The review stays with your team: per task you choose what Clyde proposes first and what he may do himself and report.
 
 We do not quote hours saved: there is no measured time saving yet. In the strategy call we look at where your team's hours go today (content, inbox, reporting) and which of that work Clyde can take on.`,
  },
@@ -129,7 +117,7 @@ We do not quote hours saved: there is no measured time saving yet. In the strate
 
 There are no measured ROI figures yet, so we do not quote percentages, savings or payback periods.
 
-What matters to an agency owner is pipeline, margin, revenue per FTE and client retention. In the strategy call we work out with your own numbers what Clyde would change, starting from the price per workspace (see pricing).`,
+What matters to an agency owner is pipeline, margin, revenue per FTE and client retention. In the strategy call we work out with your own numbers what Clyde would change, starting from the Founding price for your number of client brands (see pricing).`,
  },
  {
  key: 'founding_member',
@@ -146,19 +134,19 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  'benefit',
  'exclusive',
  ],
- content: `## Founding Member Program
+ content: `## Founding Program
 
 **What Is It?**
-The Founding Member program offers the first 10 agencies access at EUR 997/mo, a rate that stays fixed for as long as the agency remains a client. Once all 10 spots are filled, new agencies start on the regular workspace-priced tiers (Growth EUR 499 per workspace, Professional EUR 399, Enterprise EUR 299).
+Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. The first cohort has 3 spots. After the Founding cohort, regular plans follow, built on three measured months.
 
 **Benefits:**
-- EUR 997/mo, fixed for as long as the agency remains a client (vs. linear EUR 499/EUR 399/EUR 299 per workspace on the other tiers)
-- 10 workspaces included, EUR 299 per extra workspace above that
-- 8,000 credits/mo (the other tiers get 800 per workspace)
-- All skills, with caps between Growth and Professional
-- Direct line to Daley on WhatsApp for support and feature requests
-- First access to new skills when they go live
-- No onboarding fee
+- Price fixed for 12 paid months, cancel monthly
+- EUR 0 onboarding
+- Direct line to Daley on WhatsApp for questions and feature requests
+
+**How the work runs:**
+- The agency approves the work itself and keeps the client contact. Guidance is available on request
+- Not included: AI video, voice-over, ads
 
 **Requirements:**
 - Monthly 30-minute feedback call
@@ -166,10 +154,12 @@ The Founding Member program offers the first 10 agencies access at EUR 997/mo, a
 
 **Who Is It For?**
 Marketing agencies who want to:
-- Serve more clients per team member, with 10 workspaces included
+- Serve more clients per team member, with 5 client brands included and room to grow to 15
 - Have direct influence on product development
-- Start early: Founding closes for good once the 10 spots are taken
+- Start early: the first cohort has 3 spots
 
-**Spots:** maximum 10 founding spots in total. Do not state how many are taken.`,
+**Spots:** 3 in the first cohort. The counter on the site counts signed spots only; do not state a number taken beyond what the site shows.
+
+Existing founding partners keep their agreement exactly as signed.`,
  },
 ]
