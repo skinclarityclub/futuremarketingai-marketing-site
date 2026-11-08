@@ -77,7 +77,7 @@ export default async function LegalPage({ params }: { params: Promise<{ locale: 
       {/* Hero Section */}
       <section className="relative pt-16 pb-12 px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-text-primary mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-text-primary mb-4 hyphens-auto break-words">
             {t('hero.title')}
           </h1>
         </div>
