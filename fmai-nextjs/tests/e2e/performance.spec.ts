@@ -41,9 +41,10 @@ test.describe('Console Errors', () => {
     await page.goto('/en')
     await page.waitForLoadState('networkidle')
 
-    // Filter out external/third-party failures
+    // Filter out external/third-party failures, and ERR_ABORTED: that is the browser cancelling
+    // a request (Next.js link prefetch on prod, 2026-11-08), not a broken one.
     const internalFailures = failedRequests.filter(
-      (r) => r.includes('localhost') || r.includes('future-marketing')
+      (r) => (r.includes('localhost') || r.includes('future-marketing')) && !r.endsWith('net::ERR_ABORTED')
     )
     expect(internalFailures).toHaveLength(0)
   })

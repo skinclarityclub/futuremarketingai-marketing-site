@@ -417,7 +417,16 @@ export function ChatWidget({
                   status={status}
                   welcomeMessage={welcomeMessage}
                   flagship={isFlagship}
-                  onStartDemo={demoMode ? undefined : startDemo}
+                  // The tour button unmounts on click: without this focus drops to body and
+                  // Escape no longer closes the (non-modal) desktop panel.
+                  onStartDemo={
+                    demoMode
+                      ? undefined
+                      : () => {
+                          startDemo()
+                          focusComposer()
+                        }
+                  }
                   suggestedPrompts={showPrompts ? suggestedPrompts : undefined}
                   onPromptSelect={handlePromptSelect}
                   onRegenerate={regenerate ? () => regenerate() : undefined}

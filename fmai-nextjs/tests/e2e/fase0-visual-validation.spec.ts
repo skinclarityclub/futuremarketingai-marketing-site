@@ -11,8 +11,8 @@ import { test, expect } from '@playwright/test'
  * removed after Fase 0 push if it adds noise.
  */
 
+// /nl/skills/clyde left: golf 8a (#103) rebuilt it with a native details/summary FAQ, no Radix accordion.
 const PAGES = [
-  { path: '/nl/skills/clyde', name: 'skill-clyde-faq' },
   { path: '/nl/pricing', name: 'pricing-faq' },
 ] as const
 

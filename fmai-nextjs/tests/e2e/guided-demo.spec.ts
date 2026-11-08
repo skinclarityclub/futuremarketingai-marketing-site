@@ -44,8 +44,10 @@ async function openChat(page: Page) {
   return panel
 }
 
-// Helper: close chat via Escape
+// Helper: close chat via Escape. The desktop panel is non-modal (e851a23a): Escape only closes it
+// with focus inside, and the composer gets focus 300 ms after opening.
 async function closeChat(page: Page) {
+  await expect(page.locator('[data-chatwidget-panel] textarea')).toBeFocused()
   await page.keyboard.press('Escape')
   const panel = page.locator('[data-chatwidget-panel]')
   await expect(panel).not.toBeVisible({ timeout: 3000 })
@@ -216,10 +218,9 @@ test.describe('Guided Demo — End Demo Flow', () => {
     await page.goto('/nl')
     await startTour(page)
 
-    // Close chat
-    await page.keyboard.press('Escape')
+    // Close chat (also proves focus stayed in the panel after the tour button unmounted)
+    await closeChat(page)
     const panel = page.locator('[data-chatwidget-panel]')
-    await expect(panel).not.toBeVisible({ timeout: 3000 })
 
     // Reopen — demo state should be preserved
     const openBtn = page.locator('button[aria-label^="Open chat"]').first()
