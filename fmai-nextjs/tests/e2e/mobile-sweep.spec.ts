@@ -23,6 +23,9 @@ async function sitemapPaths(page: Page): Promise<string[]> {
 
 // The noise below is not the page's: third-party scripts that are absent locally, and the dev-only Redis warning.
 const IGNORED = [/Upstash/i, /googletagmanager|gtag/i, /vercel\/(insights|speed-insights)/i]
+// WebKit reports the previous page's RSC prefetches, aborted by the sweep's own page.goto, as "... due to access control
+// checks". Measured on prod 2026-11-08: 0 errors while a page settles, 46-62 the moment it navigates away.
+const IGNORED_PAGE_ERRORS = [/\?_rsc=\S+ due to access control checks/]
 // Vercel serves these on its own domains only; a local `next start` answers 404, so the URL is checked, not the console text
 // (Chromium's "Failed to load resource" line carries no URL).
 const IGNORED_URLS = [/\/_vercel\/(insights|speed-insights)\//, /googletagmanager\.com|google-analytics\.com/]
@@ -65,7 +68,9 @@ test('every sitemap page works on a phone', async ({ page }) => {
       // a failed load is reported by onResponse below, with its URL
       if (!text.startsWith('Failed to load resource')) errors.push(text.slice(0, 160))
     }
-    const onPageError = (e: Error) => errors.push(`pageerror: ${e.message.slice(0, 160)}`)
+    const onPageError = (e: Error) => {
+      if (!IGNORED_PAGE_ERRORS.some((re) => re.test(e.message))) errors.push(`pageerror: ${e.message.slice(0, 160)}`)
+    }
     const onResponse = (r: { status(): number; url(): string }) => {
       if (r.status() >= 400 && !IGNORED_URLS.some((re) => re.test(r.url()))) errors.push(`HTTP ${r.status()} ${r.url().slice(0, 140)}`)
     }
@@ -86,7 +91,8 @@ test('every sitemap page works on a phone', async ({ page }) => {
     await page.waitForLoadState('networkidle').catch(() => {})
 
     const m = await page.evaluate(() => {
-      const vw = window.innerWidth
+      // clientWidth, not innerWidth: Chromium's phone emulation widens innerWidth to overflowing content (395 at 390)
+      const vw = document.documentElement.clientWidth
       const imgs = Array.from(document.images).filter((i) => i.getClientRects().length > 0 && !i.closest('[hidden]'))
       const broken = imgs.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.currentSrc || i.src)
       const fab = document.querySelector<HTMLElement>('[data-clyde-launcher]')?.getBoundingClientRect()

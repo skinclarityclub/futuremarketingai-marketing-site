@@ -60,36 +60,41 @@ test.describe('Floating ChatWidget', () => {
     await page.goto('/en')
     const panel = await openChat(page)
 
-    const closeFab = page.locator('button[aria-label^="Sluit chat"]').first()
-    await expect(closeFab).toBeVisible()
-    await expect(panel).toBeVisible()
+    // While open the launcher renders nothing; the one close control sits in the panel header.
+    await expect(panel.getByRole('button', { name: /^(Sluit|Close) chat$/ })).toBeVisible()
+    await expect(page.locator('[data-clyde-launcher]')).toHaveCount(0)
   })
 
   test('should close chat panel with Escape key', async ({ page }) => {
     await page.goto('/en')
     const panel = await openChat(page)
 
+    // Desktop is non-modal: Escape only closes once focus is inside the panel (the composer gets it after 300 ms).
+    await expect(panel.locator('textarea')).toBeFocused()
     await page.keyboard.press('Escape')
 
     await expect(panel).not.toBeVisible()
   })
 
-  test('should close chat panel when clicking floating button again', async ({ page }) => {
+  test('should close chat panel with the close button in its header', async ({ page }) => {
     await page.goto('/en')
-    await openChat(page)
+    const panel = await openChat(page)
 
-    const closeFab = page.locator('button[aria-label^="Sluit chat"]').first()
-    await closeFab.click({ force: true })
+    await panel.getByRole('button', { name: /^(Sluit|Close) chat$/ }).click()
 
-    const panel = page.locator('[data-chatwidget-panel]')
     await expect(panel).not.toBeVisible()
+    await expect(page.locator('[data-clyde-launcher]')).toBeVisible()
   })
 
   test('chat dialog should have proper accessibility attributes', async ({ page }) => {
     await page.goto('/en')
     const panel = await openChat(page)
 
-    await expect(panel).toHaveAttribute('aria-modal', 'true')
+    // Modal only below lg (PHONE_QUERY in ChatWidget.tsx), where the panel fills the screen and the page is inert.
+    const isPhone = (page.viewportSize()?.width ?? 1280) <= 1023
+    if (isPhone) await expect(panel).toHaveAttribute('aria-modal', 'true')
+    else await expect(panel).not.toHaveAttribute('aria-modal', /.*/)
+    await expect(panel).toHaveAttribute('role', 'dialog')
 
     const ariaLabel = await panel.getAttribute('aria-label')
     expect(ariaLabel).toBeTruthy()

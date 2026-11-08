@@ -11,14 +11,12 @@ test.use({ baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000' }
  */
 
 const pages = [
-  // Hero headlines on home use KineticHeadline (per-word span split) so we
-  // assert single-word fragments instead of multi-word phrases — the rendered
-  // innerText extraction collapses the inline-block words without whitespace.
-  { path: '/nl', name: 'home', expected: ['Clyde', 'langetermijngeheugen'] },
+  // Golf 10 and the hero3 rewrite replaced "langetermijngeheugen" and "Plan een gesprek"; these are the live phrases.
+  { path: '/nl', name: 'home', expected: ['Clyde', 'Meer klanten per teamlid'] },
   { path: '/nl/about', name: 'about', expected: ['Over FutureMarketingAI', 'Mijn missie'] },
   { path: '/nl/how-it-works', name: 'how-it-works', expected: ['In vier weken live met Clyde', 'Wat je per klant aanlevert'] },
   { path: '/nl/pricing', name: 'pricing', expected: ['Wat kost Clyde?', 'Founding'] },
-  { path: '/nl/apply', name: 'apply', expected: ['Plan een gesprek', 'Vertel ons'] },
+  { path: '/nl/apply', name: 'apply', expected: ['Vraag een gesprek aan', 'Daley kijkt zelf naar elke aanvraag'] },
   { path: '/nl/contact', name: 'contact', expected: ['Algemene vragen', 'Stuur ons'] },
   { path: '/nl/memory', name: 'memory', expected: ['Elke klant een eigen merkstem en geheugen', 'Vier bronnen, per klant'] },
   { path: '/nl/case-studies', name: 'cases-hub', expected: ['Clyde bij twee echte klanten', 'SalesLobe'] },
@@ -30,7 +28,9 @@ const pages = [
   { path: '/nl/skills/blog-factory', name: 'skill-blog', expected: ['Clyde schrijft SEO-blogs', 'Het onderwerp komt uit de zoekwoorden'] },
   { path: '/nl/skills', name: 'skills-hub', expected: ['per klant in één werkruimte', 'Binnenkort'] },
   { path: '/nl/skills/strategy', name: 'skill-strategy', expected: ['Contentstrategie per klant', 'De agenda die eruit volgt'] },
-  { path: '/nl/skills/reporting', name: 'skill-reporting', expected: ['rapporteert elke week', 'anomalie'] },
+  // Golf 9c made reporting a proof page; the old "rapporteert elke week" and "anomalie" copy is gone.
+  { path: '/nl/skills/reporting', name: 'skill-reporting', expected: ['Automatische marketingrapportage per klant', 'weekrapport'] },
+  { path: '/nl/skills/seo-geo', name: 'skill-seo-geo', expected: ['SEO en GEO voor al je klanten', 'AI Overviews'] },
   { path: '/nl/skills/lead-qualifier', name: 'skill-lead', expected: ['Van Instagram-reactie naar lead', 'De regel achter een trefwoord'] },
   { path: '/nl/legal/privacy', name: 'legal-privacy', expected: ['Privacybeleid', 'AVG'] },
   { path: '/nl/legal/terms', name: 'legal-terms', expected: ['Servicevoorwaarden', 'beëindigen'] },
