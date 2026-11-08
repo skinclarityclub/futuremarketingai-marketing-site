@@ -491,7 +491,7 @@
 #hero:not(#_pad) .fan .pact{margin-top:auto;flex:none}
 #hero .pv-li{display:flex;flex-direction:column;padding-top:2px;background:#1b1f23;border:1px solid rgba(255,255,255,.08)}
 #hero .lit{margin:7px 0 8px;padding:0 9px;font-size:10px;line-height:1.42;color:#d3d7db;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-#hero .lii{flex:1;min-height:0;background:#f4f7fb 0 0/auto 112% no-repeat;filter:brightness(.9)}
+#hero .lii{flex:1;min-height:0;background:#f4f7fb 0 0/100% auto no-repeat;filter:brightness(.9)}
 #hero .lia{flex:none;display:flex;justify-content:space-around;align-items:center;height:30px}
 #hero .lia svg{width:15px;height:15px;color:#b6bcc3;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
 #hero .pv-tt,#hero .pv-st{flex:none;align-self:center;width:190px;height:338px}
@@ -506,7 +506,7 @@
 #hero .ttc .tg{font-size:9.5px;opacity:.9}
 #hero .ttp{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.25)}
 #hero .ttp i{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(var(--v,0))}
-#hero .pv-st{background:#111 0 0/auto 113% no-repeat}
+#hero .pv-st{background:#111 center/cover no-repeat}
 #hero .pv-st::before{content:"";position:absolute;left:0;right:0;top:0;height:22%;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,0))}
 #hero .stb{position:absolute;left:8px;right:8px;top:7px;height:2px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
 #hero .stb i{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(.06)}
