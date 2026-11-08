@@ -55,3 +55,23 @@ Build 4 (tree van `de2d7145`), `next start -p 3119` via `detach.ps1`.
   - de blogochtendreview in de demo labelt artikelen als "Instagram";
   - een SERP-slug in de demo eindigt op "-2".
 - De subverwerkerslijst noemt nog ManyChat en Gemini. Of die nog verwerken, is een juridische vraag voor Daley, geen copy.
+
+## Live (2026-11-08)
+
+PR #107, squash-merge `7a773003` op 2026-11-08 00:41Z, op Daleys vooraf gegeven ja (zie boven). Logs in `R/g9/9c-tools` en `R/g9/psi9c`.
+
+| Poort | Commando | Uitkomst |
+|---|---|---|
+| Vercel-preview | `gh pr checks 107`, daarna `vercel curl` op de branch-alias | groen; 200 op /nl, /en, /nl/skills/reporting, /nl/skills/seo-geo, /en/skills/reporting en /nl/apply; "nagekeken" 0 keer op /nl; de reporting-H1 staat erop |
+| Prod-deploy | `vercel ls`, `vercel inspect` | `futuremarketingai-k6sc4fvzu` Production Ready, aangemaakt 00:41Z |
+| Prod, curl | `curl` op https://future-marketing.ai | 200 op /nl, /en, /nl/skills/reporting, /nl/skills/seo-geo, /en/skills/reporting, /en/skills/seo-geo, /nl/apply en /nl/contact; "Automatische marketingrapportage per klant" 3 keer op /nl/skills/reporting; "nagekeken" 0 keer op /nl |
+| Prod, sitemap | `sitemap.xml` | /nl/apply, /nl/contact, /nl/skills/clyde, /nl/skills/reporting en /nl/skills/seo-geo op lastmod 2026-11-08 |
+| Prod, woorden | `python -I words9c.py https://future-marketing.ai` (`words9c-prod.log`) | 73 pagina's, 31 treffers; regel voor regel gelijk aan `words9c-build3.log` (de build-4-meting), dus 0 nieuw |
+| Prod, PSI | `tools/port/m-psi.mjs`, 3 runs per strategie (`g9/psi9c`, `g9/psi9c-r1.log`); 12 verschillende fetchTimes | reporting mobiel 95/100/100 (run 0 op een koude edge, LCP 2,0 s, daarna 1,2 s), desktop 100/100/100; seo-geo mobiel 99/99/100, desktop 100/100/100. Niets onder 95, dus geen tweede ronde |
+| Prod, mobile-safari | `PLAYWRIGHT_BASE_URL=https://future-marketing.ai npx playwright test home-week-mobile mobile-sweep mobile-menu-cta --project=mobile-safari --workers=1` (`e2e-9c-prod-safari.log`) | 4/4 groen in 5,1 min, ook mobile-sweep over elke sitemappagina. Op 9b-prod was die rood op 33 px en 3 px zijwaarts scrollen plus de WebKit-prefetchruis; beide opgelost |
+| Prod, overflow op 390 | `overflow-probe.mjs` (`overflow-prod.log`) | scrollWidth 390 en 0 te brede elementen op /nl/kennisbank/ai-marketing-medewerker, /nl/legal/terms, /nl/skills/reporting en /nl/skills/seo-geo |
+| Prod, axe /en | `axe-en2.mjs https://future-marketing.ai` (`axe-en2-prod.log`) | 0 serious of critical op 1280 en 390. Voor 9c: 3 bekende plus `aria-prohibited-attr` |
+
+### Gezien op prod, na 9c
+
+- Bright Data staat niet in de subverwerkerslijst op /nl/legal/privacy (0 keer), terwijl hij de ChatGPT-meting voor seo-geo draait (`src/lib/geo/chatgpt-sampler.ts` in fma-app master). DataForSEO, ManyChat en Gemini staan er wel op en worden alle drie nog aangeroepen. Juridische keuze voor Daley, geen copy.

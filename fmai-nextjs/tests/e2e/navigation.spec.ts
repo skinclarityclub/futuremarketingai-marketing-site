@@ -21,7 +21,8 @@ test.describe('Navigation', () => {
     const title = await page.title()
     expect(title.length).toBeGreaterThan(5)
 
-    await expect(page.locator('h1').first()).toBeVisible()
+    // The desktop hero heading is role="heading" aria-level=1, not an <h1> tag (HeroSection.tsx)
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   })
 
   test('should redirect root to default locale', async ({ page }) => {
