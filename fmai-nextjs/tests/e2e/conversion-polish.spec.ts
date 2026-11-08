@@ -1,41 +1,35 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
+
+// The SSR "Start de scan" button is clickable before React hydrates; a click then does nothing (1 in 24 on prod, 2026-11-08).
+async function clickStartScan(page: Page) {
+  await page.waitForFunction(() =>
+    [...document.querySelectorAll('button')].some(
+      (b) => b.textContent?.includes('Start de scan') && Object.keys(b).some((k) => k.startsWith('__reactProps$')),
+    ), null, { polling: 100 })
+  await page.getByRole('button', { name: 'Start de scan' }).click()
+}
 
 test.describe('Conversion polish — P1-A trust anchors', () => {
   test('NL /assessment intro shows 3 trust anchors below bullets', async ({ page }) => {
     await page.goto('/nl/assessment')
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expect(page.getByText('Privacy-first, EU-gehost, geen tracking-cookies')).toBeVisible()
-    await expect(page.getByText('Resultaten gevalideerd met bureaus in de praktijk')).toBeVisible()
+    // Claim audit 2026-10-12 (49b30d5f) replaced "EU-hosted, no tracking cookies" and "validated with agencies"
+    await expect(page.getByText('Analytics alleen na jouw toestemming')).toBeVisible()
+    await expect(page.getByText('Gratis, 16 vragen, rapport per e-mail')).toBeVisible()
     await expect(page.getByText('Antwoorden 12 maanden bewaard, dan verwijderd')).toBeVisible()
     await expect(page.getByRole('button', { name: 'Start de scan' })).toBeVisible()
   })
 
   test('EN /assessment intro shows 3 trust anchors', async ({ page }) => {
     await page.goto('/en/assessment')
-    await expect(page.getByText('Privacy-first, EU-hosted, no tracking cookies')).toBeVisible()
-    await expect(page.getByText('Results validated with agencies in practice')).toBeVisible()
+    await expect(page.getByText('Analytics only with your consent')).toBeVisible()
+    await expect(page.getByText('Free, 16 questions, report by email')).toBeVisible()
     await expect(page.getByText('Answers stored for 12 months, then deleted')).toBeVisible()
-  })
-
-  test('ES /assessment intro shows 3 trust anchors', async ({ page }) => {
-    await page.goto('/es/assessment')
-    await expect(page.getByText('Privacidad primero, alojado en la UE, sin cookies de seguimiento')).toBeVisible()
-    await expect(page.getByText('Resultados validados con agencias en la práctica')).toBeVisible()
-    await expect(page.getByText('Respuestas guardadas 12 meses, luego eliminadas')).toBeVisible()
   })
 })
 
 test.describe('Conversion polish — P1-B LeadMagnetCTA badges', () => {
-  test('NL / inline LeadMagnetCTA shows all 3 badges on desktop', async ({ page }) => {
-    await page.setViewportSize({ width: 1280, height: 800 })
-    await page.goto('/nl', { waitUntil: 'domcontentloaded' })
-    const card = page.locator('aside').filter({ hasText: 'AI Bureau Scan' }).first()
-    await expect(card).toBeVisible()
-    await expect(card.getByText('Gratis', { exact: true })).toBeVisible()
-    await expect(card.getByText('5 min', { exact: true })).toBeVisible()
-    await expect(card.getByText('Geen account', { exact: true })).toBeVisible()
-  })
-
+  // /nl has no inline scan card since golf 5: the scan is the secondary line of #afsluiting.
   test('EN / inline LeadMagnetCTA badges localized', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/en', { waitUntil: 'domcontentloaded' })
@@ -127,7 +121,7 @@ test.describe('Conversion polish — P1-D question-flow consistency', () => {
   // until a value is picked.
   test('single-select Q1: stays on same question after pick, advances only on Volgende click', async ({ page }) => {
     await page.goto('/nl/assessment', { waitUntil: 'domcontentloaded' })
-    await page.getByRole('button', { name: 'Start de scan' }).click()
+    await clickStartScan(page)
     const next = page.getByRole('button', { name: /Volgende/ })
     await expect(next).toBeDisabled()
 
@@ -151,7 +145,7 @@ test.describe('Conversion polish — P1-E progress bar position', () => {
   // We start the scan, pick the first option, then assert the bar's position.
   async function startScan(page: import('@playwright/test').Page) {
     await page.goto('/nl/assessment', { waitUntil: 'domcontentloaded' })
-    await page.getByRole('button', { name: 'Start de scan' }).click()
+    await clickStartScan(page)
     // Wait for the progressbar to appear (i.e. we're now in question mode)
     await page.getByRole('progressbar').waitFor({ state: 'visible', timeout: 10000 })
   }
@@ -250,20 +244,14 @@ test.describe('Conversion polish — P1-G privacy assessment section', () => {
     const body = page.getByText(/12 maanden bewaard/i)
     await expect(body).toBeVisible()
     await expect(page.getByText(/Supabase \(EU-regio\)/i)).toBeVisible()
-    await expect(page.getByText('10. Contact en toezichthouder')).toBeVisible()
+    // Number-agnostic: new sections (Meta data, /voor) keep landing before the contact section.
+    await expect(page.getByText(/^\d+\. Contact en toezichthouder$/)).toBeVisible()
   })
 
   test('EN /legal/privacy contains assessment subsection', async ({ page }) => {
     await page.goto('/en/legal/privacy')
     await expect(page.getByRole('heading', { name: '9. AI Readiness Assessment' })).toBeVisible()
     await expect(page.getByText(/Supabase \(EU region\)/i)).toBeVisible()
-    await expect(page.getByText('10. Contact and supervisory authority')).toBeVisible()
-  })
-
-  test('ES /legal/privacy contains assessment subsection', async ({ page }) => {
-    await page.goto('/es/legal/privacy')
-    await expect(page.getByRole('heading', { name: '9. AI Readiness Assessment' })).toBeVisible()
-    await expect(page.getByText(/Supabase \(región UE\)/i)).toBeVisible()
-    await expect(page.getByText('10. Contacto y autoridad de control')).toBeVisible()
+    await expect(page.getByText(/^\d+\. Contact and supervisory authority$/)).toBeVisible()
   })
 })

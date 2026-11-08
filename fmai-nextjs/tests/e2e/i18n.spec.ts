@@ -17,7 +17,8 @@ test.describe('Locale Routing', () => {
   test('should load English homepage at /en', async ({ page }) => {
     await page.goto('/en')
     await expect(page.locator('html')).toHaveAttribute('lang', 'en')
-    await expect(page.locator('h1').first()).toBeVisible()
+    // Desktop hero is role=heading aria-level=1; the one <h1> belongs to the mobile hero.
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   })
 
   test('should load Dutch homepage at /nl', async ({ page }) => {
@@ -26,10 +27,11 @@ test.describe('Locale Routing', () => {
     await expect(page.locator('h1').first()).toBeVisible()
   })
 
-  test('should load Spanish homepage at /es', async ({ page }) => {
-    await page.goto('/es')
-    await expect(page.locator('html')).toHaveAttribute('lang', 'es')
-    await expect(page.locator('h1').first()).toBeVisible()
+  // es left the locales on 2026-10-02; next.config.ts sends every /es URL to its /en twin.
+  test('should redirect /es to /en', async ({ page }) => {
+    await page.goto('/es/pricing')
+    await expect(page).toHaveURL(/\/en\/pricing$/)
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   })
 })
 

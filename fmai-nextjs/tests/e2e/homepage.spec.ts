@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test'
 /**
  * E2E Tests: Homepage Sections
  *
- * Verifies homepage sections render with the W2 ServicesBento structure
- * (12 service cards: featured Clyde tile + 11 secondary services).
+ * Verifies homepage sections render with the ServicesBento structure
+ * (9 skill-page links: Clyde tile + 8 live services; the 2 coming-soon tiles link to /skills#binnenkort).
  */
 
 test.describe('Homepage Sections', () => {
@@ -14,8 +14,8 @@ test.describe('Homepage Sections', () => {
   })
 
   test('should render Hero section with CTA buttons', async ({ page }) => {
-    const h1 = page.locator('h1').first()
-    await expect(h1).toBeVisible()
+    // Desktop hero is role=heading aria-level=1; the one <h1> belongs to the mobile hero.
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 
     // Hero region has id="hero" wrapping section
     const heroLinks = page.locator('a').filter({ hasText: /Plan een gesprek|Book a call|Agenda una llamada|Meet Clyde/i })
@@ -42,13 +42,9 @@ test.describe('Homepage Sections', () => {
     await locator.waitFor({ state: 'visible', timeout: 5000 })
   }
 
-  test('should render Stats/Metrics bar', async ({ page }) => {
-    await scrollUntilVisible(page,'section[aria-labelledby="key-metrics"]')
-    const statsSection = page.locator('section[aria-labelledby="key-metrics"]')
-    await expect(statsSection).toBeVisible()
-  })
+  // The Stats/Metrics bar left on 2026-10-12 (a7fe90e4): no number without a measurement.
 
-  test('should render Services section with 12 cards', async ({ page }) => {
+  test('should render Services section with 9 skill links', async ({ page }) => {
     await scrollUntilVisible(page,'#services')
     const servicesSection = page.locator('#services')
     await expect(servicesSection).toBeVisible()
@@ -57,8 +53,8 @@ test.describe('Homepage Sections', () => {
     await expect(heading).toBeVisible()
 
     const serviceCards = servicesSection.locator('.grid a[href*="/skills/"]')
-    // ServicesBento: 1 featured Clyde tile + 11 secondary services = 12 total
-    await expect(serviceCards).toHaveCount(12)
+    // Golf 9a (#105): ManyChat folded into lead-qualifier, voice + reel are coming soon
+    await expect(serviceCards).toHaveCount(9)
   })
 
   test('should render Pillars bento section', async ({ page }) => {
@@ -130,7 +126,7 @@ test.describe('Homepage Interactions', () => {
     await page.locator('#services').waitFor({ state: 'visible', timeout: 5000 })
 
     const serviceLinks = page.locator('#services .grid a[href*="/skills/"]')
-    await expect(serviceLinks).toHaveCount(12)
+    await expect(serviceLinks).toHaveCount(9)
 
     const count = await serviceLinks.count()
     for (let i = 0; i < count; i++) {
