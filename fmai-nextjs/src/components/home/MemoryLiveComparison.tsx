@@ -57,21 +57,21 @@ export interface MemoryLiveComparisonProps {
 
 export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
   const reduced = usePrefersReducedMotion()
-  const [stage, setStage] = useState<Stage>('thinkingOther')
-  const [otherWordCount, setOtherWordCount] = useState(0)
-  const [clydeWordCount, setClydeWordCount] = useState(0)
+  const [animStage, setStage] = useState<Stage>('thinkingOther')
+  const [otherAnimCount, setOtherWordCount] = useState(0)
+  const [clydeAnimCount, setClydeWordCount] = useState(0)
   const [cycle, setCycle] = useState(0)
 
   const otherWords = props.otherResponse.split(' ')
   const clydeWords = props.clydeResponse.split(' ')
 
+  // Reduced motion shows the end state; derived here because setState in the effect body cascades renders
+  const stage: Stage = reduced ? 'finalHold' : animStage
+  const otherWordCount = reduced ? otherWords.length : otherAnimCount
+  const clydeWordCount = reduced ? clydeWords.length : clydeAnimCount
+
   useEffect(() => {
-    if (reduced) {
-      setStage('finalHold')
-      setOtherWordCount(otherWords.length)
-      setClydeWordCount(clydeWords.length)
-      return
-    }
+    if (reduced) return
 
     let cancelled = false
     const timers: ReturnType<typeof setTimeout>[] = []
@@ -81,11 +81,6 @@ export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
       }, ms)
       timers.push(t)
     }
-
-    // Reset
-    setStage('thinkingOther')
-    setOtherWordCount(0)
-    setClydeWordCount(0)
 
     // Phase A — Andere AI: thinking -> typing -> verdict
     wait(() => setStage('typingOther'), THINKING_MS)
@@ -110,7 +105,13 @@ export function MemoryLiveComparison(props: MemoryLiveComparisonProps) {
 
     // Final hold both, then loop
     wait(() => setStage('finalHold'), clydeTypingEnd + VERDICT_DELAY_MS + 200)
-    wait(() => setCycle((c) => c + 1), clydeTypingEnd + VERDICT_DELAY_MS + FINAL_HOLD_MS)
+    // Back to the start, then the next loop
+    wait(() => {
+      setStage('thinkingOther')
+      setOtherWordCount(0)
+      setClydeWordCount(0)
+      setCycle((c) => c + 1)
+    }, clydeTypingEnd + VERDICT_DELAY_MS + FINAL_HOLD_MS)
 
     return () => {
       cancelled = true

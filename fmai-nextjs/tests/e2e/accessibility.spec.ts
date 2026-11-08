@@ -22,13 +22,11 @@ test.describe('Accessibility', () => {
   test('should have proper heading structure', async ({ page }) => {
     await page.goto('/en')
 
-    // Should have exactly one h1
-    const h1Elements = page.locator('h1')
-    const count = await h1Elements.count()
-    expect(count).toBe(1)
-
-    // h1 should be visible
-    await expect(h1Elements.first()).toBeVisible()
+    // Exactly one level-1 heading per viewport: the mobile hero owns the <h1> tag, the desktop hero uses
+    // role="heading" aria-level=1 (HeroSection.tsx); getByRole counts both and skips the hidden variant
+    const h1 = page.getByRole('heading', { level: 1 })
+    await expect(h1).toHaveCount(1)
+    await expect(h1).toBeVisible()
   })
 
   test('should have visible focus indicators', async ({ page }) => {
