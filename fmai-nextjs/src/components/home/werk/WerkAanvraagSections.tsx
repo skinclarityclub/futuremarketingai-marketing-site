@@ -217,14 +217,17 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
               <ul className="wc-list" aria-label={t("werk.aria.n3")}>
                 {' '}
                 <li>
-                  <span className="wc-ln">
+                  <Link className="wc-ln" href="/skills/strategy" prefetch={false}>
                     <b>
                       {t("werk.list.n1")}
                     </b>
                     <span>
                       {t("werk.list.n2")}
                     </span>
-                  </span>
+                    <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h13M13 6l6 6-6 6" />
+                    </svg>
+                  </Link>
                 </li>
                 {' '}
                 <li>
