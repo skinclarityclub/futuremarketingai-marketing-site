@@ -22,7 +22,7 @@
       "videoPlay": "Play the animation",
       "tagline": "Your agency's <accent>AI colleague</accent>.",
       "subtitle": "Knows every client's goals, sits in every screen of your dashboard and messages you on WhatsApp the moment something comes up. For social, blogs, ads, email, Instagram DMs, SEO and reporting.",
-      "trustAnchor": "Running in production at our first client. Three founding spots in the first cohort.",
+      "trustAnchor": "Running in production at our first client. Three founding spots.",
       "cta": "Request a call",
       "ctaSecondary": "Meet Clyde",
       "trustCluster": {
@@ -175,7 +175,7 @@
         }
       },
       "ctaLabel": "Request a call",
-      "ctaHint": "Three founding spots in the first cohort",
+      "ctaHint": "Three founding spots",
       "fullJourneyLink": "See the four weeks in detail"
     },
     "comparison": {
@@ -290,10 +290,10 @@
     "pricingTeaser": {
       "eyebrow": "Pricing",
       "title": "One offer: Founding. Price fixed for 12 paid months.",
-      "subtitle": "Everyone joining now becomes a founding partner: €1,297 per month excl. VAT for five client brands, €199 per extra brand, with 1,500 credits per brand. Three spots in the first cohort.",
+      "subtitle": "Everyone joining now becomes a founding partner: €1,297 per month excl. VAT for five client brands, €199 per extra brand, with 1,500 credits per brand. Three founding spots.",
       "perMonth": "per month, excl. VAT",
       "foundingCtaLabel": "Become a founding partner",
-      "spotsTaken": "First cohort: {taken} of {total} spots taken",
+      "spotsTaken": "Founding: {taken} of {total} spots taken",
       "tiers": {
         "founding": {
           "label": "Founding",
@@ -302,7 +302,7 @@
         }
       },
       "ctaLink": "Request a call",
-      "regularNote": "Regular plans follow after the Founding cohort."
+      "regularNote": "Regular plans follow after Founding."
     },
     "pillars": {
       "title": "You stay in control. And you know where your data is.",
@@ -341,7 +341,7 @@
     },
     "cta": {
       "eyebrow": "Founding open · max {total} spots",
-      "title": "Three spots in the first cohort.",
+      "title": "Three founding spots.",
       "subtitle": "€1,297 per month excl. VAT for five client brands, fixed for 12 paid months. A 30-minute call tells us if it fits.",
       "button": "Request a call",
       "foundingLabel": "View Founding"
@@ -360,7 +360,7 @@
         },
         "q3": {
           "question": "Why an application? Why no self-service?",
-          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. There are three founding spots in the first cohort. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
+          "answer": "Clyde is a high-touch AI partnership, not a SaaS tool. Every client gets personal onboarding by Daley (founder) and 4 weeks of partnership setup. There are three founding spots. The application is not there to reject you: we check together whether it is a match for both sides. A generic sign-up doesn't fit what we deliver."
         },
         "q4": {
           "question": "Which skills do I get?",
@@ -733,7 +733,7 @@
         },
         "founding": {
           "period": "Q1 2026",
-          "title": "Founding cohort opens",
+          "title": "Founding opens",
           "body": "The first 10 founding spots announced. SKC is our first client. Pricing per workspace worked out.",
           "current": true
         },
@@ -814,8 +814,8 @@
     "capacity": {
       "eyebrow": "Capacity",
       "title": "Capacity and transparency",
-      "body": "Three founding spots in the first cohort. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally sets up every new client in 4 weeks, and there is an upper bound to how many agencies we can welcome at the same time.",
-      "reasoning": "We choose quality over volume. Better {total} agencies where Clyde truly adds value than 200 where we cannot give enough attention. Once the {total} spots are taken, the first cohort closes. Regular plans follow after that."
+      "body": "Three founding spots. This is not a marketing trick, it is the reality of high-touch onboarding. Daley personally sets up every new client in 4 weeks, and there is an upper bound to how many agencies we can welcome at the same time.",
+      "reasoning": "We choose quality over volume. Better {total} agencies where Clyde truly adds value than 200 where we cannot give enough attention. Once the {total} spots are taken, Founding closes. Regular plans follow after that."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -834,7 +834,7 @@
     "hero": {
       "eyebrow": "Pricing",
       "title": "What does Clyde cost?",
-      "lead": "Clyde costs €{price} per month excl. VAT as a founding partner, with {included} client brands included and €{extra} per extra client brand, up to {max}. Each client brand brings {creditsPerBrand} credits per month. That is the offer today, for {spots} agencies in the first cohort.",
+      "lead": "Clyde costs €{price} per month excl. VAT as a founding partner, with {included} client brands included and €{extra} per extra client brand, up to {max}. Each client brand brings {creditsPerBrand} credits per month. That is the offer today, for the first {spots} agencies.",
       "checked": "Prices checked on {date}."
     },
     "founding": {
@@ -852,7 +852,7 @@
       "definition": "A workspace is one client brand.",
       "whyTitle": "Why only {spots} spots?",
       "why": "Daley personally sets up every start, for four weeks, and so hears first-hand what the first agencies need. That decides what gets built next. It works with {spots} agencies, not with a hundred.",
-      "after": "Once the {spots} spots are taken, the first cohort closes. As a founding partner you keep €{price} per month for {included} client brands for {lock} paid months.",
+      "after": "Once the {spots} spots are taken, Founding closes. As a founding partner you keep €{price} per month for {included} client brands for {lock} paid months.",
       "cta": "Request a call"
     },
     "included": {
@@ -908,7 +908,7 @@
         "credits": "{credits} credits per month in your agency's pool.",
         "minimum": "The base price covers up to {included} client brands."
       },
-      "regular": "Regular plans follow after the Founding cohort, based on three measured months."
+      "regular": "Regular plans follow after Founding, based on three measured months."
     },
     "credits": {
       "eyebrow": "Credits",
@@ -953,7 +953,7 @@
         },
         "q8": {
           "question": "What happens when the {spots} spots are full?",
-          "answer": "Then the first cohort closes. Regular plans follow after that, based on three measured months. If you are a founding partner, you keep €{price} for {included} client brands for {lock} paid months."
+          "answer": "Then Founding closes. Regular plans follow after that, based on three measured months. If you are a founding partner, you keep €{price} for {included} client brands for {lock} paid months."
         },
         "q9": {
           "question": "Can I grow beyond {included} client brands?",
@@ -1396,7 +1396,7 @@
     },
     "end": {
       "title": "Start with a conversation.",
-      "sub": "A 30-minute conversation tells you whether Clyde fits your clients. Three founding spots in the first cohort.",
+      "sub": "A 30-minute conversation tells you whether Clyde fits your clients. Three founding spots.",
       "cta": "Request a call",
       "link": "See the price"
     }
@@ -4376,8 +4376,8 @@
   },
   "founding": {
     "counter": {
-      "badge": "First cohort: {taken} of {total} spots taken",
-      "cohortStart": "Cohort starts {date}"
+      "badge": "Founding: {taken} of {total} spots taken",
+      "cohortStart": "Founding starts {date}"
     }
   },
   "skills-template": {

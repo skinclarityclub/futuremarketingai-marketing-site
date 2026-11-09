@@ -30,7 +30,7 @@ test('pricing page renders Founding A1.4', async ({ page }) => {
   await expect(example.getByRole('row', { name: /15 klantmerken/ })).toContainText('22.500')
 
   await expect(page.locator('section#month')).toContainText('YouTube Shorts')
-  await expect(page.getByText('Reguliere pakketten volgen na het Founding-cohort', { exact: false }).first()).toBeVisible()
+  await expect(page.getByText('Reguliere pakketten volgen na Founding', { exact: false }).first()).toBeVisible()
 
   // The old tiers and the half-price month are gone from the page.
   const body = await page.locator('main').innerText()

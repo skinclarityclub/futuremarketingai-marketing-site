@@ -22,9 +22,9 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing
 
-New agencies have one offer: Founding. Regular plans follow after the Founding cohort, built on three measured months; until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
+New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
 
-**Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 spots in the first cohort)
+**Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 founding spots)
 - EUR 199 per extra client brand per month, up to 15 brands. 6 brands EUR 1,496, 10 brands EUR 2,292, 15 brands EUR 3,287
 - 1,500 credits per client brand per month, in one pool for the whole agency. Included credits expire at the end of the month; bought credits stay valid for 12 months
 - EUR 0 onboarding
@@ -137,7 +137,7 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  content: `## Founding Program
 
 **What Is It?**
-Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. The first cohort has 3 spots. After the Founding cohort, regular plans follow, built on three measured months.
+Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. There are 3 founding spots. After Founding, regular plans follow, built on three measured months.
 
 **Benefits:**
 - Price fixed for 12 paid months, cancel monthly
@@ -156,9 +156,9 @@ Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 cli
 Marketing agencies who want to:
 - Serve more clients per team member, with 5 client brands included and room to grow to 15
 - Have direct influence on product development
-- Start early: the first cohort has 3 spots
+- Start early: there are 3 founding spots
 
-**Spots:** 3 in the first cohort. The counter on the site counts signed spots only; do not state a number taken beyond what the site shows.
+**Spots:** 3 founding spots. The counter on the site counts signed spots only; do not state a number taken beyond what the site shows.
 
 Existing founding partners keep their agreement exactly as signed.`,
  },
