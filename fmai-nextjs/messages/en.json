@@ -510,21 +510,37 @@
         "skc-club-boodschappen": "Carousel by SkinClarity Club, the club: Een acne-bewuste boodschappenlijst: waar begin je? (An acne-aware shopping list: where do you start?)",
         "skc-huid-conservering": "Carousel by SkinClarity Club, the skin therapist: Conserveringsmiddelen zijn niet de vijand in je kastje (Preservatives are not the enemy in your cabinet)",
         "skc-shop-enzympeeling": "Carousel by SkinClarity Club, the web shop: Enzympeeling of zuur: wanneer kies je wat? (Enzyme peel or acid: when do you choose which?)",
-        "sl-not-right-now": "Instagram carousel by SalesLobe: Not right now is not not interested.",
-        "sl-same-leads": "Instagram carousel by SalesLobe: Same leads. More revenue.",
-        "sl-three-kinds": "Instagram carousel by SalesLobe: Slow replies leak. Wrong ones burn the lead."
+        "sl-every-reply": "Instagram post by SalesLobe: Every reply, on the record. With the timeline of one reply: marked HOT and drafted by Corty, approved by Paul with one line edited, and sent from his inbox.",
+        "sl-not-right-now": "Instagram carousel by SalesLobe: Not right now is not not interested."
       },
       "aria": {
         "n1": "Three real posts by SkinClarity Club",
         "n2": "Three real posts by SalesLobe"
+      },
+      "dates": {
+        "n1": "Oct 27",
+        "n2": "Oct 25",
+        "n3": "Oct 22",
+        "n4": "Oct 23",
+        "n5": "Oct 27",
+        "n6": "Oct 22"
+      },
+      "eyebrow": {
+        "skc": "Skincare · Instagram",
+        "sl": "B2B · Instagram and LinkedIn"
+      },
+      "li": {
+        "name": "Paul den Hartogh",
+        "platform": "LinkedIn",
+        "text": "When I was cold calling, \"not right now\" was one of the best answers I could get."
       },
       "links": {
         "n1": "Read the case",
         "n2": "See how I work"
       },
       "meta": {
-        "n1": "Instagram, since May 2026",
-        "n2": "Instagram and LinkedIn, since October 2026"
+        "n1": "Instagram · May 22 to October 27, 2026",
+        "n2": "Instagram and LinkedIn · since October 2026"
       },
       "names": {
         "n1": "SkinClarity Club",
@@ -535,25 +551,41 @@
         "n1": "The club",
         "n2": "The web shop",
         "n3": "The skin therapist",
-        "n4": "Instagram",
+        "n4": "LinkedIn · Paul",
         "n5": "Instagram",
         "n6": "Instagram"
       },
-      "role": "Founder and builder of Clyde",
-      "screens": {
-        "n1": "Carousel",
-        "n2": "Carousel",
-        "n3": "Carousel",
-        "n4": "Carousel",
-        "n5": "Carousel",
-        "n6": "Carousel"
+      "role": "Founder and developer of Clyde",
+      "stats": {
+        "n1": {
+          "label": "carousels live",
+          "value": "176"
+        },
+        "n2": {
+          "label": "accounts",
+          "value": "3"
+        },
+        "n3": {
+          "label": "in October",
+          "value": "39"
+        },
+        "n4": {
+          "label": "posts in October",
+          "value": "23"
+        },
+        "n5": {
+          "label": "on LinkedIn",
+          "value": "14"
+        },
+        "n6": {
+          "label": "on Instagram",
+          "value": "9"
+        }
       },
       "sub": "We build Clyde and use him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde made the posts from May to October 2026; at SalesLobe he makes them now, each time in the brand's voice and approved in the app.",
       "text": {
-        "n1": "Skincare. Three Instagram accounts: the club, the web shop and the skin therapist, each with a voice of its own.",
-        "n2": "SkinClarity Club is the brand of Sindy, Daley's girlfriend. That is where Clyde's first skills were born.",
-        "n3": "Clyde runs SalesLobe's Instagram and the LinkedIn of its founder, Paul den Hartogh. B2B, so with a different tone than skincare.",
-        "n4": "Every post in SalesLobe's own voice and house style, approved in the app and then published at the scheduled moment. In October 2026, 23 posts went online: 9 on Instagram and 14 on LinkedIn, all approved in the app.",
+        "n1": "Three Instagram accounts, each with a voice of its own: the club, the web shop and Sindy as a skin therapist. The brand of Sindy, Daley's girlfriend, and the place where Clyde learned his first skills.",
+        "n3": "SalesLobe's Instagram and the LinkedIn of founder Paul den Hartogh. In English, in the voice Paul chose himself beforehand. On LinkedIn Paul speaks, on Instagram the brand does.",
         "n5": "I write Clyde's code and use him myself for our clients. As a partner you have a direct line to me via WhatsApp."
       },
       "title": "Where Clyde already runs, and who builds him."

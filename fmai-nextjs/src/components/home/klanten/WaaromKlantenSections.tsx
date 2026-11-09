@@ -8,6 +8,54 @@ import './klanten.css'
 
 type HomeT = Awaited<ReturnType<typeof getTranslations>>
 
+// The posts in the two client cards: [image in public/home/klanten, message key, posted on].
+// Dates are the posted_at of the real posts in content_schedule (checked 2026-11-10).
+const SKC_POSTS = [
+  ['skc-club-boodschappen', 'n1', '2026-10-27'],
+  ['skc-shop-enzympeeling', 'n2', '2026-10-25'],
+  ['skc-huid-conservering', 'n3', '2026-10-22'],
+] as const
+const SL_POSTS = [
+  ['sl-not-right-now', 'n5', '2026-10-27'],
+  ['sl-every-reply', 'n6', '2026-10-22'],
+] as const
+const POST_SIZES = '(max-width: 599px) 44vw, (max-width: 899px) 30vw, 170px'
+
+function Stats({ t, keys }: { t: HomeT; keys: readonly string[] }) {
+  return (
+    <dl className="ek-stats">
+      {keys.map((k) => (
+        <div key={k}>
+          <dt>{t(`klanten.stats.${k}.label`)}</dt>
+          <dd>{t(`klanten.stats.${k}.value`)}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+function PostCaption({ t, n, iso }: { t: HomeT; n: string; iso: string }) {
+  return (
+    <>
+      <p className="ek-pl">{t(`klanten.postLabels.${n}`)}</p>
+      <p className="ek-pf">
+        <time dateTime={iso}>{t(`klanten.dates.${n}`)}</time>
+      </p>
+    </>
+  )
+}
+
+function CaseLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link className="gf4-lk" href={href} prefetch={false}>
+      {label}
+      <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 12h13M13 6l6 6-6 6" />
+      </svg>
+    </Link>
+  )
+}
+
 export function WaaromKlantenView({ t }: { t: HomeT }) {
   return (
     <>
@@ -366,126 +414,65 @@ export function WaaromKlantenView({ t }: { t: HomeT }) {
           <div className="ek-grid">
             {' '}
             <article className="ek-card ek-skc" aria-labelledby="ek-skc-h">
-              {' '}
-              <h3 className="ek-n" id="ek-skc-h">
-                {t("klanten.names.n1")}
-              </h3>
-              {' '}
-              <p className="ek-d">
-                {t("klanten.text.n1")}
-              </p>
-              {' '}
-              <p className="ek-d">
-                {t("klanten.text.n2")}
-              </p>
-              {' '}
-              <ul className="ek-posts" role="list" aria-label={t("klanten.aria.n1")}>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/skc-club-boodschappen.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.skc-club-boodschappen")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n1")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n1")}
-                  </p>
-                </li>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/skc-shop-enzympeeling.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.skc-shop-enzympeeling")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n2")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n2")}
-                  </p>
-                </li>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/skc-huid-conservering.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.skc-huid-conservering")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n3")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n3")}
-                  </p>
-                </li>
-                {' '}
-              </ul>
-              {' '}
-              <div className="ek-foot">
-                <p className="ek-meta">
-                  {t("klanten.meta.n1")}
-                </p>
-                <Link className="gf4-lk" href="/case-studies/skinclarity-club" prefetch={false}>
-                  {t("klanten.links.n1")}
-                  <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 12h13M13 6l6 6-6 6" />
-                  </svg>
-                </Link>
-              </div>
-              {' '}
-            </article>
-            {' '}
-            <article className="ek-card ek-sl" aria-labelledby="ek-sl-h">
-              {' '}
               <div className="ek-hd">
-                <Image src="/home/klanten/sl-logo.webp" width={100} height={96} sizes="(max-width: 599px) 29px, (max-width: 860px) 29px, 29px" className="ek-logo" alt="" loading="lazy" decoding="async" />
-                <h3 className="ek-n" id="ek-sl-h">
-                  {t("klanten.names.n2")}
-                </h3>
+                <Image src="/home/klanten/skc-logo-rond.webp" width={96} height={96} className="ek-logo" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <p className="ek-eb">{t('klanten.eyebrow.skc')}</p>
+                  <h3 className="ek-n" id="ek-skc-h">{t('klanten.names.n1')}</h3>
+                </div>
               </div>
-              {' '}
-              <p className="ek-d">
-                {t("klanten.text.n3")}
-              </p>
-              {' '}
-              <p className="ek-d">
-                {t("klanten.text.n4")}
-              </p>
-              {' '}
-              <ul className="ek-posts" role="list" aria-label={t("klanten.aria.n2")}>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/sl-same-leads.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.sl-same-leads")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n4")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n4")}
-                  </p>
-                </li>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/sl-three-kinds.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.sl-three-kinds")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n5")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n5")}
-                  </p>
-                </li>
-                {' '}
-                <li>
-                  <Image src="/home/klanten/sl-not-right-now.webp" width={720} height={900} sizes="(max-width: 599px) 95px, (max-width: 860px) 212px, 159px" alt={t("klanten.alt.sl-not-right-now")} loading="lazy" decoding="async" />
-                  <p className="ek-pl">
-                    {t("klanten.postLabels.n6")}
-                  </p>
-                  <p className="ek-pf" data-app="">
-                    {t("klanten.screens.n6")}
-                  </p>
-                </li>
-                {' '}
+              <p className="ek-d">{t('klanten.text.n1')}</p>
+              <Stats t={t} keys={['n1', 'n2', 'n3']} />
+              <ul className="ek-posts" role="list" aria-label={t('klanten.aria.n1')} tabIndex={0}>
+                {SKC_POSTS.map(([img, n, iso]) => (
+                  <li key={img}>
+                    <Image src={`/home/klanten/${img}.webp`} width={720} height={900} sizes={POST_SIZES} alt={t(`klanten.alt.${img}`)} loading="lazy" decoding="async" />
+                    <PostCaption t={t} n={n} iso={iso} />
+                  </li>
+                ))}
               </ul>
-              {' '}
               <div className="ek-foot">
-                <p className="ek-meta">
-                  {t("klanten.meta.n2")}
-                </p>
+                <p className="ek-meta">{t('klanten.meta.n1')}</p>
+                <CaseLink href="/case-studies/skinclarity-club" label={t('klanten.links.n1')} />
               </div>
-              {' '}
             </article>
-            {' '}
+            <article className="ek-card ek-sl" aria-labelledby="ek-sl-h">
+              <div className="ek-hd">
+                <Image src="/home/klanten/sl-logo.webp" width={100} height={96} className="ek-logo" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <p className="ek-eb">{t('klanten.eyebrow.sl')}</p>
+                  <h3 className="ek-n" id="ek-sl-h">{t('klanten.names.n2')}</h3>
+                </div>
+              </div>
+              <p className="ek-d">{t('klanten.text.n3')}</p>
+              <Stats t={t} keys={['n4', 'n5', 'n6']} />
+              <ul className="ek-posts" role="list" aria-label={t('klanten.aria.n2')} tabIndex={0}>
+                <li>
+                  {/* Paul's LinkedIn post is text only, so it is shown as text; it is English on every locale. */}
+                  <div className="ek-li">
+                    <p className="ek-li-hd">
+                      <span className="ek-li-in" aria-hidden="true">in</span>
+                      <span>
+                        {t('klanten.li.name')}
+                        <small>{t('klanten.li.platform')}</small>
+                      </span>
+                    </p>
+                    <p className="ek-li-tx" lang="en">{t('klanten.li.text')}</p>
+                  </div>
+                  <PostCaption t={t} n="n4" iso="2026-10-23" />
+                </li>
+                {SL_POSTS.map(([img, n, iso]) => (
+                  <li key={img}>
+                    <Image src={`/home/klanten/${img}.webp`} width={720} height={900} sizes={POST_SIZES} alt={t(`klanten.alt.${img}`)} loading="lazy" decoding="async" />
+                    <PostCaption t={t} n={n} iso={iso} />
+                  </li>
+                ))}
+              </ul>
+              <div className="ek-foot">
+                <p className="ek-meta">{t('klanten.meta.n2')}</p>
+                <CaseLink href="/case-studies/saleslobe" label={t('klanten.links.n1')} />
+              </div>
+            </article>
             <article className="ek-me" aria-labelledby="ek-me-h">
               {' '}
               <Image src="/home/klanten/portret-huidig.webp" width={400} height={400} sizes="(max-width: 599px) 112px, (max-width: 860px) 112px, 112px" className="ek-pt" alt={t("klanten.alt.portret-huidig")} loading="lazy" decoding="async" />
