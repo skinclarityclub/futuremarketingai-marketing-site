@@ -19,7 +19,7 @@ const SL_POSTS = [
   ['sl-not-right-now', 'n5', '2026-10-27'],
   ['sl-every-reply', 'n6', '2026-10-22'],
 ] as const
-const POST_SIZES = '(max-width: 599px) 44vw, (max-width: 899px) 30vw, 170px'
+const POST_SIZES = '(max-width: 599px) 44vw, (max-width: 959px) 30vw, 170px'
 
 function Stats({ t, keys }: { t: HomeT; keys: readonly string[] }) {
   return (

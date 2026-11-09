@@ -113,6 +113,20 @@
 #waarom:not(#_pad) .gw-left{display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:clamp(28px,4vw,48px);align-items:end}
 #klanten:not(#_pad) .ek-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+/* one column from 959px down: between 900 and ~925px the two columns made Paul's LinkedIn tile 109px wide and cut off his last words (measured 2026-11-10) */
+@media (max-width:959px){
+#klanten:not(#_pad) .ek-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;row-gap:clamp(16px,1.8vw,24px)}
+#klanten:not(#_pad) .ek-card{grid-row:auto;display:flex;flex-direction:column;gap:18px}
+#klanten:not(#_pad) .ek-me{grid-row:auto;margin-top:0;grid-template-columns:minmax(0,1fr)}
+#klanten:not(#_pad) .ek-me .ek-pt{grid-row:auto}
+#klanten:not(#_pad) .ek-stats{gap:8px}
+#klanten:not(#_pad) .ek-stats div{padding:10px}
+#klanten:not(#_pad) .ek-stats dd{font-size:24px}
+#klanten:not(#_pad) .ek-pl{font-size:13px}
+/* align-self:start is for the subgrid rows; in one column it shrank numbers and footer to their content */
+#klanten:not(#_pad) .ek-card :is(.ek-stats,.ek-posts,.ek-foot){align-self:stretch}
+#klanten:not(#_pad) .ek-li{font-size:clamp(10px,1.4vw,13px)}
+}
 @media (max-width:899px){
 :is(#waarom,#klanten):not(#_pad) .gf4-hd{grid-template-columns:1fr;gap:18px}
 :is(#waarom,#klanten):not(#_pad) .gf4-p{font-size:17px}
@@ -124,20 +138,13 @@
 #waarom:not(#_pad) .gw-tab th,#waarom:not(#_pad) .gw-tab td{padding:12px}
 #waarom:not(#_pad) .gw-tab thead th:first-child{width:112px}
 #waarom:not(#_pad) .gw-tab thead th.gw-cy{width:176px}
-#klanten:not(#_pad) .ek-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;row-gap:clamp(16px,1.8vw,24px)}
-#klanten:not(#_pad) .ek-card{grid-row:auto;display:flex;flex-direction:column;gap:18px}
-#klanten:not(#_pad) .ek-me{grid-row:auto;margin-top:0;grid-template-columns:minmax(0,1fr)}
-#klanten:not(#_pad) .ek-me .ek-pt{grid-row:auto}
-#klanten:not(#_pad) .ek-stats{gap:8px}
-#klanten:not(#_pad) .ek-stats div{padding:10px}
-#klanten:not(#_pad) .ek-stats dd{font-size:24px}
-#klanten:not(#_pad) .ek-pl{font-size:13px}
 }
 @media (max-width:599px){
 /* phone: a row you swipe, so the tiles are big enough to read the slides (they were 92px wide) */
 #klanten:not(#_pad) .ek-posts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
 #klanten:not(#_pad) .ek-posts li{scroll-snap-align:start}
 #klanten:not(#_pad) .ek-li{font-size:10px}
+#klanten:not(#_pad) .ek-card .ek-foot{flex-direction:column;align-items:flex-start}
 }
 :is(#waarom,#klanten):not(._pad) *,:is(#waarom,#klanten):not(._pad) *::before,:is(#waarom,#klanten):not(._pad) *::after{box-sizing:border-box}
 :is(#waarom,#klanten):not(._pad) p,:is(#waarom,#klanten):not(._pad) h1,:is(#waarom,#klanten):not(._pad) h2,:is(#waarom,#klanten):not(._pad) h3{margin:0}
