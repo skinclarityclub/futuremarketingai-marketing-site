@@ -138,8 +138,9 @@ test.describe('ChatWidget persistence across navigation', () => {
     await page.goto('/en')
     await waitForChatButton(page)
 
-    // :visible, because on a phone the header link sits in the closed menu; the footer link is the visible one there
-    await page.locator('a[href*="/pricing"]:visible').first().click()
+    // :visible, because on a phone the header link sits in the closed menu; the footer link is the visible one there.
+    // ^="/en/pricing", because #waarom also links to the external planable.io/pricing (opens in a new tab).
+    await page.locator('a[href^="/en/pricing"]:visible').first().click()
     await expect(page).toHaveURL(/\/en\/pricing/)
 
     await waitForChatButton(page)

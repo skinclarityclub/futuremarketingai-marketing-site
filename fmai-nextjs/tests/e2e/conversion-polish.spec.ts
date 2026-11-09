@@ -29,13 +29,14 @@ test.describe('Conversion polish — P1-A trust anchors', () => {
 })
 
 test.describe('Conversion polish — P1-B LeadMagnetCTA badges', () => {
-  // /nl has no inline scan card since golf 5: the scan is the secondary line of #afsluiting.
-  test('EN / inline LeadMagnetCTA badges localized', async ({ page }) => {
+  // No inline scan card on the home since golf 5 (/nl) and golf 10 (/en): the scan is the secondary line of #afsluiting.
+  test('EN / the scan is the secondary link of the closing section', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/en', { waitUntil: 'domcontentloaded' })
-    const card = page.locator('aside').filter({ hasText: 'AI Agency Scan' }).first()
-    await expect(card.getByText('Free', { exact: true })).toBeVisible()
-    await expect(card.getByText('No account', { exact: true })).toBeVisible()
+    const scan = page.locator('#afsluiting a[href="/en/assessment"]')
+    await scan.scrollIntoViewIfNeeded()
+    await expect(scan).toBeVisible()
+    await expect(scan).toContainText('Or take the AI scan of your agency first')
   })
 
   // Sidebar variant on /pricing shows 2 pills only (free + fast), NO noAccount.

@@ -332,7 +332,7 @@ export function WaaromKlantenView({ t }: { t: HomeT }) {
                     <path d="M5 12h13M13 6l6 6-6 6" />
                   </svg>
                 </Link>
-                <Link className="gf4-lk" href="/kennisbank/clyde-vs-jasper-chatgpt-semrush" prefetch={false}>
+                <Link className="gf4-lk" href="/kennisbank/clyde-vs-jasper-chatgpt-semrush" locale="nl" prefetch={false}>
                   {t("waarom.links.n2")}
                   <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M5 12h13M13 6l6 6-6 6" />
