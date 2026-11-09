@@ -420,6 +420,673 @@
       },
       "caption": "Our first client's calendar for the year, built on the strategy"
     },
+    "hero3": {
+      "alt": {
+        "h3-kal": "The calendar from Wednesday 11 to Friday 13 November, with posts for five clients",
+        "krijtenstaal_mark": "Krijt & Staal",
+        "luwte_mark": "Dagspa Luwte",
+        "meerkade_mark": "Mondzorg Meerkade"
+      },
+      "cta": {
+        "primary": "Request a call",
+        "secondary": "See Clyde at work"
+      },
+      "def": "Clyde is the <nw>AI colleague</nw> for marketing agencies with 5 to 15 client brands: from strategy and content calendar to approval, publishing and reporting, with a separate memory for each client, for the agency and for the client.",
+      "demo": "Example agency and example brands from the demo environment of the app. The brands are Dutch, so their posts are in Dutch.",
+      "pause": {
+        "pause": "Pause the animation",
+        "play": "Play the animation"
+      },
+      "proof": {
+        "desktop": "Dashboard, phone and WhatsApp. Nothing goes live without approval from you and your client.",
+        "mobile": "You steer, Clyde does the work, your client approves."
+      },
+      "sceneDescription": "Nova Digital's calendar holds the posts of five clients for the week of 9 November, on Instagram, LinkedIn and X. Mondzorg Meerkade approves a LinkedIn post on its own phone. Dagspa Luwte approves an Instagram reel. Krijt & Staal approves an Instagram story. Then Luwte's weekly report arrives as a PDF in WhatsApp.",
+      "screens": {
+        "n1": "You steer",
+        "n10": "19:00",
+        "n11": "Dagspa Luwte ·",
+        "n12": "Vijftig minuten in Luwte",
+        "n19": "Clyde does the work",
+        "n2": "Nova Digital / Content / Calendar",
+        "n20": "Clyde",
+        "n21": "Week of 9 November",
+        "n22": "posts for five clients are ready",
+        "n23": "LinkedIn post approved",
+        "n24": "scheduled for Wed 08:30",
+        "n25": "Reel approved",
+        "n26": "scheduled on Instagram and Facebook",
+        "n27": "Story approved",
+        "n28": "Instagram, scheduled for Fri 17:00",
+        "n29": "Weekly report sent",
+        "n3": "November 2026",
+        "n30": "via WhatsApp, to Noor",
+        "n31": "Your clients approve",
+        "n32": "Mondzorg Meerkade",
+        "n33": "LinkedIn post · Wed 08:30",
+        "n34": "Die tijd gaat niet naar de stoel, maar naar uitleg en vragen. Werk je in de mondzorg en wil je die tijd ook? We zoeken een mondhygiënist.",
+        "n35": "Approve",
+        "n36": "Change",
+        "n37": "Approved",
+        "n38": "Dagspa Luwte",
+        "n39": "Instagram reel · Wed 19:00",
+        "n4": "08:30",
+        "n40": "Vijftig minuten even niets. Daarna thee.",
+        "n41": "#dagspa #evenniets #rust",
+        "n42": "Approve",
+        "n43": "Change",
+        "n44": "Approved",
+        "n45": "Krijt & Staal",
+        "n46": "Instagram story · Fri 17:00",
+        "n47": "Approve",
+        "n48": "Change",
+        "n49": "Approved",
+        "n5": "Mondzorg Meerkade ·",
+        "n50": "Client's WhatsApp: weekly report",
+        "n51": "Clyde",
+        "n52": "WhatsApp",
+        "n53": "PDF",
+        "n54": "Weekrapport Luwte.pdf",
+        "n55": "PDF",
+        "n56": "Hoi Noor, het weekrapport van Luwte staat klaar. Boekingen: 86, het doel was 80 per vier weken.",
+        "n6": "Een controle van tien minuten is te kort.",
+        "n7": "17:00",
+        "n8": "Krijt & Staal ·",
+        "n9": "Proeftraining? Er is deze week nog plek."
+      },
+      "title": "More clients per team member."
+    },
+    "week": {
+      "alt": {
+        "agenda": "The strategy calendar of Dagspa Luwte with six windows and their pillars, in the demo environment",
+        "analyse": "Two signals for Dagspa Luwte with their urgency, in the demo environment",
+        "dagstart": "Clyde's overview of what is waiting for you at four clients, in the demo environment",
+        "deck": "The review of the carousel Welke behandeling past bij jou? (Which treatment suits you?), with caption, platform check and language check, in the demo environment",
+        "geheugen": "Clyde's core memory about Dagspa Luwte: customer profile, brand voice, strategy, ways of working and summary, in the demo environment",
+        "maken": "Two blogs for Dagspa Luwte with their scores, including Je eerste keer in een dagspa (Your first time at a day spa), in the demo environment",
+        "rapport": "Dagspa Luwte's bookings per week against the goal of 80 per four weeks, in the demo environment",
+        "strategie": "The strategy of Dagspa Luwte: what we aim for, for whom, and the customer profile, in the demo environment"
+      },
+      "demo": "Example agency and example brands from the demo environment of the app.",
+      "desc": {
+        "0": "Clyde starts the day with what needs your attention, across all your clients. The morning briefing is already in your WhatsApp.",
+        "1": "Clyde researches what is going on for each client: competitors, market, keywords and audience. When he sees an opportunity, he puts it to you. Around the holidays the gift vouchers come in, and hardly any spa shows what happens during a treatment. So he proposes a blog about your first time.",
+        "2": "Clyde puts each client's course on paper: for whom, what you promise and what you talk about. You and your client decide. What you agree in the review is in the calendar the same day.",
+        "3": "Clyde writes in the client's voice, from what he remembers about that client: offer, tone and what you never promise. Last night four blogs for Luwte, including the one about your first time, each already checked for findability and trustworthiness.",
+        "4": "You decide per day what is ready, with caption, platform check and language check: approve, adjust or skip. The client follows along in the portal on their phone. Nothing goes live without approval.",
+        "5": "On Saturday you are off. The post goes live at the scheduled moment, with its own text per channel: Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube. Whoever comments RUST gets a DM with the link to book. You can always pause.",
+        "6": "On Sunday Clyde lines up each client's week, such as the bookings against the goal. The weekly report arrives as a PDF in the client's WhatsApp."
+      },
+      "rail": {
+        "0": {
+          "day": "Mon",
+          "name": "Day start"
+        },
+        "1": {
+          "day": "Tue",
+          "name": "Analysis"
+        },
+        "2": {
+          "day": "Wed",
+          "name": "Strategy"
+        },
+        "3": {
+          "day": "Thu",
+          "name": "Create"
+        },
+        "4": {
+          "day": "Fri",
+          "name": "Approve"
+        },
+        "5": {
+          "day": "Sat",
+          "name": "Live"
+        },
+        "6": {
+          "day": "Sun",
+          "name": "Report"
+        }
+      },
+      "railLabel": "The seven days",
+      "screens": {
+        "s0": {
+          "n1": "Nova Digital / Clyde",
+          "n10": "Later",
+          "n2": "Clyde",
+          "n3": "Briefing is in your WhatsApp",
+          "n4": "Routine · Morning briefing 09:00",
+          "n5": "Clyde",
+          "n6": "WhatsApp",
+          "n7": "Good morning. Something is waiting for you at four clients: two signals for Luwte, a blog topic for Havermoed Granola and five posts to review. Shall I open the review?",
+          "n8": "09:00",
+          "n9": "Open review"
+        },
+        "s1": {
+          "n1": "Nova Digital / Research",
+          "n2": "Clyde",
+          "n3": "Opportunity for Luwte: an explainer for guests who come with a gift voucher",
+          "n4": "For you",
+          "n5": "Blog for Luwte: Je eerste keer in een dagspa",
+          "n6": "Clyde wants to write a blog for Dagspa Luwte about what a guest can expect the first time. Approve the topic and Clyde writes the draft.",
+          "n7": "Approve",
+          "n8": "Put aside"
+        },
+        "s2": {
+          "n1": "Nova Digital / Strategy",
+          "n2": "Clyde",
+          "n3": "Course is set, calendar filled up to and including January 2028",
+          "n4": "Review of the week · Luwte",
+          "n5": "Google Meet · 3 participants",
+          "n6": "Decision: two extra explainer posts (facial treatment, what to bring) and a story about gift vouchers.",
+          "n7": "Added to the calendar",
+          "n8": "Nova Digital / Strategy / Calendar"
+        },
+        "s3": {
+          "n1": "Nova Digital / Blog Factory",
+          "n2": "Clyde",
+          "n3": "4 blogs ready for review",
+          "n4": "Nova Digital / Clyde / Memory"
+        },
+        "s4": {
+          "n1": "Nova Digital / Social Media Manager / Review",
+          "n10": "Calendar",
+          "n11": "Reports",
+          "n12": "Carousel · 1/6",
+          "n13": "Welke behandeling past bij jou?",
+          "n14": "Carousel · 2/6",
+          "n15": "1",
+          "n16": "Adem rustig in",
+          "n17": "Carousel · 3/6",
+          "n18": "Plan je rustmoment",
+          "n19": "Boek nu",
+          "n2": "Clyde",
+          "n20": "We krijgen vaak de vraag welke behandeling iemand moet kiezen. Het eerlijke antwoord: dat hangt af van hoeveel tijd je hebt en waar je behoefte aan hebt. Hier staan ze alle drie, in gewone woorden.",
+          "n21": "Instagram · Sat 10:00",
+          "n22": "1 of 2",
+          "n23": "Approve",
+          "n24": "Change",
+          "n25": "Approved",
+          "n26": "Video",
+          "n27": "Een uur voor je gezicht",
+          "n3": "Luwte views the carousel in the portal",
+          "n4": "Luwte approved. Scheduled for Sat 10:00",
+          "n5": "Stop moment · you can pause",
+          "n6": "Client's phone: Nova Digital's portal",
+          "n7": "Nova Digital",
+          "n8": "Portal · Luwte",
+          "n9": "Approve"
+        },
+        "s5": {
+          "n1": "luwte",
+          "n10": "Luwte",
+          "n11": "@luwte",
+          "n12": "Rugmassage, gezicht of allebei? Zo kies je wat bij je past.",
+          "n13": "luwte.nl",
+          "n14": "luwte",
+          "n15": "De vraag die we het vaakst krijgen: wat kies ik de eerste keer? Ons eerlijke antwoord.",
+          "n16": "Luwte",
+          "n17": "Just now",
+          "n18": "We krijgen vaak de vraag welke behandeling iemand moet kiezen. Hier staan ze alle drie, in gewone woorden.",
+          "n19": "Like",
+          "n2": "<b>luwte</b> Welke behandeling past bij jou? Swipe door alle drie. Reageer RUST, dan sturen we je de link.",
+          "n20": "Comment",
+          "n21": "Share",
+          "n22": "0:24",
+          "n23": "Welke behandeling past bij jou? Drie opties uitgelegd",
+          "n24": "Luwte",
+          "n25": "Coming up",
+          "n26": "Pause",
+          "n27": "Comment on Instagram",
+          "n28": "RUST",
+          "n29": "DM sent with the link to book",
+          "n3": "Luwte",
+          "n4": "Day spa · Amsterdam",
+          "n5": "Een cadeaubon voor je team? Zo kiest iedereen zelf de behandeling die past.",
+          "n6": "Like",
+          "n7": "Comment",
+          "n8": "Share",
+          "n9": "<b>@luwte</b><br></br>Je eerste gezichtsbehandeling, van begin tot eind"
+        },
+        "s6": {
+          "n1": "Nova Digital / Results / Bookings",
+          "n10": "PDF",
+          "n11": "Hoi Noor, het weekrapport van Luwte staat klaar. Boekingen: 86, het doel was 80 per vier weken.",
+          "n2": "Back into the strategy",
+          "n3": "Clyde learns from what worked and from what your team rejected. A new course he puts to you first.",
+          "n4": "Routine · Weekly report Luwte",
+          "n5": "Client's WhatsApp: weekly report",
+          "n6": "Clyde",
+          "n7": "WhatsApp",
+          "n8": "PDF",
+          "n9": "Weekrapport Luwte.pdf"
+        }
+      },
+      "sub": "Seven days, from day start to weekly report. Clyde runs the marketing for all your clients, you stay in charge and your client follows along.",
+      "title": "A week <br></br>with Clyde",
+      "ts": {
+        "0": "Briefing ready",
+        "1": "Opportunity found",
+        "2": "Strategy set",
+        "3": "Written",
+        "4": "Awaiting approval",
+        "5": "Live",
+        "6": "Report sent"
+      }
+    },
+    "regie": {
+      "lines": {
+        "n1": "Clyde proposes, you decide.",
+        "n2": "With the stop moment on, you can still pause a post after your approval, up to four hours before it goes live.",
+        "n3": "If it really has to go quiet, one button pauses everything for a client."
+      },
+      "sceneDescription": "Under Coming up in For you sits the reel of Dagspa Luwte, which goes live on Wednesday 11 November at 19:00. Pause sends it back to review, and until 18:35 you can still let it go. The Crisis pause card stops everything for Luwte with Pause everything.",
+      "screens": {
+        "n1": "For you",
+        "n10": "Vijftig minuten in Luwte",
+        "n11": "Pause",
+        "n12": "View",
+        "n13": "Paused. The post is back in your review.",
+        "n14": "With Let it go anyway, until Wed 11 Nov, 18:35, it still goes out at Wed 11 Nov, 19:00.",
+        "n15": "Let it go anyway",
+        "n16": "Crisis pause",
+        "n17": "Immediately stops all scheduled posts, automatic DMs and Clyde's messages for this client. Only the agency can lift the pause.",
+        "n18": "Pause everything",
+        "n2": "Decide",
+        "n3": "Review",
+        "n4": "Worth a look",
+        "n5": "Coming up",
+        "n6": "Coming up",
+        "n7": "Approved posts for the next 7 days, from clients with the stop moment on.",
+        "n8": "Goes live Wed 11 Nov, 19:00, unless you pause it. Pausing is certain to work until Wed 11 Nov, 15:00.",
+        "n9": "Dagspa Luwte"
+      },
+      "title": "Nothing goes live without you."
+    },
+    "klant": {
+      "lines": {
+        "n1": "They see your name, logo and colours.",
+        "n2": "They approve themselves, on their phone.",
+        "n3": "They get their report every week."
+      },
+      "sceneDescription": "In Nova Digital's settings, White-label is switched on. Dagspa Luwte's portal then shows Nova Digital's name and logo, and the buttons take Nova Digital's colour. There Luwte approves the reel itself and receives the weekly report every week.",
+      "screens": {
+        "n1": "White-label for your clients",
+        "n10": "Nova Digital",
+        "n11": "Sign out",
+        "n12": "Awaiting approval",
+        "n13": "Approve",
+        "n14": "Changes",
+        "n15": "Weekly report",
+        "n16": "I receive the weekly report",
+        "n2": "Clients see your name, logo and colours instead of those of FutureMarketingAI.",
+        "n3": "White-label on",
+        "n4": "Dagspa Luwte",
+        "n5": "Dashboard",
+        "n6": "Content Review",
+        "n7": "Content Review",
+        "n8": "Calendar",
+        "n9": "Reports"
+      },
+      "title": "Your client stays, because they follow along."
+    },
+    "werk": {
+      "alt": {
+        "havermoed_posts_havermoed-drie-zakken-1": "Instagram carousel by Havermoed Granola: Drie zakken. Meer niet. En dit zit erin. (Three bags. Nothing more. And this is inside.)",
+        "krijtenstaal_posts_krijtenstaal-goblet-squat-1": "Instagram carousel by Krijt & Staal: De goblet squat. Eén oefening, drie stappen. (The goblet squat. One exercise, three steps.)",
+        "luwte_logo": "Luwte",
+        "luwte_posts_luwte-eerste-keer-1": "Instagram carousel by Dagspa Luwte: Je eerste keer in Luwte. Van de deur tot de thee. (Your first time at Luwte. From the door to the tea.)",
+        "meerkade_posts_meerkade-zo-gaat-een-controle-1": "Instagram carousel by Mondzorg Meerkade: Zo gaat een controle bij ons. Twintig minuten, stap voor stap. (This is how a check-up goes with us. Twenty minutes, step by step.)",
+        "veldlijn_posts_veldlijn-van-0740-tot-0742-1": "LinkedIn document by Veldlijn: Van 07:40 tot 07:42. Twee minuten maandagochtend. (From 07:40 to 07:42. Two minutes on a Monday morning.)"
+      },
+      "aria": {
+        "n1": "Work by five example brands",
+        "n2": "Reel by Dagspa Luwte: Vijftig minuten in Luwte",
+        "n3": "What Clyde makes"
+      },
+      "blogDemo": "Example agency and example brands from the demo environment of the app.",
+      "channels": "Clyde publishes today to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.",
+      "demo": "Example agency and example brands from the demo environment of the app. The brands are Dutch, so they write in Dutch.",
+      "list": {
+        "n1": "Strategy",
+        "n10": "A report per client, every week.",
+        "n11": "SEO and GEO",
+        "n12": "How your client is found in Google and in AI answers.",
+        "n2": "Goals, pillars and a calendar per client.",
+        "n3": "Social media",
+        "n4": "Posts, carousels and stories, scheduled per channel.",
+        "n5": "Blogs",
+        "n6": "Articles for your client's website.",
+        "n7": "From post to request",
+        "n8": "A DM with a link for anyone who comments with the keyword.",
+        "n9": "Reporting"
+      },
+      "screens": {
+        "n1": "Havermoed Granola",
+        "n10": "Dagspa Luwte",
+        "n11": "Instagram · Carousel",
+        "n12": "Nog nooit in een dagspa geweest? Dan weet je niet wat je kunt verwachten, en dat maakt het spannender dan nodig. Zo gaat een eerste bezoek bij ons, van de deur tot de thee.",
+        "n13": "Veldlijn",
+        "n14": "LinkedIn · Document",
+        "n15": "Om 07:40 belt de eerste monteur zich ziek. Om 07:42 staat zijn dag verdeeld over drie collega's. Zo werkt dat, stap voor stap.",
+        "n16": "Dagspa Luwte",
+        "n17": "Instagram · Reel",
+        "n18": "Vijftig minuten in Luwte",
+        "n19": "Je eerste keer in een dagspa: wat je kunt verwachten",
+        "n2": "Instagram · Carousel",
+        "n20": "Veel gasten vertellen ons achteraf dat ze het spannend vonden om voor het eerst te komen. Wat neem je mee, wat trek je aan, hoe lang duurt het? Hier lopen we een bezoek aan Luwte met je door, van de deur tot de thee.",
+        "n21": "Voordat je komt",
+        "n22": "Je hoeft niets mee te nemen. Je badjas ligt warm klaar, net als slippers en handdoeken. Kom tien minuten eerder, dan is er tijd voor thee en hoef je niet binnen te rennen.",
+        "n23": "Dagspa Luwte",
+        "n24": "Blog",
+        "n3": "Drie zakken, en per zak een korte lijst. Veeg door, dan zie je wat erin zit.",
+        "n4": "Mondzorg Meerkade",
+        "n5": "Instagram · Carousel",
+        "n6": "Een controle duurt bij ons twintig minuten, en je weet vooraf precies wat er gebeurt. Hier staat het stap voor stap, zodat niets je verrast.",
+        "n7": "Krijt & Staal",
+        "n8": "Instagram · Carousel",
+        "n9": "Eén oefening, drie stappen. De goblet squat is de eerste die we iedereen leren, omdat hij laat zien hoe je beweegt."
+      },
+      "sub": "For each client, Clyde makes posts, carousels, stories, LinkedIn posts, X posts and blogs in that brand's style. Everything is ready for your approval.",
+      "title": "Five clients, five voices of their own."
+    },
+    "aanvraag": {
+      "alt": {
+        "g3-dm-regel-rust": "DM automation of Dagspa Luwte: the rule RUST, a custom rule on a comment under a post, switched on. Last 30 days: keyword 93, DM 80."
+      },
+      "aria": {
+        "n1": "The rule RUST in the DM automation of Dagspa Luwte"
+      },
+      "demo": "Example agency and example brands from the demo environment of the app.",
+      "screens": {
+        "n1": "93",
+        "n2": "Used your keyword",
+        "n3": "80",
+        "n4": "Got your DM with the link",
+        "n5": "22",
+        "n6": "Sent a request",
+        "n7": "Example figures from a demo account."
+      },
+      "sub": "When someone comments on Instagram with your client's keyword, Clyde automatically sends a DM with the link. Per client you see how many people used the keyword, got the DM and sent a request.",
+      "title": "From comment to request."
+    },
+    "waarom": {
+      "caption": "The memory of one client, next to that client's work and planning.",
+      "dataLine": "Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US.",
+      "demo": "Example agency and example brands from the demo environment of the app.",
+      "links": {
+        "n1": "All alternatives side by side",
+        "n2": "Clyde, Jasper, ChatGPT and Semrush compared (in Dutch)"
+      },
+      "replaces": "He takes work off your team and replaces no one.",
+      "screens": {
+        "n1": "Dagspa Luwte",
+        "n10": "Customer profile",
+        "n11": "Dagspa Luwte is a small day spa in Amsterdam. Tagline: \"Kom op adem.\" Offer: a fifty-minute back massage (75 euros; back, neck and shoulders…",
+        "n12": "Edit",
+        "n13": "Brand voice",
+        "n14": "Calm, warm and honest. Write the way you talk to a regular guest and address the reader as \"je\". Say concretely what happens during a treatment…",
+        "n15": "Edit",
+        "n16": "Strategy",
+        "n17": "Goal for the next twelve months: more first-time guests. Three pillars: Rest and ritual (40 percent), Treatments explained (35 percent)…",
+        "n18": "Edit",
+        "n19": "Ways of working",
+        "n2": "Overview",
+        "n20": "Noor approves all content herself before it goes live. Roos answers the DMs. Besides RUST, the second DM word has not been chosen yet…",
+        "n21": "Edit",
+        "n22": "Summary",
+        "n23": "Dagspa Luwte is a small day spa in Amsterdam where you can catch your breath. Guests choose a back massage, a facial treatment or the ritual…",
+        "n24": "Edit",
+        "n3": "For you",
+        "n4": "Work",
+        "n5": "Planning",
+        "n6": "Meetings",
+        "n7": "Memory",
+        "n8": "Memory",
+        "n9": "Core memory"
+      },
+      "sources": {
+        "n1": "Prices and features of others as stated on their own site, checked on 7 November 2026, always the lowest price (often with annual billing):",
+        "n2": "ChatGPT Business",
+        "n3": ",",
+        "n4": "projects in ChatGPT",
+        "n5": ",",
+        "n6": "Planable",
+        "n7": ",",
+        "n8": "aicollegas.nl",
+        "n9": "."
+      },
+      "sub": "ChatGPT remembers what you put in a project, even when you share that project with your team. But the planning, your client's approval and the publishing then sit in other tools. Clyde has one memory per client that is tied to that work, and your client approves in a portal with your agency's name.",
+      "table": {
+        "caption": "Clyde next to the other routes: doing it yourself with ChatGPT and a planning tool, and a custom builder",
+        "cells": {
+          "n1": "Per client, tied to calendar, approval and report",
+          "n10": "Yes, to seven channels",
+          "n11": "The planning tool, ChatGPT does not",
+          "n12": "Custom",
+          "n13": "Every week, per client",
+          "n14": "Planable: as a paid add-on",
+          "n15": "Custom",
+          "n16": "Four weeks, with guidance",
+          "n17": "Right away, you set everything up yourself",
+          "n18": "Live within 4 to 12 weeks",
+          "n19": "Founding: €1,297 for 5 client brands, excl. VAT",
+          "n2": "Per ChatGPT project, separate from your planning",
+          "n20": "$20 per user (ChatGPT Business) plus $33 per workspace (Planable)",
+          "n21": "€1,495 for a session, then a fixed custom price and a fixed amount per month",
+          "n3": "Custom",
+          "n4": "Your team and your client, in the app",
+          "n5": "In the planning tool (required from Planable Pro)",
+          "n6": "Custom",
+          "n7": "Yes: your name, logo and colours",
+          "n8": "Your client follows along in the planning tool",
+          "n9": "Custom"
+        },
+        "head": {
+          "n1": "Topic",
+          "n2": "Clyde",
+          "n3": "Yourself, with ChatGPT and a planning tool",
+          "n4": "A custom builder"
+        },
+        "rows": {
+          "n1": "Memory per client",
+          "n2": "Approval by team and client",
+          "n3": "Portal in your agency's name",
+          "n4": "Publishes itself",
+          "n5": "Report per client",
+          "n6": "Start",
+          "n7": "Price from, per month"
+        }
+      },
+      "tabsLabel": "Client tabs",
+      "title": "Why not ChatGPT and an extra hire?",
+      "windowLabel": "The memory of Dagspa Luwte in the app"
+    },
+    "klanten": {
+      "alt": {
+        "portret-huidig": "Portrait of Daley van Diest, founder of FutureMarketingAI",
+        "skc-club-boodschappen": "Carousel by SkinClarity Club, the club: Een acne-bewuste boodschappenlijst: waar begin je? (An acne-aware shopping list: where do you start?)",
+        "skc-huid-conservering": "Carousel by SkinClarity Club, the skin therapist: Conserveringsmiddelen zijn niet de vijand in je kastje (Preservatives are not the enemy in your cabinet)",
+        "skc-shop-enzympeeling": "Carousel by SkinClarity Club, the web shop: Enzympeeling of zuur: wanneer kies je wat? (Enzyme peel or acid: when do you choose which?)",
+        "sl-not-right-now": "Instagram carousel by SalesLobe: Not right now is not not interested.",
+        "sl-same-leads": "Instagram carousel by SalesLobe: Same leads. More revenue.",
+        "sl-three-kinds": "Instagram carousel by SalesLobe: Slow replies leak. Wrong ones burn the lead."
+      },
+      "aria": {
+        "n1": "Three real posts by SkinClarity Club",
+        "n2": "Three real posts by SalesLobe"
+      },
+      "links": {
+        "n1": "Read the case",
+        "n2": "See how I work"
+      },
+      "meta": {
+        "n1": "Instagram, since May 2026",
+        "n2": "Instagram and LinkedIn, since October 2026"
+      },
+      "names": {
+        "n1": "SkinClarity Club",
+        "n2": "SalesLobe",
+        "n3": "Daley van Diest"
+      },
+      "postLabels": {
+        "n1": "The club",
+        "n2": "The web shop",
+        "n3": "The skin therapist",
+        "n4": "Instagram",
+        "n5": "Instagram",
+        "n6": "Instagram"
+      },
+      "role": "Founder and builder of Clyde",
+      "screens": {
+        "n1": "Carousel",
+        "n2": "Carousel",
+        "n3": "Carousel",
+        "n4": "Carousel",
+        "n5": "Carousel",
+        "n6": "Carousel"
+      },
+      "sub": "We build Clyde and use him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde made the posts from May to October 2026; at SalesLobe he makes them now, each time in the brand's voice and approved in the app.",
+      "text": {
+        "n1": "Skincare. Three Instagram accounts: the club, the web shop and the skin therapist, each with a voice of its own.",
+        "n2": "SkinClarity Club is the brand of Sindy, Daley's girlfriend. That is where Clyde's first skills were born.",
+        "n3": "Clyde runs SalesLobe's Instagram and the LinkedIn of its founder, Paul den Hartogh. B2B, so with a different tone than skincare.",
+        "n4": "Every post in SalesLobe's own voice and house style, approved in the app and then published at the scheduled moment. In October 2026, 23 posts went online: 9 on Instagram and 14 on LinkedIn, all approved in the app.",
+        "n5": "I write Clyde's code and use him myself for our clients. As a partner you have a direct line to me via WhatsApp."
+      },
+      "title": "Where Clyde already runs, and who builds him."
+    },
+    "start": {
+      "cta": "Request a call",
+      "links": {
+        "n1": "See the four weeks in detail"
+      },
+      "note": "Three founding spots.",
+      "rowLabels": {
+        "n1": "You provide",
+        "n10": "You provide",
+        "n11": "Clyde does",
+        "n12": "Ready",
+        "n2": "Clyde does",
+        "n3": "Ready",
+        "n4": "You provide",
+        "n5": "Clyde does",
+        "n6": "Ready",
+        "n7": "You provide",
+        "n8": "Clyde does",
+        "n9": "Ready"
+      },
+      "rowTexts": {
+        "n1": "A working session of <b>2 hours</b> with Daley.",
+        "n10": "Kickoff with Daley. Per task you choose how much Clyde may do on his own.",
+        "n11": "Plans and publishes according to the calendar.",
+        "n12": "Clyde is running, with a direct WhatsApp line to Daley. <b>2 hours a week</b>, ongoing.",
+        "n2": "Reads each client's colours, fonts, tone and USPs, and pulls in your Instagram patterns.",
+        "n3": "Brand DNA per client and an Instagram baseline.",
+        "n4": "<b>2 hours</b>.",
+        "n5": "Turns the brand DNA into five to seven content pillars and design templates per brand.",
+        "n6": "Pillars and templates per brand.",
+        "n7": "<b>4 hours</b>: you review the first batch.",
+        "n8": "Adjusts the voice until it fits, up to three rounds per brand.",
+        "n9": "The brand voice is set and approvals are running."
+      },
+      "sub": "Starting with Clyde takes four weeks and about ten hours of your time in the first month: two, two and four hours, then two hours a week. Daley guides every start himself.",
+      "title": "Live in four weeks.",
+      "weekLabels": {
+        "n1": "Week 1",
+        "n2": "Week 2",
+        "n3": "Week 3",
+        "n4": "Week 4"
+      },
+      "weekTitles": {
+        "n1": "Intake and brand scan",
+        "n2": "Setup and pillars",
+        "n3": "Tuning the brand voice",
+        "n4": "Kickoff and start"
+      }
+    },
+    "prijs": {
+      "cta": "Request a call",
+      "definition": "A workspace is one client brand.",
+      "fitTitles": {
+        "n1": "Who this works for",
+        "n2": "Who this does not work for"
+      },
+      "labels": {
+        "n1": "Founding",
+        "n2": "Per client brand per month"
+      },
+      "links": {
+        "n1": "All prices and what is included"
+      },
+      "lists": {
+        "n1": "5 client brands included, €199 per extra client brand, up to 15",
+        "n10": "You do pure branding, identity or creative work. Clyde delivers performance content, not design work.",
+        "n11": "You are looking for a fully automatic solution. Clyde learns from you, and that takes 4 weeks of onboarding plus ongoing input.",
+        "n12": "You have both more than 20 people and an AI or tech team of your own. We speed up agencies that don't build this themselves.",
+        "n2": "1,500 credits per client brand per month, in one pool for your agency",
+        "n3": "€0 onboarding; your agency approves the work itself",
+        "n4": "Price fixed for 12 paid months, cancel monthly",
+        "n5": "Agencies with 5 to 20 people and 5 to 15 brands that want to handle more clients per team member.",
+        "n6": "Marketing operators who work data-driven and see content as a growth engine.",
+        "n7": "Founders looking for a partner, not a tool. Willing to adjust workflows together, not just execute them.",
+        "n8": "Dutch and EU-first agencies that want to know where their data is.",
+        "n9": "Your annual revenue is below €300K. The budget doesn't fit, and we don't want to stand in the way of your growth."
+      },
+      "perBrand": {
+        "n1": "€259",
+        "n2": "at 5 client brands",
+        "n3": "€229",
+        "n4": "at 10 client brands",
+        "n5": "€219",
+        "n6": "at 15 client brands"
+      },
+      "price": "<b>€1,297</b> per month, excl. VAT",
+      "sub": "As a founding partner, Clyde costs €1,297 per month excl. VAT, with five client brands included and €199 per extra client brand, up to 15. Per brand you get 1,500 credits per month. Onboarding costs €0 and the price is fixed for 12 paid months.",
+      "title": "€1,297 per month for five client brands.",
+      "regular": "Regular plans follow after Founding. Three founding spots."
+    },
+    "vragen": {
+      "answers": {
+        "n1": "Clyde is the AI colleague for marketing agencies with 5 to 15 client brands: from strategy and content calendar to approval, publishing and reporting, with a separate memory for each client, for the agency and for the client.",
+        "n2": "ChatGPT and Jasper are general-purpose tools: their memory belongs to a user or a project, not to a client of your agency. Clyde has a separate memory for each client that is tied to the calendar, the approvals and the reports.",
+        "n3": "Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US.",
+        "n4": "Yes. You add Clyde from your browser to your phone's home screen, without an app store. For questions you have a direct WhatsApp line to Daley.",
+        "n5": "Yes. Your team and your client approve in the app, in a portal with your agency's name, logo and colours.",
+        "n6": "Yes. When someone comments on Instagram with your client's keyword, Clyde automatically sends a DM with the link. Per client you see how many people used the keyword, got the DM and sent a request.",
+        "n7": "Four weeks, and about ten hours of your time in the first month. After that two hours a week.",
+        "n8": "Founding costs €1,297 per month excl. VAT for five client brands, about €259 per client brand, with 1,500 credits per brand. Above that you pay €199 per extra client brand, up to 15.",
+        "n9": "You are not locked in. What Clyde knows about your clients is yours. After you cancel, we send you an export of your data within 30 days; after that we delete your workspaces."
+      },
+      "links": {
+        "n1": "ChatGPT vs Jasper vs Semrush: where does Clyde fit? (in Dutch)",
+        "n2": "Scaling a marketing agency with AI: the operating model (in Dutch)",
+        "n3": "Memory and learning of an AI marketing agent (in Dutch)"
+      },
+      "questions": {
+        "n1": "What is Clyde?",
+        "n2": "How is Clyde different from ChatGPT or Jasper?",
+        "n3": "Where is my clients' data stored?",
+        "n4": "Does Clyde work on my phone?",
+        "n5": "Can my client follow along and approve themselves?",
+        "n6": "Can Clyde turn Instagram comments into requests?",
+        "n7": "How long does the start take?",
+        "n8": "What does Clyde cost per client?",
+        "n9": "What if I want to cancel?"
+      },
+      "sub": "The answers are written out here already, even before you open them.",
+      "title": "Questions every owner asks."
+    },
+    "afsluiting": {
+      "alt": {
+        "portret-huidig": "Portrait of Daley van Diest, founder of FutureMarketingAI"
+      },
+      "cta": "Request a call",
+      "links": {
+        "n1": "Or take the AI scan of your agency first"
+      },
+      "sub": "You talk to me, 30 minutes. One call tells you whether it fits.",
+      "title": "Three founding spots. Then Founding closes."
+    },
     "people": {
       "eyebrow": "The people",
       "title": "Clyde works with your team. And with your client.",

@@ -464,7 +464,7 @@ export function StartPrijsVragenView({ t }: { t: HomeT }) {
           <ul className="gv-kb">
             {' '}
             <li>
-              <Link className="gf5-lk" href="/kennisbank/clyde-vs-jasper-chatgpt-semrush" prefetch={false}>
+              <Link className="gf5-lk" href="/kennisbank/clyde-vs-jasper-chatgpt-semrush" locale="nl" prefetch={false}>
                 {t("vragen.links.n1")}
                 <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h13M13 6l6 6-6 6" />
@@ -473,7 +473,7 @@ export function StartPrijsVragenView({ t }: { t: HomeT }) {
             </li>
             {' '}
             <li>
-              <Link className="gf5-lk" href="/kennisbank/marketingbureau-schalen-met-ai" prefetch={false}>
+              <Link className="gf5-lk" href="/kennisbank/marketingbureau-schalen-met-ai" locale="nl" prefetch={false}>
                 {t("vragen.links.n2")}
                 <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h13M13 6l6 6-6 6" />
@@ -482,7 +482,7 @@ export function StartPrijsVragenView({ t }: { t: HomeT }) {
             </li>
             {' '}
             <li>
-              <Link className="gf5-lk" href="/kennisbank/ai-marketing-agent-geheugen-en-leren" prefetch={false}>
+              <Link className="gf5-lk" href="/kennisbank/ai-marketing-agent-geheugen-en-leren" locale="nl" prefetch={false}>
                 {t("vragen.links.n3")}
                 <svg className="ic" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h13M13 6l6 6-6 6" />
