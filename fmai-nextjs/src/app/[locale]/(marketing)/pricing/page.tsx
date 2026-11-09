@@ -15,7 +15,7 @@ import { WorkspaceSlider } from '@/components/pricing/WorkspaceSlider'
 import { FoundingCounter } from '@/components/founding/FoundingCounter'
 import { FaqAccordion } from '@/components/home/FaqAccordion'
 import { FOUNDING_SPOTS_TAKEN, FOUNDING_SPOTS_TOTAL } from '@/lib/constants'
-import { CREDIT_PACKS, FOUNDING, PRICING_CHECKED_ON, formatEur, foundingPrice } from '@/lib/pricing-data'
+import { CREDIT_PACKS, FOUNDING, PRICING_CHECKED_ON, REGULAR_EXPECTED, formatEur, foundingPrice } from '@/lib/pricing-data'
 import { ArrowRight } from 'lucide-react'
 
 export function generateStaticParams() {
@@ -84,6 +84,10 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
     creditsPerBrand: eur(FOUNDING.creditsPerBrand),
     credits: eur(FOUNDING.creditsPerBrand * FOUNDING.includedWorkspaces),
     lock: FOUNDING.priceLockMonths,
+    loyalty: FOUNDING.loyaltyDiscountPct,
+    regularMin: eur(REGULAR_EXPECTED.min),
+    regularMax: eur(REGULAR_EXPECTED.max),
+    regularBrands: REGULAR_EXPECTED.brands,
     spots: FOUNDING_SPOTS_TOTAL,
     taken: FOUNDING_SPOTS_TAKEN,
     perBrand: eur(Math.round(FOUNDING.price / FOUNDING.includedWorkspaces)),

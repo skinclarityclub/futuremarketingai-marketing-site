@@ -22,14 +22,14 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing
 
-New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
+New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands. Until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
 
 **Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 founding spots)
 - EUR 199 per extra client brand per month, up to 15 brands. 6 brands EUR 1,496, 10 brands EUR 2,292, 15 brands EUR 3,287
 - 1,500 credits per client brand per month, in one pool for the whole agency. Included credits expire at the end of the month; bought credits stay valid for 12 months
 - EUR 0 onboarding
 - The agency approves the work itself and keeps the client contact. Guidance is available on request; it has no public price
-- Price fixed for 12 paid months; cancel monthly, before the next period
+- Price fixed for 12 paid months; cancel monthly, before the next period. After that founding partners pay 30% below the regular price while the subscription runs without a break
 - Not included: AI video, voice-over, ads and ad management
 - No trial and no introductory discount: Founding itself is the opening offer
 
@@ -137,10 +137,10 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  content: `## Founding Program
 
 **What Is It?**
-Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. There are 3 founding spots. After Founding, regular plans follow, built on three measured months.
+Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. There are 3 founding spots. After Founding, regular plans follow, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands.
 
 **Benefits:**
-- Price fixed for 12 paid months, cancel monthly
+- Price fixed for 12 paid months, cancel monthly; after that 30% below the regular price while the subscription runs without a break
 - EUR 0 onboarding
 - Direct line to Daley on WhatsApp for questions and feature requests
 

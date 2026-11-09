@@ -852,7 +852,7 @@
       "definition": "A workspace is one client brand.",
       "whyTitle": "Why only {spots} spots?",
       "why": "Daley personally sets up every start, for four weeks, and so hears first-hand what the first agencies need. That decides what gets built next. It works with {spots} agencies, not with a hundred.",
-      "after": "Once the {spots} spots are taken, Founding closes. As a founding partner you keep €{price} per month for {included} client brands for {lock} paid months.",
+      "after": "Once the {spots} spots are taken, Founding closes. As a founding partner you keep €{price} per month for {included} client brands for {lock} paid months. After that you pay {loyalty}% below the regular price for as long as you stay a client.",
       "cta": "Request a call"
     },
     "included": {
@@ -908,7 +908,7 @@
         "credits": "{credits} credits per month in your agency's pool.",
         "minimum": "The base price covers up to {included} client brands."
       },
-      "regular": "Regular plans follow after Founding, based on three measured months."
+      "regular": "Regular plans follow after Founding, based on three measured months. We expect around €{regularMin}-{regularMax} per month for {regularBrands} client brands. As a founding partner you pay €{price}, fixed for {lock} paid months, and after that {loyalty}% below the regular price for as long as you stay a client."
     },
     "credits": {
       "eyebrow": "Credits",
@@ -941,7 +941,7 @@
         },
         "q5": {
           "question": "Can I cancel or pause?",
-          "answer": "You cancel per month, before the next period, without a fee. Your price is fixed for {lock} paid months. If you stop or pause, that protection lapses. If you come back later, you start on the prices that apply at that moment."
+          "answer": "You cancel per month, before the next period, without a fee. Your price is fixed for {lock} paid months, and after that you keep a {loyalty}% founding discount on the regular price. If you stop or pause, that protection lapses. If you come back later, you start on the prices that apply at that moment."
         },
         "q6": {
           "question": "What happens to my data when I cancel?",
@@ -953,7 +953,7 @@
         },
         "q8": {
           "question": "What happens when the {spots} spots are full?",
-          "answer": "Then Founding closes. Regular plans follow after that, based on three measured months. If you are a founding partner, you keep €{price} for {included} client brands for {lock} paid months."
+          "answer": "Then Founding closes. Regular plans follow after that, based on three measured months. We expect around €{regularMin}-{regularMax} per month for {regularBrands} client brands. If you are a founding partner, you keep €{price} for {included} client brands for {lock} paid months, and after that {loyalty}% off the regular price for as long as you stay a client."
         },
         "q9": {
           "question": "Can I grow beyond {included} client brands?",
@@ -1482,7 +1482,7 @@
           },
           "subscription_terms": {
             "title": "2. Subscription terms",
-            "content": "Services are offered on a monthly subscription basis. The current offer is Founding: EUR 1,297 per month excluding VAT for up to 5 active client brands (workspaces), above that EUR 199 per extra client brand per month up to a maximum of 15, with 1,500 credits per active client brand per month in one pool for the agency. Onboarding costs EUR 0. The price is fixed for 12 paid months. Usage is measured in credits; included credits expire at the end of the month. Extra credits can be purchased in packs (500 for EUR 40, 2,000 for EUR 160, 5,000 for EUR 400, excluding VAT) and stay valid for 12 months. AI video, voice-over and ads are not included. Existing agreements keep the terms agreed in them. Billing takes place monthly in advance. You can cancel your subscription monthly with 30 days written notice, effective at the end of the current billing period."
+            "content": "Services are offered on a monthly subscription basis. The current offer is Founding: EUR 1,297 per month excluding VAT for up to 5 active client brands (workspaces), above that EUR 199 per extra client brand per month up to a maximum of 15, with 1,500 credits per active client brand per month in one pool for the agency. Onboarding costs EUR 0. The price is fixed for 12 paid months. After that a founding partner pays 30% below the regular price in force at that time, as long as the subscription runs without a break; until a regular price exists, the Founding price continues. Usage is measured in credits; included credits expire at the end of the month. Extra credits can be purchased in packs (500 for EUR 40, 2,000 for EUR 160, 5,000 for EUR 400, excluding VAT) and stay valid for 12 months. AI video, voice-over and ads are not included. Existing agreements keep the terms agreed in them. Billing takes place monthly in advance. You can cancel your subscription monthly with 30 days written notice, effective at the end of the current billing period."
           },
           "ai_output_disclaimer": {
             "title": "3. AI output disclaimer",

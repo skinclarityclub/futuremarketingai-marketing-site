@@ -22,7 +22,7 @@
       "videoPlay": "Reproducir la animación",
       "tagline": "El <accent>compañero de IA</accent> de tu agencia.",
       "subtitle": "Conoce los objetivos de cada cliente, está en cada pantalla de tu dashboard y te escribe por WhatsApp en cuanto pasa algo. Para redes sociales, blogs, anuncios, email, DMs de Instagram, SEO e informes.",
-      "trustAnchor": "En producción con nuestro primer cliente. Tres plazas de fundador en el primer grupo.",
+      "trustAnchor": "En producción con nuestro primer cliente. Tres plazas de fundador.",
       "cta": "Solicita una llamada",
       "ctaSecondary": "Conoce a Clyde",
       "trustCluster": {
@@ -175,7 +175,7 @@
         }
       },
       "ctaLabel": "Solicita una llamada",
-      "ctaHint": "Tres plazas de fundador en el primer grupo",
+      "ctaHint": "Tres plazas de fundador",
       "fullJourneyLink": "Ver el recorrido completo de onboarding en 5 pasos"
     },
     "comparison": {
@@ -290,10 +290,10 @@
     "pricingTeaser": {
       "eyebrow": "Precios",
       "title": "Una oferta: Founding. Precio fijo durante 12 meses pagados.",
-      "subtitle": "Quien entra ahora se convierte en socio fundador: €1.297 al mes sin IVA por cinco marcas cliente, €199 por marca extra, con 1.500 créditos por marca. Tres plazas en el primer grupo.",
+      "subtitle": "Quien entra ahora se convierte en socio fundador: €1.297 al mes sin IVA por cinco marcas cliente, €199 por marca extra, con 1.500 créditos por marca. Tres plazas de fundador.",
       "perMonth": "al mes, sin IVA",
       "foundingCtaLabel": "Únete como socio founding",
-      "spotsTaken": "Primer grupo: {taken} de {total} plazas ocupadas",
+      "spotsTaken": "Founding: {taken} de {total} plazas ocupadas",
       "tiers": {
         "founding": {
           "label": "Founding",
@@ -302,7 +302,7 @@
         }
       },
       "ctaLink": "Solicita una llamada",
-      "regularNote": "Los planes regulares llegan después del grupo Founding."
+      "regularNote": "Los planes regulares llegan después de Founding."
     },
     "pillars": {
       "title": "Tú mantienes el control. Tus datos están en la UE.",
@@ -341,7 +341,7 @@
     },
     "cta": {
       "eyebrow": "Founding abierto · máx. {total} plazas",
-      "title": "Tres plazas en el primer grupo.",
+      "title": "Tres plazas de fundador.",
       "subtitle": "€1.297 al mes sin IVA por cinco marcas cliente, fijo durante 12 meses pagados. Una llamada de 30 minutos nos dice si encaja.",
       "button": "Solicita una llamada",
       "foundingLabel": "Ver Founding"
@@ -360,7 +360,7 @@
         },
         "q3": {
           "question": "¿Por qué una solicitud? ¿Por qué no self-service?",
-          "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Hay tres plazas de fundador en el primer grupo. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
+          "answer": "Clyde es una asociación AI high-touch, no una herramienta SaaS. Cada cliente recibe onboarding personal con Daley (founder) y 4 semanas de partnership setup. Hay tres plazas de fundador. La solicitud no está para rechazarte: sirve para evaluar juntos si es un encaje para ambas partes. Un sign-up genérico no encaja con lo que entregamos."
         },
         "q4": {
           "question": "¿Qué habilidades obtengo?",
@@ -814,8 +814,8 @@
     "capacity": {
       "eyebrow": "Capacidad",
       "title": "Capacidad y transparencia",
-      "body": "Tres plazas de fundador en el primer grupo. No es un truco de marketing, es la realidad de un onboarding cercano. Daley prepara personalmente a cada nuevo cliente en 4 semanas, y hay un límite a cuántas agencias podemos recibir a la vez.",
-      "reasoning": "Elegimos calidad antes que volumen. Mejor {total} agencias donde Clyde aporta valor de verdad que 200 a las que no podemos dar suficiente atención. Cuando las {total} plazas estén ocupadas, se cierra el primer grupo. Después llegan los planes regulares."
+      "body": "Tres plazas de fundador. No es un truco de marketing, es la realidad de un onboarding cercano. Daley prepara personalmente a cada nuevo cliente en 4 semanas, y hay un límite a cuántas agencias podemos recibir a la vez.",
+      "reasoning": "Elegimos calidad antes que volumen. Mejor {total} agencias donde Clyde aporta valor de verdad que 200 a las que no podemos dar suficiente atención. Cuando las {total} plazas estén ocupadas, se cierra Founding. Después llegan los planes regulares."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -834,7 +834,7 @@
     "hero": {
       "eyebrow": "Precios",
       "title": "¿Cuánto cuesta Clyde?",
-      "lead": "Clyde cuesta €{price} al mes sin IVA como socio fundador, con {included} marcas cliente incluidas y €{extra} por cada marca extra, hasta {max}. Cada marca cliente aporta {creditsPerBrand} créditos al mes. Esa es la oferta de hoy, para {spots} agencias en el primer grupo.",
+      "lead": "Clyde cuesta €{price} al mes sin IVA como socio fundador, con {included} marcas cliente incluidas y €{extra} por cada marca extra, hasta {max}. Cada marca cliente aporta {creditsPerBrand} créditos al mes. Esa es la oferta de hoy, para las primeras {spots} agencias.",
       "checked": "Precios comprobados el {date}."
     },
     "founding": {
@@ -852,7 +852,7 @@
       "definition": "Un espacio de trabajo es una marca cliente.",
       "whyTitle": "¿Por qué solo {spots} plazas?",
       "why": "Daley prepara personalmente cada arranque, durante cuatro semanas, y así escucha de primera mano lo que necesitan las primeras agencias. Eso decide lo que se construye después. Funciona con {spots} agencias, no con cien.",
-      "after": "Cuando las {spots} plazas estén ocupadas, se cierra el primer grupo. Como socio fundador mantienes €{price} al mes por {included} marcas cliente durante {lock} meses pagados.",
+      "after": "Cuando las {spots} plazas estén ocupadas, se cierra Founding. Como socio fundador mantienes €{price} al mes por {included} marcas cliente durante {lock} meses pagados. Después pagas un {loyalty}% menos que el precio regular mientras sigas siendo cliente.",
       "cta": "Solicita una llamada"
     },
     "included": {
@@ -908,7 +908,7 @@
         "credits": "{credits} créditos al mes en la bolsa de tu agencia.",
         "minimum": "El precio base cubre hasta {included} marcas cliente."
       },
-      "regular": "Los planes regulares llegan después del grupo Founding, a partir de tres meses medidos."
+      "regular": "Los planes regulares llegan después de Founding, a partir de tres meses medidos. Esperamos unos €{regularMin}-{regularMax} al mes por {regularBrands} marcas cliente. Como socio fundador pagas €{price}, fijo durante {lock} meses pagados, y después un {loyalty}% menos que el precio regular mientras sigas siendo cliente."
     },
     "credits": {
       "eyebrow": "Créditos",
@@ -941,7 +941,7 @@
         },
         "q5": {
           "question": "¿Puedo cancelar o pausar?",
-          "answer": "Cancelas por meses, antes del siguiente periodo, sin penalización. Tu precio queda fijo durante {lock} meses pagados. Si paras o pausas, esa protección se pierde. Si vuelves más tarde, empiezas con los precios vigentes en ese momento."
+          "answer": "Cancelas por meses, antes del siguiente periodo, sin penalización. Tu precio queda fijo durante {lock} meses pagados, y después mantienes un {loyalty}% de descuento de fundador sobre el precio regular. Si paras o pausas, esa protección se pierde. Si vuelves más tarde, empiezas con los precios vigentes en ese momento."
         },
         "q6": {
           "question": "¿Qué pasa con mis datos si cancelo?",
@@ -953,7 +953,7 @@
         },
         "q8": {
           "question": "¿Qué pasa cuando las {spots} plazas estén llenas?",
-          "answer": "Entonces se cierra el primer grupo. Después llegan los planes regulares, a partir de tres meses medidos. Si eres socio fundador, mantienes €{price} por {included} marcas cliente durante {lock} meses pagados."
+          "answer": "Entonces se cierra Founding. Después llegan los planes regulares, a partir de tres meses medidos. Esperamos unos €{regularMin}-{regularMax} al mes por {regularBrands} marcas cliente. Si eres socio fundador, mantienes €{price} por {included} marcas cliente durante {lock} meses pagados, y después un {loyalty}% de descuento sobre el precio regular mientras sigas siendo cliente."
         },
         "q9": {
           "question": "¿Puedo crecer por encima de {included} marcas cliente?",
@@ -1396,7 +1396,7 @@
     },
     "end": {
       "title": "Start with a conversation.",
-      "sub": "Una conversación de 30 minutos te dice si Clyde encaja con tus clientes. Tres plazas de fundador en el primer grupo.",
+      "sub": "Una conversación de 30 minutos te dice si Clyde encaja con tus clientes. Tres plazas de fundador.",
       "cta": "Request a call",
       "link": "See the price"
     }
@@ -1482,7 +1482,7 @@
           },
           "subscription_terms": {
             "title": "2. Condiciones de suscripción",
-            "content": "Los servicios se ofrecen mediante una suscripción mensual. La oferta actual es Founding: EUR 1.297 al mes sin IVA por hasta 5 marcas cliente activas (espacios de trabajo); por encima, EUR 199 por cada marca extra al mes hasta un máximo de 15, con 1.500 créditos por marca activa al mes en una bolsa para la agencia. El onboarding cuesta EUR 0. El precio queda fijo durante 12 meses pagados. El uso se mide en créditos; los créditos incluidos caducan al final del mes. Se pueden comprar créditos extra en paquetes (500 por EUR 40, 2.000 por EUR 160, 5.000 por EUR 400, sin IVA), válidos durante 12 meses. El vídeo con IA, la locución y los anuncios no están incluidos. Los acuerdos existentes mantienen las condiciones pactadas en ellos. La facturación es mensual y por adelantado. Puedes cancelar tu suscripción cada mes con un preaviso por escrito de 30 días, con efecto al final del periodo de facturación en curso."
+            "content": "Los servicios se ofrecen mediante una suscripción mensual. La oferta actual es Founding: EUR 1.297 al mes sin IVA por hasta 5 marcas cliente activas (espacios de trabajo); por encima, EUR 199 por cada marca extra al mes hasta un máximo de 15, con 1.500 créditos por marca activa al mes en una bolsa para la agencia. El onboarding cuesta EUR 0. El precio queda fijo durante 12 meses pagados. Después, un socio fundador paga un 30% menos que el precio regular vigente en ese momento, mientras la suscripción continúe sin interrupción; mientras no exista un precio regular, sigue vigente el precio Founding. El uso se mide en créditos; los créditos incluidos caducan al final del mes. Se pueden comprar créditos extra en paquetes (500 por EUR 40, 2.000 por EUR 160, 5.000 por EUR 400, sin IVA), válidos durante 12 meses. El vídeo con IA, la locución y los anuncios no están incluidos. Los acuerdos existentes mantienen las condiciones pactadas en ellos. La facturación es mensual y por adelantado. Puedes cancelar tu suscripción cada mes con un preaviso por escrito de 30 días, con efecto al final del periodo de facturación en curso."
           },
           "ai_output_disclaimer": {
             "title": "3. Exención de responsabilidad sobre la salida de IA",
@@ -4376,7 +4376,7 @@
   },
   "founding": {
     "counter": {
-      "badge": "Primer grupo: {taken} de {total} plazas ocupadas",
+      "badge": "Founding: {taken} de {total} plazas ocupadas",
       "cohortStart": "Founding empieza el {date}"
     }
   },
