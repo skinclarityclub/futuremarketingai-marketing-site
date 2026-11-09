@@ -153,7 +153,7 @@ Bij variable-interpolatie: `{var}` notation, bijv. `"badge": "{taken} van {total
 
 - `VoiceDemoSection` + `VoiceDemoFAB` op `/skills/voice-agent` — bestaande interactieve demo, werkt
 - `DemoPlayground` + `MultiPlatformShowcase` — verhuist naar lead-qualifier in Phase 3, niet vergooien
-- Hero-kringvideo (`HeroVideo`, `public/videos/clyde-kring.mp4`) — goedgekeurd beeld uit stream 2b (Daley 2026-10-12), sinds de website-port PR 3 alleen nog op /en. Op /nl staat hero 3 (`src/components/home/hero3/`, goedgekeurd 2026-11-02, V4). Op /en mag hem alleen vervangen: een nieuwe render uit `C:/tmp/fmai-verhaal-beeld/` met status klaar in MANIFEST.md, of een Engelse hero 3 met Engelse opnames.
+- Hero-kringvideo (`public/videos/clyde-kring.mp4` + `public/images/clyde-kring-poster.webp`): goedgekeurd beeld uit stream 2b (Daley 2026-10-12), staat sinds golf 10 (PR #123, 2026-11-09) op geen enkele pagina meer: /nl en /en hebben allebei hero 3 (`src/components/home/hero3/`). De component `HeroVideo` is bij de opruim-PR daarna verwijderd; terughalen kan uit `dbb1e664`. Het beeld zelf blijft in `public/` staan, gooi het niet weg zonder Daley.
 - `messages/nl.json` keys die actief gebruikt worden — altijd verifiëren via grep vóór verwijderen
 - Hardcoded `futuremarketingai.com` anywhere in code or copy — the domain was unified to `future-marketing.ai` on 2026-04-24. Always use the canonical. Customer-facing email is `hello@future-marketing.ai` except on the legal page which keeps `privacy@future-marketing.ai`.
 
