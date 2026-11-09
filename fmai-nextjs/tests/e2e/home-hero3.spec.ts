@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test'
 
 /**
- * Hero 3 on /nl (website-port PR 3, approved 2026-11-02). The old hero, its backdrop and the kring poster preload stay
- * on /en until there are English captures (PLAN-port PR 3, besluit 10).
+ * Hero 3 on /nl (website-port PR 3, approved 2026-11-02) and since golf 10 also on /en (Daley 2026-11-08:
+ * "/en = /nl-structuur"). Daley 2026-11-09 kept the Dutch app captures on /en too: the example brands are Dutch.
  */
 
 test.describe('Home hero 3 (/nl)', () => {
@@ -84,13 +84,18 @@ test.describe('Home hero 3 (/nl)', () => {
   })
 })
 
-test.describe('Home hero on /en stays the old one', () => {
-  test('old hero, kring poster preload, no hero 3', async ({ page }) => {
+test.describe('Home hero on /en is the same as /nl', () => {
+  test('hero 3, one h1, the page title, speakable targets and no old hero', async ({ page }) => {
     await page.goto('/en')
-    await expect(page.locator('section[aria-label="Hero"]')).toHaveCount(1)
-    await expect(page.locator('#hero[data-b]')).toHaveCount(0)
-    expect(await page.locator('link[rel="preload"][href*="clyde-kring-poster"]').count()).toBeGreaterThan(0)
-    // no quiet section on /en, and still the round mark: it is the shape everywhere (Daley 2026-11-08)
+    await expect(page).toHaveTitle("FutureMarketingAI: Clyde, your agency's AI colleague")
+    await expect(page.locator('h1')).toHaveCount(1)
+    await expect(page.locator('#hero[data-b]')).toHaveCount(1)
+    await expect(page.locator('section[aria-label="Hero"]')).toHaveCount(0)
+    await expect(page.locator('.speakable-hero')).toHaveCount(1)
+    await expect(page.locator('.speakable-tldr')).toHaveCount(1)
+    await expect(page.locator('link[rel="preload"][href*="clyde-kring-poster"]')).toHaveCount(0)
+    await expect(page.locator('#hero #pause')).toHaveAttribute('aria-label', 'Pause the animation')
+    // the round mark is the shape everywhere (Daley 2026-11-08)
     const box = await page.locator('[data-clyde-launcher]').boundingBox()
     expect(box && Math.round(box.width)).toBe(44)
   })
