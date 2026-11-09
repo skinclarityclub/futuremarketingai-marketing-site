@@ -55,7 +55,7 @@ Entrances: the dashboard, WhatsApp and the web app on your home screen (no App S
  key: 'pricing',
  content: `## FutureMarketingAI Pricing
 
-New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months. Growth, Professional and Enterprise are not for sale.
+New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands. Growth, Professional and Enterprise are not for sale.
 
 **Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 founding spots)
 - EUR 199 per extra client brand per month, up to 15 brands (6 brands EUR 1,496, 10 EUR 2,292, 15 EUR 3,287)
@@ -63,7 +63,7 @@ New agencies have one offer: Founding. Regular plans follow after Founding, buil
 - Enough for a balanced month per brand, for example about 20 unique pieces (12 posts, 4 carousels, 4 shorts from the brand's own footage) and about 40 placements on Instagram, Facebook, LinkedIn, TikTok and YouTube Shorts; X and Threads where they fit the brand. Plus a blog, a research memo, an SEO/GEO check, a monthly report and Clyde. A guideline, not an output entitlement
 - The agency approves the work itself and keeps the client contact. Guidance is available on request
 - EUR 0 onboarding
-- Price fixed for 12 paid months, cancel monthly
+- Price fixed for 12 paid months, cancel monthly; after that founding partners pay 30% below the regular price while the subscription runs without a break
 - Not included: AI video, voice-over, ads
 - Extra credits: 500 credits EUR 40, 2,000 EUR 160, 5,000 EUR 400
 

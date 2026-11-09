@@ -1519,7 +1519,7 @@
       "definition": "Een werkruimte is één klantmerk.",
       "whyTitle": "Waarom maar {spots} plekken?",
       "why": "Daley zet elke start zelf op, vier weken lang, en hoort zo rechtstreeks wat de eerste bureaus nodig hebben. Dat bepaalt wat er daarna gebouwd wordt. Dat werkt met {spots} bureaus, niet met honderd.",
-      "after": "Zijn de {spots} plekken bezet, dan sluit Founding. Als founding partner houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast.",
+      "after": "Zijn de {spots} plekken bezet, dan sluit Founding. Als founding partner houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast. Daarna betaal je {loyalty}% minder dan de reguliere prijs, zolang je klant blijft.",
       "cta": "Vraag een gesprek aan"
     },
     "included": {
@@ -1575,7 +1575,7 @@
         "credits": "{credits} credits per maand in de pot van je bureau.",
         "minimum": "De basisprijs dekt tot {included} klantmerken."
       },
-      "regular": "Reguliere pakketten volgen na Founding, op basis van drie gemeten maanden."
+      "regular": "Reguliere pakketten volgen na Founding, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Als founding partner betaal je €{price}, {lock} betaalde maanden vast, en daarna {loyalty}% minder dan de reguliere prijs, zolang je klant blijft."
     },
     "credits": {
       "eyebrow": "Credits",
@@ -1608,7 +1608,7 @@
         },
         "q5": {
           "question": "Kan ik opzeggen of pauzeren?",
-          "answer": "Je zegt per maand op, vóór de volgende periode, zonder boete. Je prijs staat {lock} betaalde maanden vast. Stop of pauzeer je, dan vervalt die bescherming. Kom je later terug, dan start je op de prijzen die op dat moment gelden."
+          "answer": "Je zegt per maand op, vóór de volgende periode, zonder boete. Je prijs staat {lock} betaalde maanden vast, en daarna houd je {loyalty}% founding-korting op de reguliere prijs. Stop of pauzeer je, dan vervalt die bescherming. Kom je later terug, dan start je op de prijzen die op dat moment gelden."
         },
         "q6": {
           "question": "Wat gebeurt er met mijn gegevens als ik opzeg?",
@@ -1620,7 +1620,7 @@
         },
         "q8": {
           "question": "Wat gebeurt er als de {spots} plekken vol zijn?",
-          "answer": "Dan sluit Founding. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. Ben je founding partner, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast."
+          "answer": "Dan sluit Founding. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Ben je founding partner, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast, en daarna {loyalty}% korting op de reguliere prijs, zolang je klant blijft."
         },
         "q9": {
           "question": "Kan ik doorgroeien boven de {included} klantmerken?",
@@ -2149,7 +2149,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis. Het huidige aanbod is Founding: EUR 1.297 per maand exclusief btw voor maximaal 5 actieve klantmerken (werkruimtes), daarboven EUR 199 per extra klantmerk per maand tot maximaal 15, met 1.500 credits per actief klantmerk per maand in één pot voor het bureau. Onboarding kost EUR 0. De prijs staat 12 betaalde maanden vast. Gebruik wordt gemeten in credits; inbegrepen credits vervallen aan het einde van de maand. Extra credits kunnen in pakketten worden aangeschaft (500 voor EUR 40, 2.000 voor EUR 160, 5.000 voor EUR 400, exclusief btw) en blijven 12 maanden geldig. AI-video, voice-over en advertenties zijn niet inbegrepen. Voor bestaande overeenkomsten blijven de daarin afgesproken voorwaarden gelden. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement maandelijks opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis. Het huidige aanbod is Founding: EUR 1.297 per maand exclusief btw voor maximaal 5 actieve klantmerken (werkruimtes), daarboven EUR 199 per extra klantmerk per maand tot maximaal 15, met 1.500 credits per actief klantmerk per maand in één pot voor het bureau. Onboarding kost EUR 0. De prijs staat 12 betaalde maanden vast. Daarna betaalt een founding partner 30% minder dan de dan geldende reguliere prijs, zolang het abonnement zonder onderbreking doorloopt; zolang er geen reguliere prijs is, blijft de Founding-prijs gelden. Gebruik wordt gemeten in credits; inbegrepen credits vervallen aan het einde van de maand. Extra credits kunnen in pakketten worden aangeschaft (500 voor EUR 40, 2.000 voor EUR 160, 5.000 voor EUR 400, exclusief btw) en blijven 12 maanden geldig. AI-video, voice-over en advertenties zijn niet inbegrepen. Voor bestaande overeenkomsten blijven de daarin afgesproken voorwaarden gelden. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement maandelijks opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
