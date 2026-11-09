@@ -10,9 +10,10 @@ import { sanitizeMemory } from './memory-persistence'
 export type Fit = 'strong' | 'good' | 'no_fit' | 'unclear'
 
 // The ICP as the site states it (messages/nl.json: "Bureaus met 5 tot 20 mensen en
-// 5 tot 20 merken"); 1 brand or a solo team is no fit.
-const ICP_MIN = 5
-const ICP_MAX = 20
+// 5 tot 15 merken"); brands stop at 15 because Founding does (Daley 2026-11-09).
+// 1 brand or a solo team is no fit.
+const TEAM = { min: 5, max: 20 }
+const BRANDS = { min: 5, max: 15 }
 
 function count(v: unknown): number | undefined {
   return typeof v === 'number' && Number.isFinite(v) && v >= 0 ? v : undefined
@@ -23,8 +24,8 @@ export function assessFit(profile: Pick<MemoryProfile, 'brandCount' | 'teamSize'
   const team = count(profile.teamSize)
   if ((brands !== undefined && brands <= 1) || (team !== undefined && team <= 1)) return 'no_fit'
   if (brands === undefined) return 'unclear'
-  const inIcp = (n: number) => n >= ICP_MIN && n <= ICP_MAX
-  if (inIcp(brands) && team !== undefined && inIcp(team)) return 'strong'
+  const within = (n: number, r: { min: number; max: number }) => n >= r.min && n <= r.max
+  if (within(brands, BRANDS) && team !== undefined && within(team, TEAM)) return 'strong'
   return 'good'
 }
 

@@ -100,7 +100,7 @@
       "closingSubtext": "En 30 minutos te digo si encajamos con tu portfolio.",
       "closingCta": "Solicita una llamada",
       "fitTitle": "Para quién funciona",
-      "fit1": "Agencias de 5 a 20 personas y 5 a 20 marcas que quieren que cada miembro del equipo atienda más clientes.",
+      "fit1": "Agencias de 5 a 20 personas y 5 a 15 marcas que quieren que cada miembro del equipo atienda más clientes.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo ejecutarlos.",
       "fit4": "Agencias neerlandesas y EU-first que quieren saber dónde están sus datos.",
@@ -780,7 +780,7 @@
       "title": "Para quién funciona (y para quién no)",
       "subtitle": "El mismo ICP híbrido que en la home, aquí con más detalle. Somos deliberadamente selectivos.",
       "fitTitle": "Para quién funciona",
-      "fit1": "Agencias de 5 a 20 personas y 5 a 20 marcas que quieren que cada miembro del equipo atienda más clientes.",
+      "fit1": "Agencias de 5 a 20 personas y 5 a 15 marcas que quieren que cada miembro del equipo atienda más clientes.",
       "fit2": "Operadores de marketing que trabajan con datos y ven el contenido como motor de crecimiento.",
       "fit3": "Founders que buscan un partner, no una herramienta. Dispuestos a recalibrar flujos de trabajo juntos, no solo a ejecutarlos.",
       "fit4": "Agencias NL y EU-first que quieren saber dónde están sus datos.",
@@ -1152,7 +1152,7 @@
     },
     "clyde": {
       "title": "What Clyde is for.",
-      "p1": "Clyde is the AI colleague for marketing agencies with 5 to 20 client brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own environment.",
+      "p1": "Clyde is the AI colleague for marketing agencies with 5 to 15 client brands. Every client has its own workspace and its own memory. Per client, Clyde does strategy, research, content, reporting and leads, and your client approves in their own environment.",
       "p2": "Clyde cuesta €1.297 al mes sin IVA como socio fundador, con cinco marcas cliente incluidas y €199 por cada marca extra, hasta 15. Database, servers and queues are in the EU. The language model runs at Anthropic and OpenAI in the US.",
       "links": {
         "pricing": "See the price",

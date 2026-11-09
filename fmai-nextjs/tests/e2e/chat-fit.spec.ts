@@ -13,11 +13,15 @@ import { buildFlagshipTools } from '../../src/lib/chatbot/tools/flagship-tools'
 import { buildLeadgenTools } from '../../src/lib/chatbot/tools/leadgen-tools'
 
 // Pure-logic spec (no browser, no API): the fit rules that decide the application card.
-test('assessFit follows the ICP on the site: 5 to 20 people, 5 to 20 brands, plans from 2 brands', () => {
+test('assessFit follows the ICP on the site: 5 to 20 people, 5 to 15 brands, plans from 2 brands', () => {
   expect(assessFit({})).toBe('unclear')
   expect(assessFit({ teamSize: 8 })).toBe('unclear')
   expect(assessFit({ brandCount: 6, teamSize: 8 })).toBe('strong')
   expect(assessFit({ brandCount: 5, teamSize: 20 })).toBe('strong')
+  expect(assessFit({ brandCount: 15, teamSize: 20 })).toBe('strong')
+  // past Founding's 15 brands: still a fit, no longer the core ICP
+  expect(assessFit({ brandCount: 16, teamSize: 8 })).toBe('good')
+  expect(assessFit({ brandCount: 20, teamSize: 20 })).toBe('good')
   expect(assessFit({ brandCount: 6 })).toBe('good')
   expect(assessFit({ brandCount: 3, teamSize: 3 })).toBe('good')
   expect(assessFit({ brandCount: 40, teamSize: 60 })).toBe('good')
