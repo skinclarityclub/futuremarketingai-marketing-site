@@ -23,7 +23,7 @@ export const LEADGEN_TOPICS: TopicDefinition[] = [
  content: `## Voor wie Clyde WEL en NIET werkt
 
 **Werkt goed voor:**
-- Marketingbureaus met 5 tot 20 mensen en 5 tot 20 klantmerken
+- Marketingbureaus met 5 tot 20 mensen en 5 tot 15 klantmerken
 - Bureaus die per klant werken met doelen, een contentagenda en rapportage
 - Teams die veel tijd kwijt zijn aan repetitieve content, inbox of rapportage
 - Bureaus die meer klanten willen bedienen met het team dat ze hebben

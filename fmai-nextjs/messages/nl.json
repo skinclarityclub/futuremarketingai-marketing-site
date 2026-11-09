@@ -42,7 +42,7 @@
         "primary": "Vraag een gesprek aan",
         "secondary": "Zie Clyde aan het werk"
       },
-      "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
+      "def": "Clyde is de <nw>AI-collega</nw> voor marketingbureaus met 5 tot 15 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
       "demo": "Voorbeeldbureau en voorbeeldmerken uit de demo-omgeving van de app.",
       "pause": {
         "pause": "Pauzeer de animatie",
@@ -176,7 +176,7 @@
       "closingSubtext": "Dan vertel ik je in 30 minuten of we een match zijn voor jouw portfolio.",
       "closingCta": "Vraag een gesprek aan",
       "fitTitle": "Voor wie dit werkt",
-      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
+      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 15 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
       "fit4": "Nederlandse en EU-first bureaus die willen weten waar hun data staat.",
@@ -1047,7 +1047,7 @@
     },
     "vragen": {
       "answers": {
-        "n1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 20 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
+        "n1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 15 klantmerken: van strategie en contentagenda tot goedkeuring, publicatie en rapportage, met een eigen geheugen per klant, voor het bureau én voor de klant.",
         "n2": "ChatGPT en Jasper zijn generieke tools: hun geheugen hoort bij een gebruiker of project, niet bij een klant van je bureau. Clyde heeft een eigen geheugen per klant dat vastzit aan de agenda, de goedkeuringen en de rapporten.",
         "n3": "Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
         "n4": "Ja. Je zet Clyde vanuit je browser op het beginscherm van je telefoon, zonder app store. Voor vragen heb je een directe WhatsApp-lijn met Daley.",
@@ -1447,7 +1447,7 @@
       "title": "Voor wie dit werkt (en voor wie niet)",
       "subtitle": "Dezelfde hybride ICP als op home, hier uitgebreider. We zijn bewust selectief.",
       "fitTitle": "Voor wie dit werkt",
-      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 20 merken, die meer klanten per teamlid willen aankunnen.",
+      "fit1": "Bureaus met 5 tot 20 mensen en 5 tot 15 merken, die meer klanten per teamlid willen aankunnen.",
       "fit2": "Marketing-operators die datagedreven werken en content zien als groeimotor.",
       "fit3": "Founders die een partner zoeken, geen tool. Bereid om workflows samen bij te stellen, niet alleen uit te voeren.",
       "fit4": "NL- en EU-first bureaus die willen weten waar hun data staat.",
@@ -1819,7 +1819,7 @@
     },
     "clyde": {
       "title": "Waar Clyde voor is.",
-      "p1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 20 klantmerken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in zijn eigen omgeving.",
+      "p1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 15 klantmerken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in zijn eigen omgeving.",
       "p2": "Clyde kost €1.297 per maand excl. btw als founding partner, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
       "links": {
         "pricing": "Bekijk de prijs",
