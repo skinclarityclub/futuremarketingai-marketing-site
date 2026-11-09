@@ -230,7 +230,7 @@ export function WeekView({ t }: { t: WeekT }) {
                   </span>
                 </div>
                 <div className="wb sh">
-                  <Image src="/home/week/dagstart.jpg" width={1520} height={1108} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.dagstart")} />
+                  <Image src="/home/week/dagstart-1110.jpg" width={1520} height={1108} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.dagstart")} />
                   <div className="rib">
                     <span className="cav">
                       <svg viewBox="0 0 512 512" aria-hidden="true">
@@ -317,7 +317,7 @@ export function WeekView({ t }: { t: WeekT }) {
                   </span>
                 </div>
                 <div className="wb sh">
-                  <Image src="/home/week/analyse.jpg" width={1592} height={1060} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.analyse")} />
+                  <Image src="/home/week/analyse-1110.jpg" width={1592} height={1060} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.analyse")} />
                   <div className="rib">
                     <span className="cav">
                       <svg viewBox="0 0 512 512" aria-hidden="true">
@@ -392,7 +392,7 @@ export function WeekView({ t }: { t: WeekT }) {
                   </span>
                 </div>
                 <div className="wb sh">
-                  <Image src="/home/week/strategie.jpg" width={1720} height={1290} sizes="(max-width: 860px) 92vw, 855px" className="shot" alt={t("alt.strategie")} />
+                  <Image src="/home/week/strategie-1110.jpg" width={1720} height={1290} sizes="(max-width: 860px) 92vw, 855px" className="shot" alt={t("alt.strategie")} />
                   <div className="rib">
                     <span className="cav">
                       <svg viewBox="0 0 512 512" aria-hidden="true">
@@ -454,7 +454,7 @@ export function WeekView({ t }: { t: WeekT }) {
                     </span>
                   </div>
                   <div className="wb sh">
-                    <Image src="/home/week/agenda.jpg" width={1720} height={1098} sizes="(max-width: 860px) 92vw, 491px" className="shot" alt={t("alt.agenda")} />
+                    <Image src="/home/week/agenda-1110.jpg" width={1720} height={1098} sizes="(max-width: 860px) 92vw, 491px" className="shot" alt={t("alt.agenda")} />
                   </div>
                 </div>
               </div>
@@ -483,7 +483,7 @@ export function WeekView({ t }: { t: WeekT }) {
                 </div>
                 {' '}
                 <div className="wb sh">
-                  <Image src="/home/week/maken.jpg" width={780} height={1242} sizes="(max-width: 860px) 92vw, 465px" className="shot" alt={t("alt.maken")} />
+                  <Image src="/home/week/maken-1110.jpg" width={780} height={1242} sizes="(max-width: 860px) 92vw, 465px" className="shot" alt={t("alt.maken")} />
                   <div className="rib">
                     <span className="cav">
                       <svg viewBox="0 0 512 512" aria-hidden="true">
@@ -558,7 +558,7 @@ export function WeekView({ t }: { t: WeekT }) {
                 </div>
                 {' '}
                 <div className="wb sh">
-                  <Image src="/home/week/deck.jpg" width={1720} height={1062} sizes="(max-width: 860px) 92vw, 907px" className="shot" alt={t("alt.deck")} />
+                  <Image src="/home/week/deck-1110.jpg" width={1720} height={1154} sizes="(max-width: 860px) 92vw, 907px" className="shot" alt={t("alt.deck")} />
                   <div className="rib">
                     <span className="cav">
                       <svg viewBox="0 0 512 512" aria-hidden="true">
@@ -736,7 +736,7 @@ export function WeekView({ t }: { t: WeekT }) {
               <div className="ag fan">
                 <div className="hubglow">
                 </div>
-                <div style={{ "--dx": "-350px", "--dy": "-80px", "--z": "60px", "--r": "16deg", "--w": "200px", "--k": "0" } as CSSProperties} className="fc dk c-ig">
+                <div style={{ "--dx": "-350px", "--dy": "-105px", "--z": "60px", "--r": "16deg", "--w": "200px", "--k": "0" } as CSSProperties} className="fc dk c-ig">
                   <div className="fh">
                     <i className="gl gl-ig">
                       <svg>
@@ -747,7 +747,7 @@ export function WeekView({ t }: { t: WeekT }) {
                       {t("screens.s5.n1")}
                     </b>
                   </div>
-                  <i className="cover cv-rose sq">
+                  <i className="cover cv-rose p45">
                   </i>
                   <div className="fa">
                     <svg className="ia">
@@ -976,7 +976,7 @@ export function WeekView({ t }: { t: WeekT }) {
                   </span>
                 </div>
                 <div className="wb sh">
-                  <Image src="/home/week/rapport.jpg" width={1536} height={524} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.rapport")} />
+                  <Image src="/home/week/rapport-1110.jpg" width={1536} height={524} sizes="(max-width: 860px) 92vw, 1011px" className="shot" alt={t("alt.rapport")} />
                   <div className="loop full">
                     <svg className="ck">
                       <use href="#i-check" />
