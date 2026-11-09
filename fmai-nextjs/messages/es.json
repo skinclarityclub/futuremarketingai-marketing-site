@@ -733,7 +733,7 @@
         },
         "founding": {
           "period": "Q1 2026",
-          "title": "Apertura del cohorte Founding",
+          "title": "Apertura de Founding",
           "body": "Anunciadas las primeras 10 plazas founding. SKC es nuestro primer cliente. Precio por workspace definido.",
           "current": true
         },
@@ -4377,7 +4377,7 @@
   "founding": {
     "counter": {
       "badge": "Primer grupo: {taken} de {total} plazas ocupadas",
-      "cohortStart": "El cohort empieza el {date}"
+      "cohortStart": "Founding empieza el {date}"
     }
   },
   "skills-template": {

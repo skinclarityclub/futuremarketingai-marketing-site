@@ -1,12 +1,12 @@
 # FutureMarketingAI (FMai)
 
-> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Skills for strategy, social media, blogs, ads, Instagram DMs, email, reporting and SEO/GEO, and a memory per client. The offer for new agencies since 2026-11-09 is Founding: 1297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 spots in the first cohort. Regular plans follow after the Founding cohort. Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: Founding A1.4, 2026-11-09.
+> FMai builds Clyde, the AI colleague of your agency (Dutch: AI-collega). Clyde works in a loop per client: goals and strategy, research, a content agenda per channel, execution (Clyde creates, the team and the client approve) and reporting that feeds the next goal. Skills for strategy, social media, blogs, ads, Instagram DMs, email, reporting and SEO/GEO, and a memory per client. The offer for new agencies since 2026-11-09 is Founding: 1297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 founding spots. Regular plans follow after Founding. Servers and database in the EU; the language model runs at Anthropic and OpenAI (US). Application-gated: no self-service signup. Canonical: https://future-marketing.ai. Founder: Daley. Languages: Dutch (source), English. Pricing canon: Founding A1.4, 2026-11-09.
 
 ## Company
 
 FutureMarketingAI (FMai) is an AI marketing partnership founded by Daley. The product was repositioned in April 2026 from a services agency to a high-touch partnership platform. Based in the Netherlands, serving EU agencies.
 
-Unlike a self-serve SaaS, FMai has application-gated onboarding and 3 founding spots in the first cohort. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
+Unlike a self-serve SaaS, FMai has application-gated onboarding and 3 founding spots. Every engagement starts with the Apply form at https://future-marketing.ai/nl/apply and is reviewed by Daley personally within 48 hours. This is deliberate: quality of partnership is the product.
 
 The first client is SkinClarity Club, a Dutch skincare business with 3 Instagram accounts. FutureMarketingAI is the agency for SkinClarity Club, and all of Clyde's live skills are switched on there.
 
@@ -197,11 +197,11 @@ Page: https://future-marketing.ai/nl/skills/clyde (Working with Clyde). What Cly
 
 ## Pricing
 
-All prices in EUR per month excluding VAT unless stated. Pricing canon: Founding A1.4, 2026-11-09, mirrored in `src/lib/pricing-data.ts` of this site. New agencies have one offer: Founding. Regular plans follow after the Founding cohort, built on three measured months; Growth, Professional and Enterprise are no longer for sale. Existing founding partners keep their agreement as signed; it is not retroactively adjusted.
+All prices in EUR per month excluding VAT unless stated. Pricing canon: Founding A1.4, 2026-11-09, mirrored in `src/lib/pricing-data.ts` of this site. New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; Growth, Professional and Enterprise are no longer for sale. Existing founding partners keep their agreement as signed; it is not retroactively adjusted.
 
 ### Founding, 1,297 EUR per month excl. VAT, 5 client brands included
 
-- 3 spots in the first cohort; the counter on the site counts signed spots only
+- 3 founding spots; the counter on the site counts signed spots only
 - 199 EUR per extra client brand per month, up to 15 brands (6 brands 1,496 EUR, 10 brands 2,292 EUR, 15 brands 3,287 EUR)
 - 1,500 credits per client brand per month, in one pool for the whole agency; included credits expire at the end of the month, bought credits stay valid for 12 months
 - 0 EUR onboarding
@@ -379,7 +379,7 @@ Type: FAQPage
 URL: https://future-marketing.ai
 
 Q: Wat kost FutureMarketingAI?
-A: Founding kost 1.297 EUR per maand excl. btw, met 5 klantmerken inbegrepen. Elk extra klantmerk kost 199 EUR per maand, tot 15 merken. Je krijgt 1.500 credits per klantmerk per maand, in één pot voor je bureau. De onboarding kost 0 EUR en de prijs staat 12 betaalde maanden vast. Het eerste cohort heeft 3 plekken. Reguliere pakketten volgen na het Founding-cohort.
+A: Founding kost 1.297 EUR per maand excl. btw, met 5 klantmerken inbegrepen. Elk extra klantmerk kost 199 EUR per maand, tot 15 merken. Je krijgt 1.500 credits per klantmerk per maand, in één pot voor je bureau. De onboarding kost 0 EUR en de prijs staat 12 betaalde maanden vast. Er zijn 3 founding-plekken. Reguliere pakketten volgen na Founding.
 
 Q: Kan ik stoppen wanneer ik wil?
 A: Ja. Founding is maandelijks opzegbaar, vóór de volgende periode. Het is geen eenmalige betaling maar een maandelijks abonnement, met een prijs die 12 betaalde maanden vaststaat.

@@ -22,7 +22,7 @@
       "videoPlay": "Speel de animatie af",
       "tagline": "De <accent>AI-collega</accent> van je bureau.",
       "subtitle": "Kent de doelen van elke klant, kijkt mee in elk scherm van je dashboard en meldt zich op WhatsApp zodra er iets speelt. Voor social, blogs, advertenties, e-mail, Instagram-DM's, SEO en rapportage.",
-      "trustAnchor": "Draait in productie bij onze eerste klant. Drie founding-plekken in het eerste cohort.",
+      "trustAnchor": "Draait in productie bij onze eerste klant. Drie founding-plekken.",
       "cta": "Vraag een gesprek aan",
       "ctaSecondary": "Leer Clyde kennen",
       "trustCluster": {
@@ -251,7 +251,7 @@
         }
       },
       "ctaLabel": "Vraag een gesprek aan",
-      "ctaHint": "Drie founding-plekken in het eerste cohort",
+      "ctaHint": "Drie founding-plekken",
       "fullJourneyLink": "Bekijk de vier weken in detail"
     },
     "comparison": {
@@ -366,10 +366,10 @@
     "pricingTeaser": {
       "eyebrow": "Prijzen",
       "title": "Eén aanbod: Founding. Prijs 12 betaalde maanden vast.",
-      "subtitle": "Wie nu instapt, wordt founding partner: €1.297 per maand excl. btw voor vijf klantmerken, €199 per extra merk, met 1.500 credits per merk. Drie plekken in het eerste cohort.",
+      "subtitle": "Wie nu instapt, wordt founding partner: €1.297 per maand excl. btw voor vijf klantmerken, €199 per extra merk, met 1.500 credits per merk. Drie founding-plekken.",
       "perMonth": "per maand, excl. btw",
       "foundingCtaLabel": "Word founding partner",
-      "spotsTaken": "Eerste cohort: {taken} van {total} plekken bezet",
+      "spotsTaken": "Founding: {taken} van {total} plekken bezet",
       "tiers": {
         "founding": {
           "label": "Founding",
@@ -378,7 +378,7 @@
         }
       },
       "ctaLink": "Vraag een gesprek aan",
-      "regularNote": "Reguliere pakketten volgen na het Founding-cohort."
+      "regularNote": "Reguliere pakketten volgen na Founding."
     },
     "pillars": {
       "title": "Jij houdt de controle. En je weet waar je data staat.",
@@ -417,7 +417,7 @@
     },
     "cta": {
       "eyebrow": "Founding open · maximaal {total} plekken",
-      "title": "Drie plekken in het eerste cohort.",
+      "title": "Drie founding-plekken.",
       "subtitle": "€1.297 per maand excl. btw voor vijf klantmerken, 12 betaalde maanden vast. Een gesprek van 30 minuten zegt of het past.",
       "button": "Vraag een gesprek aan",
       "foundingLabel": "Bekijk Founding"
@@ -436,7 +436,7 @@
         },
         "q3": {
           "question": "Waarom een aanmeldprocedure? Waarom geen self-service?",
-          "answer": "Clyde is een high-touch AI-partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. Er zijn drie founding-plekken in het eerste cohort. De aanmelding is niet om je af te wijzen: we kijken of het een match is voor ons beide. Een generieke sign-up past niet bij wat we leveren."
+          "answer": "Clyde is een high-touch AI-partnership, geen SaaS-tool. Elke klant krijgt persoonlijke onboarding door Daley (founder) en 4 weken partnership-setup. Er zijn drie founding-plekken. De aanmelding is niet om je af te wijzen: we kijken of het een match is voor ons beide. Een generieke sign-up past niet bij wat we leveren."
         },
         "q4": {
           "question": "Welke vaardigheden krijg ik?",
@@ -960,7 +960,7 @@
       "links": {
         "n1": "Bekijk de vier weken in detail"
       },
-      "note": "Drie founding-plekken in het eerste cohort.",
+      "note": "Drie founding-plekken.",
       "rowLabels": {
         "n1": "Jij levert",
         "n10": "Jij levert",
@@ -1043,7 +1043,7 @@
       "price": "<b>€1.297</b> per maand, excl. btw",
       "sub": "Clyde kost €1.297 per maand excl. btw als founding partner, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Per merk krijg je 1.500 credits per maand. De onboarding kost €0 en de prijs staat 12 betaalde maanden vast.",
       "title": "€1.297 per maand voor vijf klantmerken.",
-      "regular": "Reguliere pakketten volgen na het Founding-cohort. Drie plekken in het eerste cohort."
+      "regular": "Reguliere pakketten volgen na Founding. Drie founding-plekken."
     },
     "vragen": {
       "answers": {
@@ -1085,7 +1085,7 @@
         "n1": "Of doe eerst de AI-scan van je bureau"
       },
       "sub": "Je spreekt mij, 30 minuten. Een gesprek zegt of het past.",
-      "title": "Drie founding-plekken. Daarna sluit het eerste cohort."
+      "title": "Drie founding-plekken. Daarna sluit Founding."
     },
     "people": {
       "eyebrow": "De mensen",
@@ -1400,7 +1400,7 @@
         },
         "founding": {
           "period": "Q1 2026",
-          "title": "Founding-cohort opengesteld",
+          "title": "Founding opengesteld",
           "body": "De eerste 10 founding-plekken aangekondigd. SKC is onze eerste klant. Prijs per werkruimte uitgewerkt.",
           "current": true
         },
@@ -1481,8 +1481,8 @@
     "capacity": {
       "eyebrow": "Capaciteit",
       "title": "Capaciteit en transparantie",
-      "body": "Drie founding-plekken in het eerste cohort. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik zet elk nieuw bureau persoonlijk op in 4 weken, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever {total} bureaus waar Clyde echt meerwaarde levert dan 200 waar ik niet genoeg aandacht aan kan geven. Zijn de {total} plekken bezet, dan sluit het eerste cohort. Daarna volgen reguliere pakketten."
+      "body": "Drie founding-plekken. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik zet elk nieuw bureau persoonlijk op in 4 weken, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {total} bureaus waar Clyde echt meerwaarde levert dan 200 waar ik niet genoeg aandacht aan kan geven. Zijn de {total} plekken bezet, dan sluit Founding. Daarna volgen reguliere pakketten."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -1501,7 +1501,7 @@
     "hero": {
       "eyebrow": "Prijzen",
       "title": "Wat kost Clyde?",
-      "lead": "Clyde kost €{price} per maand excl. btw als founding partner, met {included} klantmerken inbegrepen en €{extra} per extra klantmerk, tot {max}. Per klantmerk krijg je {creditsPerBrand} credits per maand. Dat is het aanbod van nu, voor {spots} bureaus in het eerste cohort.",
+      "lead": "Clyde kost €{price} per maand excl. btw als founding partner, met {included} klantmerken inbegrepen en €{extra} per extra klantmerk, tot {max}. Per klantmerk krijg je {creditsPerBrand} credits per maand. Dat is het aanbod van nu, voor de eerste {spots} bureaus.",
       "checked": "Prijzen gecontroleerd op {date}."
     },
     "founding": {
@@ -1519,7 +1519,7 @@
       "definition": "Een werkruimte is één klantmerk.",
       "whyTitle": "Waarom maar {spots} plekken?",
       "why": "Daley zet elke start zelf op, vier weken lang, en hoort zo rechtstreeks wat de eerste bureaus nodig hebben. Dat bepaalt wat er daarna gebouwd wordt. Dat werkt met {spots} bureaus, niet met honderd.",
-      "after": "Zijn de {spots} plekken bezet, dan sluit het eerste cohort. Als founding partner houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast.",
+      "after": "Zijn de {spots} plekken bezet, dan sluit Founding. Als founding partner houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast.",
       "cta": "Vraag een gesprek aan"
     },
     "included": {
@@ -1575,7 +1575,7 @@
         "credits": "{credits} credits per maand in de pot van je bureau.",
         "minimum": "De basisprijs dekt tot {included} klantmerken."
       },
-      "regular": "Reguliere pakketten volgen na het Founding-cohort, op basis van drie gemeten maanden."
+      "regular": "Reguliere pakketten volgen na Founding, op basis van drie gemeten maanden."
     },
     "credits": {
       "eyebrow": "Credits",
@@ -1620,7 +1620,7 @@
         },
         "q8": {
           "question": "Wat gebeurt er als de {spots} plekken vol zijn?",
-          "answer": "Dan sluit het eerste cohort. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. Ben je founding partner, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast."
+          "answer": "Dan sluit Founding. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. Ben je founding partner, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast."
         },
         "q9": {
           "question": "Kan ik doorgroeien boven de {included} klantmerken?",
@@ -2063,7 +2063,7 @@
     },
     "end": {
       "title": "Begin met een gesprek.",
-      "sub": "Een gesprek van 30 minuten zegt of Clyde past bij je klanten. Drie founding-plekken in het eerste cohort.",
+      "sub": "Een gesprek van 30 minuten zegt of Clyde past bij je klanten. Drie founding-plekken.",
       "cta": "Vraag een gesprek aan",
       "link": "Bekijk de prijs"
     }
@@ -5043,8 +5043,8 @@
   },
   "founding": {
     "counter": {
-      "badge": "Eerste cohort: {taken} van {total} plekken bezet",
-      "cohortStart": "Cohort start {date}"
+      "badge": "Founding: {taken} van {total} plekken bezet",
+      "cohortStart": "Founding start {date}"
     }
   },
   "skills-template": {
