@@ -237,7 +237,7 @@ Credit costs: static post 20, carousel 30, short 60, platform variant of an exis
 
 Client: SkinClarity Club, our first client, and FutureMarketingAI is the agency. A Dutch skincare brand with a club, a webshop and the personal account of skin therapist Sindy.
 
-Period: from May to October 2026 Clyde made the posts for the three Instagram accounts. The case is written in the past tense until SkinClarity Club posts go live again.
+Period: Clyde has made the posts for the three Instagram accounts since May 2026.
 
 Setup: one workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. Each account had its own audience, voice and fixed time in the calendar.
 - @skinclarityclub: skin knowledge for consumers, at 10:00.

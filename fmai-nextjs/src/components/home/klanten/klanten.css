@@ -73,8 +73,9 @@
 #klanten:not(#_pad) .ek-card,#klanten:not(#_pad) .ek-me{box-sizing:border-box;padding:clamp(20px,2vw,28px);border-radius:18px;background:#0e121b;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 /* The two client cards share five rows through subgrid, so header, text, numbers, posts and footer line up across both. Each card wears its own brand (Daley 2026-11-10: "volledige branding"). */
 #klanten:not(#_pad) .ek-card{grid-row:1 / span 5;display:grid;grid-template-rows:subgrid;row-gap:18px}
-#klanten:not(#_pad) .ek-skc{--ek-acc:#e3c25e;--ek-num:#e3c25e;--ek-tx:#d7e6de;--ek-mu:#a9c6b9;background:radial-gradient(120% 80% at 100% 0%,rgba(217,181,74,.16),transparent 55%),linear-gradient(165deg,#105a49 0%,#0b3d32 70%);box-shadow:0 0 0 1px rgba(217,181,74,.22)}
-#klanten:not(#_pad) .ek-sl{--ek-acc:#c9b3ff;--ek-num:#fff;--ek-tx:#e4dcff;--ek-mu:#c3b6f2;background:radial-gradient(120% 80% at 100% 0%,rgba(201,179,255,.22),transparent 55%),linear-gradient(165deg,#4b25c9 0%,#2a1478 75%);box-shadow:0 0 0 1px rgba(201,179,255,.25)}
+/* brand tokens live in globals.css (--brand-*), shared with the case pages */
+#klanten:not(#_pad) .ek-skc{--ek-acc:var(--brand-skc-acc);--ek-num:var(--brand-skc-num);--ek-tx:var(--brand-skc-tx);--ek-mu:var(--brand-skc-mu);background:var(--brand-skc-bg);box-shadow:0 0 0 1px var(--brand-skc-line)}
+#klanten:not(#_pad) .ek-sl{--ek-acc:var(--brand-sl-acc);--ek-num:var(--brand-sl-num);--ek-tx:var(--brand-sl-tx);--ek-mu:var(--brand-sl-mu);background:var(--brand-sl-bg);box-shadow:0 0 0 1px var(--brand-sl-line)}
 #klanten:not(#_pad) .ek-hd{display:flex;align-items:center;gap:14px}
 #klanten:not(#_pad) .ek-logo{display:block;flex:none;width:48px;height:48px;object-fit:contain}
 #klanten:not(#_pad) .ek-eb{margin-bottom:2px;font-family:var(--font-jetbrains-mono),ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:.08em;line-height:1.4;text-transform:uppercase;color:var(--ek-acc)}
