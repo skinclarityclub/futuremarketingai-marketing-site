@@ -48,7 +48,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n2")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n3")}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n5")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n6")}
                 </p>
               </div>
@@ -90,7 +90,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n8")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n9")}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n11")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n12")}
                 </p>
               </div>
@@ -132,7 +132,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n14")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n15")}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
                 <p className="wc-fm">
                   {t("werk.screens.n17")}
                 </p>
-                <p className="wc-tx">
+                <p className="wc-tx" lang="nl">
                   {t("werk.screens.n18")}
                 </p>
               </div>
@@ -174,7 +174,7 @@ export function WerkAanvraagView({ t }: { t: HomeT }) {
             {' '}
             <figure className="wc-bfig">
               <div className="wc-bm">
-                <div className="wc-blog" data-app="">
+                <div className="wc-blog" data-app="" lang="nl">
                   <Image src="/home/werk/luwte_logo.png" width={512} height={195} sizes="(max-width: 599px) 58px, (max-width: 860px) 58px, 58px" className="wc-blogo" alt={t("werk.alt.luwte_logo")} />
                   {' '}
                   <p className="wc-bt">
