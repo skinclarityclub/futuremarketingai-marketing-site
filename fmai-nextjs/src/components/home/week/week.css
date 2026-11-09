@@ -148,7 +148,7 @@
 #een-week-met-clyde .cv-sage::after{left:8cqw;top:calc(100% - 12cqw);width:20cqw;height:1.2cqw;border-radius:9px;background:rgba(31,58,43,.45);display:none}
 #een-week-met-clyde .cv-sand{background:linear-gradient(170deg,#f8ecd6 0%,#efdcbc 100%);color:#44301a}
 #een-week-met-clyde .cv-sand::before{content:"Ja \00B7  Nee";left:50%;top:22cqw;width:62cqw;height:16cqw;margin-left:-31cqw;border-radius:99px;background:#fffaf0;box-shadow:0 2cqw 6cqw rgba(90,60,20,.18);display:flex;align-items:center;justify-content:center;font-size:7.4cqw;font-weight:700;letter-spacing:.02em;color:#6a4a22;white-space:pre}
-#een-week-met-clyde .car{position:relative;height:178px;border-radius:8px;overflow:hidden;background:#000}
+#een-week-met-clyde .car{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#000}
 #een-week-met-clyde .car .slides{display:flex;width:300%;height:100%;animation:wk-carx 10s infinite cubic-bezier(.65,0,.35,1)}
 #een-week-met-clyde .car .slides .cover{flex:0 0 33.3334%;height:100%;border-radius:0;font-size:21px;padding:12px}
 #een-week-met-clyde .car .dots{position:absolute;left:0;right:0;bottom:7px;display:flex;justify-content:center;gap:5px;z-index:3}
@@ -183,14 +183,18 @@
 #een-week-met-clyde .gl-yt{background:#f00}
 #een-week-met-clyde .cover{font-size:0!important;color:transparent!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;padding:0!important}
 #een-week-met-clyde .cover .tag{font-size:10px!important;color:#fff!important}
+/* the Luwte renders print their own label and page counter, so the overlay tag would sit on top of them */
+#een-week-met-clyde .car .cover .tag{display:none!important}
 #een-week-met-clyde .cover::before,#een-week-met-clyde .cover::after{display:none!important}
 #een-week-met-clyde .cover .pill,#een-week-met-clyde .cover .big1{display:none!important}
-#een-week-met-clyde .cv-rose{background-image:url(/home/week/s1.webp)!important}
+#een-week-met-clyde .cv-rose{background-image:url(/home/week/luwte-eerste-keer-1.webp)!important}
 #een-week-met-clyde .cv-plum{background-image:url(/home/week/p8.webp)!important}
 #een-week-met-clyde .cv-sage{background-image:url(/home/week/s6.webp)!important}
 #een-week-met-clyde .cv-sand{background-image:url(/home/week/p6.webp)!important}
-#een-week-met-clyde .cover.cv-rose.s2,#een-week-met-clyde .cover.s2{background-image:url(/home/week/s2.webp)!important}
-#een-week-met-clyde .cover.cv-rose.s3,#een-week-met-clyde .cover.s3{background-image:url(/home/week/s3.webp)!important}
+#een-week-met-clyde .cover.cv-rose.s2,#een-week-met-clyde .cover.s2{background-image:url(/home/week/luwte-eerste-keer-2.webp)!important}
+#een-week-met-clyde .cover.cv-rose.s3,#een-week-met-clyde .cover.s3{background-image:url(/home/week/luwte-eerste-keer-3.webp)!important}
+/* wide frames would cut the 4:5 title slide through its text, so they get the bare photo of slide 1 */
+#een-week-met-clyde .cover.wd,#een-week-met-clyde .cover.wd2,#een-week-met-clyde .lk .cover{background-image:url(/home/week/luwte-eerste-keer-foto.webp)!important}
 #een-week-met-clyde .cv-plum::before{display:block!important;content:"";left:50%;top:50%;width:26cqw;height:26cqw;margin:-13cqw 0 0 -13cqw;border-radius:50%;background:rgba(255,246,248,.92);box-shadow:0 0 0 3cqw rgba(255,246,248,.14),0 4cqw 10cqw rgba(0,0,0,.35)}
 #een-week-met-clyde .cv-plum::after{display:block!important;content:"";left:50%;top:50%;margin:-5.5cqw 0 0 -3.4cqw;width:9cqw;height:11cqw;background:#3a2740;clip-path:polygon(0 0,100% 50%,0 100%)}
 #een-week-met-clyde .pcap{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -526,7 +530,7 @@
 #een-week-met-clyde .fh span{margin-left:auto;font-size:10.5px;opacity:.6}
 #een-week-met-clyde .fc .gl{width:20px;height:20px}
 #een-week-met-clyde .fc .cover{display:block;padding:0;border-radius:0}
-#een-week-met-clyde .fc .sq{width:100%;aspect-ratio:1/1}
+#een-week-met-clyde .fc .p45{width:100%;aspect-ratio:4/5}
 #een-week-met-clyde .fc .wd{width:100%;aspect-ratio:1.91/1}
 #een-week-met-clyde .fc .wd2{width:100%;aspect-ratio:1.6/1}
 #een-week-met-clyde .fc .tall{width:100%;aspect-ratio:9/16}
@@ -544,11 +548,16 @@
 #een-week-met-clyde .c-x .lk{display:flex;align-items:center;gap:8px;margin:0 10px 10px;padding:6px;border-radius:10px;border:1px solid rgba(255,255,255,.12);font-size:11px;color:#9aa4b4}
 #een-week-met-clyde .c-x .lk .cover{width:42px;height:42px;border-radius:6px}
 #een-week-met-clyde .c-yt .dur{position:absolute;right:8px;top:calc(var(--w)*.5625 - 26px);padding:2px 6px;border-radius:5px;background:rgba(0,0,0,.8);font-size:10.5px;font-weight:600}
+/* stacked cards are narrower than --w, so the badge follows the card's own width to stay on the thumbnail */
+@media (max-width: 860px), (prefers-reduced-motion: reduce){
+#een-week-met-clyde:not(._pad):not(_pad) .c-yt{container-type:inline-size}
+#een-week-met-clyde:not(._pad):not(_pad) .c-yt .dur{top:calc(56.25cqw - 26px)}
+}
 #een-week-met-clyde .ytm{display:flex;gap:9px;padding:9px 10px 11px;align-items:flex-start}
 #een-week-met-clyde .ytm b{display:block;font-size:12.5px;line-height:1.25}
 #een-week-met-clyde .ytm span{display:block;font-size:11px;opacity:.6;margin-top:3px}
 @media (max-width: 860px), (prefers-reduced-motion: reduce){
-#een-week-met-clyde:not(._pad):not(_pad) .fan.ag{position:relative!important;width:auto!important;height:auto!important;display:grid;grid-template-columns:1fr 1fr;gap:10px;--f:1}
+#een-week-met-clyde:not(._pad):not(_pad) .fan.ag{position:relative!important;width:auto!important;height:auto!important;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;--f:1}
 }
 @media (max-width: 860px), (prefers-reduced-motion: reduce){
 #een-week-met-clyde:not(._pad):not(_pad) .fc{position:relative;left:auto;top:auto;width:auto;transform:none!important;opacity:1}
