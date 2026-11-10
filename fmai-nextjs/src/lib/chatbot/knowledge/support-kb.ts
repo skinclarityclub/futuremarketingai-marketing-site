@@ -13,6 +13,8 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  'pack',
  'founders club',
  'founding',
+ 'introductieprijs',
+ 'introductory price',
  'growth',
  'professional',
  'enterprise',
@@ -22,16 +24,16 @@ export const SUPPORT_TOPICS: TopicDefinition[] = [
  ],
  content: `## FutureMarketingAI Pricing
 
-New agencies have one offer: Founding. Regular plans follow after Founding, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands. Until then the pricing page shows only Founding. Growth, Professional and Enterprise are not for sale.
+New agencies have one offer: Clyde at the introductory price. Regular plans follow after the first three agencies, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands. Until then the pricing page shows only the introductory price. Growth, Professional and Enterprise are not for sale.
 
-**Founding. EUR 1,297 per month excl. VAT, 5 client brands included** (3 founding spots)
+**Introductory price. EUR 1,297 per month excl. VAT, 5 client brands included** (3 spots)
 - EUR 199 per extra client brand per month, up to 15 brands. 6 brands EUR 1,496, 10 brands EUR 2,292, 15 brands EUR 3,287
 - 1,500 credits per client brand per month, in one pool for the whole agency. Included credits expire at the end of the month; bought credits stay valid for 12 months
 - EUR 0 onboarding
 - The agency approves the work itself and keeps the client contact. Guidance is available on request; it has no public price
-- Price fixed for 12 paid months; cancel monthly, before the next period. After that founding partners pay 30% below the regular price while the subscription runs without a break
+- Price fixed for 12 paid months; cancel monthly, before the next period. After that agencies on the introductory price pay 30% below the regular price while the subscription runs without a break
 - Not included: AI video, voice-over, ads and ad management
-- No trial and no introductory discount: Founding itself is the opening offer
+- No trial and no extra discount: the introductory price itself is the opening offer
 
 **What 1,500 credits typically cover per brand per month** (a guideline for planning, not an output entitlement; the agency may spend credits differently):
 - About 20 unique pieces: 12 static posts, 4 carousels and 4 shorts made from the brand's own footage (no AI video)
@@ -42,7 +44,7 @@ New agencies have one offer: Founding. Regular plans follow after Founding, buil
 
 **Extra credits:** 500 credits EUR 40, 2,000 credits EUR 160, 5,000 credits EUR 400. There is never an automatic overage.
 
-Existing founding partners keep their agreement exactly as signed; the new offer does not change it.`,
+Existing clients keep their agreement exactly as signed; the new offer does not change it. Never call the offer Founding or Founder.`,
  },
  {
  key: 'cost_benchmarks',
@@ -65,7 +67,7 @@ Existing founding partners keep their agreement exactly as signed; the new offer
 
 Clyde does not replace people: he takes work off the team, so the same team can serve more clients. Compare against your cost per client today, not against a salary.
 
-**Price per client brand (Founding, excl. VAT):**
+**Price per client brand (introductory price, excl. VAT):**
 - 5 brands: EUR 1,297/mo, about EUR 259 per brand
 - 10 brands: EUR 2,292/mo, about EUR 229 per brand
 - 15 brands: EUR 3,287/mo, about EUR 219 per brand

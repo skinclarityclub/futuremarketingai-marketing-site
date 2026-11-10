@@ -10,7 +10,7 @@ FutureMarketingAI delivers Clyde, the AI colleague of your agency (Dutch: AI-col
 **Create and Publish**
 - Social Media Manager (live): captions in brand voice, a content calendar per account, carousels in the house style and performance per post. Publishes to Instagram, Facebook, LinkedIn, X, Threads, TikTok and YouTube.
 - Blog Factory (live): SEO articles from keyword research to publication after approval. Length follows the search intent and the pages that already rank. Publishes to an MDX site, a Shopify blog or a custom connection.
-- Ad Manager (live): static and video ads for Meta, prepared for approval in Ads Manager (ad spend is always proposed first), then followed per ad on conversions, ROAS and ad fatigue. Ads are not included in the Founding offer.
+- Ad Manager (live): static and video ads for Meta, prepared for approval in Ads Manager (ad spend is always proposed first), then followed per ad on conversions, ROAS and ad fatigue. Ads are not included at the introductory price.
 - Reel Builder (coming soon): short vertical videos with script, captions and music.
 
 **Engage and Convert**
