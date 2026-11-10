@@ -472,7 +472,7 @@
           "n16": "Vier weken, met begeleiding",
           "n17": "Meteen, je richt alles zelf in",
           "n18": "Binnen 4 tot 12 weken live",
-          "n19": "Founding: €1.297 voor 5 klantmerken, excl. btw",
+          "n19": "Introductieprijs: €1.297 voor 5 klantmerken, excl. btw",
           "n2": "Per ChatGPT-project, los van je planning",
           "n20": "$20 per gebruiker (ChatGPT Business) plus $33 per werkruimte (Planable)",
           "n21": "€1.495 voor een sessie, dan een vaste prijs op maat en een vast bedrag per maand",
@@ -595,7 +595,7 @@
       "links": {
         "n1": "Bekijk de vier weken in detail"
       },
-      "note": "Drie founding-plekken.",
+      "note": "Drie plekken tegen de introductieprijs.",
       "rowLabels": {
         "n1": "Jij levert",
         "n10": "Jij levert",
@@ -647,7 +647,7 @@
         "n2": "Voor wie dit niet werkt"
       },
       "labels": {
-        "n1": "Founding",
+        "n1": "Introductieprijs",
         "n2": "Per klantmerk per maand"
       },
       "links": {
@@ -676,9 +676,9 @@
         "n6": "bij 15 klantmerken"
       },
       "price": "<b>€1.297</b> per maand, excl. btw",
-      "sub": "Clyde kost €1.297 per maand excl. btw als founding partner, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Per merk krijg je 1.500 credits per maand. De onboarding kost €0 en de prijs staat 12 betaalde maanden vast.",
+      "sub": "Clyde kost €1.297 per maand excl. btw, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Per merk krijg je 1.500 credits per maand. Dat is de introductieprijs voor de eerste drie bureaus: de onboarding kost €0 en de prijs staat 12 betaalde maanden vast.",
       "title": "€1.297 per maand voor vijf klantmerken.",
-      "regular": "Reguliere pakketten volgen na Founding. Drie founding-plekken."
+      "regular": "Reguliere pakketten volgen als de drie plekken bezet zijn."
     },
     "vragen": {
       "answers": {
@@ -689,7 +689,7 @@
         "n5": "Ja. Je team en je klant keuren in de app goed, in een portaal met de naam, het logo en de kleuren van je bureau.",
         "n6": "Ja. Reageert iemand op Instagram met het trefwoord van je klant, dan stuurt Clyde automatisch een DM met de link. Per klant zie je hoeveel mensen het trefwoord gebruikten, de DM kregen en een aanvraag stuurden.",
         "n7": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daarna twee uur per week.",
-        "n8": "Founding kost €1.297 per maand excl. btw voor vijf klantmerken, ongeveer €259 per klantmerk, met 1.500 credits per merk. Daarboven betaal je €199 per extra klantmerk, tot 15.",
+        "n8": "Clyde kost €1.297 per maand excl. btw voor vijf klantmerken, ongeveer €259 per klantmerk, met 1.500 credits per merk. Daarboven betaal je €199 per extra klantmerk, tot 15. Dat is de introductieprijs voor de eerste drie bureaus.",
         "n9": "Je zit nergens aan vast. Wat Clyde over jouw klanten weet, is van jou. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
       },
       "links": {
@@ -720,7 +720,7 @@
         "n1": "Of doe eerst de AI-scan van je bureau"
       },
       "sub": "Je spreekt mij, 30 minuten. Een gesprek zegt of het past.",
-      "title": "Drie founding-plekken. Daarna sluit Founding."
+      "title": "Drie plekken tegen de introductieprijs. Daarna is hij weg."
     }
   },
   "chatbots": {
@@ -940,7 +940,7 @@
     },
     "hero": {
       "eyebrow": "Over FutureMarketingAI",
-      "badge": "Founding open · maximaal {total} plekken",
+      "badge": "Introductieprijs · maximaal {total} plekken",
       "title": "Over FutureMarketingAI",
       "tagline": "Clyde, de AI-collega van je bureau. Gebouwd door Daley van Diest, die elke partner zelf begeleidt."
     },
@@ -968,14 +968,14 @@
         },
         "founding": {
           "period": "Q1 2026",
-          "title": "Founding opengesteld",
-          "body": "De eerste 10 founding-plekken aangekondigd. SKC is onze eerste klant. Prijs per werkruimte uitgewerkt.",
+          "title": "Eerste plekken opengesteld",
+          "body": "De eerste 10 plekken aangekondigd. SKC is onze eerste klant. Prijs per werkruimte uitgewerkt.",
           "current": true
         },
         "scale": {
           "period": "Q4 2026",
           "title": "Waar we nu staan",
-          "body": "Founding-plekken open voor de eerste bureaus. Clyde als web-app op je beginscherm, en een kennisbank die per klant laat zien wat Clyde weet."
+          "body": "Introductieprijs voor de eerste bureaus. Clyde als web-app op je beginscherm, en een kennisbank die per klant laat zien wat Clyde weet."
         }
       }
     },
@@ -1006,8 +1006,8 @@
     },
     "cta": {
       "eyebrow": "Volgende stap",
-      "title": "Word Founding Member",
-      "description": "We zetten de eerste drie Founding-bureaus op: €1.297 per maand excl. btw voor vijf klantmerken, 12 betaalde maanden vast. Help het product vormgeven.",
+      "title": "Word een van de eerste drie bureaus",
+      "description": "We zetten de eerste drie bureaus op tegen de introductieprijs: €1.297 per maand excl. btw voor vijf klantmerken, 12 betaalde maanden vast. Help het product vormgeven.",
       "demo_button": "Vraag een gesprek aan"
     },
     "icp": {
@@ -1049,8 +1049,8 @@
     "capacity": {
       "eyebrow": "Capaciteit",
       "title": "Capaciteit en transparantie",
-      "body": "Drie founding-plekken. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik zet elk nieuw bureau persoonlijk op in 4 weken, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
-      "reasoning": "Ik kies kwaliteit boven volume. Liever {total} bureaus waar Clyde echt meerwaarde levert dan 200 waar ik niet genoeg aandacht aan kan geven. Zijn de {total} plekken bezet, dan sluit Founding. Daarna volgen reguliere pakketten."
+      "body": "Drie plekken. Dit is geen marketing-truc, het is de realiteit van high-touch onboarding. Ik zet elk nieuw bureau persoonlijk op in 4 weken, en daar zit een bovengrens aan hoeveel bureaus ik tegelijk kan verwelkomen.",
+      "reasoning": "Ik kies kwaliteit boven volume. Liever {total} bureaus waar Clyde echt meerwaarde levert dan 200 waar ik niet genoeg aandacht aan kan geven. Zijn de {total} plekken bezet, dan stopt de introductieprijs. Daarna volgen reguliere pakketten."
     },
     "founder": {
       "eyebrow": "Founder",
@@ -1064,17 +1064,17 @@
   "pricing": {
     "meta": {
       "title": "Prijzen van Clyde: €1.297 per maand | FutureMarketingAI",
-      "description": "Wat kost Clyde? Founding: €1.297 per maand excl. btw voor 5 klantmerken, €199 per extra merk, 1.500 credits per merk, €0 onboarding. Drie plekken."
+      "description": "Wat kost Clyde? €1.297 per maand excl. btw voor 5 klantmerken, €199 per extra merk, 1.500 credits per merk, €0 onboarding. Introductieprijs voor drie bureaus."
     },
     "hero": {
       "eyebrow": "Prijzen",
       "title": "Wat kost Clyde?",
-      "lead": "Clyde kost €{price} per maand excl. btw als founding partner, met {included} klantmerken inbegrepen en €{extra} per extra klantmerk, tot {max}. Per klantmerk krijg je {creditsPerBrand} credits per maand. Dat is het aanbod van nu, voor de eerste {spots} bureaus.",
+      "lead": "Clyde kost €{price} per maand excl. btw, met {included} klantmerken inbegrepen en €{extra} per extra klantmerk, tot {max}. Per klantmerk krijg je {creditsPerBrand} credits per maand. Dat is de introductieprijs, voor de eerste {spots} bureaus.",
       "checked": "Prijzen gecontroleerd op {date}."
     },
     "founding": {
-      "eyebrow": "Founding",
-      "title": "Het aanbod van nu: founding partner",
+      "eyebrow": "Introductieprijs",
+      "title": "Het aanbod van nu: de introductieprijs",
       "sub": "Voor de eerste {spots} bureaus: één vast bedrag per maand voor {included} klantmerken, met de credits voor een volle maand per merk.",
       "perMonth": "per maand, excl. btw",
       "list": {
@@ -1087,13 +1087,13 @@
       "definition": "Een werkruimte is één klantmerk.",
       "whyTitle": "Waarom maar {spots} plekken?",
       "why": "Daley zet elke start zelf op, vier weken lang, en hoort zo rechtstreeks wat de eerste bureaus nodig hebben. Dat bepaalt wat er daarna gebouwd wordt. Dat werkt met {spots} bureaus, niet met honderd.",
-      "after": "Zijn de {spots} plekken bezet, dan sluit Founding. Als founding partner houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast. Daarna betaal je {loyalty}% minder dan de reguliere prijs, zolang je klant blijft.",
+      "after": "Zijn de {spots} plekken bezet, dan stopt de introductieprijs. Als een van de eerste {spots} bureaus houd je €{price} per maand voor {included} klantmerken {lock} betaalde maanden vast. Daarna betaal je {loyalty}% minder dan de reguliere prijs, zolang je klant blijft.",
       "cta": "Vraag een gesprek aan"
     },
     "included": {
       "eyebrow": "Wat erin zit",
       "title": "Wat je krijgt",
-      "sub": "Het hele product, voor elk klantmerk. Wat Clyde per maand maakt, gaat af van de creditpot van je bureau. Advertenties, AI-video en voice-over zitten niet in Founding.",
+      "sub": "Het hele product, voor elk klantmerk. Wat Clyde per maand maakt, gaat af van de creditpot van je bureau. Advertenties, AI-video en voice-over zitten er niet in.",
       "items": {
         "n1": {
           "title": "Voor jou",
@@ -1125,11 +1125,11 @@
     "example": {
       "eyebrow": "Rekenvoorbeeld",
       "title": "Wat je per klantmerk betaalt",
-      "sub": "Founding kost €{price} per maand tot en met {included} klantmerken; elk klantmerk daarboven kost €{extra}, tot {max}. Per klantmerk komen er {creditsPerBrand} credits bij in de pot.",
-      "caption": "Maandprijs als founding partner bij 5, 10 en 15 klantmerken, met de credits per maand",
+      "sub": "Clyde kost €{price} per maand tot en met {included} klantmerken; elk klantmerk daarboven kost €{extra}, tot {max}. Per klantmerk komen er {creditsPerBrand} credits bij in de pot.",
+      "caption": "Maandprijs tegen de introductieprijs bij 5, 10 en 15 klantmerken, met de credits per maand",
       "head": {
         "n1": "Klantmerken",
-        "n2": "Founding per maand",
+        "n2": "Introductieprijs per maand",
         "n3": "Per klantmerk",
         "n4": "Credits per maand"
       },
@@ -1137,19 +1137,19 @@
       "slider": {
         "eyebrow": "Reken zelf",
         "label": "Aantal klantmerken",
-        "totalLabel": "Founding per maand",
+        "totalLabel": "Introductieprijs per maand",
         "perMonth": "per maand",
         "perBrand": "€{price} per klantmerk",
         "credits": "{credits} credits per maand in de pot van je bureau.",
         "minimum": "De basisprijs dekt tot {included} klantmerken."
       },
-      "regular": "Reguliere pakketten volgen na Founding, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Als founding partner betaal je €{price}, {lock} betaalde maanden vast, en daarna {loyalty}% minder dan de reguliere prijs, zolang je klant blijft."
+      "regular": "Reguliere pakketten volgen na de eerste drie bureaus, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Met de introductieprijs betaal je €{price}, {lock} betaalde maanden vast, en daarna {loyalty}% minder dan de reguliere prijs, zolang je klant blijft."
     },
     "credits": {
       "eyebrow": "Credits",
       "title": "Wat is een credit?",
       "body1": "Een credit is de rekeneenheid voor wat Clyde doet. Een statische post kost 20 credits, een carrousel 30, een short 60 en een variant voor een ander kanaal 2. Een blog kost 20, een onderzoeksmemo 50, een maandrapport 100 en een SEO/GEO-check 200. Een vraag aan Clyde kost 1 tot 17 credits, afhankelijk van het model.",
-      "body2": "Founding geeft {creditsPerBrand} credits per klantmerk per maand, in één pot voor je hele bureau: bij {included} klantmerken {credits} credits. Inbegrepen credits vervallen aan het eind van de maand. Zijn ze op, dan doet Clyde tot de volgende maand geen acties meer die credits kosten, tenzij je bijkoopt. Er komt nooit een automatische overschrijding op je factuur, en in je {lock} vaste maanden kan een tarief alleen omlaag.",
+      "body2": "Je krijgt {creditsPerBrand} credits per klantmerk per maand, in één pot voor je hele bureau: bij {included} klantmerken {credits} credits. Inbegrepen credits vervallen aan het eind van de maand. Zijn ze op, dan doet Clyde tot de volgende maand geen acties meer die credits kosten, tenzij je bijkoopt. Er komt nooit een automatische overschrijding op je factuur, en in je {lock} vaste maanden kan een tarief alleen omlaag.",
       "packsTitle": "Een maand meer nodig? Koop credits bij.",
       "packCredits": "{credits} credits",
       "packsNote": "€0,08 per credit, zonder staffel. Bijgekochte credits blijven 12 maanden geldig."
@@ -1160,11 +1160,11 @@
       "items": {
         "q1": {
           "question": "Wat is een werkruimte?",
-          "answer": "Een werkruimte is één klantmerk: de plek waar Clyde de merkstem, de strategie, de agenda en de rapporten van die klant bewaart. Founding heeft er {included} inbegrepen. Elke extra werkruimte kost €{extra} per maand, tot {max}."
+          "answer": "Een werkruimte is één klantmerk: de plek waar Clyde de merkstem, de strategie, de agenda en de rapporten van die klant bewaart. Bij de introductieprijs zijn er {included} inbegrepen. Elke extra werkruimte kost €{extra} per maand, tot {max}."
         },
         "q2": {
           "question": "Wat is een credit?",
-          "answer": "De rekeneenheid voor wat Clyde doet. Een statische post kost 20 credits, een carrousel 30, een short 60 en een blog 20. Founding geeft je {creditsPerBrand} credits per klantmerk per maand, in één pot voor je bureau."
+          "answer": "De rekeneenheid voor wat Clyde doet. Een statische post kost 20 credits, een carrousel 30, een short 60 en een blog 20. Je krijgt {creditsPerBrand} credits per klantmerk per maand, in één pot voor je bureau."
         },
         "q3": {
           "question": "Wat gebeurt er als mijn credits op zijn?",
@@ -1172,35 +1172,35 @@
         },
         "q4": {
           "question": "Is er een proefperiode?",
-          "answer": "Nee. Founding is zelf de openingsdeal. Je begint met een gesprek van 30 minuten met Daley. Past het, dan volgen vier weken onboarding. Je zegt per maand op."
+          "answer": "Nee. De introductieprijs is zelf de openingsdeal. Je begint met een gesprek van 30 minuten met Daley. Past het, dan volgen vier weken onboarding. Je zegt per maand op."
         },
         "q5": {
           "question": "Kan ik opzeggen of pauzeren?",
-          "answer": "Je zegt per maand op, vóór de volgende periode, zonder boete. Je prijs staat {lock} betaalde maanden vast, en daarna houd je {loyalty}% founding-korting op de reguliere prijs. Stop of pauzeer je, dan vervalt die bescherming. Kom je later terug, dan start je op de prijzen die op dat moment gelden."
+          "answer": "Je zegt per maand op, vóór de volgende periode, zonder boete. Je prijs staat {lock} betaalde maanden vast, en daarna houd je {loyalty}% korting op de reguliere prijs. Stop of pauzeer je, dan vervalt die bescherming. Kom je later terug, dan start je op de prijzen die op dat moment gelden."
         },
         "q6": {
           "question": "Wat gebeurt er met mijn gegevens als ik opzeg?",
-          "answer": "Wat Clyde over jouw klanten weet, is van jou. Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
+          "answer": "Wat Clyde over jouw klanten weet, is van jou. Clyde bewaart het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
         },
         "q7": {
           "question": "Wat zit er in de onboarding?",
-          "answer": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daley doet de intake, Clyde leest per klant het merk en zet pijlers en templates op, en samen stemmen jullie de merkstem af tot hij klopt. Als founding partner betaal je er €0 voor."
+          "answer": "Vier weken, en ongeveer tien uur van jouw tijd in de eerste maand. Daley doet de intake, Clyde leest per klant het merk en zet pijlers en templates op, en samen stemmen jullie de merkstem af tot hij klopt. Met de introductieprijs betaal je er €0 voor."
         },
         "q8": {
           "question": "Wat gebeurt er als de {spots} plekken vol zijn?",
-          "answer": "Dan sluit Founding. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Ben je founding partner, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast, en daarna {loyalty}% korting op de reguliere prijs, zolang je klant blijft."
+          "answer": "Dan stopt de introductieprijs. Reguliere pakketten volgen daarna, op basis van drie gemeten maanden. We verwachten rond de €{regularMin}-{regularMax} per maand voor {regularBrands} klantmerken. Heb je de introductieprijs, dan houd je €{price} voor {included} klantmerken {lock} betaalde maanden vast, en daarna {loyalty}% korting op de reguliere prijs, zolang je klant blijft."
         },
         "q9": {
           "question": "Kan ik doorgroeien boven de {included} klantmerken?",
           "answer": "Ja, tot {max}. Elk klantmerk boven de {included} kost €{extra} per maand en brengt {creditsPerBrand} credits mee. Bij 10 klantmerken betaal je €{price10} per maand, bij 15 €{price15}."
         },
         "q10": {
-          "question": "Wat zit er niet in Founding?",
+          "question": "Wat zit er niet in de prijs?",
           "answer": "AI-video, voice-over en advertenties, ook het beheer daarvan. Shorts maakt Clyde wel, uit je eigen beeldmateriaal. Je bureau keurt zelf goed; wil je hulp bij het nakijken, dan kan begeleiding op aanvraag."
         },
         "q11": {
           "question": "Wat kost een AI-agent voor een marketingbureau?",
-          "answer": "Dat hangt af van wat je koopt: een losse tool per taak, maatwerk dat je laat bouwen en zelf onderhoudt, of een AI-collega die het werk per klant doet. Clyde kost als founding partner €{price} per maand voor {included} klantmerken, dus ongeveer €{perBrand} per klantmerk, met strategie, content, goedkeuring, publicatie en rapportage in één. Op de pagina Alternatieven zetten we de opties met hun prijzen naast elkaar."
+          "answer": "Dat hangt af van wat je koopt: een losse tool per taak, maatwerk dat je laat bouwen en zelf onderhoudt, of een AI-collega die het werk per klant doet. Met de introductieprijs kost Clyde €{price} per maand voor {included} klantmerken, dus ongeveer €{perBrand} per klantmerk, met strategie, content, goedkeuring, publicatie en rapportage in één. Op de pagina Alternatieven zetten we de opties met hun prijzen naast elkaar."
         }
       }
     },
@@ -1308,7 +1308,7 @@
           "memory": "Ja, vast aan agenda, akkoord en rapport",
           "publishes": "Ja, naar zeven kanalen",
           "data": "Database en servers in de EU, taalmodel in de VS",
-          "price": "€1.297 voor 5 klantmerken (founding)"
+          "price": "€1.297 voor 5 klantmerken (introductieprijs)"
         },
         "diy": {
           "name": "Zelf, met ChatGPT en Planable",
@@ -1388,7 +1388,7 @@
     "clyde": {
       "title": "Waar Clyde voor is.",
       "p1": "Clyde is de AI-collega voor marketingbureaus met 5 tot 15 klantmerken. Elke klant heeft een eigen werkruimte en een eigen geheugen. Per klant doet Clyde strategie, research, content, rapportage en leads, en je klant keurt zelf goed in zijn eigen omgeving.",
-      "p2": "Clyde kost €1.297 per maand excl. btw als founding partner, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
+      "p2": "Met de introductieprijs kost Clyde €1.297 per maand excl. btw, met vijf klantmerken inbegrepen en €199 per extra klantmerk, tot 15. Database, servers en wachtrijen staan in de EU. Het taalmodel draait bij Anthropic en OpenAI in de VS.",
       "links": {
         "pricing": "Bekijk de prijs",
         "trust": "Waar de data van je klanten staat"
@@ -1625,13 +1625,13 @@
         },
         "cost": {
           "q": "Wat kost de start?",
-          "a": "De onboarding kost niets. Je betaalt het maandtarief: €1.297 per maand excl. btw als founding partner, met vijf klantmerken inbegrepen. Alles over de prijs staat op <link>de prijspagina</link>."
+          "a": "De onboarding kost niets. Je betaalt het maandtarief: de introductieprijs van €1.297 per maand excl. btw, met vijf klantmerken inbegrepen. Alles over de prijs staat op <link>de prijspagina</link>."
         }
       }
     },
     "end": {
       "title": "Begin met een gesprek.",
-      "sub": "Een gesprek van 30 minuten zegt of Clyde past bij je klanten. Drie founding-plekken.",
+      "sub": "Een gesprek van 30 minuten zegt of Clyde past bij je klanten. Drie plekken tegen de introductieprijs.",
       "cta": "Vraag een gesprek aan",
       "link": "Bekijk de prijs"
     }
@@ -1688,7 +1688,7 @@
       "button": "Vraag een gesprek aan"
     },
     "finalCta": {
-      "eyebrow": "Founding open · maximaal {total} plekken",
+      "eyebrow": "Introductieprijs · maximaal {total} plekken",
       "title": "Liever direct naar de aanmelding?",
       "description": "Geen vragen, maar wel klaar voor een gesprek over partnership? Sla het bericht over en ga direct naar de aanmelding.",
       "button": "Vraag een gesprek aan"
@@ -1717,7 +1717,7 @@
           },
           "subscription_terms": {
             "title": "2. Abonnementsvoorwaarden",
-            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis. Het huidige aanbod is Founding: EUR 1.297 per maand exclusief btw voor maximaal 5 actieve klantmerken (werkruimtes), daarboven EUR 199 per extra klantmerk per maand tot maximaal 15, met 1.500 credits per actief klantmerk per maand in één pot voor het bureau. Onboarding kost EUR 0. De prijs staat 12 betaalde maanden vast. Daarna betaalt een founding partner 30% minder dan de dan geldende reguliere prijs, zolang het abonnement zonder onderbreking doorloopt; zolang er geen reguliere prijs is, blijft de Founding-prijs gelden. Gebruik wordt gemeten in credits; inbegrepen credits vervallen aan het einde van de maand. Extra credits kunnen in pakketten worden aangeschaft (500 voor EUR 40, 2.000 voor EUR 160, 5.000 voor EUR 400, exclusief btw) en blijven 12 maanden geldig. AI-video, voice-over en advertenties zijn niet inbegrepen. Voor bestaande overeenkomsten blijven de daarin afgesproken voorwaarden gelden. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement maandelijks opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
+            "content": "Diensten worden aangeboden op maandelijkse abonnementsbasis. Het huidige aanbod is Clyde tegen de introductieprijs: EUR 1.297 per maand exclusief btw voor maximaal 5 actieve klantmerken (werkruimtes), daarboven EUR 199 per extra klantmerk per maand tot maximaal 15, met 1.500 credits per actief klantmerk per maand in één pot voor het bureau. Onboarding kost EUR 0. De prijs staat 12 betaalde maanden vast. Daarna betaalt een bureau met de introductieprijs 30% minder dan de dan geldende reguliere prijs, zolang het abonnement zonder onderbreking doorloopt; zolang er geen reguliere prijs is, blijft de introductieprijs gelden. Gebruik wordt gemeten in credits; inbegrepen credits vervallen aan het einde van de maand. Extra credits kunnen in pakketten worden aangeschaft (500 voor EUR 40, 2.000 voor EUR 160, 5.000 voor EUR 400, exclusief btw) en blijven 12 maanden geldig. AI-video, voice-over en advertenties zijn niet inbegrepen. Voor bestaande overeenkomsten blijven de daarin afgesproken voorwaarden gelden. Facturering vindt maandelijks vooraf plaats. U kunt uw abonnement maandelijks opzeggen met 30 dagen schriftelijke opzegtermijn, ingaand aan het einde van de lopende factuurperiode."
           },
           "ai_output_disclaimer": {
             "title": "3. AI Output Disclaimer",
@@ -2318,8 +2318,8 @@
           "answer": "Meta Ads (Instagram en Facebook): Feed, Stories en Reels, plus per-advertentie prestaties via de Meta-Marketing-API. TikTok-, LinkedIn- en Google-Ads doet Clyde niet. Heeft een klant budget op die kanalen, dan exporteer je de advertenties als PNG of MP4 en zet je ze daar zelf neer."
         },
         "q3": {
-          "question": "Zit Ad Manager in Founding?",
-          "answer": "Nee. Advertenties en het beheer daarvan zitten niet in het Founding-aanbod. Wil je ze voor je merken, vraag er dan naar in het gesprek met Daley."
+          "question": "Zit Ad Manager in de prijs?",
+          "answer": "Nee. Advertenties en het beheer daarvan zitten niet in het aanbod. Wil je ze voor je merken, vraag er dan naar in het gesprek met Daley."
         },
         "q4": {
           "question": "Hoe start Ad Manager?",
@@ -2467,7 +2467,7 @@
         },
         "kept": {
           "label": "Bewaard",
-          "value": "Zolang je abonnement loopt, als founding partner"
+          "value": "Zolang je abonnement loopt"
         }
       }
     },
@@ -2521,7 +2521,7 @@
         "nightly": {
           "eyebrow": "Elke nacht",
           "title": "De samenvatting per klant bijgewerkt",
-          "text": "Elke nacht werkt Clyde per klant de samenvatting bij; oude, onbelangrijke details wegen daarna minder. Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt."
+          "text": "Elke nacht werkt Clyde per klant de samenvatting bij; oude, onbelangrijke details wegen daarna minder. Clyde bewaart het geheugen en de gesprekken zolang je abonnement loopt."
         }
       },
       "link": "Waar de data van je klanten staat"
@@ -2581,7 +2581,7 @@
         },
         "kept": {
           "q": "Hoe lang bewaart Clyde het geheugen?",
-          "a": "Als founding partner bewaart Clyde het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
+          "a": "Clyde bewaart het geheugen en de gesprekken zolang je abonnement loopt. Na opzegging sturen we je binnen 30 dagen een export van je gegevens; daarna verwijderen we je werkruimtes."
         },
         "where": {
           "q": "Waar staat het geheugen?",
@@ -2600,11 +2600,11 @@
   "apply": {
     "meta": {
       "title": "Vraag een gesprek aan bij Daley | FutureMarketingAI",
-      "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Drie founding-plekken."
+      "description": "Aanmelden voor een gesprek over FutureMarketingAI. Partnership met Clyde voor marketingbureaus. Drie plekken tegen de introductieprijs."
     },
     "hero": {
       "eyebrow": "Aanvraag",
-      "counter": "Maximaal {total} Founding-plekken",
+      "counter": "Maximaal {total} plekken tegen de introductieprijs",
       "title": "Vraag een gesprek aan",
       "subtitle": "Geen zelfbediening. Geen generieke aanmelding. Daley kijkt zelf naar elke aanvraag en je hoort binnen 3 werkdagen van ons. Ook als het geen match is."
     },
@@ -2656,12 +2656,12 @@
       },
       "tierLabel": "Welk aanbod past het best?",
       "tierOptions": {
-        "founding": "Founding (€1.297 per maand excl. btw voor 5 klantmerken, €199 per extra merk): 3 plekken",
+        "founding": "Introductieprijs (€1.297 per maand excl. btw voor 5 klantmerken, €199 per extra merk): 3 plekken",
         "unsure": "Weet het nog niet zeker"
       },
       "workspacesLabel": "Hoeveel werkruimtes verwacht je nodig te hebben?",
       "workspacesPlaceholder": "Bijvoorbeeld: 6",
-      "workspacesHelp": "Eén werkruimte per klantmerk. Founding heeft er vijf inbegrepen.",
+      "workspacesHelp": "Eén werkruimte per klantmerk. Vijf zijn inbegrepen.",
       "workspacesError": "Vul een aantal werkruimtes in (1 of meer).",
       "problemLabel": "Wat is jouw meest urgente probleem?",
       "problemPlaceholder": "Bijvoorbeeld: \"We verliezen 2 FTE aan contentproductie voor 15 merken\" of \"Onze SEO stagneert en we hebben geen ruimte voor blogs.\"",
@@ -3281,7 +3281,7 @@
         },
         "price": {
           "q": "Wat kost een portaal per klant?",
-          "a": "Niets extra. Het portaal hoort bij elk klantmerk: als founding partner betaal je €1.297 per maand excl. btw met vijf klantmerken inbegrepen. Zie <link>de prijzen</link>."
+          "a": "Niets extra. Het portaal hoort bij elk klantmerk: met de introductieprijs betaal je €1.297 per maand excl. btw met vijf klantmerken inbegrepen. Zie <link>de prijzen</link>."
         }
       }
     },
@@ -3381,8 +3381,8 @@
           "answer": "Gmail (Google Workspace en gratis accounts) en Outlook, beide via OAuth. Clyde kijkt elk kwartier of er nieuwe mail is. Mails en labels staan in onze database in de EU. Om te classificeren en concepten te schrijven gaat de tekst van een mail naar het taalmodel; dat draait standaard bij Anthropic, een Amerikaans bedrijf."
         },
         "q3": {
-          "question": "Zit Email Management in Founding?",
-          "answer": "Niet in de standaardmaand. E-mail heeft nog geen vast credittarief in Founding. Wil je het voor je merken gebruiken, vraag er dan naar in het gesprek met Daley."
+          "question": "Zit Email Management in de prijs?",
+          "answer": "Niet in de standaardmaand. E-mail heeft nog geen vast credittarief. Wil je het voor je merken gebruiken, vraag er dan naar in het gesprek met Daley."
         },
         "q4": {
           "question": "Hoe start Email Management?",
@@ -4490,7 +4490,7 @@
       "body": "We hebben je een bevestigingsmail gestuurd. Klik op de link in die mail en je volledige actieplan komt direct binnen."
     },
     "finalCta": {
-      "eyebrow": "Founding open · maximaal {total} plekken",
+      "eyebrow": "Introductieprijs · maximaal {total} plekken",
       "title": "Liever direct praten?",
       "description": "Niet iedereen wil eerst een scan. Sla 'm over en vraag een gesprek van 30 minuten met Daley aan.",
       "button": "Vraag een gesprek aan"
@@ -4564,8 +4564,8 @@
   },
   "founding": {
     "counter": {
-      "badge": "Founding: {taken} van {total} plekken bezet",
-      "cohortStart": "Founding start {date}"
+      "badge": "Introductieprijs: {taken} van {total} plekken bezet",
+      "cohortStart": "Eerste bureaus starten {date}"
     }
   },
   "skills-template": {
@@ -4598,7 +4598,7 @@
     "promptHero": {
       "intro": "Vraag Clyde bijvoorbeeld:"
     },
-    "scarcityBadge": "Founding open · maximaal {total} plekken",
+    "scarcityBadge": "Introductieprijs · maximaal {total} plekken",
     "kennisbank": {
       "title": "Verder lezen in de kennisbank",
       "intro": "Gidsen die dieper ingaan op het werk achter deze vaardigheid, met bronnen erbij."
@@ -4621,11 +4621,11 @@
     },
     "tier-caps": {
       "name": "Limieten per abonnement",
-      "definition": "De grenzen van een abonnement. In Founding loopt dat via credits: 1.500 per klantmerk per maand, in één pot voor het bureau, in plaats van caps per vaardigheid."
+      "definition": "De grenzen van een abonnement. Bij Clyde loopt dat via credits: 1.500 per klantmerk per maand, in één pot voor het bureau, in plaats van caps per vaardigheid."
     },
     "werkruimte": {
       "name": "Werkruimte (klantmerk)",
-      "definition": "De plek in Clyde voor één klantmerk, met de merkstem, de doelgroep, de doelen en de goedkeuringsregels van die klant. Founding heeft er vijf inbegrepen; elke extra werkruimte kost €199 per maand."
+      "definition": "De plek in Clyde voor één klantmerk, met de merkstem, de doelgroep, de doelen en de goedkeuringsregels van die klant. Vijf zijn inbegrepen; elke extra werkruimte kost €199 per maand."
     },
     "klantportaal": {
       "name": "Klantportaal",

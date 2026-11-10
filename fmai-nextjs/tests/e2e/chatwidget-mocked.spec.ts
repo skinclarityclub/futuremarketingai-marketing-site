@@ -674,7 +674,7 @@ test.describe('compact cards', () => {
       expect(c!.width).toBeGreaterThan(b!.width)
     })
 
-    test('pricing shows the one Founding row', async ({ page }) => {
+    test('pricing shows the one offer row', async ({ page }) => {
       const { card } = await show(page, 'get_pricing_info', PRICING)
       await expect(card.locator('li')).toHaveCount(1)
       await expect(card.getByText('€1.297/mnd excl. btw')).toBeVisible()
@@ -776,7 +776,7 @@ test.describe('compact cards', () => {
 
   test('a single tier keeps its link to all prices', async ({ page }) => {
     const { card } = await show(page, 'get_pricing_info', {
-      name: 'Founding',
+      name: 'Clyde (introductory price)',
       description: '€1.297/mnd excl. btw',
       features: ['5 klantmerken inbegrepen, €199 per extra klantmerk tot 15'],
     })

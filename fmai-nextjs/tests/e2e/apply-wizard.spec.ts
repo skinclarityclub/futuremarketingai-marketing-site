@@ -87,7 +87,7 @@ async function clickOptionContaining(page: Page, text: string) {
 
 async function fillQualificationHigh(page: Page) {
   // Q1 founding → 3pts
-  await clickOptionContaining(page, 'Founding (€1.297')
+  await clickOptionContaining(page, 'Introductieprijs (€1.297')
   // Q2 €1M tot €3M → 3pts
   await clickOptionContaining(page, '1M tot')
   // Q3 5 tot 15 merken → 3pts
@@ -368,7 +368,7 @@ test.describe('Critical path: assessment handoff via URL params', () => {
 
     // Q1 + Q5 still asked
     // Founding A1.4: the wizard only offers Founding and 'not sure' (growth stays valid in the API enum).
-    await clickOptionContaining(page, 'Founding (€1.297')
+    await clickOptionContaining(page, 'Introductieprijs (€1.297')
     await clickOptionContaining(page, '30 dagen')
     await clickNext(page)
 
@@ -441,7 +441,7 @@ test.describe('Critical path: refresh mid-flow rehydration', () => {
     // Should land on qualification step, not identity
     await expect(page.getByText(/bureau context/i)).toBeVisible({ timeout: 8_000 })
     // Q1 should be pre-selected (founding)
-    await expect(page.getByRole('button', { name: /founding/i }).first()).toBeVisible()
+    await expect(page.getByRole('button', { name: /introductieprijs/i }).first()).toBeVisible()
   })
 })
 

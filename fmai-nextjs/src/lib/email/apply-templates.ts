@@ -85,7 +85,7 @@ const CLIENT_COUNT_LABELS: Record<string, string> = {
 }
 
 const TIER_LABELS: Record<string, string> = {
-  founding: 'Founding (1.297 EUR per maand excl. btw, 5 klantmerken inbegrepen)',
+  founding: 'Introductieprijs (1.297 EUR per maand excl. btw, 5 klantmerken inbegrepen)',
   // Old tiers stay as labels: an application sent before 2026-11-09 can still carry them.
   growth: 'Growth (oud pakket, niet meer te koop)',
   professional: 'Professional (oud pakket, niet meer te koop)',

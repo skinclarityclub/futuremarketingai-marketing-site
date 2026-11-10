@@ -30,11 +30,12 @@ test('pricing page renders Founding A1.4', async ({ page }) => {
   await expect(example.getByRole('row', { name: /15 klantmerken/ })).toContainText('22.500')
 
   await expect(page.locator('section#month')).toContainText('YouTube Shorts')
-  await expect(page.getByText('Reguliere pakketten volgen na Founding', { exact: false }).first()).toBeVisible()
+  await expect(page.getByText('Reguliere pakketten volgen na de eerste drie bureaus', { exact: false }).first()).toBeVisible()
 
   // The old tiers and the half-price month are gone from the page.
   const body = await page.locator('main').innerText()
-  for (const gone of ['Growth', 'Professional', 'Enterprise', '€997', '€499', '€3.997', 'halve prijs']) {
+  // Founder-naam (Daley 2026-11-10, option D): the offer is no longer called Founding.
+  for (const gone of ['Growth', 'Professional', 'Enterprise', '€997', '€499', '€3.997', 'halve prijs', 'Founding', 'founding']) {
     expect(body, `"${gone}" must not be on /nl/pricing`).not.toContain(gone)
   }
 
@@ -53,7 +54,7 @@ test('slider updates the founding total and the credit pool', async ({ page }) =
 
   const slider = page.locator('input[type="range"]').first()
   await slider.scrollIntoViewIfNeeded()
-  const total = page.locator('[aria-live="polite"]').filter({ hasText: 'Founding per maand' })
+  const total = page.locator('[aria-live="polite"]').filter({ hasText: 'Introductieprijs per maand' })
 
   await slider.fill('3')
   await expect(total).toContainText('€1.297')

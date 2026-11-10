@@ -55,9 +55,9 @@ export function VoorExperience({ slug, firstName, agencyName, email, bookingStar
         <ChapterList chapters={chapters} onSeek={(s) => player.current?.seek(s)} />
       </div>
       <div className="rounded-xl border border-border-accent bg-bg-surface p-5 lg:col-span-2">
-        <span className="text-xs font-semibold uppercase tracking-widest text-accent-system">Founding partners</span>
+        <span className="text-xs font-semibold uppercase tracking-widest text-accent-system">Introductieprijs</span>
         <p className="mt-2">
-          Ik zoek maximaal 10 bureaus met dezelfde AI-first visie. Wat dat inhoudt, bespreken we in het gesprek.
+          Ik zoek maximaal drie bureaus met dezelfde AI-first visie. Wat dat inhoudt, bespreken we in het gesprek.
         </p>
       </div>
       <div className="lg:col-span-2">
