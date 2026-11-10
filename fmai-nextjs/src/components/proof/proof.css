@@ -271,3 +271,39 @@
   .g6 .g6-stack td{padding:6px 18px;border-top:0}
   .g6 .g6-stack td::before{content:attr(data-l);display:block;margin-bottom:2px;font-size:12px;font-weight:600;color:var(--g6-muted)}
 }
+
+/* golf 7c (2026-11-10, Daley's choice "vorm B"): a case opens in the client's brand, the hero and the first section on one
+   ground, and the hub's client cards wear it too, as on the home cards. The rest of a case stays ours: dark. Tokens from
+   globals.css (--brand-*). No long caption under the posts in brand; account and date under each post stay (his choice). */
+.g6 .g6-skc{--b-bg:var(--brand-skc-bg);--b-line:var(--brand-skc-line);--b-acc:var(--brand-skc-acc);--b-num:var(--brand-skc-num);--b-tx:var(--brand-skc-tx);--b-mu:var(--brand-skc-mu)}
+.g6 .g6-sl{--b-bg:var(--brand-sl-bg);--b-line:var(--brand-sl-line);--b-acc:var(--brand-sl-acc);--b-num:var(--brand-sl-num);--b-tx:var(--brand-sl-tx);--b-mu:var(--brand-sl-mu)}
+.g6 .g6-brand{background:var(--b-bg)}
+.g6 .g6-brand .g6-hero::before{display:none}
+.g6 .g6-brand .g6-sec{border-top-color:var(--b-line)}
+.g6 .g6-brand .g6-crumb{color:var(--b-mu)}
+.g6 .g6-brand :is(.g6-eb,.g6-lk){color:var(--b-acc)}
+.g6 .g6-brand .g6-lk:focus-visible{outline-color:var(--b-acc)}
+.g6 .g6-brand :is(.g6-def,.g6-p){color:var(--b-tx)}
+.g6 .g6-brand .g6-post img{box-shadow:0 0 0 1px rgba(255,255,255,.18),0 10px 24px -12px rgba(0,0,0,.6)}
+.g6 .g6-brand .g6-quote{border-left-color:var(--b-acc)}
+.g6 .g6-logo{display:block;width:64px;height:64px;margin-bottom:22px;object-fit:contain}
+.g6 .g6-stats{display:grid;grid-template-columns:repeat(3,minmax(0,200px));gap:12px;margin-top:clamp(32px,5vh,44px)}
+.g6 .g6-stats div{display:flex;flex-direction:column-reverse;justify-content:flex-end;padding:14px 16px;border-radius:12px;background:rgba(0,0,0,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.g6 .g6-stats dd{font-size:clamp(30px,3vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--b-num)}
+.g6 .g6-stats dt{margin-top:8px;font-size:13.5px;line-height:1.35;color:var(--b-mu)}
+/* under a post: who posted it, and when, as on the home cards */
+.g6 .g6-post .g6-pl{margin-top:10px;font-size:14px;font-weight:600;line-height:1.4;color:var(--g6-head)}
+.g6 .g6-post .g6-pf{margin-top:2px;font-family:var(--font-jetbrains-mono),ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:.08em;line-height:1.5;text-transform:uppercase;color:var(--b-mu,var(--g6-muted))}
+.g6 .g6-card.g6-brand{box-shadow:0 0 0 1px var(--b-line)}
+.g6 .g6-brand .g6-posts:focus-visible{outline:2px solid var(--b-acc);outline-offset:4px;border-radius:10px}
+/* hub: two cards side by side only from 1024px; at 900-1023 a post tile was 112px and "De huidtherapeut" broke in two,
+   which shifted the SKC card's text below the SalesLobe card's (measured 2026-11-10) */
+@media (max-width:1023px){.g6 .g6-clients{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:599px){
+  .g6 .g6-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .g6 .g6-stats div{padding:10px}
+  .g6 .g6-stats dd{font-size:24px}
+  /* phone: the three posts become a row you swipe, as on the home cards (three in a row were 100px wide) */
+  .g6 .g6-brand .g6-posts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+  .g6 .g6-brand .g6-post{scroll-snap-align:start}
+}

@@ -582,7 +582,7 @@
           "value": "9"
         }
       },
-      "sub": "We build Clyde and use him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde made the posts from May to October 2026; at SalesLobe he makes them now, each time in the brand's voice and approved in the app.",
+      "sub": "We build Clyde and use him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde has made the posts since May 2026, at SalesLobe since October, each time in the brand's voice and approved in the app.",
       "text": {
         "n1": "Three Instagram accounts, each with a voice of its own: the club, the web shop and Sindy as a skin therapist. The brand of Sindy, Daley's girlfriend, and the place where Clyde learned his first skills.",
         "n3": "SalesLobe's Instagram and the LinkedIn of founder Paul den Hartogh. In English, in the voice Paul chose himself beforehand. On LinkedIn Paul speaks, on Instagram the brand does.",
@@ -2793,20 +2793,15 @@
     }
   },
   "case_studies": {
-    "posts": {
-      "skc-club-boodschappen": "Carousel by SkinClarity Club, the club: Een acne-bewuste boodschappenlijst: waar begin je? (an acne-aware shopping list: where do you start?)",
-      "skc-shop-enzympeeling": "Carousel by SkinClarity Club, the webshop: Enzympeeling of zuur: wanneer kies je wat? (enzyme peel or acid: when do you choose which?)",
-      "skc-huid-conservering": "Carousel by SkinClarity Club, the skin therapist: Conserveringsmiddelen zijn niet de vijand in je kastje (preservatives are not the enemy in your cabinet)"
-    },
     "hub": {
       "meta": {
         "title": "Cases: Clyde at SkinClarity Club and SalesLobe",
-        "description": "Clyde at two real clients: the three Instagram accounts of SkinClarity Club, from May to October 2026, and SalesLobe on Instagram and LinkedIn."
+        "description": "Clyde at two real clients: the three Instagram accounts of SkinClarity Club, since May 2026, and SalesLobe on Instagram and LinkedIn."
       },
       "hero": {
         "eyebrow": "Cases",
         "title": "Clyde at two real clients.",
-        "definition": "We build Clyde and run him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde made the posts for three Instagram accounts from May to October 2026; at SalesLobe he makes the Instagram and the LinkedIn of the founder. A post only goes live once it is approved in the app.",
+        "definition": "We build Clyde and run him for two clients: SkinClarity Club and SalesLobe. At SkinClarity Club, Clyde has made the posts for three Instagram accounts since May 2026; at SalesLobe he makes the Instagram and the LinkedIn of the founder. A post only goes live once it is approved in the app.",
         "factsLabel": "In short",
         "facts": {
           "clients": {
@@ -2828,20 +2823,13 @@
         "sub": "A skincare brand for consumers and a B2B brand. A different audience and a different tone, with the same work underneath: planning, making, approving and publishing.",
         "skc": {
           "postsLabel": "Three real posts by SkinClarity Club",
-          "labels": {
-            "club": "The club",
-            "shop": "The webshop",
-            "huid": "The skin therapist"
-          },
-          "caption": "Real posts by SkinClarity Club on Instagram, published in October 2026.",
-          "eyebrow": "Skincare · May to October 2026",
+          "eyebrow": "Skincare · since May 2026",
           "title": "SkinClarity Club",
-          "text": "Clyde made the posts for three Instagram accounts: the club, the webshop and the skin therapist, each with its own voice.",
+          "text": "Clyde makes the posts for three Instagram accounts: the club, the webshop and the skin therapist, each with its own voice.",
           "link": "Read the case"
         },
         "sl": {
           "postsLabel": "Three slides from the carousel of 27 October",
-          "caption": "Real carousel by SalesLobe on Instagram, published on 27 October 2026.",
           "eyebrow": "B2B · since October 2026",
           "title": "SalesLobe",
           "text": "Clyde runs the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. B2B, so with a different tone than skincare.",
@@ -2884,38 +2872,18 @@
     "skc": {
       "meta": {
         "title": "Case SkinClarity Club: 3 Instagram accounts with Clyde",
-        "description": "How Clyde made the Instagram of SkinClarity Club from May to October 2026: three accounts, each with its own voice, and approval in the app."
+        "description": "How Clyde has made the Instagram of SkinClarity Club since May 2026: three accounts, each with its own voice, and approval in the app."
       },
       "hero": {
         "eyebrow": "Case · our first client",
         "title": "Three Instagram accounts, one client, one Clyde.",
-        "definition": "SkinClarity Club has three Instagram accounts: the club, the webshop and the skin therapist, each with its own voice. From May to late October 2026, Clyde made the posts for all three, from one memory. A post only went live once it was approved in the app.",
-        "factsLabel": "In short",
-        "facts": {
-          "accounts": {
-            "label": "Accounts",
-            "value": "Three, on Instagram"
-          },
-          "period": {
-            "label": "Period",
-            "value": "May to October 2026"
-          },
-          "memory": {
-            "label": "Memory",
-            "value": "One, for all three accounts"
-          }
-        }
+        "definition": "SkinClarity Club has three Instagram accounts: the club, the webshop and the skin therapist, each with its own voice. Since May 2026, Clyde has made the posts for all three, from one memory. A post only goes live once it is approved in the app.",
+        "factsLabel": "In short"
       },
       "voices": {
         "title": "Three accounts, three voices.",
         "sub": "The club shares skin knowledge with consumers. The webshop is about products and when to choose what. The skin therapist is Sindy's personal account, with her professional knowledge. What works on one account sounds wrong on another.",
-        "postsLabel": "Three real posts by SkinClarity Club",
-        "labels": {
-          "club": "The club · 27 October",
-          "shop": "The webshop · 25 October",
-          "huid": "The skin therapist · 22 October"
-        },
-        "caption": "Real posts by SkinClarity Club on Instagram, published in October 2026."
+        "postsLabel": "Three real posts by SkinClarity Club"
       },
       "week": {
         "title": "A week at SkinClarity Club.",
@@ -2927,24 +2895,24 @@
         "real": "Real screen from the SkinClarity Club workspace, captured on 7 November 2026."
       },
       "live": {
-        "title": "How a post went live.",
-        "sub": "The same work for each of the three accounts, with one memory underneath. Nothing went live that was not in the app first.",
+        "title": "How a post goes live.",
+        "sub": "The same work for each of the three accounts, with one memory underneath. Nothing goes live that is not in the app first.",
         "steps": {
           "concept": {
-            "title": "Clyde made the draft",
-            "text": "In the account's voice, from what Clyde had learned about SkinClarity Club: the products, the skin topics and what the brand does and does not say."
+            "title": "Clyde makes the draft",
+            "text": "In the account's voice, from what Clyde knows about SkinClarity Club: the products, the skin topics and what the brand does and does not say."
           },
           "approve": {
             "title": "Approval in the app",
-            "text": "Every draft stayed in the app until it was approved. Editing or skipping it was possible too."
+            "text": "Every draft stays in the app until it is approved. Editing or skipping it is possible too."
           },
           "live": {
             "title": "Live at the scheduled time",
-            "text": "Then the post went live at the time from the calendar, and got a tick in the calendar."
+            "text": "Then the post goes live at the time from the calendar, and gets a tick in the calendar."
           },
           "memory": {
             "title": "One memory for all three",
-            "text": "What Clyde learned about SkinClarity Club, he used for all three accounts. The voice differed per account, the knowledge of the brand did not."
+            "text": "What Clyde learns about SkinClarity Club, he uses for all three accounts. The voice differs per account, the knowledge of the brand does not."
           }
         },
         "links": {
@@ -2971,7 +2939,7 @@
           },
           "numbers": {
             "q": "Does this case show revenue or reach figures?",
-            "a": "No. This case shows how the work ran and what went live, not what it earned."
+            "a": "No. This case shows how the work runs and what goes live, not what it earns."
           }
         },
         "links": {
@@ -2997,22 +2965,8 @@
       "hero": {
         "eyebrow": "Case · B2B",
         "title": "SalesLobe: B2B content with Clyde, voice first.",
-        "definition": "Clyde makes the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. Every post in SalesLobe's own voice and house style, approved in the app and then published at the scheduled time.",
-        "factsLabel": "In short",
-        "facts": {
-          "channels": {
-            "label": "Channels",
-            "value": "Instagram and LinkedIn"
-          },
-          "since": {
-            "label": "Since",
-            "value": "5 October 2026"
-          },
-          "october": {
-            "label": "Online in October",
-            "value": "23 posts: 9 on Instagram, 14 on LinkedIn"
-          }
-        }
+        "definition": "Since 5 October 2026, Clyde has made the Instagram of SalesLobe and the LinkedIn of its founder, Paul den Hartogh. Every post in SalesLobe's own voice and house style, approved in the app and then published at the scheduled time.",
+        "factsLabel": "In short"
       },
       "two": {
         "title": "One topic, two voices.",
@@ -3020,8 +2974,7 @@
         "liLabel": "LinkedIn · Paul den Hartogh · 23 October",
         "liNote": "The post is shortened here.",
         "igLabel": "Instagram · SalesLobe · 27 October",
-        "igAlt": "First slide of SalesLobe's Instagram carousel: Not right now is not not interested.",
-        "caption": "Real posts by SalesLobe, published on 23 and 27 October 2026."
+        "igAlt": "First slide of SalesLobe's Instagram carousel: Not right now is not not interested."
       },
       "slides": {
         "title": "The carousel, slide by slide.",

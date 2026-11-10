@@ -3,6 +3,8 @@
 // case_studies.sl. The quoted posts and the voice-round openings below are SalesLobe's own English text (rows 57596 and
 // 57600, stemronde-1 C1), shown verbatim with lang="en" in every locale, so they are constants and not translated.
 // Excluded on purpose: the LinkedIn documents (Paul's avatar on every slide) and the posts the case rules refuse.
+// Golf 7c (2026-11-10, Daley's choice "vorm B"): the hero and the two voices sit on the SalesLobe brand ground, with the
+// numbers of the home card (home.klanten), so one recount updates both.
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
@@ -10,7 +12,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { Arrow } from '@/components/proof/Arrow'
 import '@/components/proof/proof.css'
 
-const FACT_KEYS = ['channels', 'since', 'october'] as const
+const STAT_KEYS = ['n4', 'n5', 'n6'] as const
 // LinkedIn text post of 23 October 2026 (row 57596), the first four paragraphs; the fifth names Corty
 const LI_POST = [
   'When I was cold calling, "not right now" was one of the best answers I could get.',
@@ -38,25 +40,26 @@ const FAQ_KEYS = ['channels', 'language', 'voice', 'results'] as const
 
 export async function SlCaseSections({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'case_studies' })
+  const tk = await getTranslations({ locale, namespace: 'home.klanten' })
 
   return (
     <div className="g6" id="g6-sl">
+      <div className="g6-brand g6-sl">
       <section className="g6-hero" aria-labelledby="sl-h1">
         <div className="g6-in">
           <Breadcrumbs path="/case-studies/saleslobe" locale={locale} className="g6-crumb" />
-          <div className="g6-hero-g">
-            <div className="g6-hero-t">
-              <p className="g6-eb">{t('sl.hero.eyebrow')}</p>
-              <h1 className="g6-h1" id="sl-h1">
-                {t('sl.hero.title')}
-              </h1>
-              <p className="g6-def speakable-sl-def">{t('sl.hero.definition')}</p>
-            </div>
-            <dl className="g6-facts" aria-label={t('sl.hero.factsLabel')}>
-              {FACT_KEYS.map((k) => (
+          <div className="g6-hero-t">
+            <Image src="/home/klanten/sl-logo.webp" width={100} height={96} className="g6-logo" alt="" priority />
+            <p className="g6-eb">{t('sl.hero.eyebrow')}</p>
+            <h1 className="g6-h1" id="sl-h1">
+              {t('sl.hero.title')}
+            </h1>
+            <p className="g6-def speakable-sl-def">{t('sl.hero.definition')}</p>
+            <dl className="g6-stats" aria-label={t('sl.hero.factsLabel')}>
+              {STAT_KEYS.map((k) => (
                 <div key={k}>
-                  <dt>{t(`sl.hero.facts.${k}.label`)}</dt>
-                  <dd>{t(`sl.hero.facts.${k}.value`)}</dd>
+                  <dt>{tk(`stats.${k}.label`)}</dt>
+                  <dd>{tk(`stats.${k}.value`)}</dd>
                 </div>
               ))}
             </dl>
@@ -104,13 +107,11 @@ export async function SlCaseSections({ locale }: { locale: string }) {
                   </p>
                 </div>
               </div>
-              <figcaption className="g6-cap">
-                <span className="g6-real">{t('sl.two.caption')}</span>
-              </figcaption>
             </figure>
           </div>
         </div>
       </section>
+      </div>
 
       <section className="g6-sec" aria-labelledby="sl-slides">
         <div className="g6-in">

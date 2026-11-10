@@ -671,3 +671,20 @@ body::-webkit-scrollbar-corner {
   bottom: max(9.5rem, calc(var(--fab-safe-bottom, 0px) + 4.5rem));
 }
 
+
+/* Client brands: one source for the home cards (#klanten, klanten.css) and the case pages (.g6, proof.css). The values
+ * are the ones Daley approved on the home cards (2026-11-10). The purple is SalesLobe's own brand, not a site accent. */
+:root {
+  --brand-skc-bg: radial-gradient(120% 80% at 100% 0%, rgba(217, 181, 74, 0.16), transparent 55%), linear-gradient(165deg, #105a49 0%, #0b3d32 70%);
+  --brand-skc-line: rgba(217, 181, 74, 0.22);
+  --brand-skc-acc: #e3c25e;
+  --brand-skc-num: #e3c25e;
+  --brand-skc-tx: #d7e6de;
+  --brand-skc-mu: #a9c6b9;
+  --brand-sl-bg: radial-gradient(120% 80% at 100% 0%, rgba(201, 179, 255, 0.22), transparent 55%), linear-gradient(165deg, #4b25c9 0%, #2a1478 75%);
+  --brand-sl-line: rgba(201, 179, 255, 0.25);
+  --brand-sl-acc: #c9b3ff;
+  --brand-sl-num: #fff;
+  --brand-sl-tx: #e4dcff;
+  --brand-sl-mu: #c3b6f2;
+}

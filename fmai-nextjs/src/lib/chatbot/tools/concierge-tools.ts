@@ -20,10 +20,10 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'SkinClarity Club is onze eerste klant, en FutureMarketingAI is het bureau. Drie Instagram-accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), elk met een eigen publiek, toon en agenda, plus een blog en een webshop.',
     solution:
-      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Van mei tot oktober 2026 maakte Clyde de posts in de stem van elk account; een post ging pas live als hij in de app was goedgekeurd, op de tijd uit de agenda.',
+      'Eén werkruimte voor SkinClarity Club met 3 Instagram-accounts en één geheugen voor de hele klant. Sinds mei 2026 maakt Clyde de posts in de stem van elk account; een post gaat pas live als hij in de app is goedgekeurd, op de tijd uit de agenda.',
     results: [
       'Posts voor 3 Instagram-accounts, elk in een eigen stem',
-      'Van mei tot oktober 2026, vanuit één geheugen',
+      'Sinds mei 2026, vanuit één geheugen',
       'Live pas na goedkeuring in de app',
     ],
     url: 'https://future-marketing.ai/nl/case-studies/skinclarity-club',
@@ -34,10 +34,10 @@ const CASE_STUDY_SKC: Record<ChatbotLocale, CaseStudy> = {
     challenge:
       'SkinClarity Club is our first client, and FutureMarketingAI is the agency. Three Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience, tone and agenda, plus a blog and a webshop.',
     solution:
-      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. From May to October 2026 Clyde made the posts in the voice of each account; a post went live only after approval in the app, at the time from the calendar.',
+      'One workspace for SkinClarity Club with 3 Instagram accounts and one memory for the whole client. Since May 2026 Clyde has made the posts in the voice of each account; a post goes live only after approval in the app, at the time from the calendar.',
     results: [
       'Posts for 3 Instagram accounts, each in its own voice',
-      'May to October 2026, from one memory',
+      'Since May 2026, from one memory',
       'Live only after approval in the app',
     ],
     url: 'https://future-marketing.ai/en/case-studies/skinclarity-club',

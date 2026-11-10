@@ -1,26 +1,26 @@
 // Ported by hand from the approved prototype design/ronde1b/golf7-cases.tpl.html (2026-11-02 website-audit folder,
 // golf 7, r3, Daley's yes 2026-11-07). Same markup and classes; every text node is a key under case_studies.hub.
-// SkinClarity Club stays in the past tense until posts go live again (last post 2026-10-27). Golf 7b (Paul's yes
-// 2026-11-07): the SalesLobe card shows the first three slides of the "not right now" carousel and links to its case.
+// Golf 7b (Paul's yes 2026-11-07): the SalesLobe card shows the first three slides of the "not right now" carousel and
+// links to its case. Golf 7c (2026-11-10, Daley's choices): both cards wear the client's brand, the SKC card shows the
+// covers of the home card, and SkinClarity Club is in the present tense again (new posts scheduled for 12 Nov).
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { Arrow } from '@/components/proof/Arrow'
+import { SKC_POSTS, SL_POSTS } from '@/components/home/klanten/posts'
 import '@/components/proof/proof.css'
 
 const FACT_KEYS = ['clients', 'channels', 'approval'] as const
-const SKC_POSTS = [
-  ['skc-club-boodschappen', 'club'],
-  ['skc-shop-enzympeeling', 'shop'],
-  ['skc-huid-conservering', 'huid'],
-] as const
 const SL_SLIDES = ['s01', 's02', 's03'] as const
+// the three slides are one carousel, posted with the home card's "not right now" post
+const [, SL_N, SL_ISO] = SL_POSTS[0]
 const FAQ_KEYS = ['real', 'agency', 'live', 'results'] as const
-const POST_SIZES = '(max-width: 860px) 30vw, 180px'
+const POST_SIZES = '(max-width: 599px) 40vw, (max-width: 860px) 30vw, 180px'
 
 export async function CasesHubSections({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'case_studies' })
+  const tk = await getTranslations({ locale, namespace: 'home.klanten' })
 
   return (
     <div className="g6" id="g6-cases">
@@ -55,40 +55,40 @@ export async function CasesHubSections({ locale }: { locale: string }) {
             </h2>
             <p className="g6-p">{t('hub.clients.sub')}</p>
           </div>
-          <div className="g6-body g6-two">
-            <article className="g6-card g6-case">
+          <div className="g6-body g6-two g6-clients">
+            <article className="g6-card g6-case g6-brand g6-skc">
               <figure className="g6-shot">
-                <div className="g6-posts" aria-label={t('hub.clients.skc.postsLabel')}>
-                  {SKC_POSTS.map(([img, label]) => (
+                <div className="g6-posts" role="region" tabIndex={0} aria-label={t('hub.clients.skc.postsLabel')}>
+                  {SKC_POSTS.map(([img, n, iso]) => (
                     <div className="g6-post" key={img}>
                       <Image
                         src={`/home/klanten/${img}.webp`}
                         width={720}
                         height={900}
                         sizes={POST_SIZES}
-                        alt={t(`posts.${img}`)}
+                        alt={tk(`alt.${img}`)}
                         loading="lazy"
                       />
-                      <p>{t(`hub.clients.skc.labels.${label}`)}</p>
+                      <p className="g6-pl">{tk(`postLabels.${n}`)}</p>
+                      <p className="g6-pf">
+                        <time dateTime={iso}>{tk(`dates.${n}`)}</time>
+                      </p>
                     </div>
                   ))}
                 </div>
-                <figcaption className="g6-cap">
-                  <span className="g6-real">{t('hub.clients.skc.caption')}</span>
-                </figcaption>
               </figure>
               <p className="g6-eb">{t('hub.clients.skc.eyebrow')}</p>
               <h3>{t('hub.clients.skc.title')}</h3>
-              <p>{t('hub.clients.skc.text')}</p>
+              <p className="g6-p">{t('hub.clients.skc.text')}</p>
               <div className="g6-links">
                 <Link className="g6-lk" href="/case-studies/skinclarity-club" prefetch={false}>
                   {t('hub.clients.skc.link')} <Arrow />
                 </Link>
               </div>
             </article>
-            <article className="g6-card g6-case">
+            <article className="g6-card g6-case g6-brand g6-sl">
               <figure className="g6-shot">
-                <div className="g6-posts" aria-label={t('hub.clients.sl.postsLabel')}>
+                <div className="g6-posts" role="region" tabIndex={0} aria-label={t('hub.clients.sl.postsLabel')}>
                   {SL_SLIDES.map((s, i) => (
                     <div className="g6-post" key={s}>
                       <Image
@@ -99,17 +99,20 @@ export async function CasesHubSections({ locale }: { locale: string }) {
                         alt={t(`sl.slides.alts.${s}`)}
                         loading="lazy"
                       />
-                      <p>{t('sl.slides.of', { n: i + 1 })}</p>
+                      <p className="g6-pl">{t('sl.slides.of', { n: i + 1 })}</p>
+                      {/* the date once, under the first slide, so both cards keep two label lines */}
+                      {i === 0 && (
+                        <p className="g6-pf">
+                          <time dateTime={SL_ISO}>{tk(`dates.${SL_N}`)}</time>
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
-                <figcaption className="g6-cap">
-                  <span className="g6-real">{t('hub.clients.sl.caption')}</span>
-                </figcaption>
               </figure>
               <p className="g6-eb">{t('hub.clients.sl.eyebrow')}</p>
               <h3>{t('hub.clients.sl.title')}</h3>
-              <p>{t('hub.clients.sl.text')}</p>
+              <p className="g6-p">{t('hub.clients.sl.text')}</p>
               <div className="g6-links">
                 <Link className="g6-lk" href="/case-studies/saleslobe" prefetch={false}>
                   {t('hub.clients.sl.link')} <Arrow />

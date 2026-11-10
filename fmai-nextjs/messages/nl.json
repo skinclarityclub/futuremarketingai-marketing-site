@@ -582,7 +582,7 @@
           "value": "9"
         }
       },
-      "sub": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakte Clyde van mei tot oktober 2026 de posts, bij SalesLobe maakt hij ze nu, telkens in de stem van het merk en goedgekeurd in de app.",
+      "sub": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakt Clyde sinds mei 2026 de posts, bij SalesLobe sinds oktober, telkens in de stem van het merk en goedgekeurd in de app.",
       "text": {
         "n1": "Drie Instagram-accounts met elk een eigen stem: de club, de webshop en Sindy als huidtherapeut. Het merk van Sindy, de vriendin van Daley, en de plek waar Clyde zijn eerste vaardigheden leerde.",
         "n3": "De Instagram van SalesLobe en de LinkedIn van oprichter Paul den Hartogh. In het Engels, in de stem die Paul vooraf zelf koos. Op LinkedIn spreekt Paul, op Instagram het merk.",
@@ -2793,20 +2793,15 @@
     }
   },
   "case_studies": {
-    "posts": {
-      "skc-club-boodschappen": "Carrousel van SkinClarity Club, de club: Een acne-bewuste boodschappenlijst: waar begin je?",
-      "skc-shop-enzympeeling": "Carrousel van SkinClarity Club, de webshop: Enzympeeling of zuur: wanneer kies je wat?",
-      "skc-huid-conservering": "Carrousel van SkinClarity Club, de huidtherapeut: Conserveringsmiddelen zijn niet de vijand in je kastje"
-    },
     "hub": {
       "meta": {
         "title": "Cases: Clyde bij SkinClarity Club en SalesLobe",
-        "description": "Clyde bij twee echte klanten: de drie Instagram-accounts van SkinClarity Club, van mei tot oktober 2026, en SalesLobe op Instagram en LinkedIn."
+        "description": "Clyde bij twee echte klanten: de drie Instagram-accounts van SkinClarity Club, sinds mei 2026, en SalesLobe op Instagram en LinkedIn."
       },
       "hero": {
         "eyebrow": "Cases",
         "title": "Clyde bij twee echte klanten.",
-        "definition": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakte Clyde van mei tot oktober 2026 de posts voor drie Instagram-accounts; bij SalesLobe maakt hij de Instagram en de LinkedIn van de oprichter. Een post gaat pas live als hij in de app is goedgekeurd.",
+        "definition": "Wij bouwen Clyde en zetten hem in voor twee klanten: SkinClarity Club en SalesLobe. Bij SkinClarity Club maakt Clyde sinds mei 2026 de posts voor drie Instagram-accounts; bij SalesLobe maakt hij de Instagram en de LinkedIn van de oprichter. Een post gaat pas live als hij in de app is goedgekeurd.",
         "factsLabel": "Kort",
         "facts": {
           "clients": {
@@ -2828,20 +2823,13 @@
         "sub": "Een huidverzorgingsmerk voor consumenten en een B2B-merk. Een andere doelgroep en een andere toon, met hetzelfde werk eronder: plannen, maken, goedkeuren en live zetten.",
         "skc": {
           "postsLabel": "Drie echte posts van SkinClarity Club",
-          "labels": {
-            "club": "De club",
-            "shop": "De webshop",
-            "huid": "De huidtherapeut"
-          },
-          "caption": "Echte posts van SkinClarity Club op Instagram, geplaatst in oktober 2026.",
-          "eyebrow": "Huidverzorging · mei tot oktober 2026",
+          "eyebrow": "Huidverzorging · sinds mei 2026",
           "title": "SkinClarity Club",
-          "text": "Clyde maakte de posts voor drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem.",
+          "text": "Clyde maakt de posts voor drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem.",
           "link": "Lees de case"
         },
         "sl": {
           "postsLabel": "Drie slides uit de carrousel van 27 oktober",
-          "caption": "Echte carrousel van SalesLobe op Instagram, geplaatst op 27 oktober 2026.",
           "eyebrow": "B2B · sinds oktober 2026",
           "title": "SalesLobe",
           "text": "Clyde draait de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. B2B, dus met een andere toon dan huidverzorging.",
@@ -2884,38 +2872,18 @@
     "skc": {
       "meta": {
         "title": "Case SkinClarity Club: 3 Instagram-accounts met Clyde",
-        "description": "Hoe Clyde van mei tot oktober 2026 de Instagram van SkinClarity Club maakte: drie accounts, elk met een eigen stem, en goedkeuren in de app."
+        "description": "Hoe Clyde sinds mei 2026 de Instagram van SkinClarity Club maakt: drie accounts, elk met een eigen stem, en goedkeuren in de app."
       },
       "hero": {
         "eyebrow": "Case · onze eerste klant",
         "title": "Drie Instagram-accounts, één klant, één Clyde.",
-        "definition": "SkinClarity Club heeft drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem. Van mei tot eind oktober 2026 maakte Clyde de posts voor alle drie, vanuit één geheugen. Een post ging pas live als hij in de app was goedgekeurd.",
-        "factsLabel": "Kort",
-        "facts": {
-          "accounts": {
-            "label": "Accounts",
-            "value": "Drie, op Instagram"
-          },
-          "period": {
-            "label": "Periode",
-            "value": "Mei tot oktober 2026"
-          },
-          "memory": {
-            "label": "Geheugen",
-            "value": "Eén, voor alle drie de accounts"
-          }
-        }
+        "definition": "SkinClarity Club heeft drie Instagram-accounts: de club, de webshop en de huidtherapeut, elk met een eigen stem. Sinds mei 2026 maakt Clyde de posts voor alle drie, vanuit één geheugen. Een post gaat pas live als hij in de app is goedgekeurd.",
+        "factsLabel": "Kort"
       },
       "voices": {
         "title": "Drie accounts, drie stemmen.",
         "sub": "De club deelt huidkennis met consumenten. De webshop gaat over producten en wanneer je wat kiest. De huidtherapeut is het persoonlijke account van Sindy, met haar vakkennis. Wat op het ene account werkt, klinkt op het andere niet.",
-        "postsLabel": "Drie echte posts van SkinClarity Club",
-        "labels": {
-          "club": "De club · 27 oktober",
-          "shop": "De webshop · 25 oktober",
-          "huid": "De huidtherapeut · 22 oktober"
-        },
-        "caption": "Echte posts van SkinClarity Club op Instagram, geplaatst in oktober 2026."
+        "postsLabel": "Drie echte posts van SkinClarity Club"
       },
       "week": {
         "title": "Een week bij SkinClarity Club.",
@@ -2927,24 +2895,24 @@
         "real": "Echt scherm uit de werkruimte van SkinClarity Club, opgenomen op 7 november 2026."
       },
       "live": {
-        "title": "Hoe een post live ging.",
-        "sub": "Voor elk van de drie accounts hetzelfde werk, met één geheugen eronder. Niets ging live dat niet eerst in de app stond.",
+        "title": "Hoe een post live gaat.",
+        "sub": "Voor elk van de drie accounts hetzelfde werk, met één geheugen eronder. Niets gaat live dat niet eerst in de app staat.",
         "steps": {
           "concept": {
-            "title": "Clyde maakte het concept",
-            "text": "In de stem van het account, vanuit wat Clyde over SkinClarity Club had onthouden: de producten, de huidthema's en wat het merk wel en niet zegt."
+            "title": "Clyde maakt het concept",
+            "text": "In de stem van het account, vanuit wat Clyde over SkinClarity Club onthoudt: de producten, de huidthema's en wat het merk wel en niet zegt."
           },
           "approve": {
             "title": "Goedkeuren in de app",
-            "text": "Elk concept stond in de app tot het was goedgekeurd. Aanpassen of overslaan kon ook."
+            "text": "Elk concept staat in de app tot het is goedgekeurd. Aanpassen of overslaan kan ook."
           },
           "live": {
             "title": "Live op het geplande moment",
-            "text": "Daarna ging de post live op de tijd uit de agenda, en kreeg hij in de kalender een vinkje."
+            "text": "Daarna gaat de post live op de tijd uit de agenda, en krijgt hij in de kalender een vinkje."
           },
           "memory": {
             "title": "Eén geheugen voor alle drie",
-            "text": "Wat Clyde over SkinClarity Club leerde, gebruikte hij voor alle drie de accounts. De stem verschilde per account, de kennis over het merk niet."
+            "text": "Wat Clyde over SkinClarity Club leert, gebruikt hij voor alle drie de accounts. De stem verschilt per account, de kennis over het merk niet."
           }
         },
         "links": {
@@ -2971,7 +2939,7 @@
           },
           "numbers": {
             "q": "Staan er omzet- of bereikcijfers in deze case?",
-            "a": "Nee. Deze case laat zien hoe het werk loopt en wat er live ging, niet wat het opleverde."
+            "a": "Nee. Deze case laat zien hoe het werk loopt en wat er live gaat, niet wat het oplevert."
           }
         },
         "links": {
@@ -2997,22 +2965,8 @@
       "hero": {
         "eyebrow": "Case · B2B",
         "title": "SalesLobe: B2B-content met Clyde, eerst de stem.",
-        "definition": "Clyde maakt de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. Elke post in de eigen stem en huisstijl van SalesLobe, goedgekeurd in de app en daarna op het geplande moment gepubliceerd.",
-        "factsLabel": "Kort",
-        "facts": {
-          "channels": {
-            "label": "Kanalen",
-            "value": "Instagram en LinkedIn"
-          },
-          "since": {
-            "label": "Sinds",
-            "value": "5 oktober 2026"
-          },
-          "october": {
-            "label": "Online in oktober",
-            "value": "23 posts: 9 op Instagram, 14 op LinkedIn"
-          }
-        }
+        "definition": "Sinds 5 oktober 2026 maakt Clyde de Instagram van SalesLobe en de LinkedIn van de oprichter, Paul den Hartogh. Elke post in de eigen stem en huisstijl van SalesLobe, goedgekeurd in de app en daarna op het geplande moment gepubliceerd.",
+        "factsLabel": "Kort"
       },
       "two": {
         "title": "Eén onderwerp, twee stemmen.",
@@ -3020,8 +2974,7 @@
         "liLabel": "LinkedIn · Paul den Hartogh · 23 oktober",
         "liNote": "De post is hier ingekort.",
         "igLabel": "Instagram · SalesLobe · 27 oktober",
-        "igAlt": "Eerste slide van de Instagram-carrousel van SalesLobe: Not right now is not not interested.",
-        "caption": "Echte posts van SalesLobe, geplaatst op 23 en 27 oktober 2026."
+        "igAlt": "Eerste slide van de Instagram-carrousel van SalesLobe: Not right now is not not interested."
       },
       "slides": {
         "title": "De carrousel, slide voor slide.",

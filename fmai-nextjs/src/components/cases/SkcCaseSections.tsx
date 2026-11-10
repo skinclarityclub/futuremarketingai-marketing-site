@@ -1,83 +1,81 @@
 // Ported by hand from the approved prototype design/ronde1b/golf7-skinclarity-club.tpl.html (2026-11-02 website-audit
 // folder, golf 7, r3, Daley's yes 2026-11-07). Same markup and classes; every text node is a key under case_studies.skc.
-// Past tense until SKC posts go live again (176 posted 2026-05-22..2026-10-27, SELECT 2026-11-07). The week is a real
-// screen from the SKC workspace, so its caption carries the real-screen line, never the demo line.
+// Present tense since 2026-11-10 (Daley's choice "loopt": new posts are scheduled for 12 Nov); the numbers and the period
+// line wait until those posts are posted. Golf 7c: the hero and the voices sit on the SKC brand ground, with the same
+// numbers, covers and post labels as the home card (home.klanten, posts.ts), so one recount updates both. The week is a
+// real screen from the SKC workspace, so its caption carries the real-screen line, never the demo line.
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { Arrow } from '@/components/proof/Arrow'
+import { SKC_POSTS } from '@/components/home/klanten/posts'
 import '@/components/proof/proof.css'
 
-const FACT_KEYS = ['accounts', 'period', 'memory'] as const
-const POSTS = [
-  ['skc-club-boodschappen', 'club'],
-  ['skc-shop-enzympeeling', 'shop'],
-  ['skc-huid-conservering', 'huid'],
-] as const
+const STAT_KEYS = ['n1', 'n2', 'n3'] as const
 const STEP_KEYS = ['concept', 'approve', 'live', 'memory'] as const
 const FAQ_KEYS = ['who', 'three', 'notApproved', 'numbers'] as const
 
 export async function SkcCaseSections({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'case_studies' })
+  const tk = await getTranslations({ locale, namespace: 'home.klanten' })
 
   return (
     <div className="g6" id="g6-skc">
-      <section className="g6-hero" aria-labelledby="skc-h1">
-        <div className="g6-in">
-          <Breadcrumbs path="/case-studies/skinclarity-club" locale={locale} className="g6-crumb" />
-          <div className="g6-hero-g">
+      <div className="g6-brand g6-skc">
+        <section className="g6-hero" aria-labelledby="skc-h1">
+          <div className="g6-in">
+            <Breadcrumbs path="/case-studies/skinclarity-club" locale={locale} className="g6-crumb" />
             <div className="g6-hero-t">
+              <Image src="/home/klanten/skc-logo-rond.webp" width={96} height={96} className="g6-logo" alt="" priority />
               <p className="g6-eb">{t('skc.hero.eyebrow')}</p>
               <h1 className="g6-h1" id="skc-h1">
                 {t('skc.hero.title')}
               </h1>
               <p className="g6-def speakable-skc-def">{t('skc.hero.definition')}</p>
+              <dl className="g6-stats" aria-label={t('skc.hero.factsLabel')}>
+                {STAT_KEYS.map((k) => (
+                  <div key={k}>
+                    <dt>{tk(`stats.${k}.label`)}</dt>
+                    <dd>{tk(`stats.${k}.value`)}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-            <dl className="g6-facts" aria-label={t('skc.hero.factsLabel')}>
-              {FACT_KEYS.map((k) => (
-                <div key={k}>
-                  <dt>{t(`skc.hero.facts.${k}.label`)}</dt>
-                  <dd>{t(`skc.hero.facts.${k}.value`)}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="g6-sec" aria-labelledby="skc-stemmen">
-        <div className="g6-in">
-          <div className="g6-hd">
-            <h2 className="g6-h2" id="skc-stemmen">
-              {t('skc.voices.title')}
-            </h2>
-            <p className="g6-p">{t('skc.voices.sub')}</p>
-          </div>
-          <div className="g6-body">
-            <figure className="g6-shot">
-              <div className="g6-posts" aria-label={t('skc.voices.postsLabel')}>
-                {POSTS.map(([img, label]) => (
+        <section className="g6-sec" aria-labelledby="skc-stemmen">
+          <div className="g6-in">
+            <div className="g6-hd">
+              <h2 className="g6-h2" id="skc-stemmen">
+                {t('skc.voices.title')}
+              </h2>
+              <p className="g6-p">{t('skc.voices.sub')}</p>
+            </div>
+            <div className="g6-body">
+              <div className="g6-posts" role="region" tabIndex={0} aria-label={t('skc.voices.postsLabel')}>
+                {SKC_POSTS.map(([img, n, iso]) => (
                   <div className="g6-post" key={img}>
                     <Image
                       src={`/home/klanten/${img}.webp`}
                       width={720}
                       height={900}
-                      sizes="(max-width: 860px) 30vw, 340px"
-                      alt={t(`posts.${img}`)}
+                      sizes="(max-width: 599px) 44vw, (max-width: 860px) 30vw, 340px"
+                      alt={tk(`alt.${img}`)}
                       loading="lazy"
                     />
-                    <p>{t(`skc.voices.labels.${label}`)}</p>
+                    <p className="g6-pl">{tk(`postLabels.${n}`)}</p>
+                    <p className="g6-pf">
+                      <time dateTime={iso}>{tk(`dates.${n}`)}</time>
+                    </p>
                   </div>
                 ))}
               </div>
-              <figcaption className="g6-cap">
-                <span className="g6-real">{t('skc.voices.caption')}</span>
-              </figcaption>
-            </figure>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="g6-sec" aria-labelledby="skc-week">
         <div className="g6-in">

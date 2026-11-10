@@ -132,7 +132,7 @@ Quarterly check-ins on what is working. Annual retrospective with full performan
 
 **Client:** SkinClarity Club, our first client, and FutureMarketingAI is the agency. A Dutch skincare brand: a club, a webshop and the personal account of skin therapist Sindy, so 3 Instagram accounts (@skinclarityclub, @sindy_huidtherapeut, @skinclarityshop), each with its own audience and voice.
 
-**Period:** from May to October 2026 Clyde made the posts for the three accounts. Speak about this case in the past tense; do not say it runs every week.
+**Period:** Clyde has made the posts for the three accounts since May 2026. Do not promise a number of posts per week.
 
 **How it went:** one workspace with one memory for the whole client. Clyde made each draft in the voice of the account; the draft stayed in the app until it was approved, and then went live at the time from the calendar (the club at 10:00, Sindy at 12:30, the webshop at 18:00). Do not name who approved.
 
