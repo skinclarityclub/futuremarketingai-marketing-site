@@ -33,7 +33,7 @@ export function buildLeadgenTools(locale: ChatbotLocale, session: FitSession = n
 
   const get_pricing_info = tool({
     description:
-      'Retrieve the offer for new agencies. There is one: Founding, 1,297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1,500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 founding spots. Regular plans follow after Founding, expected around 2,400-2,500 EUR per month for 5 brands; founding partners pay 30% below that after the 12 fixed months while they stay. Growth, Professional and Enterprise are not for sale.',
+      'Retrieve the offer for new agencies. There is one: Clyde at the introductory price, 1,297 EUR per month excl. VAT with 5 client brands included, 199 EUR per extra brand up to 15, 1,500 credits per brand per month in one agency pool, 0 EUR onboarding, price fixed for 12 paid months, 3 spots. Regular plans follow after the first three agencies, expected around 2,400-2,500 EUR per month for 5 brands; agencies on the introductory price pay 30% below that after the 12 fixed months while they stay. Never call the offer Founding or Founder. Growth, Professional and Enterprise are not for sale.',
     inputSchema: z.object({
       tier: z.enum(['founding', 'all']).default('all').describe('Use "all" for the overview.'),
     }),

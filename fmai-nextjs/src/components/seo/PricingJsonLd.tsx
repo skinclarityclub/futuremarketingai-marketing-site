@@ -10,13 +10,13 @@ const COPY = {
   nl: {
     app: 'Clyde, de AI-collega voor marketingbureaus: strategie, content, goedkeuring, publicatie en rapportage per klantmerk.',
     founding: (f: Founding) =>
-      `Founding partner: €${f.price} per maand excl. btw met ${f.includedWorkspaces} klantmerken inbegrepen, €${f.pricePerExtraWorkspace} per extra klantmerk tot ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per klantmerk per maand in één pot voor je bureau, €0 onboarding. Je bureau keurt zelf goed. Prijs ${f.priceLockMonths} betaalde maanden vast, maandelijks opzegbaar. Niet inbegrepen: AI-video, voice-over en advertenties.`,
+      `Introductieprijs: €${f.price} per maand excl. btw met ${f.includedWorkspaces} klantmerken inbegrepen, €${f.pricePerExtraWorkspace} per extra klantmerk tot ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per klantmerk per maand in één pot voor je bureau, €0 onboarding. Je bureau keurt zelf goed. Prijs ${f.priceLockMonths} betaalde maanden vast, maandelijks opzegbaar. Niet inbegrepen: AI-video, voice-over en advertenties.`,
     pack: (credits: number) => `${credits} extra credits`,
   },
   en: {
     app: 'Clyde, the AI colleague for marketing agencies: strategy, content, approval, publishing and reporting per client brand.',
     founding: (f: Founding) =>
-      `Founding partner: €${f.price} per month excl. VAT with ${f.includedWorkspaces} client brands included, €${f.pricePerExtraWorkspace} per extra client brand up to ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per client brand per month in one pool for your agency, €0 onboarding. Your agency approves the work itself. Price fixed for ${f.priceLockMonths} paid months, cancel monthly. Not included: AI video, voice-over and ads.`,
+      `Introductory price: €${f.price} per month excl. VAT with ${f.includedWorkspaces} client brands included, €${f.pricePerExtraWorkspace} per extra client brand up to ${f.maxWorkspaces}, ${f.creditsPerBrand} credits per client brand per month in one pool for your agency, €0 onboarding. Your agency approves the work itself. Price fixed for ${f.priceLockMonths} paid months, cancel monthly. Not included: AI video, voice-over and ads.`,
     pack: (credits: number) => `${credits} extra credits`,
   },
 } as const
@@ -49,7 +49,7 @@ export function PricingJsonLd({ locale }: { locale: string }) {
     offers: [
       {
         '@type': 'Offer',
-        name: 'Founding',
+        name: 'Clyde',
         description: copy.founding(FOUNDING),
         price: String(FOUNDING.price),
         priceCurrency: 'EUR',

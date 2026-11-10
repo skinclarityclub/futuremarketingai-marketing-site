@@ -15,7 +15,7 @@ const pages = [
   { path: '/nl', name: 'home', expected: ['Clyde', 'Meer klanten per teamlid'] },
   { path: '/nl/about', name: 'about', expected: ['Over FutureMarketingAI', 'Mijn missie'] },
   { path: '/nl/how-it-works', name: 'how-it-works', expected: ['In vier weken live met Clyde', 'Wat je per klant aanlevert'] },
-  { path: '/nl/pricing', name: 'pricing', expected: ['Wat kost Clyde?', 'Founding'] },
+  { path: '/nl/pricing', name: 'pricing', expected: ['Wat kost Clyde?', 'Introductieprijs'] },
   { path: '/nl/apply', name: 'apply', expected: ['Vraag een gesprek aan', 'Daley kijkt zelf naar elke aanvraag'] },
   { path: '/nl/contact', name: 'contact', expected: ['Algemene vragen', 'Stuur ons'] },
   { path: '/nl/memory', name: 'memory', expected: ['Elke klant een eigen merkstem en geheugen', 'Vier bronnen, per klant'] },

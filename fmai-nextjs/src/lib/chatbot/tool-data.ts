@@ -24,7 +24,7 @@ export function normalizeChatbotLocale(value: string | undefined): ChatbotLocale
 
 export const CHATBOT_TIERS = {
   founding: {
-    name: 'Founding',
+    name: 'Clyde (introductory price)',
     monthlyPrice: 1297, // EUR excl. VAT, covers includedBrands
     includedBrands: 5,
     pricePerExtraBrand: 199,
@@ -62,7 +62,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         'Prijs 12 betaalde maanden vast, maandelijks opzegbaar',
         'Daarna 30% onder de reguliere prijs (verwacht rond €2.400-2.500 voor 5 merken), zolang je klant blijft',
         'Niet inbegrepen: AI-video, voice-over, advertenties',
-        '3 founding-plekken',
+        '3 plekken tegen de introductieprijs',
       ],
     },
   },
@@ -78,7 +78,7 @@ const TIER_COPY: Record<ChatbotLocale, Record<ChatbotTierKey, TierCopy>> = {
         'Price fixed for 12 paid months, cancel monthly',
         'After that 30% below the regular price (expected around €2,400-2,500 for 5 brands), as long as you stay a client',
         'Not included: AI video, voice-over, ads',
-        '3 founding spots',
+        '3 spots at the introductory price',
       ],
     },
   },

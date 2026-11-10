@@ -117,7 +117,7 @@ We do not quote hours saved: there is no measured time saving yet. In the strate
 
 There are no measured ROI figures yet, so we do not quote percentages, savings or payback periods.
 
-What matters to an agency owner is pipeline, margin, revenue per FTE and client retention. In the strategy call we work out with your own numbers what Clyde would change, starting from the Founding price for your number of client brands (see pricing).`,
+What matters to an agency owner is pipeline, margin, revenue per FTE and client retention. In the strategy call we work out with your own numbers what Clyde would change, starting from the introductory price for your number of client brands (see pricing).`,
  },
  {
  key: 'founding_member',
@@ -125,6 +125,8 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  keywords: [
  'founding',
  'founding member',
+ 'introductieprijs',
+ 'introductory price',
  'early',
  'discount',
  'spots',
@@ -134,10 +136,10 @@ What matters to an agency owner is pipeline, margin, revenue per FTE and client 
  'benefit',
  'exclusive',
  ],
- content: `## Founding Program
+ content: `## Introductory price
 
 **What Is It?**
-Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. There are 3 founding spots. After Founding, regular plans follow, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands.
+The offer for new agencies is Clyde at the introductory price: EUR 1,297 per month excl. VAT with 5 client brands included, EUR 199 per extra brand up to 15, and 1,500 credits per brand per month in one agency pool. There are 3 spots. After the first three agencies, regular plans follow, built on three measured months; we expect around EUR 2,400-2,500 per month for 5 client brands.
 
 **Benefits:**
 - Price fixed for 12 paid months, cancel monthly; after that 30% below the regular price while the subscription runs without a break
@@ -156,10 +158,10 @@ Founding is the offer for new agencies: EUR 1,297 per month excl. VAT with 5 cli
 Marketing agencies who want to:
 - Serve more clients per team member, with 5 client brands included and room to grow to 15
 - Have direct influence on product development
-- Start early: there are 3 founding spots
+- Start early: there are 3 spots
 
-**Spots:** 3 founding spots. The counter on the site counts signed spots only; do not state a number taken beyond what the site shows.
+**Spots:** 3 spots at the introductory price. The counter on the site counts signed spots only; do not state a number taken beyond what the site shows.
 
-Existing founding partners keep their agreement exactly as signed.`,
+Existing clients keep their agreement exactly as signed. Never call the offer Founding or Founder.`,
  },
 ]

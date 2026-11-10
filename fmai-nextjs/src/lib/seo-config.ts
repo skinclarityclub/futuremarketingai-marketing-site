@@ -78,17 +78,19 @@ export const ORG_FOUNDING_DATE = '2024-01-01'
 export const FALLBACK_PAGE_DATE = '2026-03-18'
 
 export const PAGE_DATES: Record<string, string> = {
+  // 2026-11-10 founder-naam (Daley's option D): 'Founding' became 'Clyde with an introductory price' in the visible
+  // copy of these paths (pricing, terms, CTA eyebrow, FAQ, glossary). Move them to the merge day if it slips.
   // 2026-11-09 Founding A1.4: price, spots, credits and the old tiers changed on /, /pricing, /apply, /about,
   // /alternatives, /how-it-works, /client-portal, /contact, /assessment, /legal/terms and every skill page that
   // carried the per-tier caps table.
   // 2026-11-05 site-audit P0 PR: every path below changed its HTML that day (CTA label,
   // FAQ answers in the HTML, prices, export sentence). Untouched: /kennisbank, /legal/cookies.
   // 2026-11-06 golf 5c: the Founding rate reads 'vast zolang je klant blijft' on /, /apply, /about and in /legal/terms.
-  '/': '2026-11-09',
-  '/memory': '2026-11-07',
+  '/': '2026-11-10',
+  '/memory': '2026-11-10',
   // 2026-11-08 golf 9c: /apply and /contact got titles and metas under the limits, /skills/clyde lost the WhatsApp
   // one-tap line. Move these to the merge day if it slips.
-  '/apply': '2026-11-09',
+  '/apply': '2026-11-10',
   // 2026-11-07 golf 7a: the cases hub is new and the SKC case moved to the proof-page template, in the past tense.
   '/case-studies': '2026-11-07',
   '/case-studies/skinclarity-club': '2026-11-07',
@@ -96,7 +98,7 @@ export const PAGE_DATES: Record<string, string> = {
   '/case-studies/saleslobe': '2026-11-07',
   // 2026-11-07 golf 8a: /client-portal is new, /skills/clyde became a proof page, and the stop-moment sentence on /,
   // /pricing and /trust now says the pause only holds with the stop moment on (Daley's choice 2).
-  '/client-portal': '2026-11-09',
+  '/client-portal': '2026-11-10',
   // 2026-11-08 golf 9c: reporting and seo-geo became proof pages from the prototype. Move these to the merge day
   // if it slips.
   '/skills/reporting': '2026-11-09',
@@ -106,27 +108,27 @@ export const PAGE_DATES: Record<string, string> = {
   // Move these to the merge day if it slips.
   '/skills/social-media': '2026-11-09',
   '/skills/blog-factory': '2026-11-09',
-  '/skills/ad-manager': '2026-11-09',
+  '/skills/ad-manager': '2026-11-10',
   // 2026-11-08 golf 9a: the hub became Wat Clyde maakt, /skills/strategy is new, lead-qualifier lost its chat demo,
   // and the skill count left /, /pricing (matrix rows) and the terms. Move these to the merge day if it slips.
   '/skills/strategy': '2026-11-08',
-  '/skills/lead-qualifier': '2026-11-09',
-  '/skills/email-management': '2026-11-09',
+  '/skills/lead-qualifier': '2026-11-10',
+  '/skills/email-management': '2026-11-10',
   '/skills/clyde': '2026-11-08',
-  '/pricing': '2026-11-09',
-  '/alternatives': '2026-11-09',
-  '/about': '2026-11-09',
-  '/contact': '2026-11-09',
-  '/how-it-works': '2026-11-09',
-  '/legal': '2026-11-05',
-  '/kennisbank': '2026-06-02',
+  '/pricing': '2026-11-10',
+  '/alternatives': '2026-11-10',
+  '/about': '2026-11-10',
+  '/contact': '2026-11-10',
+  '/how-it-works': '2026-11-10',
+  '/legal': '2026-11-10',
+  '/kennisbank': '2026-11-10',
   // Dates below come from `git log -1` on each page's own source file, not
   // from a guess — these six were missing and hit the old `new Date()` path.
   '/skills': '2026-11-08',
-  '/assessment': '2026-11-09',
+  '/assessment': '2026-11-10',
   // Privacy policy names calendar data and Recall.ai calendar linking, with a 30-day retention.
   '/legal/privacy': '2026-11-05',
-  '/legal/terms': '2026-11-09',
+  '/legal/terms': '2026-11-10',
   '/legal/cookies': '2026-04-27',
   '/trust': '2026-11-07',
 }

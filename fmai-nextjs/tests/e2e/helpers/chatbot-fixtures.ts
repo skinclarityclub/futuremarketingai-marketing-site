@@ -59,7 +59,7 @@ export const CASE = {
 export const PRICING = {
   tiers: [
     {
-      name: 'Founding',
+      name: 'Clyde (introductory price)',
       price: '€1.297/mnd excl. btw',
       features: ['5 klantmerken inbegrepen, €199 per extra klantmerk tot 15'],
     },
