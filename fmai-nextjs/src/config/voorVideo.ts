@@ -1,7 +1,7 @@
-// shortcut: film r3 (5 min) served as HLS from a public Supabase bucket so prospects see the real film now;
-// move to Bunny Stream when plan A Task 11 lands. version stays 'stil-1' because the app accepts only that value.
+// shortcut: film kort-1 (3 min) served as HLS from a public Supabase bucket; move to Bunny Stream when egress
+// starts to count. outreach-r3/ stays in the bucket as the way back. The app must list a version before it goes here.
 export const voorVideo = {
-  version: 'stil-1',
+  version: 'kort-1',
   cdnOrigin: 'https://nurdldgqxseunotmygzn.supabase.co',
-  hlsUrl: 'https://nurdldgqxseunotmygzn.supabase.co/storage/v1/object/public/voor-video/outreach-r3/playlist.m3u8',
+  hlsUrl: 'https://nurdldgqxseunotmygzn.supabase.co/storage/v1/object/public/voor-video/outreach-kort-1/playlist.m3u8',
 }

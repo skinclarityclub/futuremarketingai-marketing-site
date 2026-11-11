@@ -1,15 +1,13 @@
 {
-  "durationSec": 300,
-  "endCardSec": 293,
+  "durationSec": 180,
+  "endCardSec": 172.5,
   "chapters": [
-    { "id": "opening", "title": "Vijf vragen", "startSec": 0 },
-    { "id": "kring", "title": "Clyde, de AI-collega van je bureau", "startSec": 20 },
-    { "id": "h1", "title": "Meer klanten, zelfde team", "startSec": 44 },
-    { "id": "h2", "title": "Op tijd en zonder fouten", "startSec": 100 },
-    { "id": "h3", "title": "Klanten houden", "startSec": 132 },
-    { "id": "h4", "title": "Laten zien wat het oplevert", "startSec": 168 },
-    { "id": "h5", "title": "Controle", "startSec": 212 },
-    { "id": "h6", "title": "Hoe begin je", "startSec": 242 },
-    { "id": "founding", "title": "Introductieprijs", "startSec": 270 }
+    { "id": "minuut", "title": "In één minuut: wat Clyde voor je bureau doet", "startSec": 0 },
+    { "id": "team", "title": "Meer klanten, zelfde team", "startSec": 60 },
+    { "id": "optijd", "title": "Op tijd en zonder fouten", "startSec": 82 },
+    { "id": "klant", "title": "Je klant ziet het werk", "startSec": 104 },
+    { "id": "oplevert", "title": "Laten zien wat het oplevert", "startSec": 126 },
+    { "id": "controle", "title": "Controle", "startSec": 148 },
+    { "id": "begin", "title": "Hoe je begint", "startSec": 166 }
   ]
 }
