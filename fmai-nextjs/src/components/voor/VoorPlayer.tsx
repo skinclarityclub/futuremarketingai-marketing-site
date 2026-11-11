@@ -168,8 +168,8 @@ export function VoorPlayer({ slug, v, src, poster, still, agencyName, endCardSec
         }}
         onTimeUpdate={onTime}
       >
-        {/* shortcut: placeholder asset until plan A2 delivers the real video (ruling R2), replace at Task 11 step 1 */}
-        <track kind="subtitles" srcLang="nl" label="Nederlands" src="/voor/outreach.nl.vtt" default />
+        {/* Off by default (Daley 2026-11-11): the film carries its own on-screen text; viewers turn captions on in the player menu. */}
+        <track kind="subtitles" srcLang="nl" label="Nederlands" src="/voor/outreach.nl.vtt" />
       </video>
 
       {!live && (
