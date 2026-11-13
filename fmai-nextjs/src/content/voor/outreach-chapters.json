@@ -1,13 +1,14 @@
 {
-  "durationSec": 180,
-  "endCardSec": 172.5,
+  "durationSec": 153,
+  "endCardSec": 150,
   "chapters": [
-    { "id": "minuut", "title": "In één minuut: wat Clyde voor je bureau doet", "startSec": 0 },
-    { "id": "team", "title": "Meer klanten, zelfde team", "startSec": 60 },
-    { "id": "optijd", "title": "Op tijd en zonder fouten", "startSec": 82 },
-    { "id": "klant", "title": "Je klant ziet het werk", "startSec": 104 },
-    { "id": "oplevert", "title": "Laten zien wat het oplevert", "startSec": 126 },
-    { "id": "controle", "title": "Controle", "startSec": 148 },
-    { "id": "begin", "title": "Hoe je begint", "startSec": 166 }
+    { "id": "minuut", "title": "Minuut 1", "startSec": 0 },
+    { "id": "team", "title": "Meer klanten, zelfde team", "startSec": 57.5 },
+    { "id": "optijd", "title": "Op tijd en zonder fouten", "startSec": 72.5 },
+    { "id": "gevonden", "title": "Gevonden worden", "startSec": 88 },
+    { "id": "klant", "title": "Je klant ziet het werk", "startSec": 106 },
+    { "id": "oplevert", "title": "Laten zien wat het oplevert", "startSec": 116.5 },
+    { "id": "controle", "title": "Controle", "startSec": 130 },
+    { "id": "begin", "title": "Hoe je begint", "startSec": 142 }
   ]
 }
