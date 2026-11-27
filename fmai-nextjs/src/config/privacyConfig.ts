@@ -17,9 +17,9 @@
 /**
  * Versie van het privacybeleid waar de bezoeker op dat moment onder viel.
  * Bron van waarheid is `legal.last_updated` in `messages/{nl,en,es}.json`
- * ("Laatst bijgewerkt: 24 april 2026"). Werk beide bij als het beleid wijzigt.
+ * ("Laatst bijgewerkt: 27 november 2026"). Werk beide bij als het beleid wijzigt.
  */
-export const PRIVACY_POLICY_VERSION = '2026-04-24'
+export const PRIVACY_POLICY_VERSION = '2026-11-27'
 
 export type ConsentPurpose = 'assessment_only' | 'reply_to_enquiry'
 
